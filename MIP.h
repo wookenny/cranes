@@ -1,0 +1,36 @@
+#pragma once
+
+#include "banned.h"
+#include <string>
+#include <unordered_map>
+
+#include "Job.h"
+#include "Instance.h"
+#include "Tours.h"
+
+class IloEnv;
+class IloNumVarArray;
+class IloModel;
+class IloCplex;
+
+class MIP{
+
+	private:
+		const Instance& _inst;
+		std::unordered_map<std::string,int> v;
+		int M;
+	public:
+		MIP()=delete;
+		MIP(const Instance& i):_inst(i),v(),M(i.get_upper_bound()){}
+		
+		Tours solve();
+
+	private:
+		void _build_variables(IloEnv &env, IloNumVarArray &vars,IloModel &model, bool LP_relax = false); 
+		void _build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model); 
+		void _parse_solution(IloCplex &cplex, Tours &tours,IloNumVarArray &vars,bool debug=false) ;
+
+		void _build_variables_single_vehicle(IloEnv &env, IloNumVarArray &vars,IloModel &model);
+		void _build_constraints_single_vehicle(IloEnv &env, IloNumVarArray &vars,IloModel &model); 
+		void _parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,IloNumVarArray &vars) ;
+};
