@@ -306,8 +306,8 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 				if(i==j) continue;
 				//build constraint
 				IloExpr expr_l(env), expr_r(env);	
-				expr_l += IloInt(_inst.num_vehicles()) * vars[v[l(i,j)]];
-				expr_r += IloInt(_inst.num_vehicles()) * vars[v[r(i,j)]];
+				expr_l += IloInt(_inst.num_vehicles()-1) * vars[v[l(i,j)]];
+				expr_r += IloInt(_inst.num_vehicles()-1) * vars[v[r(i,j)]];
 				for(unsigned int k=1; k<=_inst.num_vehicles(); ++k){
 					expr_l += IloInt(k)*vars[v[x(i,k)]] - IloInt(k)*vars[v[x(j,k)]];
 					expr_r -= IloInt(k)*vars[v[x(i,k)]] - IloInt(k)*vars[v[x(j,k)]];
