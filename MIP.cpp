@@ -5,53 +5,82 @@
 
 #include "Instance.h"
 
+using namespace std;
+
 ILOSTLBEGIN 
 
-//functions to refer the different variables easily
-//starting time variable for job i
-std::string t(int i){
-	return  "t_"+std::to_string(i);
-}
-std::string t(const Job& i){return t(i.num());}
+/***********************************************************************
+		 functions to refer the different variables easily
+***********************************************************************/
+//These macros are used to create all functions automatically 
+//to obey the DRY principle.
+
+//two jobs are given
+#define DECLARE_TWO_PARAMETER_FUNCS(name, name_str)              	            \
+string name(int i, int j){													\
+	assert(i!=j);																\
+	return  string(name_str)+"_"+to_string(i)+"_"+to_string(j);	\
+}																				\
+string name(const Job& i, const Job& j){									\
+	return name( i.num(), j.num() );											\
+}	
+
+//only one job given
+#define DECLARE_SINGLE_PARAMETER_FUNCS(name, name_str)              			\
+string name(int i){														\
+	return  string(name_str)+"_"+to_string(i);						\
+}																				\
+string name(const Job& i){													\
+	return name( i.num());														\
+}	
+
 
 //x_i_k =1 => job i is processed by vehicle k
-std::string x(int i, int k){
-	return  "x_"+std::to_string(i)+"_"+std::to_string(k);
+string x(int i, int k){
+	return  "x_"+to_string(i)+"_"+to_string(k);
 }
-std::string x(const Job& i,int k){return x(i.num(),k);}
+string x(const Job& i,int k){return x(i.num(),k);}
 
-//y_i_j =1 => job i starts earlier than job j
-std::string y(int i, int j){
-	assert(i!=j);
-	return  "y_"+std::to_string(i)+"_"+std::to_string(j);
-}
-std::string y(const Job& i,const Job& j){return y(i.num(),j.num());}
 
 //z_i_j =1 => job i is handled by the same vehicle as job j
-std::string z(int i, int j){
+string z(int i, int j){
 	assert(i!=j);
 	if(i<j)
-		return  "z_"+std::to_string(i)+"_"+std::to_string(j);
+		return  "z_"+to_string(i)+"_"+to_string(j);
 	else
-		return  "z_"+std::to_string(j)+"_"+std::to_string(i);
+		return  "z_"+to_string(j)+"_"+to_string(i);
 }
-std::string z(const Job& i,const Job& j){return z(i.num(),j.num());}
+string z(const Job& i,const Job& j){return z(i.num(),j.num());}
+
+//starting time variable for job i
+DECLARE_SINGLE_PARAMETER_FUNCS(t, "t")
+
+//y_i_j =1 => job i starts earlier than job j
+DECLARE_TWO_PARAMETER_FUNCS(y, "y")
 
 //l_i_j =1 => job i is on vehicle left of job j
-std::string l(int i, int j){
-	assert(i!=j);
-	return  "l_"+std::to_string(i)+"_"+std::to_string(j);
-}
-std::string l(const Job& i,const Job& j){return l(i.num(),j.num());}
+DECLARE_TWO_PARAMETER_FUNCS(l, "l")
 
 //r_i_j =1 => job i is on vehicle right of job j
-std::string r(int i, int j){
-	assert(i!=j);
-	return  "r_"+std::to_string(i)+"_"+std::to_string(j);
-}
-std::string r(const Job& i,const Job& j){return r(i.num(),j.num());}
+DECLARE_TWO_PARAMETER_FUNCS(r, "r")
 
-Tours MIP::solve(){
+//c_i_j =1 => job i has to be on a vehicle right of job j
+DECLARE_TWO_PARAMETER_FUNCS(c, "c")
+
+//other collisions functions
+DECLARE_TWO_PARAMETER_FUNCS(caa_p, "caa_p")
+DECLARE_TWO_PARAMETER_FUNCS(caa_m, "caa_m")
+DECLARE_TWO_PARAMETER_FUNCS(cab_p, "cab_p")
+DECLARE_TWO_PARAMETER_FUNCS(cab_m, "cab_m")
+DECLARE_TWO_PARAMETER_FUNCS(cba_p, "cba_p")
+DECLARE_TWO_PARAMETER_FUNCS(cba_m, "cba_m")
+DECLARE_TWO_PARAMETER_FUNCS(cbb_p, "cbb_p")
+DECLARE_TWO_PARAMETER_FUNCS(cbb_m, "cbb_m") 
+
+
+
+
+Tours MIP::solve(bool collision_free, bool LP_relax){
 
 	Tours tours(_inst.num_vehicles());
 
@@ -60,16 +89,17 @@ Tours MIP::solve(){
 	try {
 		IloModel model(env);
 		IloCplex cplex(env);
-		IloNumVarArray vars(env);
-				
-		/***********************************************************************
-		 				Constructing all necessary variables
-		***********************************************************************/
+		IloNumVarArray vars(env);		
 		
 		if(_inst.num_vehicles()==1)
-			_build_variables_single_vehicle(env, vars, model);
+			_build_variables_single_vehicle(env, vars, LP_relax);
 		else
-			_build_variables(env, vars, model);
+			_build_variables(env, vars, LP_relax);
+		
+		if( 1==_inst.num_vehicles() and  collision_free)
+			_build_collision_variables(env, vars, LP_relax);
+		
+		model.add(vars);
 			
 		//objective function: minimize makespan
 		model.add(IloMinimize(env,vars[v["makespan"]]));	
@@ -79,16 +109,20 @@ Tours MIP::solve(){
 		else		
 			_build_constraints(env,vars,model);
 	
-		//run cplex anf solve the model!
+		if( 1==_inst.num_vehicles() and  collision_free)
+			_build_collision_constraints(env, vars, model);  
 		
+		//run cplex and solve the model!
 		cplex.extract(model);
-		std::cout<<model<<std::endl;
 		bool solved = cplex.solve();
 		if ( !solved ) {
 			env.end();
 			return Tours(_inst.num_vehicles());
 		}else{
 			//parse solution
+			//return empty tour id only an LP relaxation was solved
+			if(LP_relax)
+				return tours;
 			if(_inst.num_vehicles()==1)
 				_parse_solution_single_vehicle(cplex, tours,vars);
 			else{
@@ -100,10 +134,11 @@ Tours MIP::solve(){
 
 		
 	}catch (IloException& e) {
-		std::cerr << "Concert exception caught: " << e << std::endl;
+		cerr << "Concert exception caught: " << e << endl;
 	}
 	catch (...) {
-		std::cerr << "WARNING: Unknown exception caught" << std::endl;
+		cerr << "WARNING: Unknown exception caught whikle handling with CPLEX" << endl;
+		exit(1); // Returns 1 to the operating system
 	}
 	env.end();
 
@@ -125,76 +160,74 @@ void MIP::_parse_solution(IloCplex &cplex, Tours &tours,IloNumVarArray &vars, bo
 	if(not debug) return;
 	
 	//print additional variables for debug informations
-	std::cout<< "-------------DEBUG HINTS-------------"<<std::endl;
-	std::cout<< "starting times and assignment variables:"<<std::endl;
+	cout<< "-------------DEBUG HINTS-------------"<<endl;
+	cout<< "starting times and assignment variables:"<<endl;
 	for(const Job& j: _inst){
 		double tj = cplex.getValue(vars[v[t(j)]]);
-		std::cout<<"t_"<<j.num()<<" = "<<tj<<"\t";	
+		cout<<"t_"<<j.num()<<" = "<<tj<<"\t";	
 		for(unsigned int k=1;k<=_inst.num_vehicles(); ++k){
 			if(cplex.getValue(vars[v[x(j,k)]])>=0.1){
-				std::cout<< "veh. "<<k<<std::endl;
+				cout<< "veh. "<<k<<endl;
 			}
 		}	
 	}
 	
-	std::cout<< "\nprecedence variables:"<<std::endl;
+	cout<< "\nprecedence variables:"<<endl;
 	for(const Job& i: _inst){
 		for(const Job& j: _inst){
 			if(i==j) continue;
 			if(cplex.getValue(vars[v[y(i,j)]])>0.1)
-				std::cout<< y(i,j) << " = "<<	cplex.getValue(vars[v[y(i,j)]])<<std::endl;
+				cout<< y(i,j) << " = "<<	cplex.getValue(vars[v[y(i,j)]])<<endl;
 		}
 	}
 	
-	std::cout<< "\nsame vehicle variables:"<<std::endl;
+	cout<< "\nsame vehicle variables:"<<endl;
 	for(const Job& i: _inst){
 		for(const Job& j: _inst){
 			if(i.num()>=j.num()) continue;
 			if(cplex.getValue(vars[v[z(i,j)]])>0.1)
-				std::cout<< z(i,j) << " = "<<	cplex.getValue(vars[v[z(i,j)]])<<std::endl;
+				cout<< z(i,j) << " = "<<	cplex.getValue(vars[v[z(i,j)]])<<endl;
 		}
 	}
 	
-	std::cout<< "\nL/R variables:"<<std::endl;
+	cout<< "\nL/R variables:"<<endl;
 	for(const Job& i: _inst){
 		for(const Job& j: _inst){
 			if(i==j) continue;
 			if(cplex.getValue(vars[v[l(i,j)]])>0.1)
-				std::cout<< l(i,j) << " = "<<	cplex.getValue(vars[v[l(i,j)]])<<std::endl;
+				cout<< l(i,j) << " = "<<	cplex.getValue(vars[v[l(i,j)]])<<endl;
 			if(cplex.getValue(vars[v[r(i,j)]])>0.1)
-				std::cout<< r(i,j) << " = "<<	cplex.getValue(vars[v[r(i,j)]])<<std::endl;	
+				cout<< r(i,j) << " = "<<	cplex.getValue(vars[v[r(i,j)]])<<endl;	
 		}
 	}
-	std::cout<< "-------------END OF DEBUG HINTS-------------"<<std::endl;
+	cout<< "-------------END OF DEBUG HINTS-------------"<<endl;
 	
 }
 
 /**Adding all necessary variables to the var array and an additional redirect in the map to use the nicer name of the
 variables for direct access.
 **/
-void MIP::_build_variables(IloEnv &env, IloNumVarArray &vars,IloModel &model, bool LP_relax){
+void MIP::_build_variables(IloEnv &env, IloNumVarArray &vars, bool LP_relax){
 	auto type = IloNumVar::Bool;
 	if(LP_relax)
 		type = IloNumVar::Float; 
-	
-	int counter = 0;
-	
+		
 	//single makespan variable
-	std::string name = "makespan";
+	string name = "makespan";
 	v[name] = counter++;
 	vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
 	
 	for(const Job& i: _inst){
 		//t: time variable
-		std::string name = t(i);
+		string name = t(i);
 		v[name] = counter++;
 		vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
 		
 		//x: assignment variable(x_i_j=1 => job i done by vehicle j)
 		for(unsigned int k=1; k<=_inst.num_vehicles(); ++k){
-			std::string name = x(i,k);
+			string name = x(i,k);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, type, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/,1/*ub*/, type, name.c_str() ) );
 		}
 
 		
@@ -203,9 +236,9 @@ void MIP::_build_variables(IloEnv &env, IloNumVarArray &vars,IloModel &model, bo
 			//skip variable y_i_i
 			if(i.num()==j.num()) 
 				continue;
-			std::string name = y(i,j);
+			string name = y(i,j);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, type, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
 		}	
 		
 		//z: same vehicle variable(z_i_j)		
@@ -213,42 +246,66 @@ void MIP::_build_variables(IloEnv &env, IloNumVarArray &vars,IloModel &model, bo
 			//only variables z_i_j for i < j
 			if(i.num()>=j.num()) 
 				continue;
-			std::string name = z(i,j);
+			string name = z(i,j);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, type, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
 		}
 		
-		//r: one a vehicle more to the right(r_i_j)
+		//r: vehicle more to the right(r_i_j)
 		for(const Job& j: _inst){
 			//skip variable r_i_i
 			if(i.num()==j.num()) 
 				continue;
-			std::string name = r(i,j);
+			string name = r(i,j);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, type, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
 		}
 		
-		//l: one a vehicle more to the left(l_i_j)
+		//l: vehicle more to the left(l_i_j)
 		for(const Job& j: _inst){
 			//skip variable l_i_i
 			if(i.num()==j.num()) 
 				continue;
-			std::string name = l(i,j);
+			string name = l(i,j);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, type, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/,1/*ub*/, type, name.c_str() ) );
 		}
 				
 	}
-	model.add(vars);
 } 
 
 
+void MIP::_build_collision_variables(IloEnv &env, IloNumVarArray &vars, bool LP_relax){
+	auto type = IloNumVar::Bool;
+	if(LP_relax)
+		type = IloNumVar::Float; 
 
+	for(const Job&  i: _inst){
+		for(const Job&  j: _inst){
+			//skip variable r_i_i
+			if(i.num()==j.num()) 
+				continue;
+			
+			//c: chain variable(c_i_j)	
+			string name = c(i,j);
+			v[name] = counter++;
+			vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
+	
+			//c_xx_y: helper variables for the chain var	
+			auto names = { caa_p(i,j), caa_m(i,j), cab_p(i,j),cab_m(i,j), cba_p(i,j), cba_m(i,j), cbb_p(i,j), cbb_m(i,j) };
+			for( string var_name : names ) {
+				v[var_name] = counter++;
+				vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, var_name.c_str() ) );	
+			}
+		}
+	}
+							
+}
 
 
 void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 
-		//makespan at least as late as last return of all vehivles
+		//makespan at least as late as last return of all vehicles
 		for(const Job& j: _inst){
 			IloExpr expr(env);
 			expr += 1*vars[v["makespan"]];
@@ -270,7 +327,7 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 				expr += 1*vars[v[x(j,k)]];    
 			}
 			//IloRange(const IloEnv env, IloNum lhs, const IloNumExprArg expr, IloNum rhs, const char * name)
-			model.add(IloRange(env, 1, expr, 1, ("assignemt to vehicle for j_"+std::to_string(j.num())).c_str() ));
+			model.add(IloRange(env, 1, expr, 1, ("assignemt to vehicle for j_"+to_string(j.num())).c_str() ));
 		}
 		
 		//precedence variable setting 1
@@ -297,7 +354,7 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 			for(unsigned int k=1; k<=_inst.num_vehicles(); ++k){
 				expr -=  dist_inf<int>( _inst.get_depot(k-1),j.get_alpha() ) * vars[v[x(j,k)]]; 
 			}
-			model.add(IloRange(env, 0, expr, IloInfinity, ("starttime reachable from depot for j_"+std::to_string(j.num())).c_str() ));
+			model.add(IloRange(env, 0, expr, IloInfinity, ("starttime reachable from depot for j_"+to_string(j.num())).c_str() ));
 		}
 		
 		//in a right/left tour constr. no.1
@@ -348,7 +405,7 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 		for(const Job& i: _inst){
 			for(const Job& j: _inst){
 				if(i.num()==j.num()) continue;
-					model.add( vars[v[l(i,j)]] + vars[v[r(i,j)]]  +  vars[v[z(i,j)]]  == 1 );
+				model.add( vars[v[l(i,j)]] + vars[v[r(i,j)]]  +  vars[v[z(i,j)]]  == 1 );
 			}
 		}
 		
@@ -356,43 +413,82 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 		for(const Job& i: _inst){
 			for(const Job& j: _inst){
 				if(i==j) continue;
-				IloExpr expr(env);
 				model.add( -M*vars[v[z(i,j)]] - M*vars[v[y(i,j)]]  + vars[v[t(j)]]  -  vars[v[t(i)]] >= (-2*M + dist_inf<int>( i.get_beta(),j.get_alpha()) + i.length()) );
 			}
 		}
 		
-		//cheating:
-		/*
-		model.add( vars[v[t(1)]] == 10);
-		model.add( vars[v[t(2)]] == 9);
-		model.add( vars[v[x(1,1)]] == 1);
-		model.add( vars[v[x(1,2)]] == 0);
-		model.add( vars[v[x(2,1)]] == 0);
-		model.add( vars[v[x(2,2)]] == 1);
-		model.add( vars[v[y(1,2)]] == 1);
-		model.add( vars[v[y(2,1)]] == 0);
-		model.add( vars[v[x(1,1)]] == 1);
-		model.add( vars[v[z(1,2)]] == 0);
-		model.add( vars[v[r(1,2)]] == 0);
-		model.add( vars[v[r(2,1)]] == 1);
-		model.add( vars[v[l(1,2)]] == 1);
-		model.add( vars[v[l(2,1)]] == 0);
-		*/
 }
 
+void MIP::_build_collision_constraints(IloEnv &env, IloNumVarArray &vars, IloModel &model){										
+		
+		// c_i_j = 1 if one on the +/- pairs sums uo to two
+		for(const Job& i: _inst){
+			for(const Job& j: _inst){
+				if(i.num()==j.num()) continue;
+				//
+				model.add( vars[v[c(i,j)]]  >= vars[v[caa_p(i,j)]]  +  vars[v[caa_m(i,j)]] - 1);
+				model.add( vars[v[c(i,j)]]  >= vars[v[cab_p(i,j)]]  +  vars[v[cab_m(i,j)]] - 1);
+				model.add( vars[v[c(i,j)]]  >= vars[v[cba_p(i,j)]]  +  vars[v[cba_m(i,j)]] - 1);
+				model.add( vars[v[c(i,j)]]  >= vars[v[cbb_p(i,j)]]  +  vars[v[cbb_m(i,j)]] - 1);
+			}
+		}
+			
+		//c_xx_y: correct setting for all helping variables	
+		for(const Job& i: _inst){
+			for(const Job& j: _inst){
+				if(i==j) continue;
+				//build constraints
+				model.add( M*vars[v[caa_p(i,j)]]  >= vars[v[t(j)]] - j.get_alpha()[0] - vars[v[t(i)]] + i.get_alpha()[0]);
+				model.add( M*vars[v[caa_m(i,j)]]  >= vars[v[t(j)]] + j.get_alpha()[0] - vars[v[t(i)]] - i.get_alpha()[0]);		
+				model.add( M*vars[v[cab_p(i,j)]]  >= vars[v[t(j)]] + j.length() - j.get_beta()[0] - vars[v[t(i)]] + i.get_alpha()[0]);
+				model.add( M*vars[v[cab_m(i,j)]]  >= vars[v[t(j)]] + j.length() + j.get_beta()[0] - vars[v[t(i)]] - i.get_alpha()[0]);
+				model.add( M*vars[v[cba_p(i,j)]]  >= vars[v[t(j)]] - j.get_alpha()[0] - vars[v[t(i)]] - i.length() + i.get_beta()[0]);
+				model.add( M*vars[v[cba_m(i,j)]]  >= vars[v[t(j)]] + j.get_alpha()[0] - vars[v[t(i)]] - i.length() - i.get_beta()[0]);
+				model.add( M*vars[v[cbb_p(i,j)]]  >= vars[v[t(j)]] + j.length() - j.get_beta()[0] - vars[v[t(i)]] - i.length() + i.get_beta()[0]);
+				model.add( M*vars[v[cbb_m(i,j)]]  >= vars[v[t(j)]] + j.length() + j.get_beta()[0] - vars[v[t(i)]] - i.length() - i.get_beta()[0]);
+			}
+		}
+		
+		// c_i_j = 1 => assign j right of i
+		int K = _inst.num_vehicles();
+		for(const Job& i: _inst){
+			for(const Job& j: _inst){
+				if(i==j) continue;
+				//build constraint
+				IloExpr expr(env);
+				expr += K+1;
+				expr -= K * vars[v[c(i,j)]];
+				
+				for(int k=1; k<=K;++k){
+					expr += k * vars[v[x(j,k)]];
+					expr -= k * vars[v[x(i,k)]];
+				}				
+				//add contraint
+				model.add(IloRange(env, 0, expr, IloInfinity, ("increasing chain "+c(i,j)).c_str()));
+			}
+		}
+		
+}
+											
+											
+											
 
+void MIP::_build_variables_single_vehicle(IloEnv &env, IloNumVarArray &vars, bool LP_relax){
 
-void MIP::_build_variables_single_vehicle(IloEnv &env, IloNumVarArray &vars,IloModel &model){
+	auto type = IloNumVar::Bool;
+	if(LP_relax)
+		type = IloNumVar::Float; 
+		
 	int counter = 0;
 	
 	//single makespan variable
-	std::string name = "makespan";
+	string name = "makespan";
 	v[name] = counter++;
 	vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
 	
 	for(const Job& i: _inst){
 		//t: time variable
-		std::string name = t(i);
+		string name = t(i);
 		v[name] = counter++;
 		vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
 		
@@ -402,13 +498,12 @@ void MIP::_build_variables_single_vehicle(IloEnv &env, IloNumVarArray &vars,IloM
 			//skip variable y_i_i
 			if(i.num()==j.num()) 
 				continue;
-			std::string name = y(i,j);
+			string name = y(i,j);
 			v[name] = counter++;
-			vars.add( IloNumVar(env, 0/*lb*/, IloInfinity/*ub*/, IloNumVar::Bool/*type*/, name.c_str() ) );
+			vars.add( IloNumVar(env, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
 		}	
 			
 	}
-	model.add(vars);
 }
 
 
@@ -446,7 +541,7 @@ void MIP::_build_constraints_single_vehicle(IloEnv &env, IloNumVarArray &vars,Il
 			expr += 1*vars[v[t(j)]];
 			expr -=  dist_inf<int>( _inst.get_depot(0),j.get_alpha() ); 
 
-			model.add(IloRange(env, 0, expr, IloInfinity, ("starttime reachable from depot for j_"+std::to_string(j.num())).c_str() ));
+			model.add(IloRange(env, 0, expr, IloInfinity, ("starttime reachable from depot for j_"+to_string(j.num())).c_str() ));
 		}
 		
 		
@@ -461,11 +556,34 @@ void MIP::_build_constraints_single_vehicle(IloEnv &env, IloNumVarArray &vars,Il
 } 
 
 
-void MIP::_parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,IloNumVarArray &vars){
+void MIP::_parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,
+												IloNumVarArray &vars,bool debug){
+	
 	for(const Job& j: _inst){
-		double tj = cplex.getValue(vars[v[t(j)]], 0/*Index of solution in sol pool*/);
+		double tj = cplex.getValue(vars[v[t(j)]]);
 		tours.add_job(&j, tj, 0);
 	}	
+	
+	//if nothing to debug, we can finish here
+	if(not debug) return;
+	
+	//print additional variables for debug informations
+	cout<< "-------------DEBUG HINTS-------------"<<endl;
+	cout<< "starting times and precedence variables:"<<endl;
+	for(const Job& j: _inst){
+		double tj = cplex.getValue(vars[v[t(j)]]);
+		cout<<"t_"<<j.num()<<" = "<<tj<<"\t";	
+	}
+	
+	cout<< "\nprecedence variables:"<<endl;
+	for(const Job& i: _inst){
+		for(const Job& j: _inst){
+			if(i==j) continue;
+			if(cplex.getValue(vars[v[y(i,j)]])>0.1)
+				cout<< y(i,j) << " = "<<	cplex.getValue(vars[v[y(i,j)]])<<endl;
+		}
+	}
+	cout<< "-------------END OF DEBUG HINTS-------------"<<endl;
 }
 
 
