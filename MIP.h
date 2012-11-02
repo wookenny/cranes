@@ -1,13 +1,12 @@
 #pragma once
 
-#include "banned.h"
-#include <string>
 #include <unordered_map>
+#include <string>
 
-#include "Job.h"
 #include "Instance.h"
-#include "Tours.h"
 
+class Tour;
+class Job;
 class IloEnv;
 class IloNumVarArray;
 class IloModel;
@@ -24,7 +23,7 @@ class MIP{
 		MIP()=delete;
 		MIP(const Instance& i):_inst(i),v(),M(i.get_upper_bound()),counter(0){}
 		
-		Tours solve(bool collision_free = false,bool LP_relax = false);
+		Tours solve(bool collision_free = false, bool LP_relax = false, bool debug = false);
 
 	private:
 		//variable construction
@@ -44,4 +43,6 @@ class MIP{
 									IloNumVarArray &vars,bool debug=false) ;
 		void _parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,
 									IloNumVarArray &vars,bool debug=false) ;
+									
+		void _print_LP_solution(const IloCplex &cplex,const IloNumVarArray &vars) const;							
 };

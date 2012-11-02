@@ -3,7 +3,8 @@
 #include <ilcplex/ilocplex.h>
 #include <iostream>
 
-#include "Instance.h"
+#include "Job.h"
+#include "Tours.h"
 
 using namespace std;
 
@@ -80,7 +81,7 @@ DECLARE_TWO_PARAMETER_FUNCS(cbb_m, "cbb_m")
 
 
 
-Tours MIP::solve(bool collision_free, bool LP_relax){
+Tours MIP::solve(bool collision_free, bool LP_relax,bool debug){
 
 	Tours tours(_inst.num_vehicles());
 
@@ -96,7 +97,7 @@ Tours MIP::solve(bool collision_free, bool LP_relax){
 		else
 			_build_variables(env, vars, LP_relax);
 		
-		if( 1==_inst.num_vehicles() and  collision_free)
+		if( 1!=_inst.num_vehicles() and  collision_free)
 			_build_collision_variables(env, vars, LP_relax);
 		
 		model.add(vars);
@@ -109,7 +110,7 @@ Tours MIP::solve(bool collision_free, bool LP_relax){
 		else		
 			_build_constraints(env,vars,model);
 	
-		if( 1==_inst.num_vehicles() and  collision_free)
+		if( 1!=_inst.num_vehicles() and  collision_free)
 			_build_collision_constraints(env, vars, model);  
 		
 		//run cplex and solve the model!
@@ -121,12 +122,14 @@ Tours MIP::solve(bool collision_free, bool LP_relax){
 		}else{
 			//parse solution
 			//return empty tour id only an LP relaxation was solved
-			if(LP_relax)
+			if(LP_relax){
+				_print_LP_solution(cplex,vars);
 				return tours;
+			}	
 			if(_inst.num_vehicles()==1)
-				_parse_solution_single_vehicle(cplex, tours,vars);
+				_parse_solution_single_vehicle(cplex, tours,vars,debug);
 			else{
-				_parse_solution(cplex, tours,vars);
+				_parse_solution(cplex, tours,vars,debug);
 				}
 		}
 		
@@ -579,11 +582,20 @@ void MIP::_parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,
 	for(const Job& i: _inst){
 		for(const Job& j: _inst){
 			if(i==j) continue;
-			if(cplex.getValue(vars[v[y(i,j)]])>0.1)
+			if(cplex.getValue(vars[v[y(i,j)]])>0.01)
 				cout<< y(i,j) << " = "<<	cplex.getValue(vars[v[y(i,j)]])<<endl;
 		}
 	}
 	cout<< "-------------END OF DEBUG HINTS-------------"<<endl;
+}
+
+
+void MIP::_print_LP_solution(const IloCplex &cplex,const IloNumVarArray &vars) const{
+	cout<< "---- Variable values in the LP solution: ----"<<endl;
+	for( auto var : v)
+		if( cplex.getValue(vars[var.second]) > 0.01 )
+			cout<< var.first <<" = "<< cplex.getValue(vars[var.second]) <<endl;
+	cout<<endl;
 }
 
 

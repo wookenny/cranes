@@ -53,7 +53,7 @@ class Instance{
 		bool   verify(Tours& t) const;
 		double makespan(Tours& t) const;
 		
-		Tours get_MIP_solution() const;
+		Tours get_MIP_solution(bool collision_free = false,bool LP_relax = false, bool debug = false) const;
 		unsigned int get_upper_bound() const;
 		
 	private:
