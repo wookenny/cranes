@@ -46,6 +46,10 @@ Tours.h
 )
 
 
+set(FindGraphConfiguation_sources
+find_graph_configuration.cpp
+)
+
 #set_source_files_properties( MIP.cpp PROPERTIES CMAKE_CXX_FLAGS "-W0" ) 
 
 # display status message for important variables
@@ -67,3 +71,5 @@ MESSAGE( STATUS )
 ADD_EXECUTABLE(2DVS ${2DVS_Sources} )
 ADD_EXECUTABLE(GTests ${GTestSources} )
 target_link_libraries(GTests -lgtest -lgtest_main)
+ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )
+
