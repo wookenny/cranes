@@ -36,17 +36,19 @@ void print_random_instance(vector<string> argv){
 
 
 void test_mip(vector<string> argv){
-	if (argv.size()>4 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <n> <k> <coll.> <LP>\n Runs some tests on the mip formulation!";
+	if (argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"test_mip <n> <k> <coll.> <LP> <seed>\n Runs some tests on the mip formulation!";
 		cout<<"\n\tn: number of jobs(default = 4)\n\tk: number of vehicles(default = 2)"<<endl;
 		cout<<"\tcoll.: collision-avoidance constraints adding (default = true)"<<endl;
 		cout<<"\tLP: just solve the LP relaxation(default = false)"<<endl;
+		cout<<"\tseed: seed used to genenerate the jobs.(default = time(0))"<<endl;
 		return;
 	}
 	//set default parameter and parse given values
 	int k = 2;
 	int jobs = 4;
 	bool collision = true,LP = false;
+	int seed = time(0);
 	
 	//parse the given ones
 	if(argv.size()>0)
@@ -63,7 +65,8 @@ void test_mip(vector<string> argv){
 	if(argv.size()>3)
 		if(string_to_bool.find(argv[3])!=string_to_bool.end())
 			LP = string_to_bool[argv[3]];		
-			
+	if(argv.size()>4)
+		seed = stoi(argv[4]);
 	//give some informations
 	cout<<boolalpha;
 	cout<< "Solving a 2D-VS instance with the following settings:\n";
@@ -76,7 +79,7 @@ void test_mip(vector<string> argv){
 	for(int j=0; j<k;++j)
 		i.add_depotposition(array<int, 2>{{0,0}});
 
-	i.generate_random_jobs(  jobs, -10, 10, -10, 10, 0);
+	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
 	Tours &&t = i.get_MIP_solution(collision, LP);
 
 	

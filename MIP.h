@@ -5,7 +5,7 @@
 
 #include "Instance.h"
 
-class Tour;
+class Tours;
 class Job;
 class IloEnv;
 class IloNumVarArray;
@@ -37,6 +37,8 @@ class MIP{
 											IloModel &model);  
 		void _build_constraints_single_vehicle(IloEnv &env, 
 										IloNumVarArray &vars,IloModel &model);
+		void _build_tightening_contraints(IloEnv &env, IloNumVarArray &vars,
+										IloModel &model);
 		
 		//parsing of solution		
 		void _parse_solution(IloCplex &cplex, Tours &tours,

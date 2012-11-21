@@ -13,27 +13,34 @@ ILOSTLBEGIN
 /***********************************************************************
 		 functions to refer the different variables easily
 ***********************************************************************/
-//These macros are used to create all functions automatically 
+//These functors are used to create all functions automatically 
 //to obey the DRY principle.
 
-//two jobs are given
-#define DECLARE_TWO_PARAMETER_FUNCS(name, name_str)              	            \
-string name(int i, int j){													\
-	assert(i!=j);																\
-	return  string(name_str)+"_"+to_string(i)+"_"+to_string(j);	\
-}																				\
-string name(const Job& i, const Job& j){									\
-	return name( i.num(), j.num() );											\
-}	
 
-//only one job given
-#define DECLARE_SINGLE_PARAMETER_FUNCS(name, name_str)              			\
-string name(int i){														\
-	return  string(name_str)+"_"+to_string(i);						\
-}																				\
-string name(const Job& i){													\
-	return name( i.num());														\
-}	
+class f_two_parameter{
+		string _name;
+		public:
+		f_two_parameter(string name):_name(name){}
+		string operator()(int i, int j){
+			assert(i!=j);
+			return  string(_name)+"_"+to_string(i)+"_"+to_string(j);
+		}
+		string operator()(const Job& i, const Job& j){								
+			return operator()( i.num(), j.num() );	
+		} 
+};
+
+class f_single_parameter{
+		string _name;
+		public:
+		f_single_parameter(string name):_name(name){}
+		string operator()(int i){
+			return  string(_name)+"_"+to_string(i);
+		} 
+		string operator()(const Job& i){												
+			return operator()( i.num());													
+		}
+};
 
 
 //x_i_k =1 => job i is processed by vehicle k
@@ -41,7 +48,6 @@ string x(int i, int k){
 	return  "x_"+to_string(i)+"_"+to_string(k);
 }
 string x(const Job& i,int k){return x(i.num(),k);}
-
 
 //z_i_j =1 => job i is handled by the same vehicle as job j
 string z(int i, int j){
@@ -54,31 +60,24 @@ string z(int i, int j){
 string z(const Job& i,const Job& j){return z(i.num(),j.num());}
 
 //starting time variable for job i
-DECLARE_SINGLE_PARAMETER_FUNCS(t, "t")
-
+auto t = f_single_parameter("t");
 //y_i_j =1 => job i starts earlier than job j
-DECLARE_TWO_PARAMETER_FUNCS(y, "y")
-
+auto y = f_two_parameter("y");
 //l_i_j =1 => job i is on vehicle left of job j
-DECLARE_TWO_PARAMETER_FUNCS(l, "l")
-
+auto l = f_two_parameter("l");
 //r_i_j =1 => job i is on vehicle right of job j
-DECLARE_TWO_PARAMETER_FUNCS(r, "r")
-
+auto r = f_two_parameter("r");
 //c_i_j =1 => job i has to be on a vehicle right of job j
-DECLARE_TWO_PARAMETER_FUNCS(c, "c")
-
+auto c = f_two_parameter("c");
 //other collisions functions
-DECLARE_TWO_PARAMETER_FUNCS(caa_p, "caa_p")
-DECLARE_TWO_PARAMETER_FUNCS(caa_m, "caa_m")
-DECLARE_TWO_PARAMETER_FUNCS(cab_p, "cab_p")
-DECLARE_TWO_PARAMETER_FUNCS(cab_m, "cab_m")
-DECLARE_TWO_PARAMETER_FUNCS(cba_p, "cba_p")
-DECLARE_TWO_PARAMETER_FUNCS(cba_m, "cba_m")
-DECLARE_TWO_PARAMETER_FUNCS(cbb_p, "cbb_p")
-DECLARE_TWO_PARAMETER_FUNCS(cbb_m, "cbb_m") 
-
-
+auto caa_p = f_two_parameter("caa_p");
+auto caa_m = f_two_parameter("caa_m");
+auto cab_p = f_two_parameter("cab_p");
+auto cab_m = f_two_parameter("cab_m");
+auto cba_p = f_two_parameter("cba_p");
+auto cba_m = f_two_parameter("cba_m");
+auto cbb_p = f_two_parameter("cbb_p");
+auto cbb_m = f_two_parameter("cbb_m");
 
 
 Tours MIP::solve(bool collision_free, bool LP_relax,bool debug){
@@ -112,9 +111,19 @@ Tours MIP::solve(bool collision_free, bool LP_relax,bool debug){
 	
 		if( 1!=_inst.num_vehicles() and  collision_free)
 			_build_collision_constraints(env, vars, model);  
+			
+		//Tests with some constraints to tighten teh LP relaxation	
+		if( 1!=_inst.num_vehicles() and  LP_relax )
+			_build_tightening_contraints(env, vars, model);
+			
 		
 		//run cplex and solve the model!
 		cplex.extract(model);
+		
+		//print small models 
+		if(_inst.num_vehicles()<=6)
+			cout<<"MIP Model: \n"<<model<<endl;
+		
 		bool solved = cplex.solve();
 		if ( !solved ) {
 			env.end();
@@ -140,7 +149,7 @@ Tours MIP::solve(bool collision_free, bool LP_relax,bool debug){
 		cerr << "Concert exception caught: " << e << endl;
 	}
 	catch (...) {
-		cerr << "WARNING: Unknown exception caught whikle handling with CPLEX" << endl;
+		cerr << "WARNING: Unknown exception caught while handling with CPLEX" << endl;
 		exit(1); // Returns 1 to the operating system
 	}
 	env.end();
@@ -160,7 +169,7 @@ void MIP::_parse_solution(IloCplex &cplex, Tours &tours,IloNumVarArray &vars, bo
 	}
 
 	//if nothing to debug, we can finish here
-	if(not debug) return;
+	if(not debug and _inst.num_vehicles() > 5) return;
 	
 	//print additional variables for debug informations
 	cout<< "-------------DEBUG HINTS-------------"<<endl;
@@ -422,7 +431,7 @@ void MIP::_build_constraints(IloEnv &env, IloNumVarArray &vars,IloModel &model){
 		
 }
 
-void MIP::_build_collision_constraints(IloEnv &env, IloNumVarArray &vars, IloModel &model){										
+void MIP::_build_collision_constraints(IloEnv&, IloNumVarArray &vars, IloModel &model){										
 		
 		// c_i_j = 1 if one on the +/- pairs sums uo to two
 		for(const Job& i: _inst){
@@ -449,18 +458,23 @@ void MIP::_build_collision_constraints(IloEnv &env, IloNumVarArray &vars, IloMod
 				model.add( M*vars[v[cba_m(i,j)]]  >= vars[v[t(j)]] + j.get_alpha()[0] - vars[v[t(i)]] - i.length() - i.get_beta()[0]);
 				model.add( M*vars[v[cbb_p(i,j)]]  >= vars[v[t(j)]] + j.length() - j.get_beta()[0] - vars[v[t(i)]] - i.length() + i.get_beta()[0]);
 				model.add( M*vars[v[cbb_m(i,j)]]  >= vars[v[t(j)]] + j.length() + j.get_beta()[0] - vars[v[t(i)]] - i.length() - i.get_beta()[0]);
+			
+				//
+				model.add( vars[v[c(j,i)]]  + vars[v[c(i,j)]] <= 1);
+				model.add( vars[v[l(i,j)]]  >= vars[v[c(i,j)]] );
 			}
 		}
 		
+		
 		// c_i_j = 1 => assign j right of i
-		int K = _inst.num_vehicles();
+		/*int K = _inst.num_vehicles();
 		for(const Job& i: _inst){
 			for(const Job& j: _inst){
 				if(i==j) continue;
 				//build constraint
 				IloExpr expr(env);
-				expr += K+1;
-				expr -= K * vars[v[c(i,j)]];
+				expr += -(K);
+				expr += +(K-1) * vars[v[c(i,j)]];
 				
 				for(int k=1; k<=K;++k){
 					expr += k * vars[v[x(j,k)]];
@@ -470,9 +484,30 @@ void MIP::_build_collision_constraints(IloEnv &env, IloNumVarArray &vars, IloMod
 				model.add(IloRange(env, 0, expr, IloInfinity, ("increasing chain "+c(i,j)).c_str()));
 			}
 		}
-		
+		*/
 }
 											
+
+void MIP::_build_tightening_contraints(IloEnv&, IloNumVarArray &vars,
+										IloModel &model){
+	/*
+	The idea:
+	x_ik +l_ik-z_ij <= 1, for all vehicles k
+	This means, if i and j are on the same vehicle,
+	z_ij has to be one. For non-integral values for l_ij and r_ij  
+	this is not enforced so far. 										
+	*/	
+	for(const Job& i: _inst)
+			for(const Job& j: _inst){
+				if(i==j) continue;
+				for(uint k=1; k<=_inst.num_vehicles();++k){	
+						model.add( vars[v[x(i,k)]] + vars[v[x(j,k)]]
+									- vars[v[z(i,j)]]<= 1);
+					}
+			}
+										
+}
+		
 											
 											
 
@@ -592,10 +627,39 @@ void MIP::_parse_solution_single_vehicle(IloCplex &cplex, Tours &tours,
 
 void MIP::_print_LP_solution(const IloCplex &cplex,const IloNumVarArray &vars) const{
 	cout<< "---- Variable values in the LP solution: ----"<<endl;
-	for( auto var : v)
-		if( cplex.getValue(vars[var.second]) > 0.01 )
-			cout<< var.first <<" = "<< cplex.getValue(vars[var.second]) <<endl;
+	cout<<"starting times:"<<endl;
+	cout.precision(3);
+	for(const Job& j: _inst){
+		double tj = cplex.getValue(vars[ v.at(t(j))]);
+		cout<<t(j)<<" = "<<tj<<endl;
+	}	
 	cout<<endl;
+	
+	for(const Job& j: _inst){
+		for(unsigned int k=1; k<= _inst.num_vehicles(); ++k)
+			if (cplex.getValue(vars[ v.at(x(j,k))]) > 0.01)
+				cout<<x(j,k)<<" = " <<cplex.getValue(vars[ v.at(x(j,k))]) <<"\t";
+		
+		cout<<endl;
+	}	
+	cout<<endl;
+	
+	for(const Job& i: _inst)
+		for(const Job& j: _inst){
+			if(i==j) continue;
+			cout<< l(i,j)<<" = "<<cplex.getValue(vars[ v.at(l(i,j))]);
+			cout<<"\t"<<r(i,j) << " = "<<cplex.getValue(vars[ v.at(r(i,j))]);
+			cout<<"\t"<<z(i,j) << " = "<<cplex.getValue(vars[ v.at(z(i,j))]);
+			if(false)//TODO: I should know wether the c variables are present or not 
+					//add many more class variables
+				cout<<"\t"<<c(i,j) << " = "<<cplex.getValue(vars[ v.at(c(i,j))]);
+			
+			cout<<endl;
+		}
+	cout<<endl;
+	
+	
+	cout<< "---- End of LP solution: ----"<<endl;
 }
 
 
