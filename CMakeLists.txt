@@ -26,6 +26,8 @@ Main.cpp
 Main.h
 MIP.h
 MIP.cpp
+generalizedVRP_MIP.h
+generalizedVRP_MIP.cpp
 Instance.h
 Instance.cpp
 Job.h
@@ -47,6 +49,7 @@ Tours.h
 
 
 set(FindGraphConfiguation_sources
+stringify.h
 find_graph_configuration.cpp
 )
 
