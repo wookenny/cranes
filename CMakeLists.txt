@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 #project name
 project(2D-VehicleScheduling)
 
+ADD_SUBDIRECTORY(./blossom5-v2.03/SRC)
 
 #some path settings
 set(CPLEXDIR "/usr/site-local/ILOG/CPLEX_Studio124/cplex")
@@ -15,8 +16,8 @@ set(CONCERTLIBDIR "${CONCERTDIR}/lib/x86-64_sles10_4.1/static_pic")
 
 
 #specific compiler settings
-set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -pedantic -fopenmp -mfpmath=sse -O3 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_GLIBCXX_DEBUG -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -lz -lpng -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I${CPLEXINCDIR} -I.")
-set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "-g -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L.")
+set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -pedantic -fopenmp -mfpmath=sse -O3 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_GLIBCXX_DEBUG -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -lz -lpng -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I${CPLEXINCDIR} -I. -I./blossom5-v2.03/INCLUDE")
+set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "-g -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -lrt")
 
 
  
@@ -30,6 +31,7 @@ generalizedVRP_MIP.h
 generalizedVRP_MIP.cpp
 m_TSP_MIP.h
 m_TSP_MIP.cpp
+my_PM_test.cpp
 Instance.h
 Instance.cpp
 Job.h
@@ -74,7 +76,10 @@ MESSAGE( STATUS )
 
 #define executable 
 ADD_EXECUTABLE(2DVS ${2DVS_Sources} )
+target_link_libraries (2DVS PM) 
+
 ADD_EXECUTABLE(GTests ${GTestSources} )
 target_link_libraries(GTests -lgtest -lgtest_main)
+
 ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )
 

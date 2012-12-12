@@ -131,3 +131,15 @@ void test_mip(vector<string> argv){
 	cout<<t<<endl;
 }
 
+//TODO: REMOVE THIS AFTER IMPLEMENTING A CHRISTOFIDES-LIKE Heuristic 
+void test_PM(std::vector<std::string> argv){
+	if (argv.size()<1 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"match [n] \n Calculates a min.";
+		cout<<"\tcost perfect matching on a random graph of size n."<<endl;
+		return;
+	}
+	int n = stoi(argv[0]);
+	run_PM(n);
+}
+
+
