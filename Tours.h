@@ -49,7 +49,12 @@ class Tours{
 		
 		
 		bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
-		void add_job(const Job* const job, double time, int i){ _tours[i].push_back( std::make_tuple(job,time) );assert(!contains(job)); _job_map.insert(job); }
+		void add_job(const Job* const job, double time, int i){ 
+				assert(i>=0);
+				assert(i < static_cast<int>( _tours.size()) ); 
+				_tours[i].push_back( std::make_tuple(job,time) );
+				assert(!contains(job)); 
+				_job_map.insert(job); }
 		void sort_jobs(){for(unsigned int i=0; i<_tours.size(); ++i) _sort(i);}
 		
 		std::string to_string() const{

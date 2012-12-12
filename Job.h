@@ -24,6 +24,9 @@ class Job{
 		
 		const std::array<int,2>& get_alpha() const{return _alpha;}							
 		const std::array<int,2>& get_beta() const{return _beta;}					
+		
+		const std::array<int,2>& alpha() const{return _alpha;}							
+		const std::array<int,2>& beta() const{return _beta;}
 									
 		int length() const;
 		int delta_x() const;
@@ -42,6 +45,8 @@ std::ostream& operator <<(std::ostream &os,const Job &j)
 	os<<j.to_string();
 	return os;
 }
+
+
 
 //distance functions for any type T where '-' and absolute value are definded
 template <typename T> 

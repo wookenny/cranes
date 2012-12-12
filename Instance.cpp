@@ -174,7 +174,8 @@ bool Instance::verify(Tours& t) const{
 			if(dist_inf(job1->get_beta(),job2->get_alpha())+job1->length() > (time2 - time1 )+EPS){
 				cout<< "Job "<<*job2<<" not reachable after job "<<*job1<<endl;
 				cout<<"starting times: "<<time1 << " and "<<time2<<endl;
-				cout<<time1<< " + "<<job1->length()<<" + "<<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS > "<<time2<<endl;
+				cout<<time1<< " + "<<job1->length()<<" + "<<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS "
+				<< " = " << (time1+job1->length()+dist_inf(job1->get_beta(),job2->get_alpha())) << " - EPS > "<<time2<<endl;
 				return false;
 			}	
 		}

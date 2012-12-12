@@ -16,7 +16,7 @@
 void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
 void test_mip(std::vector<std::string> argv);
-
+void test_mtsp_mip(std::vector<std::string> argv);
 
 template <class T,class U>
 void printMapIndex( std::map<T,U> map){
@@ -33,7 +33,7 @@ int main(int argc, char** argv){
 	functionDict["read"] 	= &read_instance;
 	functionDict["random"] 	= &print_random_instance;
 	functionDict["test_mip"] 	= &test_mip;
-
+	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
 	//at least one parameter must be given
 	if(argc < 2){
 		std::cout<<"No function given, try one of these:"<<std::endl;

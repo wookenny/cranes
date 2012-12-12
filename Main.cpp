@@ -2,6 +2,10 @@
 
 #include <algorithm>
 #include <unordered_map>
+#include <memory>
+
+#include "generalizedVRP_MIP.h"
+#include "m_TSP_MIP.h"
 #include "Instance.h"
 
 using namespace std;
@@ -33,6 +37,43 @@ void print_random_instance(vector<string> argv){
 	
 	cout<< i <<endl;
 }
+
+void test_mtsp_mip(vector<string> argv){
+	if (argv.size()>3 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"test_mip <n> <k> <seed>\n Runs some tests on the mip formulation!";
+		return;
+	}
+	//set default parameter and parse given values
+	int k = 2;
+	int jobs = 20;
+	int seed = 0;
+	
+	if(argv.size()>0)
+		jobs = stoi(argv[0]);
+	if(argv.size()>1)
+		k = stoi(argv[1]);
+	if(argv.size()>2)
+		seed = stoi(argv[2]);
+
+	Instance i(k);
+	//i.generate_random_depots(-10, 10, -10, 10, 0);
+	for(int j=0; j<k;++j)
+		i.add_depotposition(array<int, 2>{{0,0}});
+
+	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
+	unique_ptr<generalizedVRP_MIP> mip_ptr(new m_TSP_MIP(i));
+	mip_ptr->set_debug(true);
+	Tours &&t = mip_ptr->solve();
+
+	
+	cout<<i<<endl;
+	cout<<boolalpha;
+	cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
+	cout<<"Makespan: "<<i.makespan(t)<<endl;
+	cout<<t<<endl;
+}
+
+
 
 
 void test_mip(vector<string> argv){

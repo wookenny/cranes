@@ -337,37 +337,37 @@ vector<array<double,3>> solveLP(int size, graph g){
 		
 		//print variables
 		for(int i=1;  i<= size; ++i){
-			cout<< name_x(i) << " = "<<	cplex.getValue(x(i));
-			cout<<"\t\t"<<name_y(i) << " = "<<	cplex.getValue(y(i));
-			cout<<"\t\t"<<name_t(i) << " = "<<	cplex.getValue(t(i))<<endl;			
+			cout<<  x(i).getName() << " = "<<	cplex.getValue(x(i));
+			cout<<"\t\t"<< y(i).getName() << " = "<<	cplex.getValue(y(i));
+			cout<<"\t\t"<< t(i).getName() << " = "<<	cplex.getValue(t(i))<<endl;			
 		}
 		cout<<endl;
 		for(int i=1;  i<= size; ++i)
 			for(int j=1;  j<= size; ++j){
 				if(i==j) continue;
-				cout<< name_z1(i,j) << " = "<<	cplex.getValue(z1(i,j));
-				cout<<"\t"<<name_z2(i,j) << " = "<<	cplex.getValue(z2(i,j))<<endl;			
+				cout<<  z1(i,j).getName() << " = "<<	cplex.getValue(z1(i,j));
+				cout<<"\t"<< z2(i,j).getName() << " = "<<	cplex.getValue(z2(i,j))<<endl;			
 			}	
 		for(int i=1;  i<= size; ++i)
 			for(int j=1;  j<= size; ++j){
 				if(i==j) continue;
 				if (not g.is_edge(i,j)) continue;
-				cout<< name_e1(i,j) << " = "<<	cplex.getValue(e1(i,j));
-				cout<<"\t"<<name_e2(i,j) << " = "<<	cplex.getValue(e2(i,j))<<endl;			
+				cout<<   e1(i,j).getName() << " = "<<	cplex.getValue(e1(i,j));
+				cout<<"\t"<< e2(i,j).getName() << " = "<<	cplex.getValue(e2(i,j))<<endl;			
 			}
 		for(int i=1;  i<= size; ++i)
 			for(int j=1;  j<= size; ++j){
 				if(i==j) continue;
 				if (g.is_edge(i,j)) continue;
-				cout<< name_n1(i,j) << " = "<<	cplex.getValue(n1(i,j));
-				cout<<"\t"<<name_n2(i,j) << " = "<<	cplex.getValue(n2(i,j))<<endl;			
+				cout<<  n1(i,j).getName() << " = "<<	cplex.getValue(n1(i,j));
+				cout<<"\t"<< n2(i,j).getName() << " = "<<	cplex.getValue(n2(i,j))<<endl;			
 			}
 		for(int i=1;  i<= size; ++i)
 			for(int j=1;  j<= size; ++j){
 				if(i==j) continue;
 				if (not g.is_arc(i,j)) continue;
-				cout<< name_a1(i,j) << " = "<<	cplex.getValue(a1(i,j));
-				cout<<"\t"<<name_a2(i,j) << " = "<<	cplex.getValue(a2(i,j))<<endl;			
+				cout<< a1(i,j).getName() << " = "<<	cplex.getValue(a1(i,j));
+				cout<<"\t"<< a2(i,j).getName() << " = "<<	cplex.getValue(a2(i,j))<<endl;			
 			}
 	}
 	catch (IloException& e) {
@@ -385,18 +385,25 @@ int main ()
 {
 
 	
-	int size = 6;	
+	int size = 10;	
 	graph g;
-	g.add_arc(1,2); g.add_arc(2,3); g.add_arc(1,3);
-	g.add_arc(4,5); g.add_arc(5,6); g.add_arc(4,6);
-	//g.add_arc(7,8); g.add_arc(8,9); g.add_arc(7,9);
-	
+	//ars
+	g.add_arc(1,2); g.add_arc(2,3); g.add_arc(3,4); g.add_arc(4,5);
+	g.add_arc(1,3); g.add_arc(2,4); g.add_arc(3,5); 
+	g.add_arc(1,4); g.add_arc(2,5); 
+	g.add_arc(1,5);
+	g.add_arc(6,7); g.add_arc(7,8); g.add_arc(8,9); g.add_arc(9,10);
+	g.add_arc(6,8); g.add_arc(7,9); g.add_arc(8,10); 
+	g.add_arc(6,9); g.add_arc(7,10); 
+	g.add_arc(6,10);
 
-	g.add_edge(1,5); g.add_edge(2,4); g.add_edge(3,6); 
-	
-	//g.add_edge(4,2);
-	//g.add_edge(1,3); g.add_edge(3,5); g.add_edge(1,5);	 
-	
+	//edges
+	g.add_edge(1,6); g.add_edge(2,7); g.add_edge(3,8); 
+	g.add_edge(6,2); g.add_edge(7,3);
+	g.add_edge(1,7); g.add_edge(2,8);
+	g.add_edge(6,3);
+	g.add_edge(1,8);
+		
 	auto sol = solveLP(size,g);
 	cout<< boolalpha;
 	if(sol.size()!=0)

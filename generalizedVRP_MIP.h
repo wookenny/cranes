@@ -6,15 +6,15 @@
 #include <iostream>
 
 #include "Instance.h"
-
+#include "Job.h"
 class Tours;
-class Job;
+
 
 class generalizedVRP_MIP{
 
 	
 	protected:
-		/* some helper classes for easy accessing of variables*/
+		/* some helper classes for easy accessing of variables */
 		class stringify{
 			std::string s_;
 			const int num_parameter_;
@@ -24,15 +24,23 @@ class generalizedVRP_MIP{
 			std::string operator()(int i,int j,int k) const {
 					assert(3==num_parameter_);
 					return s_+"_"+std::to_string(i)+"_"+std::to_string(j)+"_"+std::to_string(k);}
+			std::string operator()(const Job& i, const Job& j, const Job& k) const{
+					return operator()(i.num(), j.num(), k.num());
+			} 
 			
 			std::string operator()(int i,int j) const {
 					assert(2==num_parameter_);
 					return s_+"_"+std::to_string(i)+"_"+std::to_string(j);}
+			std::string operator()(const Job& i, const Job& j) const{
+					return operator()(i.num(), j.num());
+			} 	
 			
 			std::string operator()(int i) const {
 					assert(1==num_parameter_);
 					return s_+"_"+std::to_string(i);}
-					
+			std::string operator()(const Job& i) const{
+					return operator()(i.num());
+			} 		
 		};
 	
 		class variable_access{
@@ -45,13 +53,28 @@ class generalizedVRP_MIP{
 								IloNumVarArray& vars,
 								std::unordered_map<std::string,int>& pos):
 								name_(name),vars_(vars),pos_(pos){}
-				IloNumVar& operator()(int i){
+				IloNumVar& operator()(int i) const{
+						assert(pos_.find(name_(i))!=pos_.end());
+						return vars_[pos_[name_(i)]]; //at() because [] inserts element
+				}
+				IloNumVar& operator()(const Job& i) const{
+						assert(pos_.find(name_(i))!=pos_.end());
 						return vars_[pos_[name_(i)]]; 
 				}
-				IloNumVar& operator()(int i,int j){
+				IloNumVar& operator()(int i,int j) const{
+						assert(pos_.find(name_(i,j))!=pos_.end());
 						return vars_[pos_[name_(i,j)]]; 
 				}
-				IloNumVar& operator()(int i,int j,int k){
+				IloNumVar& operator()(const Job& i,const Job& j) const{
+						assert(pos_.find(name_(i,j))!=pos_.end());
+						return vars_[pos_[name_(i,j)]]; 
+				}
+				IloNumVar& operator()(int i,int j,int k) const{
+						assert(pos_.find(name_(i,j,k))!=pos_.end());
+						return vars_[pos_[name_(i,j,k)]]; 
+				}
+				IloNumVar& operator()(const Job& i,const Job& j,const Job& k) const{
+						assert(pos_.find(name_(i,j,k))!=pos_.end());
 						return vars_[pos_[name_(i,j,k)]]; 
 				}
 			};
@@ -64,6 +87,7 @@ class generalizedVRP_MIP{
 		int counter_;
 		IloEnv env_;
 		IloNumVarArray vars_;
+		IloRangeArray cons_;
 		IloModel model_;
 		IloCplex cplex_;
 		
@@ -74,11 +98,19 @@ class generalizedVRP_MIP{
 		
 	public:
 		generalizedVRP_MIP()=delete;
-		generalizedVRP_MIP(const Instance& i):inst_(i),env_(){};
+		generalizedVRP_MIP(const Instance& i):inst_(i),counter_(0),env_(),
+											  vars_(env_), cons_(env_),
+											  model_(env_), 
+											  cplex_(env_), debug_(false),
+											  collision_avoidance_(false),
+											  LP_relaxation_(false){};
 		virtual ~generalizedVRP_MIP(){};
 		Tours solve();
 
-		
+
+		void set_debug(bool v){debug_=v;}
+		void set_LP(bool v){LP_relaxation_ = v;}
+		void set_collision(bool v){collision_avoidance_ = v;}		
 
 	protected:
 		//almost all versions are purely virtual because often the methods are 

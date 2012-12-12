@@ -12,10 +12,7 @@ Tours generalizedVRP_MIP::solve(){
 
 	//build the MIP model and solve it!
 	try {
-		model_ 	= IloModel(env_);
-		cplex_ 	= IloCplex(env_);
-		vars_ 	= IloNumVarArray(env_);		
-		
+	
 		build_variables_();
 		
 		if( 1 != inst_.num_vehicles() and  collision_avoidance_)
@@ -25,9 +22,10 @@ Tours generalizedVRP_MIP::solve(){
 			
 		//objective function: minimize makespan
 		add_objective_function_();
-
 		
 		build_constraints_();
+	
+		model_.add(cons_);
 	
 		if( 1!= inst_.num_vehicles() and  collision_avoidance_)
 			build_collision_constraints_();  
@@ -40,6 +38,8 @@ Tours generalizedVRP_MIP::solve(){
 			cout<<"MIP Model: \n"<<model_<<endl;
 		
 		bool solved = cplex_.solve();
+		if(debug_) cout<< "Solving MIP was successful: "<<boolalpha<<solved<<endl;
+		if(debug_) cout<< "MIP status = "<<cplex_.getStatus()<<endl;
 		if ( !solved ) {
 			env_.end();
 			//return empty tours if MIP was unsolvable!
@@ -54,11 +54,14 @@ Tours generalizedVRP_MIP::solve(){
 			parse_solution_(tours);
 		}
 		
+		if(debug_)	print_LP_solution_();
+		
 	}catch (IloException& e) {
 		cerr << "Concert exception caught: " << e << endl;
 	}
 	catch (...) {
 		cerr << "WARNING: Unknown exception caught while handling with CPLEX" << endl;
+		
 		exit(1); // Returns 1 to the operating system
 	}
 	env_.end();
@@ -66,6 +69,12 @@ Tours generalizedVRP_MIP::solve(){
 }
 
 void generalizedVRP_MIP::print_LP_solution_() const{
-	for(auto& kv : v_) 
-		cout<< kv.first <<" = "<< cplex_.getValue(vars_[kv.second]) <<endl;	
+	cout<<"Values of the solution:" <<endl;
+	for(auto& kv : v_){ 
+		assert( kv.first == vars_[kv.second].getName());
+		double value = cplex_.getValue(vars_[kv.second]);
+		if(value > 0.01 or value < -0.01)
+			cout<< kv.first <<" = "<< value <<endl;	
+	}
+	cout<<endl;
 }
