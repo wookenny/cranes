@@ -23,6 +23,8 @@ set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "-g -lilocplex -lconcert -lcplex  -lpthr
  
 # collect all sources (copy from 'ls -1 *.cpp *.h')
 SET(2DVS_Sources
+DisjointSet.h
+DisjointSet.cpp
 Main.cpp
 Main.h
 MIP.h
