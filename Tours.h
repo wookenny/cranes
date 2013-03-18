@@ -1,6 +1,5 @@
 #pragma once
 
-#include "banned.h"
 #include <tuple>
 #include <vector>
 #include <algorithm>
@@ -23,7 +22,10 @@ class Tours{
 		
 		void _sort(int i){  
 			std::sort(_tours[i].begin(), _tours[i].end(), [](const scheduledJob &a,const scheduledJob &b){
-      			return std::get<1>(a) < std::get<1>(b);
+      			return std::get<1>(a) < std::get<1>(b) or 
+      				(  std::get<1>(a) == std::get<1>(b) and 
+      				  std::get<0>(a)->length() < std::get<0>(b)->length());
+      				//same starting time -> job with length 0 first
     		});
     	}
 		
@@ -39,7 +41,7 @@ class Tours{
 		Tours() = delete;
 		/*Constructs k empty tours*/
 		Tours(int k):_tours(k,std::vector<scheduledJob>()){}
-		
+		//TODO: Do I need a move-constr./assign.?
 		
 		unsigned int num_tours() const{return _tours.size();}
 		unsigned int num_jobs() const{return _job_map.size();}

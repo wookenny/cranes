@@ -1,6 +1,5 @@
 #pragma once
 
-#include "banned.h"
 #include <array>
 #include <string>
 #include <iostream>
@@ -57,5 +56,7 @@ T dist_inf(T a1, T a2, T b1, T b2){ return delta<T>(a1,b1)>delta<T>(a2,b2)?delta
 
 
 template <typename T> 
-T dist_inf(std::array<T,2> a, std::array<T,2> b){ return delta<T>(a[0],b[0]) > delta<T>(a[1],b[1])?delta<T>(a[0],b[0]):delta<T>(a[1],b[1]); }   
+T dist_inf(const std::array<T,2> &a, const std::array<T,2> &b){ return delta<T>(a[0],b[0]) > delta<T>(a[1],b[1])?delta<T>(a[0],b[0]):delta<T>(a[1],b[1]); }   
+
+
 

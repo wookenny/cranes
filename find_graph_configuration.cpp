@@ -208,7 +208,7 @@ vector<array<double,3>> solveLP(int size, graph g){
 				if(i==j) continue;
 				if(g.is_arc(i,j)){
 					cout<< "constr. for arc ("<<i<<":"<<j<<")" <<endl;
-					//xi < xj
+	 				//xi < xj
 					cons.add( x(i)  <= x(j) - EPS );
 					
 					//|ti-tj| < |xi - xj|
@@ -385,24 +385,32 @@ int main ()
 {
 
 	
-	int size = 10;	
+	int size = 8;	
 	graph g;
-	//ars
-	g.add_arc(1,2); g.add_arc(2,3); g.add_arc(3,4); g.add_arc(4,5);
-	g.add_arc(1,3); g.add_arc(2,4); g.add_arc(3,5); 
-	g.add_arc(1,4); g.add_arc(2,5); 
-	g.add_arc(1,5);
-	g.add_arc(6,7); g.add_arc(7,8); g.add_arc(8,9); g.add_arc(9,10);
-	g.add_arc(6,8); g.add_arc(7,9); g.add_arc(8,10); 
-	g.add_arc(6,9); g.add_arc(7,10); 
-	g.add_arc(6,10);
+	//arcs
+	
+	g.add_arc(1,2); g.add_arc(2,3); g.add_arc(3,4);
+	g.add_arc(1,3); g.add_arc(2,4); ; 
+	g.add_arc(1,4); 
 
+	g.add_arc(5,6); g.add_arc(6,7); g.add_arc(7,8);
+	g.add_arc(5,7); g.add_arc(6,8); ; 
+	g.add_arc(5,8);
+   
 	//edges
-	g.add_edge(1,6); g.add_edge(2,7); g.add_edge(3,8); 
-	g.add_edge(6,2); g.add_edge(7,3);
-	g.add_edge(1,7); g.add_edge(2,8);
-	g.add_edge(6,3);
-	g.add_edge(1,8);
+	g.add_edge(1,5);g.add_edge(1,6);
+	g.add_edge(2,5);g.add_edge(2,6);
+
+	
+	/*
+	
+	1		4
+	  
+	2		5
+	
+	3		6
+	
+	*/
 		
 	auto sol = solveLP(size,g);
 	cout<< boolalpha;

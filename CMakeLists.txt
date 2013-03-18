@@ -20,6 +20,9 @@ set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -pedantic -fopenmp -mfpmath=sse -O3 -m64 -
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "-g -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -lrt")
 
 
+
+
+
  
 # collect all sources (copy from 'ls -1 *.cpp *.h')
 SET(2DVS_Sources
@@ -39,6 +42,7 @@ Instance.cpp
 Job.h
 Job.cpp
 Tours.h
+SingleCraneTourApproximation.cpp
 )
 
 # collect all sources

@@ -32,7 +32,7 @@ void run_PM(int n){
 	for (int i=0; i< node_num; ++i){
 		if( ! (nodes_checked.find(i)==nodes_checked.end()) )
 			continue;//already matched
-		int j = pm. GetMatch(i);
+		int j = pm.GetMatch(i);
 		nodes_checked.insert(i); nodes_checked.insert(j);
 		cout<< i<<"-"<<j<<endl;
 	}

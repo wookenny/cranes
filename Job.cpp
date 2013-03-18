@@ -3,6 +3,8 @@
 #include <cmath>
 #include <cassert>
 
+#include <cstring>
+
 int Job::length() const{ 
 	return dist_inf(_alpha, _beta);
 }
@@ -23,6 +25,7 @@ std::string Job::to_string() const{
 }
 
 bool Job::operator==(const Job& j) const{
+
 	assert( _num != j._num || 
 			( _alpha[0]==j._alpha[0] &&  _alpha[1]==j._alpha[1] &&
 				 _beta[0]==j._beta[0] &&  _beta[1]==j._beta[1] ) 

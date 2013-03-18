@@ -3,10 +3,15 @@
 #include <algorithm>
 #include <unordered_map>
 #include <memory>
+#include <omp.h>
+#include <ctime>
+#include <chrono>
+
 
 #include "generalizedVRP_MIP.h"
 #include "m_TSP_MIP.h"
 #include "Instance.h"
+#include "SingleCraneTourApproximation.h"
 
 using namespace std;
 
@@ -132,14 +137,63 @@ void test_mip(vector<string> argv){
 }
 
 //TODO: REMOVE THIS AFTER IMPLEMENTING A CHRISTOFIDES-LIKE Heuristic 
-void test_PM(std::vector<std::string> argv){
-	if (argv.size()<1 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"match [n] \n Calculates a min.";
-		cout<<"\tcost perfect matching on a random graph of size n."<<endl;
+void test(std::vector<std::string> argv){
+	if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"Testfunction with a two to three arguments."<<endl;
 		return;
 	}
-	int n = stoi(argv[0]);
-	run_PM(n);
+	
+	int number_of_jobs = stoi(argv[0]);
+	int runs = stoi(argv[1]);
+	int completed = 0;
+	int seed = 0;//time(0);
+	
+	if(argv.size()>2)
+		seed = stoi(argv[2]);
+
+	//stop startingtime
+	using std::chrono::duration_cast;
+	using std::chrono::microseconds;
+	using std::chrono::system_clock;
+
+	system_clock::time_point start = system_clock::now();
+	
+	#pragma omp parallel for
+	for(int r=0; r<runs;++r){
+		++completed;
+		cout << "\r";
+		Instance i(2);
+		i.generate_random_jobs(  number_of_jobs, -10, 10, -10, 10, seed+r);
+		i.add_depotposition(array<int, 2>{{-5,0}});
+		//i.add_depotposition(array<int, 2>{{ -3,0}});
+		//i.add_depotposition(array<int, 2>{{  3,0}});
+		i.add_depotposition(array<int, 2>{{ 5,0}});
+
+		if(0==omp_get_thread_num()){
+			auto time = duration_cast<std::chrono::seconds>(system_clock::now()- start).count();
+			double speed =  completed/(1.0*time);
+			auto remaining = (runs-completed)/speed;
+			cout<<" Runs remaining: "<<runs-completed;
+			if(1.*completed/runs > .1)
+				cout<<"  time left: "<<(int)remaining+1<<" seconds                      ";
+
+			//cout<<"    Testing instance with seed: "<<seed+r<<"     ";
+			cout.flush();
+		}		
+				
+		SingleCraneTourApproximation apx;
+		Tours t(apx(i));
+		if(not i.verify(t) ){
+			
+			cout<<"Found instance with invalid solution:\n"<<i<<endl;
+			cout<<"Seed: "<<seed+r<<endl;
+			cout<<"tours: "<<t<<endl;
+			//break;
+		}
+		
+	}
+	
+	cout<< "\n\nAll tested solutions ok."<<endl;
 }
 
 

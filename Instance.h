@@ -1,6 +1,5 @@
 #pragma once
 
-#include "banned.h"
 #include <iostream>
 #include <array>
 #include <vector>
