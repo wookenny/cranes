@@ -12,8 +12,12 @@ typedef std::tuple<const Job*, double> scheduledJob;
 
 /*
 This class is used to build a solution for an instance.
-Further check for feasibilty and the value of a solution is provided by the class instance.
-Each tour keeps track of all inserted jobs and their starting times. For each job the corresponding vehicle is known.
+Further check for feasibility and the value of a solution is provided by the class instance.
+Each tour keeps track of all inserted jobs and their starting times. 
+For each job the corresponding vehicle is known.
+
+It can happen that two jobs with the same index are added. Nonetheless, a pointer
+can not occur twice during insertion of jobs. Index handling has to be done outside this class.
 */
 class Tours{
 	private: 
@@ -51,12 +55,17 @@ class Tours{
 		
 		
 		bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
-		void add_job(const Job* const job, double time, int i){ 
-				assert(i>=0);
-				assert(i < static_cast<int>( _tours.size()) ); 
-				_tours[i].push_back( std::make_tuple(job,time) );
+		
+		
+		void add_job(const Job* const job, double time, int vehicle){ 
+				assert(vehicle>=0);
+				assert(vehicle < static_cast<int>( _tours.size()) ); 
+				_tours[vehicle].push_back( std::make_tuple(job,time) );
 				assert(!contains(job)); 
-				_job_map.insert(job); }
+				_job_map.insert(job); 
+        }
+				
+
 		void sort_jobs(){for(unsigned int i=0; i<_tours.size(); ++i) _sort(i);}
 		
 		std::string to_string() const{

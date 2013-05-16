@@ -3,16 +3,34 @@
 //g++ unittest.cpp -std=c++0x -lgtest_main -lgtest -lpthread 
 
 #include <gtest/gtest.h>
+#include <random>
 #include "Job.h"
 #include "Tours.h"
 
 TEST(Job_Class/*Testcase Name*/, Lengths_and_differences /*Test name*/) {
-	int a1 = 1; int a2 = 2;
-	int b1 = -4; int b2 = -2;
-	Job j(0,a1,a2,b1,b2);
-  	EXPECT_EQ(j.delta_x(), 5);
-  	EXPECT_EQ(j.delta_y(), 4);
-  	EXPECT_EQ(j.length(), 5);
+	
+
+    std::random_device rnd; // obtain a random number from hardware
+    std::mt19937 eng(rnd()); // seed the generator
+    std::uniform_int_distribution<> distr(-1000, 1000); // define the range
+    for(int i = 10000; i>0; --i){
+        int a1 = distr(eng); int a2 = distr(eng);
+        int b1 = distr(eng); int b2 = distr(eng);
+        int index = abs(distr(eng));
+        
+        Job j1(index,a1,a2,b1,b2);
+        Job j2(index-1,a2,a1,b1,b2);
+        EXPECT_EQ(j1.delta_x(), abs(a1-b1));
+        EXPECT_EQ(j1.delta_y(), abs(a2-b2));
+        EXPECT_EQ(j1.length(), std::max(abs(a1-b1),abs(a2-b2)));
+        EXPECT_EQ(j1.num(),index);
+        EXPECT_EQ(j1==j1,true);
+        EXPECT_EQ(j2==j1,false);
+    } 
+    
+    
+    
+    
 } 
 
 
@@ -42,7 +60,10 @@ TEST(Tour_Class/*Testcase Name*/, Adding_and_Sorting /*Test name*/) {
   	
   	EXPECT_EQ(t[1].size(), t.num_jobs(1));
   	EXPECT_EQ(t[1].size(), 1U);
-  	//ceck assertions
-  	//EXPECT_DEATH(t.add_job(&j4,4,0),"what?");
+  	//check assertions
+    EXPECT_DEATH(t.add_job(&j4,4,0),"");
+    Job j6(6, 4,5,6,7);
+    EXPECT_DEATH(t.add_job(&j6,4,3),"");
+    EXPECT_DEATH(t.add_job(&j6,4,-1),"");
 } 
 

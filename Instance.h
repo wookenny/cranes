@@ -9,9 +9,9 @@
 #include "Tours.h"
 
 /**
-All informations about an instance are encapsuled here. 
-Basic functions like the informations about all jobs or in- and output via files are provided. 
-The function that generated random jobs can be usefull for some algorithmic tests.
+All information about an instance are encapsulated here. 
+Basic functions like the information about all jobs or in- and output via files are provided. 
+The function that generated random jobs can be useful for some algorithmic tests.
 **/
 class Instance{
 	
