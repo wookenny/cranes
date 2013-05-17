@@ -16,7 +16,7 @@ set(CONCERTLIBDIR "${CONCERTDIR}/lib/x86-64_sles10_4.1/static_pic")
 
 
 #specific compiler settings
-set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -pedantic -fopenmp -mfpmath=sse -O3 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_GLIBCXX_DEBUG -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -lz -lpng -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I/usr/site-local/include -I${CPLEXINCDIR} -I. -I./blossom5-v2.03/INCLUDE")
+set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -pedantic -fopenmp -mfpmath=sse -O3 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -lz -lpng -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I/usr/site-local/include -I${CPLEXINCDIR} -I. -I./blossom5-v2.03/INCLUDE")
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "-g -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -L/usr/site-local/lib -lrt")
 
 
