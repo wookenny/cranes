@@ -44,14 +44,19 @@ void print_random_instance(vector<string> argv){
 }
 
 void test_mtsp_mip(vector<string> argv){
-	if (argv.size()>3 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <n> <k> <seed>\n Runs some tests on the mip formulation!"<<endl;
+	if (argv.size()>4 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"test_mip <n> <k> <seed> <collision constr., default = false>\n Runs some tests on the mip formulation!"<<endl;
 		return;
 	}
 	//set default parameter and parse given values
 	int k = 2;
 	int jobs = 20;
 	int seed = 0;
+	bool collisions = false;
+	
+	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
+			{"1",true},{"yes",true},{"f",false},{"false",false},
+			{"0",false},{"no",false},{"y",true},{"n",false} };
 	
 	if(argv.size()>0)
 		jobs = stoi(argv[0]);
@@ -59,6 +64,9 @@ void test_mtsp_mip(vector<string> argv){
 		k = stoi(argv[1]);
 	if(argv.size()>2)
 		seed = stoi(argv[2]);
+	if(argv.size()>3)
+		if(string_to_bool.find(argv[3])!=string_to_bool.end())
+			collisions = string_to_bool[argv[3]];	
 
 	Instance i(k);
 	//i.generate_random_depots(-10, 10, -10, 10, 0);
@@ -68,6 +76,7 @@ void test_mtsp_mip(vector<string> argv){
 	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
 	unique_ptr<generalizedVRP_MIP> mip_ptr(new m_TSP_MIP(i));
 	mip_ptr->set_debug(true);
+	mip_ptr ->set_collision(collisions);
 	Tours &&t = mip_ptr->solve();
 
 	

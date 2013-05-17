@@ -151,6 +151,7 @@ void m_TSP_MIP::build_constraints_(){
 
 }
 void m_TSP_MIP::build_collision_constraints_(){
+
 	uint n = inst_.num_jobs();
 	auto K = static_cast<IloInt>(inst_.num_vehicles());
 	
@@ -203,6 +204,7 @@ void m_TSP_MIP::build_collision_constraints_(){
 													- beta_x(job_i) - job_i.length());
 		}
 	}
+	
 }
 		
 

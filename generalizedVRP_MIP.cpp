@@ -25,10 +25,10 @@ Tours generalizedVRP_MIP::solve(){
 		
 		build_constraints_();
 	
-		model_.add(cons_);
-	
 		if( 1!= inst_.num_vehicles() and  collision_avoidance_)
 			build_collision_constraints_();  
+
+		model_.add(cons_);
 
 		//run cplex and solve the model!
 		cplex_.extract(model_);
