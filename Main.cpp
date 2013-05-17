@@ -45,7 +45,7 @@ void print_random_instance(vector<string> argv){
 
 void test_mtsp_mip(vector<string> argv){
 	if (argv.size()>3 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <n> <k> <seed>\n Runs some tests on the mip formulation!";
+		cout<<"test_mip <n> <k> <seed>\n Runs some tests on the mip formulation!"<<endl;
 		return;
 	}
 	//set default parameter and parse given values

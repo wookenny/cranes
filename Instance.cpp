@@ -55,7 +55,7 @@ Instance::Instance(string file){
 
 
 void Instance::_parse_line(string &line){
-	if(boost::regex_match (line,comment) || boost::regex_match (line,empty)){
+	if(boost::regex_match(line,comment) || boost::regex_match(line,empty)){
 		return; //nothing to do on a comment
 	}
 		
@@ -214,7 +214,7 @@ double Instance::makespan(Tours& t) const{
 }
 
 Tours Instance::get_MIP_solution(bool collision_free,bool LP_relax,bool debug) const{
-	
+	//TODO: This might be wrong. Use the generalisd MIP here!
 	MIP mip(*this);
 	//Hint: Methods returns a Tours objct.
 	//To get rid off copying overhead, the rvalue reference

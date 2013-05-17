@@ -14,7 +14,6 @@
 //all needed functions, their implementation can be found in Main.cpp
 void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
-void test_mip(std::vector<std::string> argv);
 void test_mtsp_mip(std::vector<std::string> argv);
 void test(std::vector<std::string> argv);
 
@@ -32,7 +31,6 @@ int main(int argc, char** argv){
 	//ADD NEW FUNCTIONS HERE (they have to parse ther arguments or call a usage)
 	functionDict["read"] 	= &read_instance;
 	functionDict["random"] 	= &print_random_instance;
-	functionDict["test_mip"] 	= &test_mip;
 	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
 	functionDict["test"] 	= &test;
 	//at least one parameter must be given

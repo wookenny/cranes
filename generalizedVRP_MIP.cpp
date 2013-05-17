@@ -15,7 +15,7 @@ Tours generalizedVRP_MIP::solve(){
 	
 		build_variables_();
 		
-		if( 1 != inst_.num_vehicles() and  collision_avoidance_)
+		if( 1 != inst_.num_vehicles() and  collision_avoidance_ )
 			build_collision_variables_();
 		
 		model_.add(vars_);
