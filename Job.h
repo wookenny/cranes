@@ -1,5 +1,6 @@
 #pragma once
 
+#include <tuple>
 #include <array>
 #include <string>
 #include <iostream>
@@ -34,8 +35,27 @@ class Job{
 		std::string to_string() const;
 
 		bool operator==(const Job& j) const;
-	
+
+
+		/*
+		This method considers the implication between the
+		assignment of two jobs with given startingtimes.
+		They can be the requirement to be left/right of each other,
+		no requirement at all or simply a state were they must have 
+		a different starting time, because we found the right AND the left
+		requirement.
+		
+		returns -1 if first job has to be left of the second.
+		returns 1 if first job has to be right of the second.
+		returns 0 if no ordering is enforced by these two jobs with the 
+		starting times
+		returns -2 if these two jobs are not doable with thegiven starting times
+		*/
+		static int getOrdering(const std::tuple<const Job*, double>&,
+							   const std::tuple<const Job*, double>&);
 };
+
+
 
 /** Stream operator for convenience. Prints the string representation of a job. **/
 inline 

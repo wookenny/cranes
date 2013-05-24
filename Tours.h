@@ -12,7 +12,7 @@ typedef std::tuple<const Job*, double> scheduledJob;
 
 /*
 This class is used to build a solution for an instance.
-Further check for feasibility and the value of a solution is provided by the class instance.
+Further check for feasibility and the value of a solution is provided by the class Instance.
 Each tour keeps track of all inserted jobs and their starting times. 
 For each job the corresponding vehicle is known.
 

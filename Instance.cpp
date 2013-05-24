@@ -136,10 +136,18 @@ bool Instance::verify(Tours& t) const{
 	t.sort_jobs();
 
 	//Tests: 
+
+	//0. exact right number of vehicles?
+	if(t.num_tours() != num_vehicles()){
+		//cout<<"Wrong number of tours: "
+		//<<t.num_tours()<<" tours and "<<num_vehicles()<<" vehicles"<< endl;
+		return false;
+	}
+
 	//1. every job included?
 	for(auto j = _jobs.begin(); j!=_jobs.end(); ++j )
 		if(!t.contains(&*j)){
-			cout<<"Job "<<*j<<" missing!"<<endl;
+			//cout<<"Job "<<*j<<" missing!"<<endl;
 			return false;
 		}
 	//2. no other job included?
@@ -183,7 +191,35 @@ bool Instance::verify(Tours& t) const{
 	}
 	
 	//4. all tours collison-free
-	//TODO How To Check This?? solving the 1DVS?  
+	//check the direction induced by the four points of two jobs
+	// valid if: not contraticting, ok with assigned vehicles
+	//check jobs on pair of differnt vehicles	
+	for(uint v1=0; v1<t.num_tours()-1; ++v1){
+		for(uint v2=v1+1; v2<t.num_tours(); ++v2){
+			for(uint i=0; i<t.num_jobs(v1); ++i){
+				for(uint j=0; j<t.num_jobs(v2); ++j){
+					//i left of j => 1 or -2 are bad outcomes
+					int ord = Job::getOrdering(t[v1][i],t[v2][j]);
+					if(-2==ord or 1==ord)
+						return false;
+				}
+			}
+		}
+	}
+	
+	//job with same vehicle: no direction enforced at all
+	for(uint v=0; v<t.num_tours(); ++v){
+		for(uint i=0; i<t.num_jobs(v)-1; ++i){
+			for(uint j=i+1; j<t.num_jobs(v); ++j){
+				//job have to be reachable(0), every other thing is BAD!
+				if( Job::getOrdering(t[v][i],t[v][j]) != 0){
+					cerr<<"error on tour "<<v+1 <<endl;
+					cerr<<"job "<<i+1<<" and "<<j+1<<" not compatible"<<endl;
+					return false;
+				}	
+			}
+	 	}	
+	 }
 	
 	
 	//no error found => return true!

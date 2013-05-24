@@ -4,8 +4,11 @@
 
 #include <gtest/gtest.h>
 #include <random>
+#include <iostream>
+
 #include "Job.h"
 #include "Tours.h"
+#include "Instance.h"
 
 TEST(Job_Class/*Testcase Name*/, Lengths_and_differences /*Test name*/) {
 	
@@ -61,9 +64,59 @@ TEST(Tour_Class/*Testcase Name*/, Adding_and_Sorting /*Test name*/) {
   	EXPECT_EQ(t[1].size(), t.num_jobs(1));
   	EXPECT_EQ(t[1].size(), 1U);
   	//check assertions
-    EXPECT_DEATH(t.add_job(&j4,4,0),"");
+    //EXPECT_DEATH(t.add_job(&j4,4,0),"");
     Job j6(6, 4,5,6,7);
-    EXPECT_DEATH(t.add_job(&j6,4,3),"");
-    EXPECT_DEATH(t.add_job(&j6,4,-1),"");
+    //EXPECT_DEATH(t.add_job(&j6,4,3),"");
+    //EXPECT_DEATH(t.add_job(&j6,4,-1),"");
 } 
+
+
+TEST(Tour_Class/*Testcase Name*/, Verifying_Tours /*Test name*/) {
+	  
+	Instance inst(3);
+  	inst.add_depotposition( {{7,2}} );
+  	inst.add_depotposition( {{11,2}} );
+  	inst.add_depotposition( {{13,2}} );
+  	Job j1(1, 4,2,2,1);	  inst.add_job(j1);
+	Job j2(2, 6,2,7,2);	  inst.add_job(j2);
+ 	Job j3(3, 7,1,10,2);  inst.add_job(j3);
+  	Job j4(4, 12,3,12,0); inst.add_job(j4);
+  	Job j5(5, 11,1,15,1);  inst.add_job(j5);
+
+	//Valid tour
+	{
+	Tours t(3);
+  	t.add_job(&inst[1 -1],28,2);
+  	t.add_job(&inst[2 -1],24,2);
+  	t.add_job(&inst[3 -1],17,2);
+  	t.add_job(&inst[4 -1],1,2);
+	t.add_job(&inst[5 -1],5,2); 
+	EXPECT_EQ(inst.verify(t),true);
+	}
+	
+	//Valid tour
+	{
+	Tours t(3);
+  	t.add_job(&inst[1 -1],3,0);
+  	t.add_job(&inst[2 -1],9,0);
+  	t.add_job(&inst[3 -1],4,1);
+  	t.add_job(&inst[4 -1],1,2);
+	t.add_job(&inst[5 -1],5,2); 
+	EXPECT_EQ(inst.verify(t),true);
+	}
+	
+	
+	//Invalid tour: too many cranes used
+	{
+	Tours t(4);
+  	t.add_job(&inst[1 -1],3,0);
+  	t.add_job(&inst[2 -1],9,0);
+  	t.add_job(&inst[3 -1],4,1);
+  	t.add_job(&inst[4 -1],1,2);
+	t.add_job(&inst[5 -1],5,3); 
+	EXPECT_EQ(inst.verify(t),false);
+	}
+	
+}
+
 
