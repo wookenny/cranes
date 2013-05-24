@@ -96,6 +96,34 @@ class generalizedVRP_MIP{
 		bool collision_avoidance_;
 		bool LP_relaxation_;
 		
+		int bigM;
+		
+		//variables and helper for collision handling
+		//collision name/variable helper
+		stringify name_t_; 
+		variable_access t;
+		stringify name_k_; 
+		variable_access k;
+		stringify name_c_;
+		variable_access c;	
+		stringify name_caa_p_;
+		variable_access caa_p;
+		stringify name_caa_m_;
+		variable_access caa_m;
+		stringify name_cab_p_;
+		variable_access cab_p;		
+		stringify name_cab_m_;
+		variable_access cab_m;		
+		stringify name_cba_p_;
+		variable_access cba_p;	
+		stringify name_cba_m_;
+		variable_access cba_m;		
+		stringify name_cbb_p_;
+		variable_access cbb_p;		
+		stringify name_cbb_m_;
+		variable_access cbb_m;
+
+		
 	public:
 		generalizedVRP_MIP()=delete;
 		generalizedVRP_MIP(const Instance& i):inst_(i),counter_(0),env_(),
@@ -103,7 +131,30 @@ class generalizedVRP_MIP{
 											  model_(env_), 
 											  cplex_(env_), debug_(false),
 											  collision_avoidance_(false),
-											  LP_relaxation_(false){};
+											  LP_relaxation_(false),
+											  name_t_("t",1),
+									  		  t(name_t_,vars_,v_),
+											  name_k_("k",1),
+									  		  k(name_k_,vars_,v_),
+											  name_c_("c",2),
+									  		  c(name_c_,vars_,v_),
+									  		  name_caa_p_("c_aa_p",2),
+									  		  caa_p(name_caa_p_,vars_,v_),
+											  name_caa_m_("c_aa_m",2),
+											  caa_m(name_caa_m_,vars_,v_),
+											  name_cab_p_("c_ab_p",2),
+											  cab_p(name_cab_p_,vars_,v_),
+											  name_cab_m_("c_ab_m",2),
+											  cab_m(name_cab_m_,vars_,v_),
+											  name_cba_p_("c_ba_p",2),
+											  cba_p(name_cba_p_,vars_,v_),
+											  name_cba_m_("c_ba_m",2),
+											  cba_m(name_cba_m_,vars_,v_),
+											  name_cbb_p_("c_bb_p",2),
+											  cbb_p(name_cbb_p_,vars_,v_),
+											  name_cbb_m_("c_bb_m",2),
+											  cbb_m(name_cbb_m_,vars_,v_){};
+											  
 		virtual ~generalizedVRP_MIP(){};
 		Tours solve();
 
@@ -120,11 +171,11 @@ class generalizedVRP_MIP{
 		
 		//building variables
 		virtual void build_variables_() = 0; 
-		virtual void build_collision_variables_() = 0;	
+		virtual void build_collision_variables_();	
 										
 		//constraint construction
 		virtual void build_constraints_() = 0;
-		virtual void build_collision_constraints_() = 0;  
+		virtual void build_collision_constraints_();  
 		
 		//parsing of solution		
 		virtual void parse_solution_(Tours &tours) = 0;		
