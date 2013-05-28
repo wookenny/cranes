@@ -117,6 +117,39 @@ TEST(Tour_Class/*Testcase Name*/, Verifying_Tours /*Test name*/) {
 	EXPECT_EQ(inst.verify(t),false);
 	}
 	
+	//Invalid tour: not reachable
+	{
+	Tours t(3);
+  	t.add_job(&inst[1 -1],11,0);
+  	t.add_job(&inst[2 -1],1,0);
+  	t.add_job(&inst[3 -1],3,0);
+  	t.add_job(&inst[4 -1],1,1);
+	t.add_job(&inst[5 -1],5,1); 
+	EXPECT_EQ(inst.verify(t),false);
+	}
+	
+	//Invalid tour: cross tour
+	{
+	Tours t(3);
+  	t.add_job(&inst[1 -1],3,0);
+  	t.add_job(&inst[2 -1],10,1);
+  	t.add_job(&inst[3 -1],10,0);
+  	t.add_job(&inst[4 -1],1,2);
+	t.add_job(&inst[5 -1],5,2); 
+	EXPECT_EQ(inst.verify(t),false);
+	}
+	
+	//Invalid tour: cross job
+	{
+	Tours t(3);
+  	t.add_job(&inst[1 -1],12,0);
+  	t.add_job(&inst[2 -1],1,0);
+  	t.add_job(&inst[3 -1],3,0);
+  	t.add_job(&inst[4 -1],2,1);
+	t.add_job(&inst[5 -1],2,2); 
+	EXPECT_EQ(inst.verify(t),false);
+	}
+	
 }
 
 

@@ -168,10 +168,10 @@ bool Instance::verify(Tours& t) const{
 
 		tie(job1, time1) = t[i].front();
 		if( dist_inf(job1->get_alpha(),_depotPositions[i]) > time1+EPS  ){
-			cout<< "Job "<<*job1<<" not reachable from depot"<<endl;
-			cout<<"starting times: "<<time1<<endl;
-			cout<< "dist: "<<dist_inf(job1->get_alpha(),_depotPositions[i])<<endl;
-			cout<<"difference: "<<time1-dist_inf(job1->get_alpha(),_depotPositions[i])<<endl;
+			//cout<< "Job "<<*job1<<" not reachable from depot"<<endl;
+			//cout<<"starting times: "<<time1<<endl;
+			//cout<< "dist: "<<dist_inf(job1->get_alpha(),_depotPositions[i])<<endl;
+			//cout<<"difference: "<<time1-dist_inf(job1->get_alpha(),_depotPositions[i])<<endl;
 			return false;
 		}
 			
@@ -180,10 +180,10 @@ bool Instance::verify(Tours& t) const{
 			tie(job1, time1) = t[i][j-1];
 			tie(job2, time2) = t[i][j];		
 			if(dist_inf(job1->get_beta(),job2->get_alpha())+job1->length() > (time2 - time1 )+EPS){
-				cout<< "Job "<<*job2<<" not reachable after job "<<*job1<<endl;
-				cout<<"starting times: "<<time1 << " and "<<time2<<endl;
-				cout<<time1<< " + "<<job1->length()<<" + "<<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS "
-				<< " = " << (time1+job1->length()+dist_inf(job1->get_beta(),job2->get_alpha())) << " - EPS > "<<time2<<endl;
+				//cout<< "Job "<<*job2<<" not reachable after job "<<*job1<<endl;
+				//cout<<"starting times: "<<time1 << " and "<<time2<<endl;
+				//cout<<time1<< " + "<<job1->length()<<" + "<<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS "
+				//<< " = " << (time1+job1->length()+dist_inf(job1->get_beta(),job2->get_alpha())) << " - EPS > "<<time2<<endl;
 				return false;
 			}	
 		}

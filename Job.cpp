@@ -100,13 +100,14 @@ bool Job::operator==(const Job& j) const{
 	
 	
 	assert(max-min==2);			
-	
+	/*
 	cerr<<*j1<<"@"<<t1<<endl;
 	cerr<<*j2<<"@"<<t2<<endl;
 	cerr<<"c1 "<<c1<<endl;
 	cerr<<"c2 "<<c2<<endl;
 	cerr<<"c3 "<<c3<<endl;
 	cerr<<"c4 "<<c4<<endl;		
+ 	*/
  	return -2;									
 }
 
