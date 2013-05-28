@@ -15,7 +15,7 @@ tour_j,		(integral[0,k-1])tour variable, which assigns a job to a vehicle
 
 constraints:
 \sum_{j=1}^{n+k} x_i,j = 1 			for all i \in [n+k]//outdegree
-\sum_{i=1}^{n+k} x_i,j = 1			for all j \in [n+k]//indrgree
+\sum_{i=1}^{n+k} x_i,j = 1			for all j \in [n+k]//indegree
 t_{n+i} = 0							for all i \in [k]//start at depot at time 0
 
 t(j) - bigM*x(i,j)  >= 							//regular starting time constraint

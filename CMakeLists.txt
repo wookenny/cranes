@@ -36,6 +36,8 @@ generalizedVRP_MIP.h
 generalizedVRP_MIP.cpp
 m_TSP_MIP.h
 m_TSP_MIP.cpp
+independent_TSP_MIP.h
+independent_TSP_MIP.cpp
 my_PM_test.cpp
 Instance.h
 Instance.cpp
