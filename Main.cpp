@@ -10,6 +10,7 @@
 
 #include "generalizedVRP_MIP.h"
 #include "m_TSP_MIP.h"
+#include "independent_TSP_MIP.h"
 #include "Instance.h"
 #include "SingleCraneTourApproximation.h"
 
@@ -44,9 +45,9 @@ void print_random_instance(vector<string> argv){
 }
 
 void test_mtsp_mip(vector<string> argv){
-	if (argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+	if (argv.size()>6 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
 		cout<<"test_mip <n> <k> <seed> <collision constr., default = false>" 
-			 <<" <LP ralaxation., default = false>\n Runs some tests on the mip formulation!"<<endl;
+			 <<" <LP ralaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 0>\n Runs some tests on the mip formulation!"<<endl;
 		return;
 	}
 	//set default parameter and parse given values
@@ -55,6 +56,7 @@ void test_mtsp_mip(vector<string> argv){
 	int seed = 0;
 	bool collisions = false;
 	bool lp_relax = false;
+	int mip_type =0;
 	
 	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
 			{"1",true},{"yes",true},{"f",false},{"false",false},
@@ -72,6 +74,8 @@ void test_mtsp_mip(vector<string> argv){
 	if(argv.size()>4)
 		if(string_to_bool.find(argv[4])!=string_to_bool.end())
 			lp_relax = string_to_bool[argv[4]];	
+	if(argv.size()>5)
+		mip_type = stoi(argv[5]);
 
 
 	Instance i(k);
@@ -80,7 +84,12 @@ void test_mtsp_mip(vector<string> argv){
 		i.add_depotposition(array<int, 2>{{0,0}});
 
 	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
-	unique_ptr<generalizedVRP_MIP> mip_ptr(new m_TSP_MIP(i));
+	unique_ptr<generalizedVRP_MIP> mip_ptr;
+	if(1==mip_type)
+		mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
+	else
+		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
+	
 	mip_ptr->set_debug(true);
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
