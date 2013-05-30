@@ -57,6 +57,15 @@ class Job{
 
 
 
+/** Stream operator for convenience. Prints the string representation 
+of a scheduled job. **/
+inline 
+std::ostream& operator <<(std::ostream &os, const std::tuple<const Job*, double> &j)
+{
+	os<< std::get<0>(j)->to_string()<<" @"<<std::get<1>(j);
+	return os;
+}
+
 /** Stream operator for convenience. Prints the string representation of a job. **/
 inline 
 std::ostream& operator <<(std::ostream &os,const Job &j)
@@ -64,7 +73,6 @@ std::ostream& operator <<(std::ostream &os,const Job &j)
 	os<<j.to_string();
 	return os;
 }
-
 
 
 //distance functions for any type T where '-' and absolute value are definded

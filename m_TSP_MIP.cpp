@@ -162,12 +162,12 @@ void m_TSP_MIP::parse_solution_(Tours &tours){
 			//find next job
 			for( uint j = 1; j<=n+K; ++j){
 				if(current_pos==j) continue;
-				cout<< "trying "<<name_x_(current_pos,j)<< endl;
+				//cout<< "trying "<<name_x_(current_pos,j)<< endl;
 				if( cplex_.getValue( x(current_pos,j) ) > 0.5 ){
 					cout<< name_x_(current_pos,j) <<" = "<<cplex_.getValue( x(current_pos,j) ) << endl;
 					double time = cplex_.getValue(t(j));
 					if(j<=n){
-						cout<<"adding job "<<j<< endl;
+						//cout<<"adding job "<<j<< endl;
 						tours.add_job(&inst_[j-1], time,i-1);
 					}
 					current_pos = j;

@@ -47,7 +47,7 @@ void print_random_instance(vector<string> argv){
 void test_mtsp_mip(vector<string> argv){
 	if (argv.size()>6 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
 		cout<<"test_mip <n> <k> <seed> <collision constr., default = false>" 
-			 <<" <LP ralaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 0>\n Runs some tests on the mip formulation!"<<endl;
+			 <<" <LP relaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 0>\n Runs some tests on the mip formulation!"<<endl;
 		return;
 	}
 	//set default parameter and parse given values
@@ -85,7 +85,7 @@ void test_mtsp_mip(vector<string> argv){
 
 	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
 	unique_ptr<generalizedVRP_MIP> mip_ptr;
-	if(1==mip_type)
+	if(1==mip_type) //remember: explicit std::move here because of rvalue
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
 	else
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
@@ -93,8 +93,8 @@ void test_mtsp_mip(vector<string> argv){
 	mip_ptr->set_debug(true);
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
+		
 	Tours &&t = mip_ptr->solve();
-
 	
 	cout<<i<<endl;
 	cout<<boolalpha;

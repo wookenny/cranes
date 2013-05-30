@@ -215,6 +215,8 @@ bool Instance::verify(Tours& t) const{
 				if( Job::getOrdering(t[v][i],t[v][j]) != 0){
 					cerr<<"error on tour "<<v+1 <<endl;
 					cerr<<"job "<<i+1<<" and "<<j+1<<" not compatible"<<endl;
+					cerr<< t[v][i]<<"\n"<<t[v][j] <<endl;
+					cerr<<"status: "<< Job::getOrdering(t[v][i],t[v][j])<<endl;
 					return false;
 				}	
 			}

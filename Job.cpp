@@ -36,12 +36,15 @@ bool Job::operator==(const Job& j) const{
  
  int point_ordering__(double x1, double t1,
  					  double x2, double t2){
+ 					  
+ 	const double EPS = 0.01;				  
+ 					  
  	//-1: 1 left of 2				  
- 	if(x1 < x2 and (x2-x1 > abs(t1-t2)) )
+ 	if(x1 < x2 and (x2-x1 > abs(t1-t2)+EPS) )
  		return -1;
  	
  	//1: 1 right of 2		
- 	if(x1 > x2 and (x1-x2 > abs(t1-t2)) )
+ 	if(x1 > x2 and (x1-x2 > abs(t1-t2)+EPS) )
  		return 1;
  		
  	//0: no relation		  
@@ -75,7 +78,7 @@ bool Job::operator==(const Job& j) const{
 								j2->beta()[0] , t2+j2->length());
  	
  	int max = c1;
-	int min = c2;
+	int min = c1;
 	
 	if(c2>max) max = c2;
 	if(c3>max) max = c3;
@@ -84,6 +87,15 @@ bool Job::operator==(const Job& j) const{
 	if(c2<min) min = c2;
 	if(c3<min) min = c3;
 	if(c4<min) min = c4;
+	
+	/*
+	cerr<<*j1<<"@"<<t1<<endl;
+	cerr<<*j2<<"@"<<t2<<endl;
+	cerr<<"c1 "<<c1<<endl;
+	cerr<<"c2 "<<c2<<endl;
+	cerr<<"c3 "<<c3<<endl;
+	cerr<<"c4 "<<c4<<endl;		
+	*/
 	
 	//all equal, than that is the right answer
 	if(min==max) return min;
@@ -98,16 +110,7 @@ bool Job::operator==(const Job& j) const{
 		}
 	}
 	
-	
 	assert(max-min==2);			
-	/*
-	cerr<<*j1<<"@"<<t1<<endl;
-	cerr<<*j2<<"@"<<t2<<endl;
-	cerr<<"c1 "<<c1<<endl;
-	cerr<<"c2 "<<c2<<endl;
-	cerr<<"c3 "<<c3<<endl;
-	cerr<<"c4 "<<c4<<endl;		
- 	*/
  	return -2;									
 }
 

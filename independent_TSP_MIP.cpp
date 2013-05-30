@@ -31,7 +31,16 @@ void independent_TSP_MIP::build_variables_(){
 			//skip variable x_i_i, if not a depot
 			if(i==j and i<=inst_.num_jobs() )
 				continue;
- 			for(uint v = 1; v <= inst_.num_vehicles();++v){
+			//skip inter depot variables
+			if(i>inst_.num_jobs() and j>inst_.num_jobs())
+				continue;	
+ 			for(uint v = 1; v <= inst_.num_vehicles();++v){			
+ 				//no variables from/to depot i with another vehicle than i
+ 				if(i>inst_.num_jobs() and i-inst_.num_jobs()!=v)
+ 					continue;
+ 				if(j>inst_.num_jobs() and j-inst_.num_jobs()!=v)
+ 					continue;
+				
 				string name = name_x_(i,j,v);
 				v_[name] = counter_++;
 				vars_.add( IloNumVar(env_, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
@@ -44,7 +53,7 @@ void independent_TSP_MIP::build_variables_(){
 	for(uint j = 1; j <= inst_.num_jobs()+inst_.num_vehicles();++j){
 		name = name_k_(j);
 		v_[name] = counter_++;
-		vars_.add( IloNumVar(env_, 1/*lb*/, inst_.num_vehicles()/*ub*/, type, name.c_str() ) );
+		vars_.add( IloNumVar(env_, 1/*lb*/, inst_.num_vehicles()/*ub*/,IloNumVar::Int, name.c_str() ) );
 	}		
 }
 
@@ -56,36 +65,46 @@ void independent_TSP_MIP::build_constraints_(){
 	
 	//TODO add a better initialization!
 	bigM = 1000;
+
 	//indegree == outdegree for non-depot nodes
 	for(uint v=1; v<=K;++v){
 		for(uint i = 1; i<=n+K; ++i){
+			if(i>n and v!=i-n) //constraint with veh. i for depot j
+					continue;
+		
 			IloExpr expr(env_);
-			//incoming edges
+			//outgoing edges(from i)
 			for(uint j = 1; j<=n+K; ++j){
-				if(i>n and j>n) break; //no edges from a depot to another depot
-				if(i==j ) continue;
+				if(j>n and i>n) continue; //no interdepot constraint
+				if(i==j ) continue;//no selfedge
+				if(j>n and v!=j-n) //no edges from depot with wrong vehicle 
+					continue;
+
 				expr += x(i,j,v);
 			}
-
-			//outgoing edges
+			//incoming edges(from i)
 			for(uint j = 1; j<=n+K; ++j){
-				if(i>n and j>n) break; //no edges from a depot to another depot
 				if(i==j ) continue;
+				if(j>n and i>n) continue; //no interdepot constraint
+				if(j>n and v!=j-n) //no edges from depot with wrong vehicle 
+					continue;
+
 				expr -= x(j,i,v);
 			}
 
 			IloRange constraint(env_, 0, expr, 0,
-			("in-outdegree for "+to_string(i)+" vechicle "+to_string(v)).c_str());
+			("in-outdegree for "+to_string(i)+" vehicle "+to_string(v)).c_str());
 			cons_.add(constraint);		
 		}
 	}
-		
+			
 	//add IN degree for vertices
-	for(uint i = 1; i<=n+K; ++i){
+	for(uint i = 1; i<=n; ++i){
 		IloExpr expr(env_);
 		for(uint v = 1; v<=K; ++v){
 			for(uint j = 1; j<=n+K; ++j){
-				if(i>n and j>n) continue; //no edges from a depot to another depot
+				if(j>n and v!=j-n) //no edges from depot with wrong vehicle 
+					continue;
 	 			if(i==j) continue; //add x_ii only for depot
 				expr += x(j,i,v);
 			}
@@ -97,11 +116,12 @@ void independent_TSP_MIP::build_constraints_(){
 	}
 		
 	//add OUT degree for vertices
-	for(uint i = 1; i<=n+K; ++i){
+	for(uint i = 1; i<=n; ++i){
 		IloExpr expr(env_);
 		for(uint v = 1; v<=K; ++v){
 			for(uint j = 1; j<=n+K; ++j){
-				if(i>n and j>n) continue; //no edges from a depot to another depot
+				if(j>n and v!=j-n) //no edges from depot with wrong vehicle 
+					continue;
 	 			if(i==j) continue; //add x_ii only for depot
 				expr += x(i,j,v);
 			}
@@ -111,7 +131,26 @@ void independent_TSP_MIP::build_constraints_(){
 							("out-degree for "+to_string(i)).c_str() );
 		cons_.add(constraint);		
 	}
-		
+	
+	//special constraint for the depot:
+	//sum of out/in <=1 
+	for(uint i = n+1; i<=n+K; ++i){
+		IloExpr expr_out(env_);
+		IloExpr expr_in(env_);
+		int v = i-n;
+		for(uint j = 1; j<=n; ++j){
+	 		if(i==j) continue; //add x_ii only for depot
+			expr_out += x(i,j,v);
+			expr_in  += x(j,i,v);
+		}
+		IloRange out_constraint(env_, 0, expr_out, 1, 
+							("out-degree for "+to_string(i)).c_str() );
+		IloRange in_constraint(env_, 0, expr_in, 1, 
+							("in-degree for "+to_string(i)).c_str() );
+		cons_.add(out_constraint);	
+		cons_.add(in_constraint);		
+	}
+
 	//starting time variables for depots
 	for(uint i = n+1; i<=n+K; ++i)
 		cons_.add( t(i) == 0);	
@@ -155,11 +194,7 @@ void independent_TSP_MIP::build_constraints_(){
 	}
 
 
-
-
-
-
-	//vehicle number for depots is there number
+	//vehicle number for depots is their number
 	for(uint i = n+1; i<=n+K; ++i)
 		cons_.add( k(i) == i-n);
 	
@@ -171,6 +206,8 @@ void independent_TSP_MIP::build_constraints_(){
 		for(uint v=1; v<=K;++v){
 			for(uint j = 1; j<=n+K; ++j){
 				if(i==j) continue;	//do not respect selfloops
+				if(j>n and j-n!=v)  //no edges from depot with wrong vehicle
+					continue;
 				expr -=  static_cast<IloInt>(v)* x(j,i,v);
 			}
 		}
@@ -178,37 +215,25 @@ void independent_TSP_MIP::build_constraints_(){
 				("vehicle assignment "+to_string(i)).c_str() );
 		cons_.add(constraint);
 	}	
+
 }
 
 	
 //parsing of solution		
 void independent_TSP_MIP::parse_solution_(Tours &tours){
+
 	//TODO: remove this line after debuging
 	print_LP_solution_();
 
 	uint n = inst_.num_jobs();
-	uint K = inst_.num_vehicles();
+
 	//build all k tours
-	for( uint i = 1; i<=K; ++i){
-		uint current_pos = n+i;//starting at depot i
-		do{
-			//find next job
-			for( uint j = 1; j<=n+K; ++j){
-				if(current_pos==j) continue;
-				cout<< "trying "<<name_x_(current_pos,j)<< endl;
-				if( cplex_.getValue( x(current_pos,j) ) > 0.5 ){
-					cout<< name_x_(current_pos,j) <<" = "<<cplex_.getValue( x(current_pos,j) ) << endl;
-					double time = cplex_.getValue(t(j));
-					if(j<=n){
-						cout<<"adding job "<<j<< endl;
-						tours.add_job(&inst_[j-1], time,i-1);
-					}
-					current_pos = j;
-					break;
-				}	
-			}
-		}while(n+i!=current_pos);	
+	for( uint j = 1; j<=n; ++j){
+		int v = cplex_.getValue(k(j));
+		double time = cplex_.getValue(t(j));
+		tours.add_job(&inst_[j-1], time, v-1);
 	}
+	tours.sort_jobs();
 
 	//cplex_.exportModel("mTSP.lp");
 	//cplex_.writeSolutions("mTSP.sol"); 
