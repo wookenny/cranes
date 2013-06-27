@@ -15,6 +15,8 @@
 void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
 void test_mtsp_mip(std::vector<std::string> argv);
+void insertion_heuristic(std::vector<std::string> argv);
+
 
 void test(std::vector<std::string> argv);
 
@@ -30,9 +32,10 @@ int main(int argc, char** argv){
 	//build function dictionary
 	std::map<std::string,void (*)(std::vector<std::string>)> functionDict;
 	//ADD NEW FUNCTIONS HERE (they have to parse ther arguments or call a usage)
-	functionDict["read"] 	= &read_instance;
-	functionDict["random"] 	= &print_random_instance;
+	functionDict["read"] 		= &read_instance;
+	functionDict["random"] 		= &print_random_instance;
 	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
+	functionDict["insertion"]	= &insertion_heuristic;
 	functionDict["test"] 	= &test;
 	//at least one parameter must be given
 	if(argc < 2){

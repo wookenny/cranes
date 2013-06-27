@@ -156,12 +156,14 @@ class generalizedVRP_MIP{
 											  cbb_m(name_cbb_m_,vars_,v_){};
 											  
 		virtual ~generalizedVRP_MIP(){};
-		Tours solve();
+		virtual Tours solve();
 
 
 		void set_debug(bool v){debug_=v;}
 		void set_LP(bool v){LP_relaxation_ = v;}
 		void set_collision(bool v){collision_avoidance_ = v;}		
+
+		friend class SubtourCutsCallbackI;
 
 	protected:
 		//almost all versions are purely virtual because often the methods are 

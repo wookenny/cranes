@@ -41,6 +41,8 @@ independent_TSP_MIP.cpp
 my_PM_test.cpp
 Instance.h
 Instance.cpp
+InsertionHeuristic.h
+InsertionHeuristic.cpp
 Job.h
 Job.cpp
 Tours.h
@@ -54,6 +56,8 @@ Job.h
 Job.cpp
 Instance.h
 Instance.cpp
+InsertionHeuristic.h
+InsertionHeuristic.cpp
 MIP.h
 MIP.cpp
 Tours.h

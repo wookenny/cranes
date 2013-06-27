@@ -3,7 +3,7 @@
 #include <vector>
 
 /**
-This class is used to handle sets effincently. It supports to determine weather to elements are in the same set.
+This class is used to handle sets effincently. It supports to determine whether to elements are in the same set.
 The second important feature is to join two sets given by two elements out of different sets.
 Without further notation, all the values inside the disjoint sets are 0,...,n-1
 when n is the initial size of the DisjointSet object.
@@ -41,7 +41,10 @@ class DisjointSet{
 		unsigned int findSet( unsigned int node);
 		/** Joins togehter two sets given by arbitrary elements of the sets.*/
 		void unionSets(unsigned int nodeOutOfSet1, unsigned int nodeOutOfSet2){ 
-			linkSets_( findSet(nodeOutOfSet1),findSet(nodeOutOfSet2) );
+			unsigned int set1 = findSet(nodeOutOfSet1); 
+			unsigned int set2 = findSet(nodeOutOfSet2); 
+			if(set1==set2) return;
+			linkSets_( set1, set2 );
 			--size_;
 		}
 	 

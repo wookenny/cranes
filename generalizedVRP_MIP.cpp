@@ -54,7 +54,7 @@ Tours generalizedVRP_MIP::solve(){
 		}else{
 			//parse solution
 			//return empty tour id only an LP relaxation was solved
-			if(LP_relaxation_){
+			if(LP_relaxation_ and inst_.num_jobs()<10){
 				print_LP_solution_();
 				return tours;
 			}	
@@ -80,8 +80,9 @@ void generalizedVRP_MIP::print_LP_solution_() const{
 	for(auto& kv : v_){ 
 		assert( kv.first == vars_[kv.second].getName());
 		double value = cplex_.getValue(vars_[kv.second]);
-		if(value > 0.01 or value < -0.01)
-			cout<< kv.first <<" = "<< value <<endl;	
+		if(value > 0.01 or value < -0.01){
+			cout<< kv.first <<" = "<< value <<endl;			
+		}	
 	}
 	cout<<endl;
 }

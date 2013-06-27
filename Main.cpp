@@ -13,6 +13,7 @@
 #include "independent_TSP_MIP.h"
 #include "Instance.h"
 #include "SingleCraneTourApproximation.h"
+#include "InsertionHeuristic.h"
 
 using namespace std;
 
@@ -56,7 +57,7 @@ void test_mtsp_mip(vector<string> argv){
 	int seed = 0;
 	bool collisions = false;
 	bool lp_relax = false;
-	int mip_type =0;
+	int mip_type = 0;
 	
 	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
 			{"1",true},{"yes",true},{"f",false},{"false",false},
@@ -90,7 +91,7 @@ void test_mtsp_mip(vector<string> argv){
 	else
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
 	
-	mip_ptr->set_debug(true);
+	mip_ptr->set_debug(false);
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
 		
@@ -100,12 +101,33 @@ void test_mtsp_mip(vector<string> argv){
 	cout<<boolalpha;
 	cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
 	cout<<"Makespan: "<<i.makespan(t)<<endl;
-	cout<<t<<endl;
+	//cout<<t<<endl;
 }
 
 
+void insertion_heuristic(std::vector<std::string> argv){
+	if (argv.size()<2 || argv.size()>3){
+		cout<<"insertion [k] [n] <s>\n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. Default seed is 0."<<endl;
+		return;
+	}
+	
+	unsigned int seed = 0;
+	Instance i;
+	i.set_num_vehicles(stoi(argv[0]));
+	if(argv.size()==3)
+		seed = stoi(argv[2]);
+	i.generate_random_depots(0,4,0,0,seed);
+	i.generate_random_jobs(stoi(argv[1]),0,4,0,0,seed);
+	
+	i.debug(true);
+	cout<< i <<endl;
+	InsertionHeuristic heur;
+	cout<<"\n"<< heur(i) <<endl;
+
+}
 
 
+/*
 void test_mip(vector<string> argv){
 	if (argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
 		cout<<"test_mip <n> <k> <coll.> <LP> <seed>\n Runs some tests on the mip formulation!";
@@ -160,6 +182,8 @@ void test_mip(vector<string> argv){
 	cout<<"Makespan: "<<i.makespan(t)<<endl;
 	cout<<t<<endl;
 }
+*/
+
 
 //TODO: REMOVE THIS AFTER IMPLEMENTING A CHRISTOFIDES-LIKE Heuristic 
 void test(std::vector<std::string> argv){

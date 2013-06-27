@@ -36,6 +36,7 @@ DisjointSet::DisjointSet( const std::vector<int> &permutation  ){
 }
 		
 unsigned int DisjointSet::findSet( unsigned int node){ 
+	assert(parent_.size() > node and "Parameter node is to big to be in this DS");
 	//notice that each findSet operation sets the parent pointer of each node directly to their root via recursion 
 	if( node != parent_.at(node) )
 		parent_.at(node) = findSet(parent_.at(node));
