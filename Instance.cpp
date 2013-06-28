@@ -151,6 +151,7 @@ bool Instance::verify(Tours& t) const{
 			if(debug_) cout<<"Job "<<*j<<" missing!"<<endl;
 			return false;
 		}
+
 	//2. no other job included?
 	//easy check, because no job can be in the tour twice and therefore we only
 	//need to check the number
@@ -159,7 +160,7 @@ bool Instance::verify(Tours& t) const{
 					<<" found "<<t.num_jobs()<<endl;
 		return false;
 	}
-		
+
 	//3. every tour consistent in itself?
 	for(uint i=0; i<t.num_tours(); ++i){
 		if(t[i].size()==0)
@@ -194,7 +195,7 @@ bool Instance::verify(Tours& t) const{
 		}
 		
 	}
-	
+
 	//4. all tours collision-free
 	//check the direction induced by the four points of two jobs
 	// valid if: not contradicting, ok with assigned vehicles
@@ -215,10 +216,10 @@ bool Instance::verify(Tours& t) const{
 			}
 		}
 	}
-	
+
 	//job with same vehicle: no direction enforced at all
 	for(uint v=0; v<t.num_tours(); ++v){
-		for(uint i=0; i<t.num_jobs(v)-1; ++i){
+		for(uint i=0; i+1< t.num_jobs(v); ++i){
 			for(uint j=i+1; j<t.num_jobs(v); ++j){
 				//job have to be reachable(0), every other thing is BAD!
 				if( Job::getOrdering(t[v][i],t[v][j]) != 0){
@@ -234,7 +235,6 @@ bool Instance::verify(Tours& t) const{
 	 	}	
 	 }
 	
-	
 	//no error found => return true!
 	return true;
 }
@@ -245,8 +245,8 @@ Calculates the makespan for a given solution.
 */
 double Instance::makespan(Tours& t) const{
 	//tours should be valid!
-	//assert(verify(t));
-	t.sort_jobs();
+	assert(verify(t));
+	//t.sort_jobs();
 	
 	//find latest return of a job
 	double makespan = 0;

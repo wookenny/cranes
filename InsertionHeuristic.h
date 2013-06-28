@@ -4,7 +4,10 @@
 
 #include <vector>
 #include <thread>
+#include <tuple>
 
+
+typedef std::tuple<int,int> interval;
 class Tours;
 
 /**
@@ -17,7 +20,7 @@ class InsertionHeuristic{
 
 	public:
 		Tours operator()(const Instance& inst, const std::vector<uint>&, 
-											   const std::vector<uint>&S) const;
+											   const std::vector<uint>&) const;
 		Tours operator()(const Instance& inst) const;
 		
 		InsertionHeuristic():InsertionHeuristic(false){}
@@ -26,4 +29,20 @@ class InsertionHeuristic{
 	private:
 		bool local_search_;
 		uint earliest_startingtime_(const Instance&, const Tours&, const Job&, uint v) const;
+		
+		
+		bool get_best_neighbour(const Instance& inst, const std::vector<uint>&, 
+								const std::vector<uint>&, Tours& t) const;
+		void insertion_helper(const Instance& inst, const std::vector<uint> &, 
+					const std::vector<uint> &assign, Tours &tour) const;
+	
+		
+		inline void intervalsForLeftCone(const scheduledJob& , 
+							const Job& , std::vector<interval>&) const;
+		inline void intervalsForRightCone(const scheduledJob& , 
+							const Job& , std::vector<interval>&) const;
+		
+		//Switch to enable debug inforamtion. 
+		//If it is false, code can be removed during compilation.
+		static constexpr bool debug_ = false;	
 };

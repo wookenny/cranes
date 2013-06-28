@@ -3,102 +3,43 @@
 
 #include <random>
 #include <thread>
-#include <tuple>
+
 
 using namespace std;
 
-typedef tuple<int,int> interval;
-	
-//some helper functions, forming all the needed intervals for a single 
-//job pair
+//TODO:
+/*NEXT: local search + parallel methods . aka: threads to evaluate more than 
+one perm/assignment at the same time, 
+maybe local search
 
-inline void add_int_left(vector<interval>& events, int job_x, int left_job_x, int time, int shift_time){
-	int diff_x = left_job_x-job_x;
-	cout<< diff_x<<endl;
-	if( diff_x > 0 ){
-	
-		cout<< "["<<time-diff_x<<" - "<<time+diff_x<<"]"<<endl;
-		events.push_back( make_tuple(time - diff_x - shift_time,+1) );
-		events.push_back( make_tuple(time + diff_x - shift_time,-1) );
-	}	
-}
+Can I use some SSE/AVX parallization tricks?
 
-inline void add_int_right(vector<interval>& events, int right_job_x, int job_x, int time, int shift_time){
-	int diff_x = job_x - right_job_x;
-	cout<< diff_x<<endl;
-	if( diff_x > 0 ){
-	
-		cout<< "["<<time-diff_x<<" - "<<time+diff_x<<"]"<<endl;
-		events.push_back( make_tuple(time - diff_x - shift_time,+1) );
-		events.push_back( make_tuple(time + diff_x - shift_time,-1) );
-	}	
-}
+*/
 
-//ERROR: wenn ich für den neuen Job das ende betrachte, muss ich das
-//interval um length() shiften! 
-
-void add_intervals_left_jobs(vector<interval>& events,
-							const Job& job, const scheduledJob& leftJob)
-{
-	//interval: [t_l - (x-x_l), t_l + (x-x_l)] for all 4 pairs of alpha/beta
-	int time = get<1>(leftJob); 
-	const Job* left = get<0>(leftJob); 
-	
-	//alpha-alpha
-	add_int_left(events, job.alpha()[0], left->alpha()[0],time,0);
-
-	//alpha-beta
-	add_int_left(events, job.alpha()[0], left->beta()[0],time+left->length(),0);
-	
-	//beta-alpha
-	add_int_left(events, job.beta()[0], left->alpha()[0],time,job.length());
-
-	//beta-beta
-	add_int_left(events, job.beta()[0], left->beta()[0],time+left->length(),job.length());	
-}
-
-
-void add_intervals_right_jobs(vector<interval>& events,
-							const Job& job, const scheduledJob& rightJob)
-{
-	//interval: [t_r - (x_r-x), t_l + (x_r-x)] for all 4 pairs of alpha/beta
-	int time = get<1>(rightJob); 
-	const Job* right = get<0>(rightJob); 
-
-	//alpha-alpha
-	add_int_right(events, right->alpha()[0], job.alpha()[0],time,0);
-
-	//alpha-beta
-	add_int_right(events, right->alpha()[0], job.beta()[0],time+right->length(),job.length());
-	
-	//beta-alpha
-	add_int_right(events, right->beta()[0], job.alpha()[0],time,0);
-
-	//beta-beta
-	add_int_right(events, right->beta()[0], job.beta()[0],time+right->length(),job.length());	
-}
 
 Tours InsertionHeuristic::operator()(const Instance& inst, 
 					const vector<uint> &perm, const vector<uint> &assign) const
 {
 	assert( perm.size() == inst.num_jobs() );
 	assert( assign.size() == inst.num_jobs());
+	
 	Tours tour(inst.num_vehicles());
 	
 	//insert every job at the first, collision-free position
-	for(uint i=0; i < inst.num_jobs();++i){
-		const Job& job = inst[perm[i]];
-		int time = earliest_startingtime_(inst,tour,job,assign[i]);	
-		cout<<"added job "<<job<<" @ "<< time <<" to vehicle "<<assign[i] <<endl;
+	insertion_helper(inst, perm,assign,tour);
+	
+	if(local_search_){
+		Tours t(inst.num_vehicles());
+		bool decrease = get_best_neighbour(inst, perm, assign, t); 
+		while(decrease){
+			t = Tours(inst.num_vehicles());		
+			decrease = get_best_neighbour(inst, perm, assign, t); 
+		}
+		tour = t;	
+	}	
 		
-		tour.add_job(&job, time, assign[i]);
-		cout<<"-------------------------------------"<<endl;
-	}
-	
-	
-	
-	cout<<tour<<endl;
-	assert(inst.verify(tour));
+	if(debug_) cout<<tour<<endl;
+
 	return tour;
 }
 
@@ -124,14 +65,59 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	return operator()(inst, perm, assign);
 }
 
-//TODO:
-/*NEXT: local search + parallel methods . aka: threads to evaluate more than 
-one perm/assignment at the same time, 
-maybe local search
 
-Can I use some SSE/AVX parallization tricks?
+bool InsertionHeuristic::get_best_neighbour(const Instance& inst, 
+		const std::vector<uint> &perm, const std::vector<uint> &assign, Tours& t) const
+{
+	bool better_tour = false;
+	
+	//NEED a reference for best tour!
+	Tours original(inst.num_vehicles());
+	insertion_helper(inst, perm,assign,original);
+	int makespan = inst.makespan(original);
+	
+	//copy assigment ad permutation to alter them
+	vector<uint> p = perm;
+	vector<uint> a = assign;
+	
+	// - swap assign[i] to something else
+	for(int i = 0; i<inst.num_jobs(); ++i){
+		//0 to v-1
+		for(int v = 0; v < assign[i]; ++v){
+			a[i] = v;
+			//TODO: build tour and compare makespan			
+		}
+			
+		//v+1 to k-1
+		for(int v = assign[i]+1; v < inst.num_vehicles(); ++v){
+			a[i] = v;
+			//TODO: build tour and compare makespan			
+		}
+		//reset position a[i]
+		a[i] = assign[i];
+	}
+	
+	
+	// - swap perm[i] with perm[j] 
 
-*/
+
+	return better_tour;							
+}
+
+void InsertionHeuristic::insertion_helper(const Instance& inst, const vector<uint> &perm, 			const vector<uint> &assign, Tours &tour) const
+{	
+	//insert every job at the first, collision-free position
+	for(uint i=0; i < inst.num_jobs();++i){
+		const Job& job = inst[perm[i]];
+		int time = earliest_startingtime_(inst,tour,job,assign[i]);	
+		if(debug_) 
+			cout<<"added job "<<job<<" @ "<< time <<" to vehicle "<<assign[i] <<endl;
+		
+		tour.add_job(&job, time, assign[i]);
+		if(debug_) 
+			cout<<"-------------------------------------"<<endl;
+	}
+}
 
 uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 				const Tours& tours,	const Job& job, uint v) const
@@ -149,9 +135,9 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 		time = dist_inf( inst.get_depot(v), job.get_alpha());
 	}
 	
-	cout<<" min. time: "<<time<<endl;
-	//IF there is a problem -> increase the starting time!
-	
+	if(debug_) 
+		cout<<" min. time: "<<time<<endl;
+
 	/**
 	Algorithm:   
 		- create all forbidden intervals 
@@ -164,30 +150,22 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 		  	search
 	**/
 	
-
-	auto smaller = [] (const interval& i, const interval& j){
-		if( get<0>(i) < get<1>(j) )  
-			return true;
-		if( get<0>(j) < get<1>(i) )
-			return false;
-		return (get<1>(i) < get<1>(i));
-	};
-	
-	
 	//create all intervals
 	vector<interval> events;	
-	cout<<"jobs on the left"<<endl;
+	if(debug_)  cout<<"jobs on smaller vehicles than job"<<endl;
 	for(uint i = 0; i <= v; ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
-			add_intervals_left_jobs(events,job,tours[i][j]);
-	cout<<"jobs on the right"<<endl;	
+			//if tour[i][j] is right, than job can not be in the right cone of it!
+			intervalsForLeftCone(tours[i][j], job, events);
+	if(debug_)  cout<<"jobs on bigger vehicles than job"<<endl;	
 	for(uint i = v; i < tours.num_tours(); ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
-			add_intervals_right_jobs(events,job,tours[i][j]);
+			//if tour[i][j] is left, than job can not be in the left cone of it!
+			intervalsForRightCone(tours[i][j], job, events);
 	
 	
-	//sort
-	sort(events.begin(),events.end(),smaller);	
+	//sort -> using lexicographic order
+	sort(events.begin(),events.end());	
 	
 	//find first pos with sum == 0
 	int sum = 0;
@@ -201,5 +179,88 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 	}
 		
 	return time;
+}
+
+
+void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, const Job& job, vector<interval>& events) const
+{
+
+	//interval: [t_r - (x_r-x), t_l + (x_r-x)] for all 4 pairs of alpha/beta
+	int time = get<1>(rightJob); 
+	const Job* right = get<0>(rightJob); 
+
+	//build both tuples
+	tuple<int,int> cones[2];
+	cones[0] = make_tuple(time, right->alpha()[0]);
+	cones[1] = make_tuple(time + right->length(), right->beta()[0]);
+
+	int cone_x, cone_t, diff_x;	
+
+	//j_alpha in a cone1/2?
+	for( auto cone : cones){
+		tie(cone_t, cone_x) = cone;
+		diff_x = job.alpha()[0] - cone_x;
+		if(diff_x > 0){
+			if(debug_) 
+				cout<< "["<< cone_t - diff_x <<" - "<< cone_t + diff_x<<"]"<<endl;
+			events.push_back( make_tuple(cone_t - diff_x, +1) );
+			events.push_back( make_tuple(cone_t + diff_x, -1) );
+		}	
+	}
+		
+	//j_beta in a cone 1/2?
+	//=> shift interval with length of job backwards in time
+	for( auto cone : cones){
+		tie(cone_t, cone_x) = cone;
+		diff_x = job.beta()[0] - cone_x;
+		if(diff_x > 0){
+			if(debug_) 
+				cout<< "["<< cone_t - diff_x- job.length() 
+				<<" - "<< cone_t + diff_x- job.length()<<"]"<<endl;
+			events.push_back( make_tuple(cone_t - diff_x - job.length(), +1) );
+			events.push_back( make_tuple(cone_t + diff_x - job.length(), -1) );
+		}
+	}
+}
+
+void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob, const Job& job, vector<interval>& events) const
+{
+
+	//interval: [t_l - (x-x_l), t_l + (x-x_l)] for all 4 pairs of alpha/beta
+	int time = get<1>(leftJob); 
+	const Job* left = get<0>(leftJob); 
+
+	//build both tuples
+	tuple<int,int> cones[2];
+	cones[0] = make_tuple(time, left->alpha()[0]);
+	cones[1] = make_tuple(time + left->length(), left->beta()[0]);
+
+	int cone_x, cone_t, diff_x;	
+
+	//j_alpha in a cone1/2?
+	for( auto cone : cones){
+		tie(cone_t, cone_x) = cone;
+		diff_x = cone_x - job.alpha()[0];
+		if(diff_x > 0){
+			if(debug_) 
+				cout<< "["<< cone_t - diff_x <<" - "<< cone_t + diff_x<<"]"<<endl;
+			events.push_back( make_tuple(cone_t - diff_x, +1) );
+			events.push_back( make_tuple(cone_t + diff_x, -1) );
+		}	
+	}
+		
+	//j_beta in a cone 1/2?
+	//=> shift interval with length of job backwards in time
+	for( auto cone : cones){
+		tie(cone_t, cone_x) = cone;
+		diff_x = cone_x - job.beta()[0];
+		if(diff_x > 0){
+			if(debug_) 
+				cout<< "["<< cone_t - diff_x- job.length() 
+				<<" - "<< cone_t + diff_x- job.length()<<"]"<<endl;
+			events.push_back( make_tuple(cone_t - diff_x - job.length(), +1) );
+			events.push_back( make_tuple(cone_t + diff_x - job.length(), -1) );
+		}
+	}
 }
 

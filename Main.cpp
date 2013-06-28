@@ -7,7 +7,6 @@
 #include <ctime>
 #include <chrono>
 
-
 #include "generalizedVRP_MIP.h"
 #include "m_TSP_MIP.h"
 #include "independent_TSP_MIP.h"
@@ -116,13 +115,15 @@ void insertion_heuristic(std::vector<std::string> argv){
 	i.set_num_vehicles(stoi(argv[0]));
 	if(argv.size()==3)
 		seed = stoi(argv[2]);
-	i.generate_random_depots(0,4,0,0,seed);
-	i.generate_random_jobs(stoi(argv[1]),0,4,0,0,seed);
+	i.generate_random_depots(0,100,0,20,seed);
+	i.generate_random_jobs(stoi(argv[1]),0,100,0,20,seed);
 	
-	i.debug(true);
+	i.debug(false);
 	cout<< i <<endl;
 	InsertionHeuristic heur;
-	cout<<"\n"<< heur(i) <<endl;
+		
+	auto sol = heur(i);
+	cout<<"\n"<< sol <<endl;
 
 }
 
