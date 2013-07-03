@@ -24,15 +24,17 @@ class InsertionHeuristic{
 		Tours operator()(const Instance& inst) const;
 		
 		InsertionHeuristic():InsertionHeuristic(false){}
-		InsertionHeuristic(bool ls):local_search_(ls){}
+		InsertionHeuristic(bool ls):local_search_(ls),runs_(1){}
+		void set_runs(uint r){runs_ = r;}
 		
 	private:
 		bool local_search_;
+		uint runs_;
 		uint earliest_startingtime_(const Instance&, const Tours&, const Job&, uint v) const;
 		
 		
-		bool get_best_neighbour(const Instance& inst, const std::vector<uint>&, 
-								const std::vector<uint>&, Tours& t) const;
+		bool get_better_neighbour(const Instance& inst, std::vector<uint>&, 
+								std::vector<uint>&, Tours& t) const;
 		void insertion_helper(const Instance& inst, const std::vector<uint> &, 
 					const std::vector<uint> &assign, Tours &tour) const;
 	

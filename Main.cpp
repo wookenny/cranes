@@ -84,6 +84,7 @@ void test_mtsp_mip(vector<string> argv){
 		i.add_depotposition(array<int, 2>{{0,0}});
 
 	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
+			
 	unique_ptr<generalizedVRP_MIP> mip_ptr;
 	if(1==mip_type) //remember: explicit std::move here because of rvalue
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
@@ -100,27 +101,51 @@ void test_mtsp_mip(vector<string> argv){
 	cout<<boolalpha;
 	cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
 	cout<<"Makespan: "<<i.makespan(t)<<endl;
-	//cout<<t<<endl;
+	cout<<t<<endl;
+
+	cout<<"heuristic solution:"<<endl;
+	InsertionHeuristic heur(true);
+	heur.set_runs(20);
+	auto sol = heur(i); 
+	cout<<"MIP-Solution valid: "<<i.verify(sol)<<endl;
+	cout<<"Makespan: "<<i.makespan(sol)<<endl;
+	cout<<sol<<endl;
+
+	if(not i.verify(sol) or i.makespan(sol) < i.makespan(t))
+		cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. MIP WORSE THAN HEURISTIC!"<<endl;
 }
 
 
+
+
+
 void insertion_heuristic(std::vector<std::string> argv){
-	if (argv.size()<2 || argv.size()>3){
-		cout<<"insertion [k] [n] <s>\n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. Default seed is 0."<<endl;
+	if (argv.size()<2 || argv.size()>5){
+		cout<<"insertion [k] [n] <s> <ls> <runs>\n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false"<<endl;
 		return;
 	}
 	
 	unsigned int seed = 0;
 	Instance i;
 	i.set_num_vehicles(stoi(argv[0]));
-	if(argv.size()==3)
+	if(argv.size()>2)
 		seed = stoi(argv[2]);
 	i.generate_random_depots(0,100,0,20,seed);
 	i.generate_random_jobs(stoi(argv[1]),0,100,0,20,seed);
 	
+	bool local_search = false;
+	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
+			{"1",true},{"yes",true},{"f",false},{"false",false},
+			{"0",false},{"no",false},{"y",true},{"n",false} };
+	if (argv.size()>3)
+		if(string_to_bool.find(argv[3])!=string_to_bool.end())
+			local_search = string_to_bool[argv[3]];			
+		
 	i.debug(false);
 	cout<< i <<endl;
-	InsertionHeuristic heur;
+	InsertionHeuristic heur(local_search);
+	if (argv.size()>4)	
+		heur.set_runs(stoi(argv[4]));
 		
 	auto sol = heur(i);
 	cout<<"\n"<< sol <<endl;

@@ -16,7 +16,7 @@ void m_TSP_MIP::build_variables_(){
 	//additional depot and 
 	string name = "makespan";
 	v_[name] = counter_++;
-	vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
+	vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Int, name.c_str() ) );
 
 	//time variables
 	for(uint j = 1; j <= inst_.num_jobs()+inst_.num_vehicles();++j){

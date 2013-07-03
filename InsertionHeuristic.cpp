@@ -3,7 +3,7 @@
 
 #include <random>
 #include <thread>
-
+#include <utility>
 
 using namespace std;
 
@@ -24,19 +24,22 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	assert( assign.size() == inst.num_jobs());
 	
 	Tours tour(inst.num_vehicles());
+
+	vector<uint> p = perm;
+	vector<uint> a = assign;
 	
-	//insert every job at the first, collision-free position
-	insertion_helper(inst, perm,assign,tour);
 	
 	if(local_search_){
 		Tours t(inst.num_vehicles());
-		bool decrease = get_best_neighbour(inst, perm, assign, t); 
-		while(decrease){
-			t = Tours(inst.num_vehicles());		
-			decrease = get_best_neighbour(inst, perm, assign, t); 
-		}
-		tour = t;	
+		bool decrease = get_better_neighbour(inst, p, a, t); 
+		while(decrease)	
+			 decrease = get_better_neighbour(inst, p, a, t); 
+
+		insertion_helper(inst, p,a,tour);	
+	}else{
+		insertion_helper(inst, p,a,tour);
 	}	
+		
 		
 	if(debug_) cout<<tour<<endl;
 
@@ -44,9 +47,11 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 }
 
 Tours InsertionHeuristic::operator()(const Instance& inst) const{
+	
+
 	//randomness
 	mt19937 rng; 
-	//rng.seed(time(0));
+	rng.seed(time(0));
 
 	uint n = inst.num_jobs();
 	//get some random permutation
@@ -54,54 +59,114 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	perm.reserve(n);
 	for (uint i=0; i<n; ++i) 
 		perm.push_back(i);
-	random_shuffle(perm.begin(),perm.end()/*,rng*/);
-	
-	//get some random assignment
-	vector<uint> assign;
+	vector<uint> assign;	
 	uniform_int_distribution<uint> uint_dist(0,inst.num_vehicles()-1);
-	for (uint i=0; i<n; ++i) 
-		assign.push_back( uint_dist(rng) );
 	
-	return operator()(inst, perm, assign);
+	Tours solution(inst.num_vehicles());
+	uint runs = 0;
+	while(runs < runs_){
+		//randomize permutation and assignment
+		random_shuffle(perm.begin(),perm.end());
+		assign.clear();
+		for (uint i=0; i<n; ++i) 
+			assign.push_back( uint_dist(rng) );
+		
+		Tours t = operator()(inst, perm, assign);
+		if(0==runs or  inst.makespan(t)<inst.makespan(solution))
+			solution = t;
+		++runs;
+		//cout<<"-------------------" <<endl;
+	}
+	//cout<< "best: "<<inst.makespan(solution)<<endl;	
+	return solution;
 }
 
 
-bool InsertionHeuristic::get_best_neighbour(const Instance& inst, 
-		const std::vector<uint> &perm, const std::vector<uint> &assign, Tours& t) const
+bool InsertionHeuristic::get_better_neighbour(const Instance& inst, 
+		std::vector<uint> &perm, std::vector<uint> &assign, Tours& t) const
 {
 	bool better_tour = false;
 	
-	//NEED a reference for best tour!
-	Tours original(inst.num_vehicles());
-	insertion_helper(inst, perm,assign,original);
-	int makespan = inst.makespan(original);
+	//TODO: parallelize this method
+	
+	//need a reference for best tour!
+	Tours best_tour(inst.num_vehicles());
+	insertion_helper(inst, perm,assign,best_tour);
+	int makespan = inst.makespan(best_tour);
 	
 	//copy assigment ad permutation to alter them
-	vector<uint> p = perm;
-	vector<uint> a = assign;
 	
+	//cout<< "local search: "<<makespan<<endl;
+	
+	Tours tour(inst.num_vehicles());
 	// - swap assign[i] to something else
-	for(int i = 0; i<inst.num_jobs(); ++i){
+	for(uint i = 0; i<inst.num_jobs(); ++i){
+		uint tmp = assign[i];
+	
 		//0 to v-1
-		for(int v = 0; v < assign[i]; ++v){
-			a[i] = v;
-			//TODO: build tour and compare makespan			
+		for(uint v = 0; v < tmp; ++v){
+			assign[i] = v;
+			//build tour and compare makespan
+			tour.clear();
+			insertion_helper(inst, perm,assign,tour);
+			int new_makespan = inst.makespan(tour);
+			if(new_makespan < makespan){
+				makespan = new_makespan;
+		
+				//return !
+				t = tour;
+				return true;				
+			}
+			
 		}
 			
 		//v+1 to k-1
-		for(int v = assign[i]+1; v < inst.num_vehicles(); ++v){
-			a[i] = v;
-			//TODO: build tour and compare makespan			
+		for(uint v = tmp+1; v < inst.num_vehicles(); ++v){
+			assign[i] = v;
+			//build tour and compare makespan	
+			tour.clear();
+			insertion_helper(inst, perm,assign,tour);
+			int new_makespan = inst.makespan(tour);
+			if(new_makespan < makespan){
+				makespan = new_makespan;
+				return true;
+			}		
 		}
 		//reset position a[i]
-		a[i] = assign[i];
+		assign[i] = tmp;
 	}
 	
 	
 	// - swap perm[i] with perm[j] 
+	//TODO: implement this neighborhood!
+	for(uint i = 0; i<inst.num_jobs(); ++i){
+		for(uint j = i+1; j<inst.num_jobs(); ++j){
+			swap(perm[i],perm[j]);
+					
+			//build tour and compare makespan	
+			tour.clear();
+			insertion_helper(inst, perm,assign,tour);
+			int new_makespan = inst.makespan(tour);
+			if(new_makespan < makespan){
+				makespan = new_makespan;
+				return true;
+			}		
+			//reswap:
+			swap(perm[i],perm[j]);
+		}
+	}
+	
+	
+	
+	//copy tour to variable t
+	if(better_tour){
+		t.clear();
+		for(uint v=0; v<inst.num_vehicles();++v)
+			for(auto job: best_tour[v])
+				t.add_job(job,v);
+	}	
 
-
-	return better_tour;							
+	return false;							
 }
 
 void InsertionHeuristic::insertion_helper(const Instance& inst, const vector<uint> &perm, 			const vector<uint> &assign, Tours &tour) const

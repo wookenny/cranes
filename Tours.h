@@ -55,7 +55,7 @@ class Tours{
 		
 		void clear(){ 
 			_job_map.clear();
-			for(auto t: _tours) t.clear(); 
+			for(auto& t: _tours) t.clear(); 
 		}
 		
 		bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
@@ -68,6 +68,10 @@ class Tours{
 				assert(!contains(job)); 
 				_job_map.insert(job); 
         }
+				
+		void add_job(const scheduledJob& job, int vehicle){ 
+			add_job(std::get<0>(job),std::get<1>(job),vehicle);
+        }		
 				
 
 		void sort_jobs(){for(unsigned int i=0; i<_tours.size(); ++i) _sort(i);}
