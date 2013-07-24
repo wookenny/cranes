@@ -28,6 +28,11 @@ class Instance{
 		Instance(unsigned int i): num_vehicles_(i),debug_(false){}
  		Instance(std::string file);	
 		
+		
+		/** Writes the instance to a 2DVS File with the given name. A given comment will be written at the end.
+		No special format for the commentstring needed.**/
+		void writeToFile(std::string filename, std::string comments = "") const;
+		
 		//simple setter, getter and initial.
 		std::string to_string() const;
 		
@@ -50,6 +55,7 @@ class Instance{
 		void generate_random_jobs(int n, int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
 		//generates depot positions such that it fits to the number of depots
 		void generate_random_depots(int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
+		
 		
 		//verification for tours
 		bool   verify(Tours& t) const;

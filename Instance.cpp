@@ -1,8 +1,13 @@
 #include "Instance.h"
 
 #include <boost/regex.hpp>
+#include <boost/algorithm/string/regex.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp> //used for the time things
+#include <boost/date_time/gregorian/gregorian.hpp>   //used for easier date manipulation
 #include <fstream>
 #include <random>
+#include <chrono>
+#include <ctime>
 
 #include "MIP.h"
 #include "Job.h"
@@ -12,8 +17,10 @@ const boost::regex comment("\\s*//.*"); //line starts with // after whitespace
 const boost::regex vehicles("\\s*NUM_CRANES\\s*=\\s*(\\d+)"); //number of vehicles, captures it
 const boost::regex depot_start("\\s*START_DEPOTS\\s*=\\s*(.*)");//fist match this
 const boost::regex successive_depot("\\s*\\(([^;]*);([^\\)]+)\\)[^\\(]*(.*)");//extract each depot as single call
-const boost::regex forward_job("\\s*\\(([^;]+);([^\\)]+)\\)\\s*->\\s*\\(([^;]+);([^\\)]+)\\)\\s*"); 
-const boost::regex backward_job("\\s*\\(([^;]+);([^\\)]+)\\)\\s*<-\\s*\\(([^;]+);([^\\)]+)\\)\\s*");
+//additional number in front of job as non-capturing group ->
+// "(?:\\[[0-9]+\\]:){0,1}\\s*"
+const boost::regex forward_job("(?:\\[[0-9]+\\]:){0,1}\\s*\\(([^;]+);([^\\)]+)\\)\\s*->\\s*\\(([^;]+);([^\\)]+)\\)\\s*"); 
+const boost::regex backward_job("(?:\\[[0-9]+\\]:){0,1}\\s*\\(([^;]+);([^\\)]+)\\)\\s*<-\\s*\\(([^;]+);([^\\)]+)\\)\\s*");
 
 using namespace std;	
 
@@ -292,7 +299,52 @@ unsigned int Instance::get_upper_bound() const{
 	return length;
 }
 
+void setNiceDayFormat(){
+	using namespace boost::posix_time;
+	time_facet* facet(new time_facet("%R, %d.%m.%Y"));
+	std::cout.imbue(std::locale(std::cout.getloc(), facet));
+}
 
+void Instance::writeToFile(std::string filename, std::string comments) const{
+	//open file
+	std::ofstream file;
+	file.open(filename.c_str());
+	if( !file ) {
+		std::cerr << "Error writing instance to "<<filename<<" ." << std::endl;
+		return;	
+	}	
+	//write instance
+	using namespace boost::posix_time;
+	using namespace boost::gregorian;
+	setNiceDayFormat();
+	
+	file<<"//this file was written automaticaly\n//date: "
+		<< second_clock::local_time() << endl;
+	//write comments
+	if(comments!=""){
+		std::vector<std::string> lines;
+		boost::split_regex( lines, comments, boost::regex( "\n" ) );
+		for(const auto &line: lines){
+			file<<"//"<<line<<"\n";
+		}
+		file<<std::endl;
+	}
+
+	int cranes = num_vehicles();
+
+	file<< "NUM_CRANES\t=\t "<< cranes<<std::endl;
+	file<< "START_DEPOTS\t=\t" ;
+	for(auto &d: depotPositions_)
+		file<<"("+std::to_string(d[0])+"; "+std::to_string(d[1])+") ";
+	//write all jobs
+	file<< "\n//Jobs:"<<std::endl;
+	//write the jobs ordered in a nnice direction
+	for(const auto &job: jobs_)
+				file<< job <<endl;
+
+	file<<"\n";
+	file.close();
+}
 
 
 		

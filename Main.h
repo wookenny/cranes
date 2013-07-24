@@ -16,7 +16,7 @@ void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
 void test_mtsp_mip(std::vector<std::string> argv);
 void insertion_heuristic(std::vector<std::string> argv);
-
+void laser(std::vector<std::string> argv);
 
 void test(std::vector<std::string> argv);
 
@@ -37,6 +37,7 @@ int main(int argc, char** argv){
 	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
 	functionDict["insertion"]	= &insertion_heuristic;
 	functionDict["test"] 	= &test;
+	functionDict["laser_format"] 	= &laser;
 	//at least one parameter must be given
 	if(argc < 2){
 		std::cout<<"No function given, try one of these:"<<std::endl;
@@ -61,9 +62,9 @@ int main(int argc, char** argv){
         	functionDict[method](arguments);
     	}catch(std::invalid_argument &){
 			std::cout<< "Given arguments are invalid for the choosen function. Exit." <<std::endl;
-		}catch(std::out_of_range &){
+		}catch(std::out_of_range &oor){
 			std::cout<<"The argument you have given it out of range for its type."<<std::endl;
-		
+		std::cout << oor.what() << std::endl;
 		}
 
 	}

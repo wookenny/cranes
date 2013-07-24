@@ -3,7 +3,12 @@
 #include <algorithm>
 #include <unordered_map>
 #include <memory>
+
+#if __clang__ 
+//no omp.h for clang++
+#else
 #include <omp.h>
+#endif
 #include <ctime>
 #include <chrono>
 
@@ -13,6 +18,7 @@
 #include "Instance.h"
 #include "SingleCraneTourApproximation.h"
 #include "InsertionHeuristic.h"
+#include "LaserSharingProblemWriter.h"
 
 using namespace std;
 
@@ -28,20 +34,29 @@ void read_instance(vector<string> argv){
 }
 
 void print_random_instance(vector<string> argv){
-	if (argv.size()<2 || argv.size()>3){
-		cout<<"random [k] [n] <s>\n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s. Default seed is 0."<<endl;
+	if (argv.size()<2 || argv.size()>4){
+		cout<<"random [k] [n] <s> <filename> \n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s. Default seed is 0.\n\twrites the instance to te given filename"<<endl;
 		return;
 	}
 	
 	unsigned int seed = 0;
 	Instance i;
 	i.set_num_vehicles(stoi(argv[0]));
-	if(argv.size()==3)
+	
+	if(argv.size()>2)
 		seed = stoi(argv[2]);
 	i.generate_random_depots(-100,100,-10,10,seed);
 	i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
 	
 	cout<< i <<endl;
+
+	if(argv.size()>3){
+		string filename(argv[3]);
+		if(filename.length()<5 or filename.substr(filename.length()-5,5) != ".2dvs")
+			filename += ".2dvs";
+		i.writeToFile(filename);
+		cout<<"Written instance to file "<<filename <<endl;
+	}
 }
 
 void test_mtsp_mip(vector<string> argv){
@@ -244,7 +259,11 @@ void test(std::vector<std::string> argv){
 		//i.add_depotposition(array<int, 2>{{  3,0}});
 		i.add_depotposition(array<int, 2>{{ 5,0}});
 
-		if(0==omp_get_thread_num()){
+		#if __clang__ 
+		if(true){
+		#else
+		if(0==omp_get_thread_num()){ //CLANG does not like this line	
+		#endif
 			auto time = duration_cast<std::chrono::seconds>(system_clock::now()- start).count();
 			double speed =  completed/(1.0*time);
 			auto remaining = (runs-completed)/speed;
@@ -271,4 +290,23 @@ void test(std::vector<std::string> argv){
 	cout<< "\n\nAll tested solutions ok."<<endl;
 }
 
+void laser(std::vector<std::string> argv){
+	if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"laser_format [2dvs] [lsp] <zipped>\n\tConverts a 2dvs file [2dvs] into a LaserSharinProblem file[lsp]. If a third argument is given, it will compess the outputfile as gz."<<endl;
+		return;
+	}
+	
+	string twoDVS = argv[0];
+	string lsp    = argv[1];
 
+	Instance i(twoDVS);
+	LaserSaringProblemWriter lsp_writer;
+	if(lsp_writer.write(i, lsp,argv.size()>2)){
+		cout<< "Written "<<twoDVS<<" instance as a laser saring problem to file "
+			<< lsp <<endl;
+	}else{
+		cout<< "ERROR: Couldn't write "<<twoDVS<<" instance as a laser saring problem to file "
+			<< lsp <<endl;
+	}
+	
+}
