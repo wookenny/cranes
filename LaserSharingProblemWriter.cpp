@@ -120,6 +120,7 @@ bool LaserSharingProblemWriter::write_file_unzipped
     for(int x = min_x; x <= max_x;++x){
     	for(int y = min_y; y <= max_y; ++y){
     		//add up to eight links to neighboring vertices
+    		//TODO: add them all
     		add_dist("G"+to_string(x)+"_"+to_string(y),
     				 "G"+to_string(x)+"_"+to_string(y), 0);	
     	}

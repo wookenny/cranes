@@ -18,6 +18,10 @@ and every pair of overlapping/touching edges counts as a forbidden pair.
 The whole structure is modeled as a grid with 8 edges for each vertex with a 
 travel time of 1 to each
 other point. 
+
+
+Big disadvantage: not allowed to stay on the same y-coordinate => worse solution 
+if the x-line is too short
 **/
 
 class LaserSharingProblemWriter{
