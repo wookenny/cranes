@@ -292,7 +292,7 @@ void test(std::vector<std::string> argv){
 
 void laser(std::vector<std::string> argv){
 	if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"laser_format [2dvs] [lsp] <zipped>\n\tConverts a 2dvs file [2dvs] into a LaserSharinProblem file[lsp]. If a third argument is given, it will compess the outputfile as gz."<<endl;
+		cout<<"laser_format [2dvs] [lsp] <zipped>\n\tConverts a 2dvs file [2dvs] into a LaserSharingProblem file[lsp]. If a third argument is given, it will compess the outputfile as gz."<<endl;
 		return;
 	}
 	
@@ -300,12 +300,12 @@ void laser(std::vector<std::string> argv){
 	string lsp    = argv[1];
 
 	Instance i(twoDVS);
-	LaserSaringProblemWriter lsp_writer;
+	LaserSharingProblemWriter lsp_writer;
 	if(lsp_writer.write(i, lsp,argv.size()>2)){
-		cout<< "Written "<<twoDVS<<" instance as a laser saring problem to file "
+		cout<< "Written "<<twoDVS<<" instance as a laser sharing problem to file "
 			<< lsp <<endl;
 	}else{
-		cout<< "ERROR: Couldn't write "<<twoDVS<<" instance as a laser saring problem to file "
+		cout<< "ERROR: Couldn't write "<<twoDVS<<" instance as a laser sharing problem to file "
 			<< lsp <<endl;
 	}
 	

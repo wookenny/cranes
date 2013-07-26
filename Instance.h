@@ -56,6 +56,8 @@ class Instance{
 		//generates depot positions such that it fits to the number of depots
 		void generate_random_depots(int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
 		
+		//get the smallest bounding box around the whole instance
+		std::array<int,4> get_bounding_box() const;
 		
 		//verification for tours
 		bool   verify(Tours& t) const;

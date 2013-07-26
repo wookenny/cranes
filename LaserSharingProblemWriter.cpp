@@ -1,6 +1,7 @@
 #include "LaserSharingProblemWriter.h"
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 
 
@@ -8,7 +9,7 @@ using namespace std;
 
 
 
-bool LaserSaringProblemWriter::write(const Instance &i, std::string filename, bool zipped) const{
+bool LaserSharingProblemWriter::write(const Instance &i, std::string filename, bool zipped) const{
 	filename = add_suffix(filename, DEFAULT_SUFFIX);
 
 	if( not zipped){
@@ -42,7 +43,7 @@ bool LaserSaringProblemWriter::write(const Instance &i, std::string filename, bo
 	return true;
 }	
 
-std::string LaserSaringProblemWriter::add_suffix(string s,string suffix) const{
+std::string LaserSharingProblemWriter::add_suffix(string s,string suffix) const{
 	if (suffix[0] !='.')
 		suffix = "."+suffix;
 		
@@ -58,10 +59,11 @@ std::string LaserSaringProblemWriter::add_suffix(string s,string suffix) const{
 }
 
 /*TODO: Fragen an Wolfgang
- - was ist die cycletime?
- - fixed direction = von a nach b?
+ - cycletime: makespan angeben, fürden die lösung gesucht wird
+ - jobs auf gridpunkte legen
+ - 
 */
-bool LaserSaringProblemWriter::write_file_unzipped
+bool LaserSharingProblemWriter::write_file_unzipped
 								(const Instance &inst, std::ofstream &out) const{
 								
 	out<< "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>"
@@ -84,9 +86,9 @@ bool LaserSaringProblemWriter::write_file_unzipped
     //jobs			
     out << "  <jobs>\n";
 	for(const auto &job: inst){
-		out << "    <job direction=\"free\" name=\"J"<<job.num()<<"\">\n";
+		out << "    <job direction=\"fixed\" name=\"J"<<job.num()<<"\">\n";
 		out << "      <aPos name=\"J"<<job.num()<<"A\"/>\n";
-		out << "      <bPos name=\"J"<<job.num()<<"A\"/>\n";
+		out << "      <bPos name=\"J"<<job.num()<<"B\"/>\n";
 		out << "      <robots>\n";
 		for(uint i=1;i<=inst.num_vehicles();++i)
 			out << "        <robot name=\"" << i << "\"/>\n";
@@ -97,6 +99,34 @@ bool LaserSaringProblemWriter::write_file_unzipped
 
     
     //write distances 
+     out << "  <distances>\n";
+    //drive-by jobs
+    
+    auto add_dist = [&] (string orig, string dest, double dist) { 
+    	for(uint i=1;i<=inst.num_vehicles();++i)
+    	out << "    <dist from=\""<< orig << "\" robot=\""<<i
+    		 <<"\" to=\""<< dest <<"\">"<< dist <<"</dist>"<<endl;
+    };
+    
+    out<<fixed<<setprecision(6)<<fixed;
+    for(const auto &job: inst)
+    	add_dist("J"+to_string(job.num())+"A","J"+to_string(job.num())+"B", 0);
+
+    //distances for the whole grid
+    auto bbox = inst.get_bounding_box();
+    int min_x, max_x, min_y, max_y;
+    min_x = bbox[0]; min_y = bbox[1];
+    max_x = bbox[2]; max_y = bbox[3];
+    for(int x = min_x; x <= max_x;++x){
+    	for(int y = min_y; y <= max_y; ++y){
+    		//add up to eight links to neighboring vertices
+    		add_dist("G"+to_string(x)+"_"+to_string(y),
+    				 "G"+to_string(x)+"_"+to_string(y), 0);	
+    	}
+    }
+    //0 distance edges for the connection between grid and jobs/depots
+    
+    out << "  </distances>\n\n";
         
     //write collisions
 
@@ -105,8 +135,8 @@ bool LaserSaringProblemWriter::write_file_unzipped
 }
 
 
-bool LaserSaringProblemWriter::write_file_zipped
-									(const Instance &inst, gzFile &outfile) const{
+bool LaserSharingProblemWriter::write_file_zipped
+									(const Instance &, gzFile &) const{
 	//TODO: string version with above thing, do not copy the code!
 	return true;
 }

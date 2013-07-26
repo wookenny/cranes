@@ -346,6 +346,27 @@ void Instance::writeToFile(std::string filename, std::string comments) const{
 	file.close();
 }
 
-
+array<int,4> Instance::get_bounding_box() const{
+	array<int,4> bbox;
+	bbox[0] = bbox[2] = depotPositions_[0][0];//x coords
+	bbox[1] = bbox[3] = depotPositions_[0][0];//y coords
+	
+	//for all jobs, for all depots, save min/max coordinates
+	for(auto &job: *this){
+		bbox[0] = min(bbox[0],job.alpha()[0]); bbox[0] = min(bbox[0],job.beta()[0]);
+		bbox[1] = min(bbox[1],job.alpha()[1]); bbox[1] = min(bbox[1],job.beta()[1]);
+		bbox[2] = max(bbox[2],job.alpha()[0]); bbox[2] = max(bbox[2],job.beta()[0]);
+		bbox[3] = max(bbox[3],job.alpha()[1]); bbox[3] = max(bbox[3],job.beta()[1]);
+	}
+	
+	//all remainign depots
+	for(uint i=1;i<num_vehicles_;++i){
+		bbox[0] = min(bbox[0],depotPositions_[i][0]);
+		bbox[1] = min(bbox[1],depotPositions_[i][1]);
+		bbox[2] = max(bbox[2],depotPositions_[i][0]);
+		bbox[3] = max(bbox[3],depotPositions_[i][1]);
 		
+	}
+	return bbox;
+}
 

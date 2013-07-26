@@ -7,7 +7,7 @@
 class ofstream;
 
 /**
-The class LaserSaringProblemWriter is capable of writing instances of the 
+The class LaserSharingProblemWriter is capable of writing instances of the 
 2D Vehicle Scheduling Problem(2DVS) as a Laser Sharing Problem(lsp).
 
 Since there are slight but significant differences, this reformulation is 
@@ -20,7 +20,7 @@ travel time of 1 to each
 other point. 
 **/
 
-class LaserSaringProblemWriter{
+class LaserSharingProblemWriter{
 
 	
 
@@ -28,7 +28,7 @@ class LaserSaringProblemWriter{
 	
 		static constexpr char* DEFAULT_SUFFIX = ".xml";
 		
-		LaserSaringProblemWriter() = default;
+		LaserSharingProblemWriter() = default;
 		
 		bool write(const Instance &i, std::string filename, bool zipped = false) const;
 		
