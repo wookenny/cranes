@@ -2,9 +2,9 @@
 
 #include "Instance.h"
 #include <string>
-#include <zlib.h>
 
-class ofstream;
+#include <boost/iostreams/filtering_stream.hpp>
+
 
 /**
 The class LaserSharingProblemWriter is capable of writing instances of the 
@@ -31,6 +31,7 @@ class LaserSharingProblemWriter{
 	public:
 	
 		static constexpr char* DEFAULT_SUFFIX = ".xml";
+		static constexpr int SMALL_GRID_SIZE = 100;
 		
 		LaserSharingProblemWriter() = default;
 		
@@ -39,6 +40,6 @@ class LaserSharingProblemWriter{
 	private:
 		std::string add_suffix(std::string s, std::string suffix) const;
 		
-		bool write_file_unzipped(const Instance &i, std::ofstream &out) const;
-		bool write_file_zipped(const Instance &i, gzFile &outfile) const;
+		bool write_file(const Instance &i, boost::iostreams::filtering_ostream &out) const;
+		bool check_instance(const Instance &i,bool verbose=false) const;
 };
