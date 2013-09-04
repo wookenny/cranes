@@ -49,7 +49,9 @@ class Instance{
 		std::vector<Job>::const_iterator begin() const{return jobs_.begin();}  
 		std::vector<Job>::const_iterator end() const{return jobs_.end();}
 		const Job& operator[](unsigned int i) const{return jobs_[i];}
-		const std::array<int, 2> get_depot(unsigned int i) const{return depotPositions_[i]; }  
+		std::array<int, 2> get_depot(unsigned int i) const{
+		    assert(i<depotPositions_.size()); 
+		    return depotPositions_[i]; }  
 		
 		//generates n random jobs in the given bounds
 		void generate_random_jobs(int n, int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
