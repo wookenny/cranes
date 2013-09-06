@@ -30,8 +30,8 @@ DisjointSet.h
 DisjointSet.cpp
 Main.cpp
 Main.h
-MIP.h
-MIP.cpp
+#MIP.h
+#MIP.cpp
 generalizedVRP_MIP.h
 generalizedVRP_MIP.cpp
 m_TSP_MIP.h
@@ -54,14 +54,20 @@ LaserSharingProblemWriter.cpp
 # collect all sources
 SET(GTestSources
 datastructure_unittest.cpp
+DisjointSet.h
+DisjointSet.cpp
 Job.h
 Job.cpp
 Instance.h
 Instance.cpp
 InsertionHeuristic.h
 InsertionHeuristic.cpp
-MIP.h
-MIP.cpp
+generalizedVRP_MIP.h
+generalizedVRP_MIP.cpp
+m_TSP_MIP.h
+m_TSP_MIP.cpp
+independent_TSP_MIP.h
+independent_TSP_MIP.cpp
 Tours.h
 )
 

@@ -55,6 +55,10 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		stringify name_x_; 
 		variable_access x;
 		
+		Tours start;
+
+        //set up astarting solution
+	    void add_MIP_start();
 	
 	public:
 	
@@ -62,8 +66,11 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		independent_TSP_MIP()=delete;
 		independent_TSP_MIP(const Instance& i): generalizedVRP_MIP(i), 
 									  name_x_("x",3),
-									  x(name_x_,vars_,v_){}				  
+									  x(name_x_,vars_,v_),
+									  start(i.num_vehicles()){}				  
 		Tours solve();
+
+        virtual void add_start_solution(const Tours &tours){ start = tours;}
 		
 		friend class SubtourCutsCallbackI;
 		
@@ -79,4 +86,5 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		//parsing of solution		
 		void parse_solution_(Tours &tours);		
 
+        
 };

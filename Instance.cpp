@@ -9,8 +9,10 @@
 #include <chrono>
 #include <ctime>
 
-#include "MIP.h"
 #include "Job.h"
+#include "generalizedVRP_MIP.h"
+#include "m_TSP_MIP.h"
+#include "independent_TSP_MIP.h"
 
 const boost::regex empty("\\s*");
 const boost::regex comment("\\s*//.*"); //line starts with // after whitespace
@@ -270,15 +272,20 @@ double Instance::makespan(Tours& t) const{
 }
 
 Tours Instance::get_MIP_solution(bool collision_free,bool LP_relax,bool debug) const{
-	//TODO: This might be wrong. Use the generalisd MIP here!
-	MIP mip(*this);
+
+    //TODO: somehow switch on the desired MIP
+	auto mip = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(*this));
+	//auto mip = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(*this));
 	//Hint: Methods returns a Tours objct.
 	//To get rid off copying overhead, the rvalue reference
 	//grants perfect forwarding.
-	Tours&& t = mip.solve(collision_free, LP_relax,debug);
-	//check MIP
-	//TODO: uncomment this
-	//assert(verify(t));
+
+    mip->set_debug(debug);
+	mip->set_collision(collision_free);
+	mip->set_LP(LP_relax);
+	
+	Tours&& t = mip->solve();
+	assert(verify(t));
 	return t;
 }
 

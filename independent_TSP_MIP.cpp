@@ -54,7 +54,7 @@ void independent_TSP_MIP::build_variables_(){
 	for(uint i = inst_.num_jobs()+1; i <= inst_.num_jobs()+inst_.num_vehicles();++i){
 		assert(i-inst_.num_jobs()>0);
 		string name = name_x_(i,i,i-inst_.num_jobs());
-		v_[name] = counter_++;
+		v_[name] = counter_++;  
 		vars_.add( IloNumVar(env_, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
 	}
 	
@@ -435,6 +435,9 @@ Tours independent_TSP_MIP::solve(){
 
 		model_.add(cons_);
 
+        //add MIP start
+        add_MIP_start();
+
 		//run cplex and solve the model!
 		cplex_.extract(model_);
 		
@@ -481,5 +484,79 @@ Tours independent_TSP_MIP::solve(){
 }
 
 
+void independent_TSP_MIP::add_MIP_start(){
+    if(start.empty()) return;
+    auto schedule = start.get_schedule();
 
+    uint n = inst_.num_jobs();
+ 	uint K = inst_.num_vehicles();
+        
+    IloNumVarArray startVar(env_);
+    IloNumArray startVal(env_);
+
+
+    //makespan,	a variable for the makespan
+    startVar.add(vars_[v_["makespan"]]);
+    startVal.add(inst_.makespan(start));
+    
+    //t_j, 		starting times for all jobs and all depots
+    for(int i=1; i<=n; ++i){
+        startVar.add(t(i));
+        //starting time shopuld be an integer! or at least close to it
+        assert( fabs(get<1>(schedule[i])- (int)(get<1>(schedule[i])))<.01 ); 
+        
+        startVal.add( (int)(get<1>(schedule[i])) );
+    }
+    
+    //non-used variables are 0?
+    //TODO: my guess: not defined vars are zero....test this assumption
+    //x_i,j,k for used edges between jobs
+    for(int v=0; v< K; ++v)
+        for(int i=0; i<start[v].size()-1;++i){
+            
+            int job1 = std::get<0>(start[v][i])->num();
+            int job2 = std::get<0>(start[v][i+1])->num();
+                           
+            startVar.add(x(job1,job2,v+1));
+            startVal.add( 1 );
+                    
+        }
+        
+      //edges from depot to first job AND from last to depot
+            
+       
+    
+    
+    //k_j,  \in (0,...,k-1),tour variable, which assigns a job to a vehicle	
+    for(int i=1; i<=n; ++i){
+        startVar.add(k(i));
+        startVal.add(get<2>(schedule[i]));
+    }
+   
+    
+    cplex_.addMIPStart(startVar, startVal);
+    startVal.end();
+    startVar.end();
+    
+    /*
+    Code Example from IBM Ilog: 
+    
+   Use the method IloCplex::addMIPStart to add a MIP start to your model. This method is not incremental. In other words, successive calls of this method do not add more values to an existing MIP start. Instead, successive calls of the method override any existing MIP start. That is, each call of this method creates a new MIP start.
+   
+Furthermore, this method works only on one-dimensional arrays. If you want to create a MIP start from a multidimensional array, you first must flatten the multidimensional array by copying the variables into a one-dimensional array before you call this method. Here is a sample, assuming a matrix of dimensions m by n, with the starting value x[i][j] in start[i][j], that you can adapt to your own application. 
+
+    IloNumVarArray startVar(env);
+    IloNumArray startVal(env);
+    for (int i = 0; i < m; ++i)
+        for (int j = 0; j < n; ++j) {
+            startVar.add(x[i][j]);
+            startVal.add(start[i][j]);
+        }
+     cplex.addMIPStart(startVar, startVal);
+     startVal.end();
+     startVar.end();
+    */
+    
+         
+}
 

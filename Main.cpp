@@ -67,7 +67,7 @@ void test_mtsp_mip(vector<string> argv){
 	}
 	//set default parameter and parse given values
 	int k = 2;
-	int jobs = 20;
+	int jobs = 10;
 	int seed = 0;
 	bool collisions = false;
 	bool lp_relax = false;

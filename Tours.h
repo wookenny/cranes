@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
+#include <map>
 #include <cassert>
 
 class Job;
@@ -51,6 +52,13 @@ class Tours{
 		unsigned int num_jobs() const{return _job_map.size();}
 		unsigned int num_jobs(unsigned int i) const{return _tours[i].size();}
 		
+		bool empty() const noexcept{
+		    return _job_map.empty();
+		}
+
+    	bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
+
+
 		const std::vector<scheduledJob>& operator[](int i) const{ return _tours[i];}
 		
 		void clear(){ 
@@ -58,8 +66,19 @@ class Tours{
 			for(auto& t: _tours) t.clear(); 
 		}
 		
-		bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
+		std::map<int,std::tuple<Job, double, int>> get_schedule() const {
+		    std::map<int,std::tuple<Job, double, int>> schedule;
+		    //ID -> Jonb, starting time, vehicle
+		    for(uint i=0; i<_tours.size();++i)
+		        for(const auto job: _tours[i]){
+		            Job j =  *std::get<0>(job);
+		            double time =  std::get<1>(job);
+		            schedule[j.num()] = std::make_tuple((Job)j,(double)time,(int)i);
+		        }
+		    return schedule;
+		}
 		
+		unsigned int vehicle(const Job* const job){return _job_map.find(job)!=_job_map.end();}
 		
 		void add_job(const Job* const job, double time, int vehicle){ 
 				assert(vehicle>=0);

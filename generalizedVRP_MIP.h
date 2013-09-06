@@ -164,6 +164,8 @@ class generalizedVRP_MIP{
 		void set_collision(bool v){collision_avoidance_ = v;}		
 
 		friend class SubtourCutsCallbackI;
+    
+        virtual void add_start_solution(const Tours &tours);
 
 	protected:
 		//almost all versions are purely virtual because often the methods are 
@@ -182,5 +184,6 @@ class generalizedVRP_MIP{
 		//parsing of solution		
 		virtual void parse_solution_(Tours &tours) = 0;		
 		virtual void print_LP_solution_() const; //generic version....further refinement possible!							
+		
 };
 

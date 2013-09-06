@@ -88,6 +88,10 @@ void generalizedVRP_MIP::print_LP_solution_() const{
 }
 
 
+void generalizedVRP_MIP::add_start_solution(const Tours&){
+    std::cout<<"WARNING: Feature not implemented"<<std::endl;
+    assert(false);
+}
 
 void generalizedVRP_MIP::build_collision_variables_(){
 	auto type = IloNumVar::Bool;
