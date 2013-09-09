@@ -4,10 +4,23 @@
 #include <thread>
 using namespace std;
 
+
+ //template function for a nicer lookup function
+ template<template<class,class> class CONTAINER, typename E, typename A >
+ bool contains(const CONTAINER<E, A >& container, const E& needle){
+     return find(container.begin(), container.end(), needle) != container.end();
+ }
+  
+ template<template<class,class,class> class CONTAINER, typename E, typename A , typename O>
+ bool contains(const CONTAINER<E, O, A >& container, const E& needle){
+     return find(container.begin(), container.end(), needle) != container.end();
+ }
+   
+   
 void independent_TSP_MIP::add_objective_function_(){
-	model_.add(IloMinimize(env_,vars_[v_["makespan"]]));
-}
-		 
+       model_.add(IloMinimize(env_,vars_[v_["makespan"]]));
+} 
+ 
 //building variables
 void independent_TSP_MIP::build_variables_(){
 	auto type = IloNumVar::Bool;
@@ -291,7 +304,7 @@ ILOUSERCUTCALLBACK1(SubtourCutsCallback, independent_TSP_MIP*, mip )
 	getValues(xSol,  mip->vars_);
 
 	auto arc = [&] (int i, int j, int k){ return xSol[mip->v_[mip->name_x_(i,j,k)]];};
-	auto arc_name = [&] (int i, int j, int k){ return mip->name_x_(i,j,k);};
+	//auto arc_name = [&] (int i, int j, int k){ return mip->name_x_(i,j,k);};
 		
 	for(uint i=1; i<= n; ++i){
 		//reaching all real jobs
@@ -435,11 +448,14 @@ Tours independent_TSP_MIP::solve(){
 
 		model_.add(cons_);
 
-        //add MIP start
-        add_MIP_start();
-
+       
 		//run cplex and solve the model!
 		cplex_.extract(model_);
+		
+	    //add MIP start
+	    cout<< "add start "<< endl;
+        add_MIP_start_();
+        cout<< "add start -- end"<< endl;
 		
 		//print small models 
 		if( inst_.num_jobs()<=6)
@@ -484,8 +500,8 @@ Tours independent_TSP_MIP::solve(){
 }
 
 
-void independent_TSP_MIP::add_MIP_start(){
-    if(start.empty()) return;
+void independent_TSP_MIP::add_MIP_start_(){
+    if(LP_relaxation_ or start.empty()) return;
     auto schedule = start.get_schedule();
 
     uint n = inst_.num_jobs();
@@ -498,9 +514,9 @@ void independent_TSP_MIP::add_MIP_start(){
     //makespan,	a variable for the makespan
     startVar.add(vars_[v_["makespan"]]);
     startVal.add(inst_.makespan(start));
-    
-    //t_j, 		starting times for all jobs and all depots
-    for(int i=1; i<=n; ++i){
+      
+    //t_j, 		starting times for all jobs and ll depots
+    for(uint i=1; i<=n; ++i){
         startVar.add(t(i));
         //starting time shopuld be an integer! or at least close to it
         assert( fabs(get<1>(schedule[i])- (int)(get<1>(schedule[i])))<.01 ); 
@@ -508,32 +524,192 @@ void independent_TSP_MIP::add_MIP_start(){
         startVal.add( (int)(get<1>(schedule[i])) );
     }
     
-    //non-used variables are 0?
-    //TODO: my guess: not defined vars are zero....test this assumption
     //x_i,j,k for used edges between jobs
-    for(int v=0; v< K; ++v)
-        for(int i=0; i<start[v].size()-1;++i){
+    for(uint v=0; v< K; ++v)
+        for(uint i=0; i<start[v].size()-1;++i){
             
             int job1 = std::get<0>(start[v][i])->num();
             int job2 = std::get<0>(start[v][i+1])->num();
                            
             startVar.add(x(job1,job2,v+1));
             startVal.add( 1 );
-                    
         }
         
-      //edges from depot to first job AND from last to depot
+    //edges from depot to first job AND from last to depot
+    for(uint v=0; v< K; ++v){
+        if(start[v].empty()) continue;
+    
+         int first_job = std::get<0>(start[v].front())->num();
+         int last_job = std::get<0>(start[v].back())->num();
+         
+         //depot to first job
+         startVar.add(x(n+v+1,first_job,v+1));
+         startVal.add( 1 );
             
+         //last job to depot   
+         startVar.add(x(last_job,n+v+1,v+1));
+         startVal.add( 1 );   
+    }        
        
     
     
-    //k_j,  \in (0,...,k-1),tour variable, which assigns a job to a vehicle	
-    for(int i=1; i<=n; ++i){
+    //k_j,  \in (1,...,k),tour variable, which assigns a job to a vehicle	
+    for(uint i=1; i<=n; ++i){
         startVar.add(k(i));
-        startVal.add(get<2>(schedule[i]));
+        startVal.add(get<2>(schedule[i])+1);
     }
    
+    //k_j for depots:
+    for(uint i=1; i<=K; ++i){
+        startVar.add(k(n+i));
+        startVal.add(i);
+    }
+   
+    //add variables used for the collisions, if they are used 
+    if(collision_avoidance_){
+
+       
+		std::set<string> variables;
+		
+		for(uint i=1; i<=n; ++i){
+		    for(uint j=1; j<=n; ++j){
+			    if(i==j) continue;
+			
+			    const Job& job_i = inst_[i-1];
+			    const Job& job_j = inst_[j-1];
+			    auto alpha_x = [&](const Job& job)->int{return job.get_alpha()[0];};
+			    auto beta_x  = [&](const Job& job)->int{return job.get_beta()[0];};
+			    
+			    int t_i =  (int)(get<1>(schedule[i])); 
+			    int t_j =  (int)(get<1>(schedule[j]));
+			    
+		        //PLUS VARIABLES
+		        //alpha_x(job_j) - alpha_x(job_i) - t(j) + t(i) >0 => caa_p(i,j) = 1
+		        if( alpha_x(job_j) - alpha_x(job_i) - t_j + t_i > 0.0001 ){
+		             startVar.add(caa_p(i,j));
+		             startVal.add(1);
+		             variables.insert(name_caa_p_(i,j));
+		        }
+		        //beta_x(job_j) - job_j.length() 
+				// - alpha_x(job_i))  - t(j) + t(i) >0 => cab_p(i,j) = 1
+		        if( beta_x(job_j) - job_j.length() - alpha_x(job_i)
+		              - t_j + t_i > 0.0001 )
+		        {
+		            startVar.add(cab_p(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cab_p_(i,j));
+		        }
+		        
+		        //alpha_x(job_j) - beta_x(job_i) + job_i.length() 
+		        //- t(j) + t(i)                  >0 => cba_p(i,j) = 1
+		        if( alpha_x(job_j) - beta_x(job_i) + job_i.length() 
+		                - t_j + t_i > 0.0001 )
+		        {
+		            startVar.add(cba_p(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cba_p_(i,j));
+		        }
+		        
+		        //beta_x(job_j) -job_j.length() 
+		        // -beta_x(job_i) + job_i.length() - beta_x(job_i) + job_i.length() 
+		        // - t(j) + t(i) > 0 => cbb_p(i,j) = 1 
+                if( beta_x(job_j) - job_j.length() - beta_x(job_i) + job_i.length()
+                    - t_j + t_i > 0.0001 )
+                {
+                    startVar.add(cbb_p(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cbb_p_(i,j));                     
+                }
+		
+		        //MINUS VARIABLES
+		        //alpha_x(job_j) - alpha_x(job_i)  + t(j) - t(i) >0 => caa_m(i,j)=1
+		        if( alpha_x(job_j) - alpha_x(job_i)  + t_j - t_i > 0.0001 )
+                {
+                    startVar.add(caa_m(i,j));
+		            startVal.add(1);
+		            variables.insert(name_caa_m_(i,j));                     
+                }
+		        
+		        //beta_x(job_j) + job_j.length() 
+		        // -  alpha_x(job_i) + t(j) - t(i) >0 => cab_m(i,j)=1
+                if( beta_x(job_j) + job_j.length() -  alpha_x(job_i) + t_j - t_i > 0.0001 )
+                {
+                    startVar.add(cab_m(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cab_m_(i,j));                     
+                }
+                
+		        //alpha_x(job_j) - beta_x(job_i) - job_i.length() + t(j) - t(i) > 0
+		        // => cba_m(i,j)=1
+		        if( alpha_x(job_j) - beta_x(job_i) - job_i.length()+ t_j - t_i > 0.0001 )
+                {
+                    startVar.add(cba_m(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cba_m_(i,j));                     
+                }
+		        
+		        //beta_x(job_j) + job_j.length()
+		        // - beta_x(job_i) - job_i.length() + t(j) - t(i) > 0
+		        // =>  	cbb_m(i,j)=1
+                if(beta_x(job_j) + job_j.length() 
+                    - beta_x(job_i) - job_i.length()  + t_j - t_i > 0.0001 )
+                {
+                    startVar.add(cbb_m(i,j));
+		            startVal.add(1);
+		            variables.insert(name_cbb_m_(i,j));                     
+                }
+
+                //CHAIN VARIABLES
+                //caa_p(i,j) = caa_m(i,j) =1 => c(i,j)=1		
+		        /*if(variables.find(name_caa_p_(i,j))!=variables.end() and    
+		           variables.find(name_caa_m_(i,j))!=variables.end())
+		        */
+		        if(contains(variables,name_caa_p_(i,j)) and 
+		           contains(variables,name_caa_m_(i,j)) )
+		        {
+		             startVar.add(c(i,j));
+		             startVal.add(1);
+		             //set this variable only once!
+		             continue;
+		        }
+		           
+		        //cab_p(i,j) = cab_m(i,j) =1 => c(i,j)=1
+		        if(contains(variables,name_cab_p_(i,j)) and 
+		           contains(variables,name_cab_m_(i,j)))
+		        {
+		             startVar.add(c(i,j));
+		             startVal.add(1);
+		             //set this variable only once!
+		             continue;
+		        }		
+		        
+		        //cba_p(i,j) = cba_m(i,j) =1 => c(i,j)=1		
+		        if(contains(variables,name_cba_p_(i,j)) and 
+		           contains(variables,name_cba_m_(i,j)))
+		        {
+		             startVar.add(c(i,j));
+		             startVal.add(1);
+		             //set this variable only once!
+		             continue;
+		        }
+		        
+		        //cbb_p(i,j) = cbb_m(i,j) =1 => c(i,j)=1		
+                if(contains(variables,name_cbb_p_(i,j)) and 
+		           contains(variables,name_cbb_m_(i,j)))
+                {
+		             startVar.add(c(i,j));
+		             startVal.add(1);
+		             //set this variable only once!
+		             continue;
+		        }
+            }
+        }
+        for(auto name: variables)
+            cout<< name<< " = "<<1<< endl;
+        cout << "\n"<< endl;
+    }
     
+    //add the vector to the system
     cplex_.addMIPStart(startVar, startVal);
     startVal.end();
     startVar.end();

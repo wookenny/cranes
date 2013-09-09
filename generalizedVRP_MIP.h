@@ -165,7 +165,7 @@ class generalizedVRP_MIP{
 
 		friend class SubtourCutsCallbackI;
     
-        virtual void add_start_solution(const Tours &tours);
+        virtual void set_start_solution(const Tours &tours);
 
 	protected:
 		//almost all versions are purely virtual because often the methods are 

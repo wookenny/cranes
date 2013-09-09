@@ -5,9 +5,9 @@
 #include <memory>
 
 #if __clang__ 
-//no omp.h for clang++
+    //no omp.h for clang++
 #else
-#include <omp.h>
+    #include <omp.h>
 #endif
 #include <ctime>
 #include <chrono>
@@ -110,6 +110,17 @@ void test_mtsp_mip(vector<string> argv){
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
 		
+	
+	//run heuristic, use it as starting solution	
+    cout<<"heuristic solution:"<<endl;
+	InsertionHeuristic heur(true);
+	heur.set_runs(20);
+	auto sol = heur(i); 
+	cout<<"MIP-Solution valid: "<<i.verify(sol)<<endl;
+	cout<<"Makespan: "<<i.makespan(sol)<<endl;
+	cout<<sol<<endl;		
+		
+	mip_ptr->set_start_solution(sol);	
 	Tours &&t = mip_ptr->solve();
 	
 	cout<<i<<endl;
@@ -118,13 +129,7 @@ void test_mtsp_mip(vector<string> argv){
 	cout<<"Makespan: "<<i.makespan(t)<<endl;
 	cout<<t<<endl;
 
-	cout<<"heuristic solution:"<<endl;
-	InsertionHeuristic heur(true);
-	heur.set_runs(20);
-	auto sol = heur(i); 
-	cout<<"MIP-Solution valid: "<<i.verify(sol)<<endl;
-	cout<<"Makespan: "<<i.makespan(sol)<<endl;
-	cout<<sol<<endl;
+	
 
 	if(not i.verify(sol) or i.makespan(sol) < i.makespan(t))
 		cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. MIP WORSE THAN HEURISTIC!"<<endl;

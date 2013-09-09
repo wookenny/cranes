@@ -15,7 +15,7 @@ makespan,	a variable for the makespan
 t_j, 		starting times for all jobs and all depots
 x_i,j,k		(binary)variables for directed edges between all jobs and all depot positions
 			used by vehicle k
-tour_j,		(integral[0,k-1])tour variable, which assigns a job to a vehicle
+k_j,		(integral[1,k])tour variable, which assigns a job to a vehicle
 
 
 constraints:
@@ -58,7 +58,7 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		Tours start;
 
         //set up astarting solution
-	    void add_MIP_start();
+	    void add_MIP_start_();
 	
 	public:
 	
@@ -70,7 +70,7 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 									  start(i.num_vehicles()){}				  
 		Tours solve();
 
-        virtual void add_start_solution(const Tours &tours){ start = tours;}
+        virtual void set_start_solution(const Tours &tours){ start = tours;}
 		
 		friend class SubtourCutsCallbackI;
 		
@@ -85,6 +85,5 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		
 		//parsing of solution		
 		void parse_solution_(Tours &tours);		
-
         
 };

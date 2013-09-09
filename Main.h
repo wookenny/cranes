@@ -29,6 +29,8 @@ void printMapIndex( std::map<T,U> map){
 
 
 int main(int argc, char** argv){
+    std::cout<<std::boolalpha;
+
 	//build function dictionary
 	std::map<std::string,void (*)(std::vector<std::string>)> functionDict;
 	//ADD NEW FUNCTIONS HERE (they have to parse ther arguments or call a usage)

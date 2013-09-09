@@ -24,8 +24,6 @@ Tours generalizedVRP_MIP::solve(){
 		
 		if( 1 != inst_.num_vehicles() and  collision_avoidance_ )
 			build_collision_variables_();
-		
-		model_.add(vars_);
 			
 		//objective function: minimize makespan
 		add_objective_function_();
@@ -35,8 +33,8 @@ Tours generalizedVRP_MIP::solve(){
 		if( 1!= inst_.num_vehicles() and  collision_avoidance_)
 			build_collision_constraints_();  
 
-		model_.add(cons_);
-
+		model_.add(cons_);  
+        
 		//run cplex and solve the model!
 		cplex_.extract(model_);
 		
@@ -88,8 +86,8 @@ void generalizedVRP_MIP::print_LP_solution_() const{
 }
 
 
-void generalizedVRP_MIP::add_start_solution(const Tours&){
-    std::cout<<"WARNING: Feature not implemented"<<std::endl;
+void generalizedVRP_MIP::set_start_solution(const Tours&){
+    std::cout<<"WARNING: Set MIP start feature not implemented"<<std::endl;
     assert(false);
 }
 
