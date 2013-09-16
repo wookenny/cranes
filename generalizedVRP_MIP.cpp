@@ -26,7 +26,8 @@ Tours generalizedVRP_MIP::solve(){
 			build_collision_variables_();
 			
 		//objective function: minimize makespan
-		add_objective_function_();
+		if(fixed_makespan_ < 0)
+		    add_objective_function_();    
 		
 		build_constraints_();
 	
@@ -120,6 +121,8 @@ void generalizedVRP_MIP::build_collision_variables_(){
 void generalizedVRP_MIP::build_collision_constraints_(){
 	//TODO add a better initialization!
 	bigM = 1000;
+    if(fixed_makespan_ > 0)
+        bigM = fixed_makespan_;
 
 	uint n = inst_.num_jobs();
 	auto K = static_cast<IloInt>(inst_.num_vehicles());

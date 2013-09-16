@@ -62,6 +62,8 @@ class generalizedVRP_MIP{
 						return vars_[pos_[name_(i)]]; 
 				}
 				IloNumVar& operator()(int i,int j) const{
+				     if( pos_.find(name_(i,j))==pos_.end() )
+				          std::cout << name_(i,j) << std::endl;
 						assert(pos_.find(name_(i,j))!=pos_.end());
 						return vars_[pos_[name_(i,j)]]; 
 				}
@@ -97,6 +99,7 @@ class generalizedVRP_MIP{
 		bool LP_relaxation_;
 		
 		int bigM;
+		int fixed_makespan_;
 		
 		//variables and helper for collision handling
 		//collision name/variable helper
@@ -132,6 +135,7 @@ class generalizedVRP_MIP{
 											  cplex_(env_), debug_(false),
 											  collision_avoidance_(false),
 											  LP_relaxation_(false),
+											  fixed_makespan_(-1),
 											  name_t_("t",1),
 									  		  t(name_t_,vars_,v_),
 											  name_k_("k",1),
@@ -162,11 +166,11 @@ class generalizedVRP_MIP{
 		void set_debug(bool v){debug_=v;}
 		void set_LP(bool v){LP_relaxation_ = v;}
 		void set_collision(bool v){collision_avoidance_ = v;}		
-
+        void set_fixed_makespan(int makespan){fixed_makespan_ = makespan; bigM = makespan;}
 		friend class SubtourCutsCallbackI;
     
-        virtual void set_start_solution(const Tours &tours);
-
+        virtual void set_start_solution(const Tours &tours);       
+        
 	protected:
 		//almost all versions are purely virtual because often the methods are 
 		//depending heavily on the exact model. 

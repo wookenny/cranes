@@ -106,7 +106,7 @@ void test_mtsp_mip(vector<string> argv){
 	else
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
 	
-	mip_ptr->set_debug(false);
+	mip_ptr->set_debug(true);
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
 		
@@ -120,7 +120,8 @@ void test_mtsp_mip(vector<string> argv){
 	cout<<"Makespan: "<<i.makespan(sol)<<endl;
 	cout<<sol<<endl;		
 		
-	mip_ptr->set_start_solution(sol);	
+	//mip_ptr->set_start_solution(sol);	
+	mip_ptr->set_fixed_makespan( .5*i.makespan(sol));
 	Tours &&t = mip_ptr->solve();
 	
 	cout<<i<<endl;

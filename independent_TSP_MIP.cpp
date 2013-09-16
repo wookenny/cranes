@@ -27,12 +27,13 @@ void independent_TSP_MIP::build_variables_(){
 	if(LP_relaxation_)
 		type = IloNumVar::Float; 
 
-
+    string name;
 	//additional depot and 
-	string name = "makespan";
-	v_[name] = counter_++;
-	vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
-
+	if(fixed_makespan_ < 0){	
+	    name = "makespan";
+	    v_[name] = counter_++;
+	    vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
+    }
 	//time variables
 	for(uint j = 1; j <= inst_.num_jobs()+inst_.num_vehicles();++j){
 		name = name_t_(j);
@@ -90,6 +91,11 @@ void independent_TSP_MIP::build_constraints_(){
 	
 	//TODO add a better initialization!
 	bigM = 1000;
+    if( not start.empty() )
+        bigM = inst_.makespan(start); 
+    if(fixed_makespan_>0)
+        bigM = fixed_makespan_;
+
 
 	//indegree == outdegree nodes (single vehicle flow)
 	for(uint v=1; v<=K;++v){
@@ -214,10 +220,13 @@ void independent_TSP_MIP::build_constraints_(){
 
 	//makespan constraint for every job
 	for(uint i=1; i<=n; ++i){
-		IloNumVar &makespan = vars_[v_["makespan"]];
+		//IloNumVar &makespan = vars_[v_["makespan"]];
 		const Job& job = inst_[i-1];
 		IloExpr expr(env_);
-		expr += 1*makespan;
+		if(fixed_makespan_<0)
+		    expr += 1* vars_[v_["makespan"]];
+		else
+		    expr += fixed_makespan_;
 		expr -= t(i);
 		expr -= job.length();
 		for(uint v = 1; v<=K; ++v)
@@ -257,7 +266,7 @@ void independent_TSP_MIP::build_constraints_(){
 void independent_TSP_MIP::parse_solution_(Tours &tours){
 
 	//TODO: remove this line after debuging
-	print_LP_solution_();
+	//print_LP_solution_();
 
 	uint n = inst_.num_jobs();
 
@@ -439,7 +448,8 @@ Tours independent_TSP_MIP::solve(){
 		model_.add(vars_);
 			
 		//objective function: minimize makespan
-		add_objective_function_();
+		if(fixed_makespan_ < 0)
+		    add_objective_function_();
 		
 		build_constraints_();
 	
@@ -453,9 +463,7 @@ Tours independent_TSP_MIP::solve(){
 		cplex_.extract(model_);
 		
 	    //add MIP start
-	    cout<< "add start "<< endl;
         add_MIP_start_();
-        cout<< "add start -- end"<< endl;
 		
 		//print small models 
 		if( inst_.num_jobs()<=6)
@@ -466,6 +474,10 @@ Tours independent_TSP_MIP::solve(){
 		cplex_.use( SubtourCutsCallback(env_, this) );
 		cplex_.setParam(IloCplex::IntParam::Threads	,threads);
 		cout<<"Detected "<<threads<<" cores" <<endl;
+		
+		if(debug_ and fixed_makespan_)
+		    cout<< "Checking for solution with makspan at most "
+		        << fixed_makespan_<< endl;
 			
 		bool solved = cplex_.solve();
 		if(debug_) cout<< "Solving MIP was successful: "<<boolalpha<<solved<<endl;
@@ -502,6 +514,8 @@ Tours independent_TSP_MIP::solve(){
 
 void independent_TSP_MIP::add_MIP_start_(){
     if(LP_relaxation_ or start.empty()) return;
+    if(fixed_makespan_>0) return; //not sound to set a start in this setting
+    
     auto schedule = start.get_schedule();
 
     uint n = inst_.num_jobs();
@@ -712,27 +726,7 @@ void independent_TSP_MIP::add_MIP_start_(){
     //add the vector to the system
     cplex_.addMIPStart(startVar, startVal);
     startVal.end();
-    startVar.end();
-    
-    /*
-    Code Example from IBM Ilog: 
-    
-   Use the method IloCplex::addMIPStart to add a MIP start to your model. This method is not incremental. In other words, successive calls of this method do not add more values to an existing MIP start. Instead, successive calls of the method override any existing MIP start. That is, each call of this method creates a new MIP start.
-   
-Furthermore, this method works only on one-dimensional arrays. If you want to create a MIP start from a multidimensional array, you first must flatten the multidimensional array by copying the variables into a one-dimensional array before you call this method. Here is a sample, assuming a matrix of dimensions m by n, with the starting value x[i][j] in start[i][j], that you can adapt to your own application. 
-
-    IloNumVarArray startVar(env);
-    IloNumArray startVal(env);
-    for (int i = 0; i < m; ++i)
-        for (int j = 0; j < n; ++j) {
-            startVar.add(x[i][j]);
-            startVal.add(start[i][j]);
-        }
-     cplex.addMIPStart(startVar, startVal);
-     startVal.end();
-     startVar.end();
-    */
-    
+    startVar.end();     
          
 }
 
