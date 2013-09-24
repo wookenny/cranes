@@ -30,8 +30,8 @@ DisjointSet.h
 DisjointSet.cpp
 Main.cpp
 Main.h
-#MIP.h
-#MIP.cpp
+SingleCraneTSP_Solver.h
+SingleCraneTSP_Solver.cpp
 generalizedVRP_MIP.h
 generalizedVRP_MIP.cpp
 m_TSP_MIP.h

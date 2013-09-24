@@ -17,7 +17,7 @@ void print_random_instance(std::vector<std::string> argv);
 void test_mtsp_mip(std::vector<std::string> argv);
 void insertion_heuristic(std::vector<std::string> argv);
 void laser(std::vector<std::string> argv);
-
+void single_tsp(std::vector<std::string> argv);
 void test(std::vector<std::string> argv);
 
 template <class T,class U>
@@ -40,6 +40,7 @@ int main(int argc, char** argv){
 	functionDict["insertion"]	= &insertion_heuristic;
 	functionDict["test"] 	= &test;
 	functionDict["laser_format"] 	= &laser;
+	functionDict["single_tsp"]      = &single_tsp;
 	//at least one parameter must be given
 	if(argc < 2){
 		std::cout<<"No function given, try one of these:"<<std::endl;

@@ -19,6 +19,7 @@
 #include "SingleCraneTourApproximation.h"
 #include "InsertionHeuristic.h"
 #include "LaserSharingProblemWriter.h"
+#include "SingleCraneTSP_Solver.h"
 
 using namespace std;
 
@@ -315,4 +316,19 @@ void laser(std::vector<std::string> argv){
 			<< lsp <<endl;
 	}
 	
+}
+
+void single_tsp(std::vector<std::string> argv){
+    if (argv.size()<1 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"single_tsp [2dvs]\n\tSolves a 2dvs instance for a single vehile using concorde."<<endl;
+		return;
+	}
+	
+    SingleCraneTSP_Solver solver;
+    Instance i(argv[0]);
+    
+    //solve it
+    Tours t = solver(i);
+    
+    
 }
