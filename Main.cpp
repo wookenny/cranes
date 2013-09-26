@@ -16,7 +16,6 @@
 #include "m_TSP_MIP.h"
 #include "independent_TSP_MIP.h"
 #include "Instance.h"
-#include "SingleCraneTourApproximation.h"
 #include "InsertionHeuristic.h"
 #include "LaserSharingProblemWriter.h"
 #include "SingleCraneTSP_Solver.h"
@@ -142,35 +141,43 @@ void test_mtsp_mip(vector<string> argv){
 
 
 void insertion_heuristic(std::vector<std::string> argv){
-	if (argv.size()<2 || argv.size()>5){
-		cout<<"insertion [k] [n] <s> <ls> <runs>\n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false"<<endl;
+	if (argv.size()<1 || argv.size()>5){
+		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <runs>\n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false"<<endl;
 		return;
 	}
 	
 	unsigned int seed = 0;
 	Instance i;
-	i.set_num_vehicles(stoi(argv[0]));
-	if(argv.size()>2)
-		seed = stoi(argv[2]);
-	i.generate_random_depots(0,100,0,20,seed);
-	i.generate_random_jobs(stoi(argv[1]),0,100,0,20,seed);
+	uint argment_offset = 0; 
+	if(argv[0].size()>5 and argv[0].substr(argv[0].size()-5,5)==".2dvs"){
+	    argment_offset = -2;
+	    i = Instance{argv[0]};
+	}else{
+	    i.set_num_vehicles(stoi(argv[0]));
+	    if(argv.size()>2)
+		    seed = stoi(argv[2]);
+	    i.generate_random_depots(0,100,0,20,seed);
+	    i.generate_random_jobs(stoi(argv[1]),0,100,0,20,seed);
+	}
 	
 	bool local_search = false;
 	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
 			{"1",true},{"yes",true},{"f",false},{"false",false},
 			{"0",false},{"no",false},{"y",true},{"n",false} };
-	if (argv.size()>3)
-		if(string_to_bool.find(argv[3])!=string_to_bool.end())
-			local_search = string_to_bool[argv[3]];			
+	if (argv.size()> 3+argment_offset)
+		if(string_to_bool.find(argv[3+argment_offset])!=string_to_bool.end())
+			local_search = string_to_bool[argv[3+argment_offset]];			
 		
 	i.debug(false);
 	cout<< i <<endl;
 	InsertionHeuristic heur(local_search);
-	if (argv.size()>4)	
-		heur.set_runs(stoi(argv[4]));
+	if (argv.size()>4+argment_offset)	
+		heur.set_runs(stoi(argv[4+argment_offset]));
 		
 	auto sol = heur(i);
-	cout<<"\n"<< sol <<endl;
+	cout<<endl;
+	if(i.num_jobs()<=20)
+	    cout<<"\n"<< sol <<endl;
 
 }
 
@@ -282,8 +289,8 @@ void test(std::vector<std::string> argv){
 			cout.flush();
 		}		
 				
-		SingleCraneTourApproximation apx;
-		Tours t(apx(i));
+		SingleCraneTSP_Solver tsp;
+		Tours t(tsp(i));
 		if(not i.verify(t) ){
 			
 			cout<<"Found instance with invalid solution:\n"<<i<<endl;

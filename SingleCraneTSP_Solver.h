@@ -41,4 +41,7 @@ class SingleCraneTSP_Solver{
         void create_TSP_file(const std::vector<std::vector<int>> &) const;
         void write_TSP_file(std::fstream &, const std::vector<std::vector<int>> &) const;
         void set_distances(std::vector<std::vector<int>> &dist, const Instance& i) const;
+        std::vector<int>  parse_solution()const;
+        void build_tour(Tours&,const std::vector<int>&,const Instance&) const;
+	    	    
 };

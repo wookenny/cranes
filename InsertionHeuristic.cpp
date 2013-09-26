@@ -1,20 +1,72 @@
 #include "InsertionHeuristic.h"
 #include "Tours.h"
-
+#include <thread>
 #include <random>
 #include <thread>
 #include <utility>
 
 using namespace std;
 
-//TODO:
-/*NEXT: local search + parallel methods . aka: threads to evaluate more than 
-one perm/assignment at the same time, 
-maybe local search
+//TODO: change parallel mode to deal with swaps
+//TODO: change parallel mode to find better neighbor
 
-Can I use some SSE/AVX parallization tricks?
+bool is_permutation(vector<uint> v){
+    sort(begin(v),end(v));
+    for(uint i=0; i<v.size();++i)
+        if(v[i]!=i)
+            return false;
+    return true; 
+}
 
-*/
+class LocalSearch_Swap{
+    public:
+        LocalSearch_Swap(const Instance& i, std::vector<uint> p, std::vector<uint> a, 
+                            int t, int tt, int &o, std::vector<uint> &bp,
+                            bool better=true,bool* s=nullptr):
+                            inst(i),perm(p),assign(a),thread(t),total_threads(tt),
+                            opt(o),best_perm(bp),find_better(better),stop(s){}
+        void operator()()
+	    {       
+            InsertionHeuristic insert;
+            Tours tour = insert(inst, perm, assign);
+			opt = inst.makespan(tour);
+
+            //two exchange
+            for(uint i = thread; i<inst.num_jobs(); i+=total_threads){
+        		for(uint j = i+1; j<inst.num_jobs(); ++j){
+			        swap(perm[i],perm[j]);		
+		            //build tour and compare makespan	
+			        tour.clear();
+			        tour = insert(inst, perm, assign);
+			        int new_makespan = inst.makespan(tour);
+			        if( new_makespan < opt){
+			            opt = new_makespan;
+				        //cout<<"t_"<<thread<<": "<<opt<<endl;
+				        best_perm = perm;
+				        if(stop!=nullptr and *stop) return;
+				        if(find_better){
+				            //set to top, if pointer given and still false
+				            if(stop!=nullptr and not *stop)
+				                *stop = true;
+				            return;
+				        }
+			        }		
+			        //reswap:
+			        swap(perm[i],perm[j]);
+		        }
+        	}
+        }
+    private:
+        const Instance& inst;
+        std::vector<uint> perm;
+        std::vector<uint> assign;
+        int thread;
+        int total_threads;
+        int& opt;
+        std::vector<uint> &best_perm;      
+        bool find_better;
+        bool* stop;
+};
 
 
 Tours InsertionHeuristic::operator()(const Instance& inst, 
@@ -30,10 +82,12 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	
 	
 	if(local_search_){
-		Tours t(inst.num_vehicles());
-		bool decrease = get_better_neighbour(inst, p, a, t); 
-		while(decrease)	
-			 decrease = get_better_neighbour(inst, p, a, t); 
+		Tours t(inst.num_vehicles());	
+		bool decrease =  get_best_neighbour_parallel(inst, p, a, t); 
+		//bool decrease =  get_better_neighbour(inst, p, a, t); 
+		while(decrease)
+			 decrease =  get_best_neighbour_parallel(inst, p, a, t); 
+			 //decrease =  get_better_neighbour(inst, p, a, t); 
 
 		insertion_helper(inst, p,a,tour);	
 	}else{
@@ -64,7 +118,12 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	
 	Tours solution(inst.num_vehicles());
 	uint runs = 0;
-	while(runs < runs_){
+	bool ls = local_search_;
+	local_search_ = false;
+	//merge first runs and the last runs with additional localsearch
+	while(runs < runs_ + random_starts_){
+	    if(runs == random_starts_)
+	        local_search_ = ls;
 		//randomize permutation and assignment
 		random_shuffle(perm.begin(),perm.end());
 		assign.clear();
@@ -85,9 +144,6 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 bool InsertionHeuristic::get_better_neighbour(const Instance& inst, 
 		std::vector<uint> &perm, std::vector<uint> &assign, Tours& t) const
 {
-	bool better_tour = false;
-	
-	//TODO: parallelize this method
 	
 	//need a reference for best tour!
 	Tours best_tour(inst.num_vehicles());
@@ -115,6 +171,7 @@ bool InsertionHeuristic::get_better_neighbour(const Instance& inst,
 		
 				//return !
 				t = tour;
+				cout<< makespan<< endl;
 				return true;				
 			}
 			
@@ -129,7 +186,8 @@ bool InsertionHeuristic::get_better_neighbour(const Instance& inst,
 			int new_makespan = inst.makespan(tour);
 			if(new_makespan < makespan){
 				makespan = new_makespan;
-				return true;
+				cout<< makespan<< endl;
+			    return true;
 			}		
 		}
 		//reset position a[i]
@@ -138,7 +196,6 @@ bool InsertionHeuristic::get_better_neighbour(const Instance& inst,
 	
 	
 	// - swap perm[i] with perm[j] 
-	//TODO: implement this neighborhood!
 	for(uint i = 0; i<inst.num_jobs(); ++i){
 		for(uint j = i+1; j<inst.num_jobs(); ++j){
 			swap(perm[i],perm[j]);
@@ -149,25 +206,68 @@ bool InsertionHeuristic::get_better_neighbour(const Instance& inst,
 			int new_makespan = inst.makespan(tour);
 			if(new_makespan < makespan){
 				makespan = new_makespan;
+				cout<< makespan<< endl;
 				return true;
 			}		
 			//reswap:
 			swap(perm[i],perm[j]);
 		}
 	}
-	
-	
-	
-	//copy tour to variable t
-	if(better_tour){
-		t.clear();
-		for(uint v=0; v<inst.num_vehicles();++v)
-			for(auto job: best_tour[v])
-				t.add_job(job,v);
-	}	
-
 	return false;							
 }
+
+
+bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst, 
+		std::vector<uint> &perm, std::vector<uint> &assign,Tours& t) const
+{
+    //palce to store if a thread is already done
+    bool halt_threads = false;
+    //find best or better argument in neughborhood?
+    bool find_better  = true;
+
+	//need a reference for best tour!
+    bool found_better_tour = false;
+	Tours best_tour(inst.num_vehicles());
+	insertion_helper(inst, perm,assign,best_tour);
+	int makespan = inst.makespan(best_tour);
+
+    const int num_threads = thread::hardware_concurrency();
+    vector<std::thread> threads;
+    vector<int> opt(num_threads);
+    vector<vector<uint>> best_perms(num_threads);
+    
+    //Launch a group of threads
+    for (int i = 0; i < num_threads; ++i)
+        threads.push_back( 
+            std::thread( LocalSearch_Swap(inst,perm,assign,i,num_threads,
+                 opt.at(i), best_perms.at(i),find_better,&halt_threads ))
+            );
+    
+    //wait for them
+    for(auto &t: threads)
+        t.join();
+
+    //find min
+    int best_index = -1;
+    for(int i=0; i<num_threads; ++i){
+        if(opt[i]<makespan){
+            //assert(is_permutation(best_perms[i]));
+            found_better_tour = true;
+            makespan = opt[i];
+            best_index = i;
+        }
+    }
+
+    if(best_index>=0){
+        perm = best_perms[best_index];
+        //assert(is_permutation(perm));
+        t.clear(); 
+        insertion_helper(inst, perm,assign,t);
+        cout<<"found: "<<makespan << endl;
+    }    
+    return found_better_tour;
+}
+
 
 void InsertionHeuristic::insertion_helper(const Instance& inst, const vector<uint> &perm, 			const vector<uint> &assign, Tours &tour) const
 {	

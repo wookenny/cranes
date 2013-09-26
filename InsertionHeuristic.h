@@ -28,13 +28,16 @@ class InsertionHeuristic{
 		void set_runs(uint r){runs_ = r;}
 		
 	private:
-		bool local_search_;
+		mutable bool local_search_;
 		uint runs_;
 		uint earliest_startingtime_(const Instance&, const Tours&, const Job&, uint v) const;
 		
 		
 		bool get_better_neighbour(const Instance& inst, std::vector<uint>&, 
 								std::vector<uint>&, Tours& t) const;
+								
+		bool get_best_neighbour_parallel(const Instance& inst, std::vector<uint>&, 
+								std::vector<uint>&, Tours& t) const;						
 		void insertion_helper(const Instance& inst, const std::vector<uint> &, 
 					const std::vector<uint> &assign, Tours &tour) const;
 	
@@ -46,5 +49,6 @@ class InsertionHeuristic{
 		
 		//Switch to enable debug inforamtion. 
 		//If it is false, code can be removed during compilation.
-		static constexpr bool debug_ = false;	
+		static constexpr bool debug_ = false;
+		static constexpr uint random_starts_ = 0;	
 };

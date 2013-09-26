@@ -1,13 +1,32 @@
 #include "SingleCraneTSP_Solver.h"
 #include <string>
+#include <sstream>
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
 
 using namespace std;
 
+
+vector<string> &split(const string &s, char delim, vector<string> &elems) {
+    stringstream ss(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
+
+vector<string> split(const string &s, char delim) {
+    vector<string> elems;
+    split(s, delim, elems);
+    return elems;
+}
+
+
 const string solver_call = "concorde"; 
-const string tsp_file = "TMP_TSP_FILE.TSP"; 
+const string tsp_file = "TMP_TSP_FILE.TSP";
+const string tsp_sol_file = "TMP_TSP_FILE.sol";  
 
 Tours SingleCraneTSP_Solver::operator()(const Instance& inst) const{
 	int M = inst.get_upper_bound();
@@ -27,19 +46,29 @@ Tours SingleCraneTSP_Solver::operator()(const Instance& inst) const{
 	create_TSP_file(dist);
 	
 	//solve it
-	cout<< (solver_call+" "+tsp_file) << endl;
-	int ret = system( (solver_call+" "+tsp_file).c_str() );
+	int ret = system( (solver_call+" "+tsp_file+" > /dev/null").c_str() );
 	if(ret!=0){
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
 	    return Tours{1};
 	}    
+		  
+    //read solution
+    vector<int> vec = parse_solution();	
 	
 	//delete everything
-	//if( remove( tsp_file.c_str() ) != 0 )
-	//    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
-    	
-	
+	if( remove( tsp_file.c_str() ) != 0 )
+	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
+	if( remove( tsp_sol_file.c_str() ) != 0 )
+	    cerr<<"WARNING: Could not delete"<<tsp_sol_file<<"!"<< endl;
+	if( system( "rm TMP_TSP_FILE.* OTMP_TSP_FILE.*" )!=0)
+	    cerr<<"WARNING: Could not delete TMP files!"<< endl;
+
+	    
 	Tours t{1};
+	build_tour(t,vec,inst);
+	
+	cout<< "found tour: "<<inst.makespan(t)<<endl; 
+	cout<< "tour valid?: "<<inst.verify(t)<<endl;
 	return t;
 }
 
@@ -55,7 +84,7 @@ void SingleCraneTSP_Solver::write_TSP_file(fstream &file, const vector<vector<in
     file << "TYPE : TSP" <<endl;
     file << "DIMENSION: "<< distances.size() <<endl;
     file << "EDGE_WEIGHT_TYPE : EXPLICIT" <<endl;
-    file << "EDGE_WEIGHT_FORMT :  FULL_MATRIX" <<endl;
+    file << "EDGE_WEIGHT_FORMAT :  FULL_MATRIX" <<endl;
     file << "EDGE_WEIGHT_SECTION :" <<endl;
     for(const auto& row: distances){
         for(auto entry: row)
@@ -104,11 +133,62 @@ void SingleCraneTSP_Solver::set_distances(vector<vector<int>> &dist, const Insta
 	        
 }
 	    
-	    
-	    
-	    
-	    
-	    
+vector<int> SingleCraneTSP_Solver::parse_solution()const{
+    fstream f;
+    f.open(  tsp_sol_file.c_str(), ios::in );
+    //parse it
+    string line, lines;
+    getline(f, line);  // have line 1
+    while(getline(f, line))  //line 2...
+        lines+=line;
+    vector<string> vec =  split(lines,' ');
+    vector<int> numbers;
+    for(auto i: vec)
+        numbers.push_back(stoi(i));
+
+    int start = 0;
+    while(numbers[start]!=0)
+        ++start;      
+       
+    bool forward = (numbers[(start+1)%numbers.size()]==1);  
+    auto modulus = [=](int a, int m) ->int {return (a+m)%m;};
+    
+    vector<int> tour;
+    int pos = start + forward?1:-1;
+    int m = numbers.size(); 
+    pos = modulus(pos,m);
+
+    for(int i=0; i<m/3;++i){
+        assert(numbers[pos]/3 == numbers[modulus(pos+1,m)]/3);
+        assert(numbers[pos]/3 == numbers[modulus(pos-1,m)]/3);
+        tour.push_back(numbers[pos]/3);
+        if(forward)
+            pos+=3;
+        else
+            pos-=3;
+        pos = modulus(pos,m);
+    }
+    f.close();
+    
+    return tour;
+}	    
+	  
+void SingleCraneTSP_Solver::build_tour(Tours &t,const vector<int> &vec,
+                                            const Instance& inst) const
+{
+    assert(vec[0]==0);
+    //TODO: such a pice of code should be added to the tours class!
+    auto position = inst.get_depot(0);
+    double time = 0;
+    for(uint i=1; i<vec.size();++i){
+		int job = vec[i]-1;
+		time += dist_inf(position,inst[job].alpha());
+		t.add_job(&inst[job], time, 0);
+		time += inst[job].length();
+		position = inst[job].beta();
+    }
+    
+}	    
 	    
 	    
 	    

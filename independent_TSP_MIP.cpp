@@ -2,6 +2,7 @@
 #include "DisjointSet.h"
 #include <set>
 #include <thread>
+#include<algorithm>
 using namespace std;
 
 
@@ -90,9 +91,9 @@ void independent_TSP_MIP::build_constraints_(){
 	uint K = inst_.num_vehicles();
 	
 	//TODO add a better initialization!
-	bigM = 1000;
+	bigM = inst_.get_upper_bound();
     if( not start.empty() )
-        bigM = inst_.makespan(start); 
+        bigM = std::min(static_cast<int>(inst_.makespan(start)), bigM); 
     if(fixed_makespan_>0)
         bigM = fixed_makespan_;
 

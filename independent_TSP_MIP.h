@@ -36,6 +36,8 @@ t_{n+i} = 0							for all i \in [k]//start at depot at time 0
 t(j) - bigM*x(i,j,k)  >= 							//regular starting time constraint
 t(i)+ length(i) + dist(i,j) - bigM)	  for all v \in [k]
 
+alternativ: x(i,j,k) * (t(j) - t(i)- length(i) - dist(i,j)) >= 0  
+
 //if(x_ij==1), startingtime is bigger
 //than first reachable time
 
