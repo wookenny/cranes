@@ -60,45 +60,32 @@ void print_random_instance(vector<string> argv){
 }
 
 void test_mtsp_mip(vector<string> argv){
-	if (argv.size()>6 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <n> <k> <seed> <collision constr., default = false>" 
-			 <<" <LP relaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 0>\n Runs some tests on the mip formulation!"<<endl;
+	if (argv.size()< 1 or argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"test_mip <2dvs file> <collision constr., default = true>" 
+			 <<" <LP relaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 1>\n Runs some tests on the mip formulation!"<<endl;
 		return;
 	}
-	//set default parameter and parse given values
-	int k = 2;
-	int jobs = 10;
-	int seed = 0;
-	bool collisions = false;
+	
+	//set default parameter and parse given value
+	bool collisions = true;
 	bool lp_relax = false;
-	int mip_type = 0;
+	int mip_type = 1;
 	
 	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
 			{"1",true},{"yes",true},{"f",false},{"false",false},
 			{"0",false},{"no",false},{"y",true},{"n",false} };
-	
-	if(argv.size()>0)
-		jobs = stoi(argv[0]);
+
 	if(argv.size()>1)
-		k = stoi(argv[1]);
+		if(string_to_bool.find(argv[1])!=string_to_bool.end())
+			collisions = string_to_bool[argv[1]];	
 	if(argv.size()>2)
-		seed = stoi(argv[2]);
+		if(string_to_bool.find(argv[2])!=string_to_bool.end())
+			lp_relax = string_to_bool[argv[2]];	
 	if(argv.size()>3)
-		if(string_to_bool.find(argv[3])!=string_to_bool.end())
-			collisions = string_to_bool[argv[3]];	
-	if(argv.size()>4)
-		if(string_to_bool.find(argv[4])!=string_to_bool.end())
-			lp_relax = string_to_bool[argv[4]];	
-	if(argv.size()>5)
-		mip_type = stoi(argv[5]);
+		mip_type = stoi(argv[3]);
 
 
-	Instance i(k);
-	//i.generate_random_depots(-10, 10, -10, 10, 0);
-	for(int j=0; j<k;++j)
-		i.add_depotposition(array<int, 2>{{0,0}});
-
-	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
+	Instance i{argv[0]};
 			
 	unique_ptr<generalizedVRP_MIP> mip_ptr;
 	if(1==mip_type) //remember: explicit std::move here because of rvalue
@@ -106,7 +93,7 @@ void test_mtsp_mip(vector<string> argv){
 	else
 		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
 	
-	mip_ptr->set_debug(true);
+	mip_ptr->set_debug(false);
 	mip_ptr->set_collision(collisions);
 	mip_ptr->set_LP(lp_relax);
 		
@@ -116,15 +103,14 @@ void test_mtsp_mip(vector<string> argv){
 	InsertionHeuristic heur(true);
 	heur.set_runs(20);
 	auto sol = heur(i); 
-	cout<<"MIP-Solution valid: "<<i.verify(sol)<<endl;
+	cout<<"Heristic Solution valid: "<<i.verify(sol)<<endl;
 	cout<<"Makespan: "<<i.makespan(sol)<<endl;
 	cout<<sol<<endl;		
-		
+	
 	//mip_ptr->set_start_solution(sol);	
 	mip_ptr->set_fixed_makespan( .5*i.makespan(sol));
 	Tours &&t = mip_ptr->solve();
-	
-	cout<<i<<endl;
+
 	cout<<boolalpha;
 	cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
 	cout<<"Makespan: "<<i.makespan(t)<<endl;
@@ -136,20 +122,16 @@ void test_mtsp_mip(vector<string> argv){
 		cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. MIP WORSE THAN HEURISTIC!"<<endl;
 }
 
-
-
-
-
 void insertion_heuristic(std::vector<std::string> argv){
 	if (argv.size()<1 || argv.size()>5){
-		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <runs>\n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false"<<endl;
+		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <runs> <nm threads>\n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false\n\tnum threads used for local search, default is auto detection"<<endl;
 		return;
 	}
 	
 	unsigned int seed = 0;
 	Instance i;
 	uint argment_offset = 0; 
-	if(argv[0].size()>5 and argv[0].substr(argv[0].size()-5,5)==".2dvs"){
+	if(argv[0].size()>6 and argv[0].substr(argv[0].size()-5,5)==".2dvs"){
 	    argment_offset = -2;
 	    i = Instance{argv[0]};
 	}else{
@@ -167,18 +149,21 @@ void insertion_heuristic(std::vector<std::string> argv){
 	if (argv.size()> 3+argment_offset)
 		if(string_to_bool.find(argv[3+argment_offset])!=string_to_bool.end())
 			local_search = string_to_bool[argv[3+argment_offset]];			
-		
+
 	i.debug(false);
 	cout<< i <<endl;
 	InsertionHeuristic heur(local_search);
-	if (argv.size()>4+argment_offset)	
-		heur.set_runs(stoi(argv[4+argment_offset]));
+    if (argv.size()>4+argment_offset)	
+		heur.set_runs(stoi(argv[4+argment_offset]));		
+	if (argv.size()>5+argment_offset)
+		heur.set_num_threads(stoi(argv[5+argment_offset]));			    	
 		
 	auto sol = heur(i);
 	cout<<endl;
 	if(i.num_jobs()<=20)
 	    cout<<"\n"<< sol <<endl;
 
+    cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
 }
 
 
@@ -322,7 +307,6 @@ void laser(std::vector<std::string> argv){
 		cout<< "ERROR: Couldn't write "<<twoDVS<<" instance as a laser sharing problem to file "
 			<< lsp <<endl;
 	}
-	
 }
 
 void single_tsp(std::vector<std::string> argv){
@@ -333,9 +317,11 @@ void single_tsp(std::vector<std::string> argv){
 	
     SingleCraneTSP_Solver solver;
     Instance i(argv[0]);
-    
+    if( i.num_vehicles()!=1){
+        cout<<"Setting number of vehicles to 1!"<<endl;
+        i.set_num_vehicles(1);
+    }
     //solve it
     Tours t = solver(i);
-    
-    
 }
+

@@ -59,7 +59,10 @@ class Tours{
     	bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
 
 
-		const std::vector<scheduledJob>& operator[](int i) const{ return _tours[i];}
+		const std::vector<scheduledJob>& operator[](int i) const{
+		    assert(0<=i and i < static_cast<int>(_tours.size()) );
+		    return _tours[i];
+		}
 		
 		void clear(){ 
 			_job_map.clear();

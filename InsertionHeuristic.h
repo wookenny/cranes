@@ -24,12 +24,14 @@ class InsertionHeuristic{
 		Tours operator()(const Instance& inst) const;
 		
 		InsertionHeuristic():InsertionHeuristic(false){}
-		InsertionHeuristic(bool ls):local_search_(ls),runs_(1){}
+		InsertionHeuristic(bool ls):local_search_(ls),runs_(1),threads_(-1){}
 		void set_runs(uint r){runs_ = r;}
+		void set_num_threads(int t){threads_ = t;}
 		
 	private:
 		mutable bool local_search_;
 		uint runs_;
+		int threads_;
 		uint earliest_startingtime_(const Instance&, const Tours&, const Job&, uint v) const;
 		
 		

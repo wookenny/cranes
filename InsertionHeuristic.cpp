@@ -20,34 +20,30 @@ bool is_permutation(vector<uint> v){
 
 class LocalSearch_Swap{
     public:
-        LocalSearch_Swap(const Instance& i, std::vector<uint> p, std::vector<uint> a, 
-                            int t, int tt, int &o, std::vector<uint> &bp,
+        LocalSearch_Swap(const Instance& i, std::vector<uint> p, 
+                            std::vector<uint> a, int t, int tt, int &o, 
+                            std::vector<uint> &bp,std::vector<uint> &ba,
                             bool better=true,bool* s=nullptr):
-                            inst(i),perm(p),assign(a),thread(t),total_threads(tt),
-                            opt(o),best_perm(bp),find_better(better),stop(s){}
+                            inst(i),perm(p),assign(a),thread(t),
+                            total_threads(tt),opt(o),best_perm(bp),
+                            best_assign(ba),find_better(better),stop(s){}
         void operator()()
 	    {       
             InsertionHeuristic insert;
             Tours tour = insert(inst, perm, assign);
 			opt = inst.makespan(tour);
 
-            //two exchange
+            //two exchange in permutation
             for(uint i = thread; i<inst.num_jobs(); i+=total_threads){
         		for(uint j = i+1; j<inst.num_jobs(); ++j){
 			        swap(perm[i],perm[j]);		
-		            //build tour and compare makespan	
-			        tour.clear();
-			        tour = insert(inst, perm, assign);
-			        int new_makespan = inst.makespan(tour);
-			        if( new_makespan < opt){
-			            opt = new_makespan;
-				        //cout<<"t_"<<thread<<": "<<opt<<endl;
-				        best_perm = perm;
-				        if(stop!=nullptr and *stop) return;
-				        if(find_better){
-				            //set to top, if pointer given and still false
-				            if(stop!=nullptr and not *stop)
-				                *stop = true;
+			        if(stop!=nullptr and *stop) return;
+			        //another thread found a solution and this one can stop?
+			        bool is_better = evaluate(insert, tour);
+    		        if(is_better and find_better){
+        	            if(stop!=nullptr and not *stop){
+                        //set to stop, if pointer given and still false
+				            *stop = true;
 				            return;
 				        }
 			        }		
@@ -55,6 +51,27 @@ class LocalSearch_Swap{
 			        swap(perm[i],perm[j]);
 		        }
         	}
+        	
+        	//change in assignment
+        	for(uint i = thread; i<inst.num_jobs(); i+=total_threads){
+                uint orig_vehicle = assign[i];
+                for(uint k=0;k < inst.num_vehicles();++k){
+        	        if(k==orig_vehicle) continue;
+        	        assign[i] = k;
+        	        if(stop!=nullptr and *stop) return;
+			        //another thread found a solution and this one can stop?
+        	        bool is_better = evaluate(insert, tour);
+    		        if(is_better and find_better){
+        	            if(stop!=nullptr and not *stop){
+                        //set to stop, if pointer given and still false
+				            *stop = true;
+				            return;
+				        }
+			        }		
+        	    }
+        	    assign[i] = orig_vehicle;
+        	    //reset originally assigned vehicle   
+        	}     	  
         }
     private:
         const Instance& inst;
@@ -63,9 +80,24 @@ class LocalSearch_Swap{
         int thread;
         int total_threads;
         int& opt;
-        std::vector<uint> &best_perm;      
+        std::vector<uint> &best_perm;
+        std::vector<uint> &best_assign;          
         bool find_better;
         bool* stop;
+        
+        bool evaluate(InsertionHeuristic& insert, Tours & tour){	
+	        tour.clear();
+	        tour = insert(inst, perm, assign);
+		    int new_makespan = inst.makespan(tour);
+		    if( new_makespan < opt){
+		        opt = new_makespan;
+		        //cout<<"t_"<<thread<<": "<<opt<<endl;
+				best_perm = perm;
+				best_assign = assign;
+				return true;
+			}
+			return false;	        
+	    } 		
 };
 
 
@@ -231,16 +263,18 @@ bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst,
 	insertion_helper(inst, perm,assign,best_tour);
 	int makespan = inst.makespan(best_tour);
 
-    const int num_threads = thread::hardware_concurrency();
+    const int num_threads = (threads_>0)?threads_:thread::hardware_concurrency();
     vector<std::thread> threads;
     vector<int> opt(num_threads);
     vector<vector<uint>> best_perms(num_threads);
+    vector<vector<uint>> best_assign(num_threads);
+    
     
     //Launch a group of threads
     for (int i = 0; i < num_threads; ++i)
         threads.push_back( 
             std::thread( LocalSearch_Swap(inst,perm,assign,i,num_threads,
-                 opt.at(i), best_perms.at(i),find_better,&halt_threads ))
+                 opt.at(i), best_perms.at(i),best_assign.at(i),find_better,&halt_threads ))
             );
     
     //wait for them
@@ -259,7 +293,8 @@ bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst,
     }
 
     if(best_index>=0){
-        perm = best_perms[best_index];
+        perm    = best_perms[best_index];
+        assign  = best_assign[best_index];
         //assert(is_permutation(perm));
         t.clear(); 
         insertion_helper(inst, perm,assign,t);
@@ -269,14 +304,18 @@ bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst,
 }
 
 
-void InsertionHeuristic::insertion_helper(const Instance& inst, const vector<uint> &perm, 			const vector<uint> &assign, Tours &tour) const
+void InsertionHeuristic::insertion_helper(const Instance& inst, 
+                                          const vector<uint> &perm, 			
+                                          const vector<uint> &assign, 
+                                          Tours &tour) const
 {	
 	//insert every job at the first, collision-free position
 	for(uint i=0; i < inst.num_jobs();++i){
 		const Job& job = inst[perm[i]];
 		int time = earliest_startingtime_(inst,tour,job,assign[i]);	
 		if(debug_) 
-			cout<<"added job "<<job<<" @ "<< time <<" to vehicle "<<assign[i] <<endl;
+			cout<<"added job "<<job<<" @ "
+			    << time <<" to vehicle "<<assign[i] <<endl;
 		
 		tour.add_job(&job, time, assign[i]);
 		if(debug_) 
@@ -287,6 +326,8 @@ void InsertionHeuristic::insertion_helper(const Instance& inst, const vector<uin
 uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 				const Tours& tours,	const Job& job, uint v) const
 {
+    if(v >= tours.num_tours())
+        cout<<"insert into tour "<<v<<", number veh.:  "<<tours.num_tours() <<endl;
 	assert(v < tours.num_tours());
 	int time;
 	if(tours[v].size() > 0){
@@ -320,12 +361,12 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 	if(debug_)  cout<<"jobs on smaller vehicles than job"<<endl;
 	for(uint i = 0; i <= v; ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
-			//if tour[i][j] is right, than job can not be in the right cone of it!
+		//if tour[i][j] is right, than job can not be in the right cone of it!
 			intervalsForLeftCone(tours[i][j], job, events);
 	if(debug_)  cout<<"jobs on bigger vehicles than job"<<endl;	
 	for(uint i = v; i < tours.num_tours(); ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
-			//if tour[i][j] is left, than job can not be in the left cone of it!
+		//if tour[i][j] is left, than job can not be in the left cone of it!
 			intervalsForRightCone(tours[i][j], job, events);
 	
 	
@@ -347,7 +388,9 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 }
 
 
-void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, const Job& job, vector<interval>& events) const
+void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, 
+                                               const Job& job, 
+                                               vector<interval>& events) const
 {
 
 	//interval: [t_r - (x_r-x), t_l + (x_r-x)] for all 4 pairs of alpha/beta
@@ -367,7 +410,8 @@ void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, con
 		diff_x = job.alpha()[0] - cone_x;
 		if(diff_x > 0){
 			if(debug_) 
-				cout<< "["<< cone_t - diff_x <<" - "<< cone_t + diff_x<<"]"<<endl;
+				cout<< "["<< cone_t - diff_x <<" - "
+				    << cone_t + diff_x<<"]"<<endl;
 			events.push_back( make_tuple(cone_t - diff_x, +1) );
 			events.push_back( make_tuple(cone_t + diff_x, -1) );
 		}	
@@ -388,7 +432,9 @@ void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, con
 	}
 }
 
-void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob, const Job& job, vector<interval>& events) const
+void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob, 
+                                              const Job& job, 
+                                              vector<interval>& events) const
 {
 
 	//interval: [t_l - (x-x_l), t_l + (x-x_l)] for all 4 pairs of alpha/beta
@@ -408,7 +454,8 @@ void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob, const
 		diff_x = cone_x - job.alpha()[0];
 		if(diff_x > 0){
 			if(debug_) 
-				cout<< "["<< cone_t - diff_x <<" - "<< cone_t + diff_x<<"]"<<endl;
+				cout<< "["<< cone_t - diff_x <<" - "
+				    << cone_t + diff_x<<"]"<<endl;
 			events.push_back( make_tuple(cone_t - diff_x, +1) );
 			events.push_back( make_tuple(cone_t + diff_x, -1) );
 		}	

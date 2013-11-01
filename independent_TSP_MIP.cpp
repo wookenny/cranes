@@ -30,7 +30,7 @@ void independent_TSP_MIP::build_variables_(){
 
     string name;
 	//additional depot and 
-	if(fixed_makespan_ < 0){	
+	if(fixed_makespan_ <= 0){	
 	    name = "makespan";
 	    v_[name] = counter_++;
 	    vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
@@ -90,8 +90,7 @@ void independent_TSP_MIP::build_constraints_(){
 	uint n = inst_.num_jobs();
 	uint K = inst_.num_vehicles();
 	
-	//TODO add a better initialization!
-	bigM = inst_.get_upper_bound();
+	bigM = inst_.get_upper_bound()+1;
     if( not start.empty() )
         bigM = std::min(static_cast<int>(inst_.makespan(start)), bigM); 
     if(fixed_makespan_>0)
@@ -224,7 +223,7 @@ void independent_TSP_MIP::build_constraints_(){
 		//IloNumVar &makespan = vars_[v_["makespan"]];
 		const Job& job = inst_[i-1];
 		IloExpr expr(env_);
-		if(fixed_makespan_<0)
+		if(fixed_makespan_<=0)
 		    expr += 1* vars_[v_["makespan"]];
 		else
 		    expr += fixed_makespan_;
@@ -266,8 +265,6 @@ void independent_TSP_MIP::build_constraints_(){
 //parsing of solution		
 void independent_TSP_MIP::parse_solution_(Tours &tours){
 
-	//TODO: remove this line after debuging
-	//print_LP_solution_();
 
 	uint n = inst_.num_jobs();
 
@@ -467,7 +464,7 @@ Tours independent_TSP_MIP::solve(){
         add_MIP_start_();
 		
 		//print small models 
-		if( inst_.num_jobs()<=6)
+		if( debug_ and inst_.num_jobs()<=6)
 			cout<<"MIP Model: \n"<<model_<<endl;
 		
 		//add callback to create cuts on the fly
@@ -476,7 +473,7 @@ Tours independent_TSP_MIP::solve(){
 		cplex_.setParam(IloCplex::IntParam::Threads	,threads);
 		cout<<"Detected "<<threads<<" cores" <<endl;
 		
-		if(debug_ and fixed_makespan_)
+		if(debug_ and fixed_makespan_>0)
 		    cout<< "Checking for solution with makspan at most "
 		        << fixed_makespan_<< endl;
 			
@@ -514,7 +511,7 @@ Tours independent_TSP_MIP::solve(){
 
 
 void independent_TSP_MIP::add_MIP_start_(){
-    if(LP_relaxation_ or start.empty()) return;
+    if(LP_relaxation_ or start.empty() ) return;
     if(fixed_makespan_>0) return; //not sound to set a start in this setting
     
     auto schedule = start.get_schedule();
@@ -525,7 +522,6 @@ void independent_TSP_MIP::add_MIP_start_(){
     IloNumVarArray startVar(env_);
     IloNumArray startVal(env_);
 
-
     //makespan,	a variable for the makespan
     startVar.add(vars_[v_["makespan"]]);
     startVal.add(inst_.makespan(start));
@@ -534,22 +530,20 @@ void independent_TSP_MIP::add_MIP_start_(){
     for(uint i=1; i<=n; ++i){
         startVar.add(t(i));
         //starting time shopuld be an integer! or at least close to it
-        assert( fabs(get<1>(schedule[i])- (int)(get<1>(schedule[i])))<.01 ); 
-        
+        assert( fabs(get<1>(schedule[i])- (int)(get<1>(schedule[i])))<.01 );       
         startVal.add( (int)(get<1>(schedule[i])) );
     }
-    
+
     //x_i,j,k for used edges between jobs
     for(uint v=0; v< K; ++v)
-        for(uint i=0; i<start[v].size()-1;++i){
-            
+        for(uint i=0; i+1 < start[v].size(); ++i){
             int job1 = std::get<0>(start[v][i])->num();
             int job2 = std::get<0>(start[v][i+1])->num();
                            
             startVar.add(x(job1,job2,v+1));
             startVal.add( 1 );
         }
-        
+
     //edges from depot to first job AND from last to depot
     for(uint v=0; v< K; ++v){
         if(start[v].empty()) continue;
@@ -719,9 +713,11 @@ void independent_TSP_MIP::add_MIP_start_(){
 		        }
             }
         }
-        for(auto name: variables)
-            cout<< name<< " = "<<1<< endl;
-        cout << "\n"<< endl;
+        if(debug_){
+            for(auto name: variables)
+                cout<< name<< " = "<<1<< endl;
+            cout << "\n"<< endl;
+        }
     }
     
     //add the vector to the system
