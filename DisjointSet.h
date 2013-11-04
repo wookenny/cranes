@@ -10,44 +10,40 @@ when n is the initial size of the DisjointSet object.
 Another possiblility is to use "boost/disjoint_sets.hpp".
 **/
 class DisjointSet{
-	
-	private:
-		/** the number of the disjoint sets, possible value is between 1 and n**/
-		unsigned int size_;
+ private:
+    /** the number of the disjoint sets, possible value is between 1 and n**/
+    unsigned int size_;
 
-		/** a node that represents the set for each element, 
-		this elements changes during some operations**/
-		std::vector<unsigned int>  parent_;
-		/**The rank is an upper bound on the height of a key. 
-		It determines how many steps are needed at most to find the root.**/
-		std::vector<unsigned int>  rank_; 
+    /** a node that represents the set for each element, 
+    this elements changes during some operations**/
+    std::vector<unsigned int>  parent_;
+	/**The rank is an upper bound on the height of a key. 
+	It determines how many steps are needed at most to find the root.**/
+    std::vector<unsigned int>  rank_;
 
-		/**Both sets will regard the same root. This operation should only
-			 be used with notes that are roots. Do not call it directly. **/
-		void linkSets_(unsigned int set1, unsigned int set2);	
-	public:
+    /**Both sets will regard the same root. This operation should only
+    be used with notes that are roots. Do not call it directly. **/
+    void linkSets_(unsigned int set1, unsigned int set2);
 
-		//constr.
-		/** Creates a set of n disjoints sets */
-		DisjointSet( unsigned int n = 0 );
-		/** Creates disjoint sets out of a permutation vector. The permutation defines members of the same set. 
-		It's the representation of some subtours.*/
-		DisjointSet( const std::vector<int> &permutation  );
-	
-		//public methods
-		/** Returns the number of disjoint sets. */
-		unsigned int size() const{ return size_; }
-		/** Returns the root node for a given node.*/
-		unsigned int findSet( unsigned int node);
-		/** Joins togehter two sets given by arbitrary elements of the sets.*/
-		void unionSets(unsigned int nodeOutOfSet1, unsigned int nodeOutOfSet2){ 
-			unsigned int set1 = findSet(nodeOutOfSet1); 
-			unsigned int set2 = findSet(nodeOutOfSet2); 
-			if(set1==set2) return;
-			linkSets_( set1, set2 );
-			--size_;
-		}
-	 
+ public:
+    // constr.
+    /** Creates a set of n disjoints sets */
+    explicit DisjointSet(unsigned int n = 0);
+    /** Creates disjoint sets out of a permutation vector. The permutation defines members of the same set. 
+    It's the representation of some subtours.*/
+    explicit DisjointSet(const std::vector<int> &permutation);
 
+    // public methods
+    /** Returns the number of disjoint sets. */
+    unsigned int size() const { return size_; }
+    /** Returns the root node for a given node.*/
+    unsigned int findSet(unsigned int node);
+    /** Joins togehter two sets given by arbitrary elements of the sets.*/
+    void unionSets(unsigned int nodeOutOfSet1, unsigned int nodeOutOfSet2){
+        unsigned int set1 = findSet(nodeOutOfSet1);
+        unsigned int set2 = findSet(nodeOutOfSet2);
+        if (set1 == set2) return;
+        linkSets_(set1, set2);
+        --size_;
+    }
 };
-
