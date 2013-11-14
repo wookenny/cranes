@@ -19,8 +19,13 @@ class Job{
 		
 	public:
 		Job() = default ;
+		Job(const Job&)= default;
+		Job(const Job* j):_num(j->_num),
+		                  _alpha{{j->_alpha[0],j->_alpha[1]}},
+		                  _beta{{j->_beta[0],j->_beta[1]}} {};
 		Job(int num,int alpha_x,int alpha_y,int beta_x, int beta_y):_num(num),
-									_alpha{{alpha_x,alpha_y}},_beta{{beta_x,beta_y}}{};
+									_alpha{{alpha_x,alpha_y}},
+									_beta{{beta_x,beta_y}}{};
 		
 		const std::array<int,2>& get_alpha() const{return _alpha;}							
 		const std::array<int,2>& get_beta() const{return _beta;}					
@@ -34,9 +39,14 @@ class Job{
 		int num() const{return _num;}
 		std::string to_string() const;
 
+        void shift(int x_shift, int y_shift) {
+            _alpha[0] += x_shift; _beta[0] += x_shift;
+            _alpha[1] += y_shift; _beta[1] += y_shift;
+        }
+
 		bool operator==(const Job& j) const;
 
-
+        
 		/*
 		This method considers the implication between the
 		assignment of two jobs with given startingtimes.

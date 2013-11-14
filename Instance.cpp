@@ -111,7 +111,8 @@ void Instance::parse_line_(string &line){
 
 }
 
-void Instance::generate_random_jobs(int n, int min_x, int max_x, int min_y, int max_y, unsigned int seed){
+void Instance::generate_random_jobs(int n, int min_x, int max_x,
+                                    int min_y, int max_y, unsigned int seed){
 	
 	//random number generation via mersenne twister
 	mt19937_64 rng;
@@ -192,12 +193,17 @@ bool Instance::verify(Tours& t) const{
 			double time2; const Job* job2;
 			tie(job1, time1) = t[i][j-1];
 			tie(job2, time2) = t[i][j];		
-			if(dist_inf(job1->get_beta(),job2->get_alpha())+job1->length() > (time2 - time1 )+EPS){
+			if(dist_inf(job1->get_beta(),job2->get_alpha())+job1->length() >
+			                                             (time2 - time1 )+EPS){
 				if(debug_){ 
-					cout<< "Job "<<*job2<<" not reachable after job "<<*job1<<endl;
+					cout<< "Job "<<*job2<<" not reachable after job "
+					    <<*job1<<endl;
 					cout<<"starting times: "<<time1 << " and "<<time2<<endl;
-					cout<<time1<< " + "<<job1->length()<<" + "<<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS "
-					<< " = " << (time1+job1->length()+dist_inf(job1->get_beta(),job2->get_alpha())) << " - EPS > "<<time2<<endl;
+					cout<<time1<< " + "<<job1->length()<<" + "
+					  <<dist_inf(job1->get_beta(),job2->get_alpha()) <<" - EPS "
+					  << " = " << (time1+job1->length()+
+					       dist_inf(job1->get_beta(),job2->get_alpha())) 
+					  << " - EPS > "<<time2<<endl;
 				}
 				return false;
 			}	
@@ -208,16 +214,30 @@ bool Instance::verify(Tours& t) const{
 	//4. all tours collision-free
 	//check the direction induced by the four points of two jobs
 	// valid if: not contradicting, ok with assigned vehicles
-	//check jobs on pair of differnt vehicles	
+	//check pair of jobs on differnt vehicles	
 	for(uint v1=0; v1<t.num_tours()-1; ++v1){
 		for(uint v2=v1+1; v2<t.num_tours(); ++v2){
 			for(uint i=0; i<t.num_jobs(v1); ++i){
 				for(uint j=0; j<t.num_jobs(v2); ++j){
 					//i left of j => 1 or -2 are bad outcomes
-					int ord = Job::getOrdering(t[v1][i],t[v2][j]);
+					
+					//safety dist>0 => shift second job to the left,
+					//shifting distance: vehicle difference * safety dist
+					int ord = -2;
+					if(safety_distance_ <= 0){
+					    ord = Job::getOrdering(t[v1][i],t[v2][j]);
+				    }else{
+				        Job job_shifted( std::get<0>(t[v2][j]) );
+				        auto time = std::get<1>(t[v2][j]);
+				        job_shifted.shift(-1*safety_distance_*(v2-v1),0);
+				        std::tuple<const Job*, double> second_job;
+				        second_job = make_tuple(&job_shifted, time); 
+				        ord = Job::getOrdering(t[v1][i],second_job); 
+				    }				
 					if(-2==ord or 1==ord){
 						if(debug_){
-							cout<< "Job "<<t[v1][i]<<" crosses with job "<<t[v2][j]<<endl;
+							cout<< "Job "<<t[v1][i]<<" crosses with job "
+							             <<t[v2][j]<<endl;
 						}
 						return false;
 					}	

@@ -10,26 +10,30 @@
 
 /**
 All information about an instance are encapsulated here. 
-Basic functions like the information about all jobs or in- and output via files are provided. 
-The function that generated random jobs can be useful for some algorithmic tests.
+Basic functions like the information about all jobs or in- and output 
+via files are provided. 
+The function that generated random jobs can be useful
+ for some algorithmic tests.
 **/
 class Instance{
 	
 	private:
-		unsigned int num_vehicles_;
+		unsigned int num_vehicles_ = 2;
+		unsigned int safety_distance_ = 0;
 		std::vector< std::array<int, 2> > depotPositions_;
 		std::vector<Job> jobs_;
 		
-		bool debug_;
+		bool debug_ = false;
 	public:
 		
 		//constrs
 		Instance() = default;
-		Instance(unsigned int i): num_vehicles_(i),debug_(false){}
- 		Instance(std::string file);	
+		explicit Instance(unsigned int i): num_vehicles_(i){}
+ 		explicit Instance(std::string file);	
 		
 		
-		/** Writes the instance to a 2DVS File with the given name. A given comment will be written at the end.
+		/** Writes the instance to a 2DVS File with the given name. 
+		A given comment will be written at the end.
 		No special format for the commentstring needed.**/
 		void writeToFile(std::string filename, std::string comments = "") const;
 		
@@ -54,9 +58,11 @@ class Instance{
 		    return depotPositions_[i]; }  
 		
 		//generates n random jobs in the given bounds
-		void generate_random_jobs(int n, int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
+		void generate_random_jobs(int n, int min_x, int max_x, 
+		                          int min_y, int max_y, unsigned int seed=0);
 		//generates depot positions such that it fits to the number of depots
-		void generate_random_depots(int min_x, int max_x, int min_y, int max_y, unsigned int seed=0);
+		void generate_random_depots(int min_x, int max_x, int min_y, 
+		                            int max_y, unsigned int seed=0);
 		
 		//get the smallest bounding box around the whole instance
 		std::array<int,4> get_bounding_box() const;
@@ -65,7 +71,9 @@ class Instance{
 		bool   verify(Tours& t) const;
 		double makespan(Tours& t) const;
 		
-		Tours get_MIP_solution(bool collision_free = false,bool LP_relax = false, bool debug = false) const;
+		Tours get_MIP_solution(bool collision_free = false,
+		                       bool LP_relax = false, 
+		                       bool debug = false) const;
 		unsigned int get_upper_bound() const;
 		
 	private:
@@ -74,7 +82,8 @@ class Instance{
 	
 };
 
-/** Stream operator for convenience. Prints the string representation of the instance. **/
+/** Stream operator for convenience. 
+Prints the string representation of the instance. **/
 inline 
 std::ostream& operator <<(std::ostream &os,const Instance &inst)
 {
