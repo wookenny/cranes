@@ -4,19 +4,15 @@
 #include <random>
 #include <thread>
 #include <utility>
+#include <chrono>
 
 using namespace std;
+    
 
-//TODO: change parallel mode to deal with swaps
-//TODO: change parallel mode to find better neighbor
 
-bool is_permutation(vector<uint> v){
-    sort(begin(v),end(v));
-    for(uint i=0; i<v.size();++i)
-        if(v[i]!=i)
-            return false;
-    return true; 
-}
+//------------------------------------------------------------------//
+//     Helper class defining swaps in assignment and permutation    //
+//------------------------------------------------------------------//
 
 class LocalSearch_Swap{
     public:
@@ -100,7 +96,102 @@ class LocalSearch_Swap{
 	    } 		
 };
 
+//------------------------------------------------//
+//     Method of the Class Insertion Heuristic    //
+//------------------------------------------------//
 
+/* Main method/functor. Generates an assignment and a permutation 
+and starts the insertion heuristic.*/
+Tours InsertionHeuristic::operator()(const Instance& inst) const{
+    //measure the time    
+    using namespace std::chrono;
+    starting_time_ = system_clock::now();
+
+	//randomness
+	mt19937 rng; 
+	rng.seed(time(0));
+
+	uint n = inst.num_jobs();
+	//get some random permutation
+	vector<uint> perm;
+	perm.reserve(n);
+	for (uint i=0; i<n; ++i) 
+		perm.push_back(i);
+	vector<uint> assign;	
+    uniform_int_distribution<uint> uint_dist(0,inst.num_vehicles()-1);
+	
+	Tours solution(inst.num_vehicles());
+	uint runs = 0;
+	bool ls = local_search_;
+	local_search_ = false;
+	//merge first runs and the last runs with additional localsearch
+	while(runs < runs_ + random_starts_){
+	    if(runs == random_starts_)
+	        local_search_ = ls;
+		//randomize permutation and assignment
+		if(no_assignment == false){
+		    random_shuffle(perm.begin(),perm.end());
+		    assign.clear();
+		    for (uint i=0; i<n; ++i) 
+			    assign.push_back( uint_dist(rng) );
+		}
+		//construct tour with ass. + perm	
+		Tours t{static_cast<int>(inst.num_vehicles())};
+		if(no_assignment)
+		    t = operator()(inst, perm);
+		else t = operator()(inst, perm, assign);
+		if(0==runs or  inst.makespan(t)<inst.makespan(solution))
+			solution = t;
+		++runs;
+		if (not time_remaining()){
+		    cout<<"No remaining time. Stopping after "<<runs;
+		    cout<<(runs>=2?" runs\n":" run\n.");
+		    return solution;
+		 }   
+		//cout<<"-------------------" <<endl;
+	}
+	//cout<< "best: "<<inst.makespan(solution)<<endl;	
+	return solution;
+}
+
+
+/* insertion heuristic with given permutation, but without an assignment*/
+Tours InsertionHeuristic::operator()(const Instance& inst, 
+					const vector<uint> &perm) const
+{
+	assert( perm.size() == inst.num_jobs() );
+	
+	Tours tour(inst.num_vehicles());
+
+	vector<uint> p = perm;
+
+    //TODO: something usefull as to happen here!
+    
+	/*
+	if(local_search_){
+		Tours t(inst.num_vehicles());	
+		bool decrease =  get_best_neighbour_parallel(inst, p, t); 
+		//bool decrease =  get_better_neighbour(inst, p, a, t); 
+		while(decrease){
+			 decrease =  get_best_neighbour_parallel(inst, p, t); 
+			 //decrease =  get_better_neighbour(inst, p, a, t); 
+			 if(not time_remaining()) break;
+			    
+			 }
+		insertion_helper(inst, p,tour);	
+	}else{
+	*/
+	//TODO: enable local search
+		insertion_helper(inst, p,tour);
+	//}	
+		
+		
+	if(debug_) cout<<tour<<endl;
+   
+	return tour;
+}
+
+/* insertion heuristic with given permutation and assignment*/
 Tours InsertionHeuristic::operator()(const Instance& inst, 
 					const vector<uint> &perm, const vector<uint> &assign) const
 {
@@ -114,13 +205,15 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	
 	
 	if(local_search_){
-		Tours t(inst.num_vehicles());	
+		Tours t{static_cast<int>(inst.num_vehicles())};	
 		bool decrease =  get_best_neighbour_parallel(inst, p, a, t); 
 		//bool decrease =  get_better_neighbour(inst, p, a, t); 
-		while(decrease)
+		while(decrease){
 			 decrease =  get_best_neighbour_parallel(inst, p, a, t); 
 			 //decrease =  get_better_neighbour(inst, p, a, t); 
-
+			 if(not time_remaining()) break;
+			    
+			 }
 		insertion_helper(inst, p,a,tour);	
 	}else{
 		insertion_helper(inst, p,a,tour);
@@ -132,45 +225,6 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	return tour;
 }
 
-Tours InsertionHeuristic::operator()(const Instance& inst) const{
-	
-
-	//randomness
-	mt19937 rng; 
-	rng.seed(time(0));
-
-	uint n = inst.num_jobs();
-	//get some random permutation
-	vector<uint> perm;
-	perm.reserve(n);
-	for (uint i=0; i<n; ++i) 
-		perm.push_back(i);
-	vector<uint> assign;	
-	uniform_int_distribution<uint> uint_dist(0,inst.num_vehicles()-1);
-	
-	Tours solution(inst.num_vehicles());
-	uint runs = 0;
-	bool ls = local_search_;
-	local_search_ = false;
-	//merge first runs and the last runs with additional localsearch
-	while(runs < runs_ + random_starts_){
-	    if(runs == random_starts_)
-	        local_search_ = ls;
-		//randomize permutation and assignment
-		random_shuffle(perm.begin(),perm.end());
-		assign.clear();
-		for (uint i=0; i<n; ++i) 
-			assign.push_back( uint_dist(rng) );
-		
-		Tours t = operator()(inst, perm, assign);
-		if(0==runs or  inst.makespan(t)<inst.makespan(solution))
-			solution = t;
-		++runs;
-		//cout<<"-------------------" <<endl;
-	}
-	//cout<< "best: "<<inst.makespan(solution)<<endl;	
-	return solution;
-}
 
 
 bool InsertionHeuristic::get_better_neighbour(const Instance& inst, 
@@ -318,6 +372,33 @@ void InsertionHeuristic::insertion_helper(const Instance& inst,
 			    << time <<" to vehicle "<<assign[i] <<endl;
 		
 		tour.add_job(&job, time, assign[i]);
+		if(debug_) 
+			cout<<"-------------------------------------"<<endl;
+	}
+}
+
+
+void InsertionHeuristic::insertion_helper(const Instance& inst, 
+                                          const vector<uint> &perm, 			
+                                           Tours &tour) const
+{	
+	//insert every job at the first, collision-free position
+	for(uint i=0; i < inst.num_jobs();++i){
+		const Job& job = inst[perm[i]];
+		int time = earliest_startingtime_(inst,tour,job,0);
+		uint assign = 0;
+		for(uint v=1; v<inst.num_vehicles();++v){
+		    int curr_time  = earliest_startingtime_(inst,tour,job,v);	
+		    if(curr_time< time){
+		        time = curr_time;
+		        assign = v;
+		    }
+		}    
+		if(debug_) 
+			cout<<"added job "<<job<<" @ "
+			    << time <<" to vehicle "<<assign <<endl;
+		
+		tour.add_job(&job, time, assign);
 		if(debug_) 
 			cout<<"-------------------------------------"<<endl;
 	}
@@ -474,5 +555,15 @@ void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob,
 			events.push_back( make_tuple(cone_t + diff_x - job.length(), -1) );
 		}
 	}
+}
+
+bool InsertionHeuristic::time_remaining() const{
+    using namespace std::chrono;
+    if(time_limit_ <=0)
+        return true;    
+    
+    auto now = std::chrono::system_clock::now();        
+    auto total_seconds = duration_cast<seconds>(now - starting_time_);
+    return (total_seconds.count() < time_limit_);
 }
 

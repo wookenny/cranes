@@ -57,7 +57,7 @@ TEST(Tour_Class/*Testcase Name*/, Adding_and_Sorting /*Test name*/) {
   	EXPECT_EQ(t.contains(&j5), false);
   	//size checks
   	EXPECT_EQ(t.num_jobs(), 4U);
-  	EXPECT_EQ(t.num_tours(),2U);
+  	EXPECT_EQ(t.num_tours(), 2U);
   	EXPECT_EQ(t[0].size(), t.num_jobs(0));
   	EXPECT_EQ(t[0].size(), 3U);
   	

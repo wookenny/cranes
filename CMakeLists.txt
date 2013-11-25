@@ -102,7 +102,7 @@ ADD_EXECUTABLE(2DVS ${2DVS_Sources} )
 target_link_libraries (2DVS PM) 
 
 add_custom_target(
-    myBuildVersion
+    BuildVersion
     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build_version.sh
     )
 add_dependencies(2DVS myBuildVersion)

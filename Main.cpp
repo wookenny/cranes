@@ -124,7 +124,7 @@ void test_mtsp_mip(vector<string> argv){
 
 void insertion_heuristic(std::vector<std::string> argv){
 	if (argv.size()<1 || argv.size()>5){
-		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <runs> <nm threads>\n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false\n\tnum threads used for local search, default is auto detection"<<endl;
+		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <no permutation><runs> <time limit(s)> <num threads> \n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false\n\tno assigment: if true, jobs are added to te first vehicle available, otherwise, an assigment will be generated, default = false\n\ttime limit for the execution, default is no bound\n\tnum threads used for local search, default is auto detection"<<endl;
 		return;
 	}
 	
@@ -153,10 +153,16 @@ void insertion_heuristic(std::vector<std::string> argv){
 	i.debug(false);
 	cout<< i <<endl;
 	InsertionHeuristic heur(local_search);
-    if (argv.size()>4+argment_offset)	
-		heur.set_runs(stoi(argv[4+argment_offset]));		
-	if (argv.size()>5+argment_offset)
-		heur.set_num_threads(stoi(argv[5+argment_offset]));			    	
+	if (argv.size()> 4+argment_offset)
+		if(string_to_bool.find(argv[4+argment_offset])!=string_to_bool.end())
+			heur.set_use_assignment(string_to_bool[argv[4+argment_offset]]);	
+    if (argv.size()>5+argment_offset)	
+		heur.set_runs(stoi(argv[5+argment_offset]));		
+	if (argv.size()>6+argment_offset)
+		heur.set_timelimit(stoi(argv[6+argment_offset]));		
+			
+	if (argv.size()>7+argment_offset)
+		heur.set_num_threads(stoi(argv[7+argment_offset]));			    	
 		
 	auto sol = heur(i);
 	cout<<endl;
