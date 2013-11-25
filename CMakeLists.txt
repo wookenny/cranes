@@ -77,6 +77,10 @@ stringify.h
 find_graph_configuration.cpp
 )
 
+set(Versioning_sources
+build_version.sh
+)
+
 #set_source_files_properties( MIP.cpp PROPERTIES CMAKE_CXX_FLAGS "-W0" ) 
 
 # display status message for important variables
@@ -94,9 +98,15 @@ MESSAGE( STATUS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS}" )
 MESSAGE( STATUS "-------------------------------------------------------------------------------" )
 MESSAGE( STATUS )
 
-#define executable 
 ADD_EXECUTABLE(2DVS ${2DVS_Sources} )
 target_link_libraries (2DVS PM) 
+
+add_custom_target(
+    myBuildVersion
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build_version.sh
+    )
+add_dependencies(2DVS myBuildVersion)
+
 
 ADD_EXECUTABLE(GTests ${GTestSources} )
 target_link_libraries(GTests -lgtest -lgtest_main)
