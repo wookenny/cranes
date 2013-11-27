@@ -37,11 +37,13 @@ class InsertionHeuristic{
 
         //optional settings:
         void set_timelimit(int t){time_limit_=t;}
-        void set_use_assignment(bool b){no_assignment = b;}
+        void set_use_assignment(bool b){no_assignment = not b;}
+        void set_verbosity(int v){verbosity_ = v;}
 		
 	private:
 	    bool no_assignment = false;
 	    int time_limit_ = -1;
+	    int verbosity_  =  0;
 	    mutable std::chrono::time_point<std::chrono::system_clock> starting_time_;
 		mutable bool local_search_;
 		uint runs_;
@@ -64,7 +66,7 @@ class InsertionHeuristic{
 		inline void intervalsForRightCone(const scheduledJob& , 
 							const Job& , std::vector<interval>&) const;
 		
-		bool is_permutation(std::vector<uint> v){
+		bool is_permutation(std::vector<uint> v) const{
             sort(begin(v),end(v));
             for(uint i=0; i<v.size();++i)
                 if(v[i]!=i)

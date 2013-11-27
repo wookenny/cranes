@@ -77,7 +77,7 @@ public:
     
     std::map<int,std::tuple<Job, double, int>> get_schedule() const {
         std::map<int,std::tuple<Job, double, int>> schedule;
-        //ID -> Jonb, starting time, vehicle
+        //ID -> Job, starting time, vehicle
         for(uint i=0; i<_tours.size();++i)
             for(const auto job: _tours[i]){
                 Job j =  *std::get<0>(job);
@@ -93,8 +93,8 @@ public:
     void add_job(const Job* const job, double time, int vehicle) {
         assert(vehicle >= 0);
         assert(vehicle < static_cast<int>(_tours.size()));
+        assert(not contains(job));
         _tours[vehicle].push_back(std::make_tuple(job, time));
-        assert(!contains(job));
         _job_map.insert(job);
     }
 

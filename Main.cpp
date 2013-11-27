@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <unordered_map>
 #include <memory>
+#include <boost/program_options.hpp>
+namespace po = boost::program_options;
+
 
 #if __clang__ 
     //no omp.h for clang++
@@ -19,6 +22,10 @@
 #include "InsertionHeuristic.h"
 #include "LaserSharingProblemWriter.h"
 #include "SingleCraneTSP_Solver.h"
+
+const std::string BUILD_VERSION_{
+    #include "version.txt"
+    };
 
 using namespace std;
 
@@ -122,54 +129,98 @@ void test_mtsp_mip(vector<string> argv){
 		cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. MIP WORSE THAN HEURISTIC!"<<endl;
 }
 
+
 void insertion_heuristic(std::vector<std::string> argv){
-	if (argv.size()<1 || argv.size()>5){
-		cout<<"insertion <[k] [n] <s> | [file.2dvs]> <ls> <no permutation><runs> <time limit(s)> <num threads> \n \tGenerates a random instance with k vehicles or loads a 2dvs file, \n\tn jobs and with seed s and prints a solution found by the insertion heuristic. \n\tDefault seed is 0.\n\tls: local search for better solutions? defalt = false\n\tno assigment: if true, jobs are added to te first vehicle available, otherwise, an assigment will be generated, default = false\n\ttime limit for the execution, default is no bound\n\tnum threads used for local search, default is auto detection"<<endl;
-		return;
-	}
-	
-	unsigned int seed = 0;
-	Instance i;
-	uint argment_offset = 0; 
-	if(argv[0].size()>6 and argv[0].substr(argv[0].size()-5,5)==".2dvs"){
-	    argment_offset = -2;
-	    i = Instance{argv[0]};
-	}else{
-	    i.set_num_vehicles(stoi(argv[0]));
-	    if(argv.size()>2)
-		    seed = stoi(argv[2]);
-	    i.generate_random_depots(0,100,0,20,seed);
-	    i.generate_random_jobs(stoi(argv[1]),0,100,0,20,seed);
-	}
-	
-	bool local_search = false;
-	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
-			{"1",true},{"yes",true},{"f",false},{"false",false},
-			{"0",false},{"no",false},{"y",true},{"n",false} };
-	if (argv.size()> 3+argment_offset)
-		if(string_to_bool.find(argv[3+argment_offset])!=string_to_bool.end())
-			local_search = string_to_bool[argv[3+argment_offset]];			
+     try {
+        //define all parameters to set
+        int verbosity;
+        unsigned int seed;
+        string filename = "";
+        bool debug;
+        int k=0;
+        int n=0;
+        bool local_search;
+        int t_max;
+        int n_threads;
+        bool use_assign;
+        
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
+              "verbosity level")
+            ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
+              "set seed for random samples")
+            ("filename,f", po::value<string>(&filename), 
+             "2DVS file for heuristic")
+            ("debug", po::value<bool>(&debug)->default_value(false), 
+             "set debug mode for instances")
+            ("k", po::value<int>(&k), 
+             "set number of vehicles/cranes")
+            ("n", po::value<int>(&n), 
+             "set number of jobs to generate in the instance")
+            ("localsearch,l", 
+              po::value<bool>(&local_search)->default_value(false), 
+             "enable or disable the local search")
+            ("timelimit,t", po::value<int>(&t_max)->default_value(-1), 
+             "set a timelimit for the heuristic, -1 means not limit at all") 
+            ("threads", po::value<int>(&n_threads)->default_value(-1), 
+             "set the number of parallel threads used, -1 means an automatic value is found")  
+            ("assign,a", po::value<bool>(&use_assign)->default_value(true), 
+             "use an assignment or not, in the heuristic")   
+        ;
 
-	i.debug(false);
-	cout<< i <<endl;
-	InsertionHeuristic heur(local_search);
-	if (argv.size()> 4+argment_offset)
-		if(string_to_bool.find(argv[4+argment_offset])!=string_to_bool.end())
-			heur.set_use_assignment(string_to_bool[argv[4+argment_offset]]);	
-    if (argv.size()>5+argment_offset)	
-		heur.set_runs(stoi(argv[5+argment_offset]));		
-	if (argv.size()>6+argment_offset)
-		heur.set_timelimit(stoi(argv[6+argment_offset]));		
-			
-	if (argv.size()>7+argment_offset)
-		heur.set_num_threads(stoi(argv[7+argment_offset]));			    	
-		
-	auto sol = heur(i);
-	cout<<endl;
-	if(i.num_jobs()<=20)
-	    cout<<"\n"<< sol <<endl;
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv).options(desc).run(), vm);
+        po::notify(vm);    
 
-    cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
+        //react on som settings
+        if (vm.count("help") ){
+            cout<<boolalpha << desc << "\n";
+            return;
+        }
+
+
+        //after parsing, execute the selected method    
+	    Instance i;   
+	    if(vm.count("filename")){
+	        i = Instance{filename};
+	        if( vm.count("k") or vm.count("n")) 
+	            cout<<"Warning: Ignoring given number of vehicles and jobs!"<<endl;
+	    }else{
+	        if( not vm.count("k") and not vm.count("n")) {
+	            cout<< "Number of jobs and vehicles not given."
+	                  << " No filename given. Usage:\n"<<desc<<endl;
+	            return;
+	        }
+	            
+	        i.set_num_vehicles(k);
+	        i.generate_random_depots(0,100,0,20,seed);
+	        i.generate_random_jobs(n,0,100,0,20,seed); 
+	    }
+	    i.debug(debug);
+        
+        InsertionHeuristic heur(local_search);
+        heur.set_verbosity(verbosity);
+        heur.set_timelimit(t_max);
+        heur.set_num_threads(n_threads);
+        heur.set_use_assignment(use_assign);
+
+        //solve it
+        auto sol = heur(i);
+	    cout<<endl;
+	    if(i.num_jobs()<=20)
+	        cout<<"\n"<< sol <<endl;
+        cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
+
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;
 }
 
 

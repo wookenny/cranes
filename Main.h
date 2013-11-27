@@ -10,7 +10,6 @@
 #include <iostream>
 #include <fstream>
 
-
 //all needed functions, their implementation can be found in Main.cpp
 void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
