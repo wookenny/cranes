@@ -143,8 +143,10 @@ void insertion_heuristic(std::vector<std::string> argv){
         int t_max;
         int n_threads;
         bool use_assign;
+        bool stop_at_better;
         
         po::options_description desc("Allowed options");
+
         desc.add_options()
             ("help,h", "produce help message")
             ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
@@ -153,25 +155,27 @@ void insertion_heuristic(std::vector<std::string> argv){
               "set seed for random samples")
             ("filename,f", po::value<string>(&filename), 
              "2DVS file for heuristic")
-            ("debug", po::value<bool>(&debug)->default_value(false), 
-             "set debug mode for instances")
+            ("debug,d","set debug mode for instances")
             ("k", po::value<int>(&k), 
              "set number of vehicles/cranes")
             ("n", po::value<int>(&n), 
              "set number of jobs to generate in the instance")
             ("localsearch,l", 
-              po::value<bool>(&local_search)->default_value(false), 
              "enable or disable the local search")
             ("timelimit,t", po::value<int>(&t_max)->default_value(-1), 
              "set a timelimit for the heuristic, -1 means not limit at all") 
             ("threads", po::value<int>(&n_threads)->default_value(-1), 
              "set the number of parallel threads used, -1 means an automatic value is found")  
-            ("assign,a", po::value<bool>(&use_assign)->default_value(true), 
-             "use an assignment or not, in the heuristic")   
+            ("assign,a","use an assignment or not, in the heuristic")
+            ("stopp-at-better,b", "stopping scan of neigbourhood in a single local search step, if a better neighbor was found")    
         ;
 
         po::variables_map vm;        
-        po::store(po::command_line_parser(argv).options(desc).run(), vm);
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style(   po::command_line_style::unix_style
+                            | po::command_line_style::allow_long_disguise)
+                    .run(), vm);
         po::notify(vm);    
 
         //react on som settings
@@ -179,6 +183,10 @@ void insertion_heuristic(std::vector<std::string> argv){
             cout<<boolalpha << desc << "\n";
             return;
         }
+        use_assign      = (vm.count("assign")>0);
+        stop_at_better  = (vm.count("stopp-at-better")>0);
+        debug           = (vm.count("debug")>0);
+        local_search    = (vm.count("localsearch")>0);
 
 
         //after parsing, execute the selected method    
@@ -205,13 +213,16 @@ void insertion_heuristic(std::vector<std::string> argv){
         heur.set_timelimit(t_max);
         heur.set_num_threads(n_threads);
         heur.set_use_assignment(use_assign);
-
+        heur.set_stop_at_better(stop_at_better);
+        
         //solve it
         auto sol = heur(i);
 	    cout<<endl;
 	    if(i.num_jobs()<=20)
 	        cout<<"\n"<< sol <<endl;
         cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
+
+        cout<< "Solutions checked in total: "<<Instance::num_checks <<endl;
 
     }catch(exception& e) {
         cerr << " " << e.what() << "\n";

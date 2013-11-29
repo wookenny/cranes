@@ -26,6 +26,8 @@ const boost::regex backward_job("(?:\\[[0-9]+\\]:){0,1}\\s*\\(([^;]+);([^\\)]+)\
 
 using namespace std;	
 
+long Instance::num_checks = 0;
+
 string Instance::to_string() const{
 	string inst_str = "2D-VS Instance with "+std::to_string(num_vehicles_)+" vehicles.\n";
 	inst_str += "Depots: ";
@@ -142,6 +144,7 @@ void Instance::generate_random_depots(int min_x, int max_x,
 		
 //TODO: add GTests for all cases
 bool Instance::verify(Tours& t) const{
+    ++num_checks;
 	double EPS = 0.5;
 	t.sort_jobs();
 

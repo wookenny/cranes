@@ -25,7 +25,7 @@ class Instance{
 		
 		bool debug_ = false;
 	public:
-		
+		static long num_checks;
 		//constrs
 		Instance() = default;
 		explicit Instance(unsigned int i): num_vehicles_(i){}

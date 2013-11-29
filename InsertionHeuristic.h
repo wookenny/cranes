@@ -39,6 +39,7 @@ class InsertionHeuristic{
         void set_timelimit(int t){time_limit_=t;}
         void set_use_assignment(bool b){no_assignment = not b;}
         void set_verbosity(int v){verbosity_ = v;}
+        void set_stop_at_better(bool s){stop_at_better_=s;}
 		
 	private:
 	    bool no_assignment = false;
@@ -48,13 +49,11 @@ class InsertionHeuristic{
 		mutable bool local_search_;
 		uint runs_;
 		int threads_;
+		bool stop_at_better_ = false;
 		uint earliest_startingtime_(const Instance&, const Tours&, const Job&, uint v) const;
 		
 		
-		bool get_better_neighbour(const Instance& inst, std::vector<uint>&, 
-								std::vector<uint>&, Tours& t) const;
-								
-		bool get_best_neighbour_parallel(const Instance& , std::vector<uint>&, 
+		bool get_better_neighbour_parallel(const Instance& , std::vector<uint>&, 
 								std::vector<uint>&, Tours& t) const;						
 		void insertion_helper(const Instance& inst, const std::vector<uint> &, 
 					const std::vector<uint> &assign, Tours &tour) const;

@@ -13,7 +13,6 @@ using namespace std;
 //------------------------------------------------------------------//
 //     Helper class defining swaps in assignment and permutation    //
 //------------------------------------------------------------------//
-
 class LocalSearch_Swap{
     public:
         LocalSearch_Swap(const Instance& i, std::vector<uint> p, 
@@ -172,7 +171,8 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
         auto total_seconds = duration_cast<seconds>(now - starting_time_);
 	    cout<<"Running time: "<< total_seconds.count() <<" seconds."<<endl;
 	 }
-	//cout<< "best: "<<inst.makespan(solution)<<endl;	
+	//cout<< "best: "<<inst.makespan(solution)<<endl;
+	assert(inst.verify(solution));	
 	return solution;
 }
 
@@ -193,9 +193,10 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	if(local_search_){
 		Tours t(inst.num_vehicles());	
 		
-		bool decrease =  get_best_neighbour_parallel(inst, p, a, t); 
+		bool decrease =  get_better_neighbour_parallel(inst, p, a, t); 
 		while(decrease){
-			 decrease =  get_best_neighbour_parallel(inst, p, a, t); 
+			 decrease =  get_better_neighbour_parallel(inst, p, a, t); 
+			 assert(inst.verify(t));	
 			 if(not time_remaining()) break; 
 		}
 		insertion_helper(inst, p,tour);	
@@ -228,15 +229,17 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 		Tours t{static_cast<int>(inst.num_vehicles())};	
 		bool decrease;
 		if(initial_runs_no_assign >0)
-		     decrease =  get_best_neighbour_parallel(inst, p, empty_a, t);
-		else decrease =  get_best_neighbour_parallel(inst, p, a, t);
+		     decrease =  get_better_neighbour_parallel(inst, p, empty_a, t);
+		else decrease =  get_better_neighbour_parallel(inst, p, a, t);
 		
 		while(decrease){
     	    if(not time_remaining()) break; 
 			if(initial_runs_no_assign <=0){
-			    decrease =  get_best_neighbour_parallel(inst, p, a, t); 
+			    decrease =  get_better_neighbour_parallel(inst, p, a, t); 
+			    assert(inst.verify(t));	 
             }else{
-                decrease =  get_best_neighbour_parallel(inst, p, empty_a, t); 
+                decrease =  get_better_neighbour_parallel(inst, p, empty_a, t); 
+                assert(inst.verify(t));	
 		        --initial_runs_no_assign;
                 if(initial_runs_no_assign==0){
                     if(verbosity_>0)
@@ -251,101 +254,22 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	    }	
 		
 		insertion_helper(inst, p,a,tour);  	
+		assert(inst.verify(tour));	
 	}else{
 		insertion_helper(inst, p,a,tour);
+		assert(inst.verify(tour));	
 	}	
 
 	if(debug_) cout<<tour<<endl;
 	return tour;
 }
 
-
-/*
-bool InsertionHeuristic::get_better_neighbour(const Instance& inst, 
-		std::vector<uint> &perm, std::vector<uint> &assign, Tours& t) const
-{
-	
-	//need a reference for best tour!
-	Tours best_tour(inst.num_vehicles());
-	insertion_helper(inst, perm,assign,best_tour);
-	int makespan = inst.makespan(best_tour);
-	
-	//copy assigment ad permutation to alter them
-	
-	//cout<< "local search: "<<makespan<<endl;
-	
-	Tours tour(inst.num_vehicles());
-	// - swap assign[i] to something else
-	for(uint i = 0; i<inst.num_jobs(); ++i){
-		uint tmp = assign[i];
-	
-		//0 to v-1
-		for(uint v = 0; v < tmp; ++v){
-			assign[i] = v;
-			//build tour and compare makespan
-			tour.clear();
-			insertion_helper(inst, perm,assign,tour);
-			int new_makespan = inst.makespan(tour);
-			if(new_makespan < makespan){
-				makespan = new_makespan;
-		
-				//return !
-				t = tour;
-				cout<< makespan<< endl;
-				return true;				
-			}
-			
-		}
-			
-		//v+1 to k-1
-		for(uint v = tmp+1; v < inst.num_vehicles(); ++v){
-			assign[i] = v;
-			//build tour and compare makespan	
-			tour.clear();
-			insertion_helper(inst, perm,assign,tour);
-			int new_makespan = inst.makespan(tour);
-			if(new_makespan < makespan){
-				makespan = new_makespan;
-				cout<< makespan<< endl;
-			    return true;
-			}		
-		}
-		//reset position a[i]
-		assign[i] = tmp;
-	}
-	
-	
-	// - swap perm[i] with perm[j] 
-	for(uint i = 0; i<inst.num_jobs(); ++i){
-		for(uint j = i+1; j<inst.num_jobs(); ++j){
-			swap(perm[i],perm[j]);
-					
-			//build tour and compare makespan	
-			tour.clear();
-			insertion_helper(inst, perm,assign,tour);
-			int new_makespan = inst.makespan(tour);
-			if(new_makespan < makespan){
-				makespan = new_makespan;
-				cout<< makespan<< endl;
-				return true;
-			}		
-			//reswap:
-			swap(perm[i],perm[j]);
-		}
-	}
-	return false;							
-}
-*/
-
-bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst, 
+bool InsertionHeuristic::get_better_neighbour_parallel(const Instance& inst, 
 		std::vector<uint> &perm, std::vector<uint> &assign,Tours& t) const
 {
     //palce to store if a thread is already done
     bool halt_threads = false;
     //find best or better argument in neughborhood?
-    //TODO: make this selectable (pick better or best neighbour)
-    //bool find_better  = true;
-    bool find_better = false;
 
 	//need a reference for best tour!
     bool found_better_tour = false;
@@ -367,7 +291,7 @@ bool InsertionHeuristic::get_best_neighbour_parallel(const Instance& inst,
     
         auto lswap = LocalSearch_Swap(inst,perm,assign,i,num_threads,
                                       opt.at(i), best_perms.at(i),
-                                      best_assign.at(i),find_better,
+                                      best_assign.at(i),stop_at_better_,
                                       &halt_threads );
 
         lswap.set_use_assign( assign.size()>0 );
