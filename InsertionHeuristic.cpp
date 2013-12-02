@@ -138,14 +138,18 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	uint runs = 0;
 	bool ls = local_search_;
 	local_search_ = false;
+	bool first_run = true;
 	//merge first runs and the last runs with additional localsearch
 	while(runs < runs_ + random_starts_){
 	    if(runs == random_starts_)
 	        local_search_ = ls;
 		//randomize permutation and assignment
-		if(no_assignment == false){
-		    if(runs>0)
-		        random_shuffle(perm.begin(),perm.end());
+		if(!first_run){
+		    random_shuffle(perm.begin(),perm.end());
+		}else{
+		    first_run = false;
+		}  
+		if(no_assignment == false){  
 		    assign.clear();
 		    for (uint i=0; i<n; ++i) 
 			    assign.push_back( uint_distr(rng) );  

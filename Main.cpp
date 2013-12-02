@@ -144,6 +144,7 @@ void insertion_heuristic(std::vector<std::string> argv){
         int n_threads;
         bool use_assign;
         bool stop_at_better;
+        int n_runs;
         
         po::options_description desc("Allowed options");
 
@@ -167,14 +168,14 @@ void insertion_heuristic(std::vector<std::string> argv){
             ("threads", po::value<int>(&n_threads)->default_value(-1), 
              "set the number of parallel threads used, -1 means an automatic value is found")  
             ("assign,a","use an assignment or not, in the heuristic")
-            ("stopp-at-better,b", "stopping scan of neigbourhood in a single local search step, if a better neighbor was found")    
+            ("stopp-at-better,b", "stopping scan of neigbourhood in a single local search step, if a better neighbor was found")
+            ("runs,r", po::value<int>(&n_runs)->default_value(1), "number of runs using on a single input")    
         ;
 
         po::variables_map vm;        
         po::store(po::command_line_parser(argv)
                     .options(desc)
-                    .style(   po::command_line_style::unix_style
-                            | po::command_line_style::allow_long_disguise)
+                    .style(   po::command_line_style::unix_style)
                     .run(), vm);
         po::notify(vm);    
 
@@ -214,6 +215,7 @@ void insertion_heuristic(std::vector<std::string> argv){
         heur.set_num_threads(n_threads);
         heur.set_use_assignment(use_assign);
         heur.set_stop_at_better(stop_at_better);
+        heur.set_runs(n_runs);
         
         //solve it
         auto sol = heur(i);

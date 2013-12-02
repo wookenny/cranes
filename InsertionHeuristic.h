@@ -77,5 +77,5 @@ class InsertionHeuristic{
 		//Switch to enable debug information. 
 		//If it is false, code can be removed during compilation.
 		static constexpr bool debug_ = false;
-		static constexpr uint random_starts_ = 0;	
+		static constexpr uint random_starts_ = 12;	
 };
