@@ -10,6 +10,11 @@
 #include <iostream>
 #include <fstream>
 
+
+const std::string BUILD_VERSION_{
+    #include "version.txt"
+    };
+
 //all needed functions, their implementation can be found in Main.cpp
 void read_instance(std::vector<std::string> argv);
 void print_random_instance(std::vector<std::string> argv);
@@ -42,6 +47,7 @@ int main(int argc, char** argv){
 	functionDict["single_tsp"]      = &single_tsp;
 	//at least one parameter must be given
 	if(argc < 2){
+        std::cout<< "Version: "<< BUILD_VERSION_ << std::endl;
 		std::cout<<"No function given, try one of these:"<<std::endl;
 		printMapIndex(functionDict);
 		return 0;

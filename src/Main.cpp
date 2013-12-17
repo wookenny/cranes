@@ -23,10 +23,6 @@ namespace po = boost::program_options;
 #include "LaserSharingProblemWriter.h"
 #include "SingleCraneTSP_Solver.h"
 
-const std::string BUILD_VERSION_{
-    #include "version.txt"
-    };
-
 using namespace std;
 
 void read_instance(vector<string> argv){

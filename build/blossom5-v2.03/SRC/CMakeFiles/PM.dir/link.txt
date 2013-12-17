@@ -1,0 +1,2 @@
+/usr/bin/ar cr libPM.a  CMakeFiles/PM.dir/misc.cpp.o CMakeFiles/PM.dir/PMduals.cpp.o CMakeFiles/PM.dir/PMexpand.cpp.o CMakeFiles/PM.dir/PMinit.cpp.o CMakeFiles/PM.dir/PMinterface.cpp.o CMakeFiles/PM.dir/PMmain.cpp.o CMakeFiles/PM.dir/PMrepair.cpp.o CMakeFiles/PM.dir/PMshrink.cpp.o CMakeFiles/PM.dir/GEOM/GPMinit.cpp.o CMakeFiles/PM.dir/GEOM/GPMinterface.cpp.o CMakeFiles/PM.dir/GEOM/GPMkdtree.cpp.o CMakeFiles/PM.dir/GEOM/GPMmain.cpp.o CMakeFiles/PM.dir/MinCost/MinCost.cpp.o
+/usr/bin/ranlib libPM.a
