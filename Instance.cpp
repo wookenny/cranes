@@ -17,6 +17,7 @@
 const boost::regex empty("\\s*");
 const boost::regex comment("\\s*//.*"); //line starts with // after whitespace
 const boost::regex vehicles("\\s*NUM_CRANES\\s*=\\s*(\\d+)"); //number of vehicles, captures it
+const boost::regex safety_dist("\\s*SAFETY_DIST\\s*=\\s*(\\d+)"); //safety dist, captures it
 const boost::regex depot_start("\\s*START_DEPOTS\\s*=\\s*(.*)");//fist match this
 const boost::regex successive_depot("\\s*\\(([^;]*);([^\\)]+)\\)[^\\(]*(.*)");//extract each depot as single call
 //additional number in front of job as non-capturing group ->
@@ -30,6 +31,8 @@ long Instance::num_checks = 0;
 
 string Instance::to_string() const{
 	string inst_str = "2D-VS Instance with "+std::to_string(num_vehicles_)+" vehicles.\n";
+	if(safety_distance_>0)
+	    inst_str += "Safety Distance: "+std::to_string(safety_distance_)+"\n"; 
 	inst_str += "Depots: ";
 	for(auto &d: depotPositions_)
 		inst_str += "("+std::to_string(d[0])+"; "+std::to_string(d[1])+") ";
@@ -59,6 +62,7 @@ Instance::Instance(string file){
 	}
 	
 	infile.close();
+	sort_depots_();
 	
 	if(num_vehicles_!=depotPositions_.size())
 		cerr<< "Warning: Number of vehicles and given depot positions does not fit!" <<endl;
@@ -78,6 +82,15 @@ void Instance::parse_line_(string &line){
 			cerr<<"Warning: Multiple lines for number of vehicles!"<<endl;
 			
 		 num_vehicles_ = stoi(cm[1]);
+		 return;
+	}
+	
+	//safety distance?
+  if( boost::regex_match (line.c_str(),cm,safety_dist)){
+		//already an entry stored?
+		if( safety_distance_ >0)
+			cerr<<"Warning: Multiple lines for safety distance!"<<endl;
+		 safety_distance_ = stoi(cm[1]);
 		 return;
 	}
 	
@@ -140,6 +153,13 @@ void Instance::generate_random_depots(int min_x, int max_x,
 	//creates depots until the number the nu,ber of vehicles matches
 	while( depotPositions_.size() < num_vehicles_)
 		depotPositions_.push_back( array<int,2>{{dist_x(rng),dist_y(rng)}});
+	
+	//shift depots
+	if(safety_distance_>0){
+	    for(uint i=0; i<depotPositions_.size()-1;++i)
+	        if( depotPositions_[i][0]+static_cast<int>(safety_distance_) >depotPositions_[i+1][0])
+	            depotPositions_[i+1][0]= depotPositions_[i][0]+safety_distance_;
+	}	
 }
 		
 //TODO: add GTests for all cases
@@ -363,6 +383,8 @@ void Instance::writeToFile(std::string filename, std::string comments) const{
 	int cranes = num_vehicles();
 
 	file<< "NUM_CRANES\t=\t "<< cranes<<std::endl;
+	if(safety_distance_>0)
+	    file<<"SAFETY_DIST\t=\t"<<safety_distance_<<"\n";
 	file<< "START_DEPOTS\t=\t" ;
 	for(auto &d: depotPositions_)
 		file<<"("+std::to_string(d[0])+"; "+std::to_string(d[1])+") ";
@@ -379,7 +401,7 @@ void Instance::writeToFile(std::string filename, std::string comments) const{
 array<int,4> Instance::get_bounding_box() const{
 	array<int,4> bbox;
 	bbox[0] = bbox[2] = depotPositions_[0][0];//x coords
-	bbox[1] = bbox[3] = depotPositions_[0][0];//y coords
+	bbox[1] = bbox[3] = depotPositions_[0][1];//y coords
 	
 	//for all jobs, for all depots, save min/max coordinates
 	for(auto &job: *this){
@@ -397,6 +419,20 @@ array<int,4> Instance::get_bounding_box() const{
 		bbox[3] = max(bbox[3],depotPositions_[i][1]);
 		
 	}
+	//add space for safety distance and k-1 vehicle on x axis
+	if(safety_distance_ >0 ){
+	    bbox[0] -= (num_vehicles_-1) * safety_distance_;
+	    bbox[2] += (num_vehicles_-1) * safety_distance_;
+	}
 	return bbox;
 }
 
+void Instance::sort_depots_(){
+    //std::vector< std::array<int, 2> > depotPositions_;
+    typedef std::array<int, 2> position;
+    auto sorter  = [](const position & a, const position & b){ 
+        return a[0] < b[0];  };
+        
+    sort( std::begin(depotPositions_), std::end(depotPositions_), sorter);
+
+}

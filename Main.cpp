@@ -30,6 +30,7 @@ const std::string BUILD_VERSION_{
 using namespace std;
 
 void read_instance(vector<string> argv){
+	
 	if (argv.size()!=1){
 		cout<<"read [file] \n \tRead the input file and print the instance."<<endl;
 		return;
@@ -145,6 +146,7 @@ void insertion_heuristic(std::vector<std::string> argv){
         bool use_assign;
         bool stop_at_better;
         int n_runs;
+        uint safety_dist; 
         
         po::options_description desc("Allowed options");
 
@@ -167,8 +169,10 @@ void insertion_heuristic(std::vector<std::string> argv){
              "set a timelimit for the heuristic, -1 means not limit at all") 
             ("threads", po::value<int>(&n_threads)->default_value(-1), 
              "set the number of parallel threads used, -1 means an automatic value is found")  
+            ("safetydist", po::value<uint>(&safety_dist), 
+             "set safetydistance between vehicles, overrides the setting via 2dvs file")
             ("assign,a","use an assignment or not, in the heuristic")
-            ("stopp-at-better,b", "stopping scan of neigbourhood in a single local search step, if a better neighbor was found")
+            ("stop-at-better,b", "stopping scan of neigbourhood in a single local search step, if a better neighbor was found")
             ("runs,r", po::value<int>(&n_runs)->default_value(1), "number of runs using on a single input")    
         ;
 
@@ -185,7 +189,7 @@ void insertion_heuristic(std::vector<std::string> argv){
             return;
         }
         use_assign      = (vm.count("assign")>0);
-        stop_at_better  = (vm.count("stopp-at-better")>0);
+        stop_at_better  = (vm.count("stop-at-better")>0);
         debug           = (vm.count("debug")>0);
         local_search    = (vm.count("localsearch")>0);
 
@@ -207,9 +211,13 @@ void insertion_heuristic(std::vector<std::string> argv){
 	        i.generate_random_depots(0,100,0,20,seed);
 	        i.generate_random_jobs(n,0,100,0,20,seed); 
 	    }
+	    
 	    i.debug(debug);
+	    if (vm.count("safetydist")>0)
+	        i.set_safety_distance(safety_dist);
         
         InsertionHeuristic heur(local_search);
+        heur.set_seed(seed);
         heur.set_verbosity(verbosity);
         heur.set_timelimit(t_max);
         heur.set_num_threads(n_threads);

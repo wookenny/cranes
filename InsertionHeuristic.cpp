@@ -8,7 +8,7 @@
 
 using namespace std;
     
-
+//%TODO: use safety distance in this methods!
 
 //------------------------------------------------------------------//
 //     Helper class defining swaps in assignment and permutation    //
@@ -117,13 +117,15 @@ class LocalSearch_Swap{
 and starts the insertion heuristic.*/
 Tours InsertionHeuristic::operator()(const Instance& inst) const{
 
+    safety_distance_ = inst.get_safety_distance();
+
     //measure the time    
     using namespace std::chrono;
     starting_time_ = system_clock::now();
 
 	//randomness
 	mt19937 rng; 
-	rng.seed(time(0));
+	rng.seed(seed_);
 
 	uint n = inst.num_jobs();
 	//get some random permutation
@@ -188,6 +190,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
     
 	assert( perm.size() == inst.num_jobs() );
 	
+	safety_distance_ = inst.get_safety_distance();
 	Tours tour(inst.num_vehicles());
 
 	vector<uint> p = perm;
@@ -220,11 +223,12 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 	assert( perm.size() == inst.num_jobs() );
 	assert( assign.size() == inst.num_jobs() or assign.size()==0);
 	
+	safety_distance_ = inst.get_safety_distance();
 	Tours tour(inst.num_vehicles());
 
 	vector<uint> p = perm;
 	vector<uint> a = assign;
-	static int initial_runs_no_assign = 10;//inst.num_jobs();
+	static int initial_runs_no_assign = static_cast<int>(.1 * inst.num_jobs());
  	assert(p.size()==a.size());
  	assert(p.size()==inst.num_jobs());
  	vector<uint> empty_a;
@@ -236,7 +240,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 		     decrease =  get_better_neighbour_parallel(inst, p, empty_a, t);
 		else decrease =  get_better_neighbour_parallel(inst, p, a, t);
 		
-		while(decrease){
+		while(decrease or initial_runs_no_assign > 0){
     	    if(not time_remaining()) break; 
 			if(initial_runs_no_assign <=0){
 			    decrease =  get_better_neighbour_parallel(inst, p, a, t); 
@@ -309,7 +313,7 @@ bool InsertionHeuristic::get_better_neighbour_parallel(const Instance& inst,
     int best_index = -1;
     for(int i=0; i<num_threads; ++i){
         if(opt[i]<makespan){
-            //assert(is_permutation(best_perms[i]));
+            assert(is_permutation(best_perms[i]));
             found_better_tour = true;
             makespan = opt[i];
             best_index = i;
@@ -319,12 +323,13 @@ bool InsertionHeuristic::get_better_neighbour_parallel(const Instance& inst,
     if(best_index>=0){
         perm    = best_perms[best_index];
         assign  = best_assign[best_index];
-        //assert(is_permutation(perm));
+        assert(is_permutation(perm));
         t.clear(); 
         if(assign.size()==0)
              insertion_helper(inst, perm,t);
         else insertion_helper(inst, perm,assign,t);
         if(verbosity_>0) cout<<"found: "<<makespan << endl;
+        assert( makespan == inst.makespan(t) );
         //if(verbosity_>0) cout<<"assign len: "<<assign.size()<< endl;
     }    
     return found_better_tour;
@@ -406,13 +411,17 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 	Algorithm:   
 		- create all forbidden intervals 
 			for jobs on same or bigger(right) vehicle
+			(shift right job (diff_vehicle)*safety dist to the left)
 		- create all forbidden intervals 
 			for jobs on same or smaller(left) vehicle
+			(shift current job (diff_vehicle)*safety dist to the left)
 		- add all intervals as tuple (time,+1/-1) to a vector
 		- sort vector(first smaller time,then  -1 < +1)
 		- find position where the sum is 0 for the first time via sequential
 		  	search
 	**/
+	
+	//TODO: add method to use safety distance to this thingy
 	
 	//create all intervals
 	vector<interval> events;	
@@ -420,12 +429,12 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 	for(uint i = 0; i <= v; ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
 		//if tour[i][j] is right, than job can not be in the right cone of it!
-			intervalsForLeftCone(tours[i][j], job, events);
+			intervalsForLeftCone(tours[i][j], i, job, v, events);
 	if(debug_)  cout<<"jobs on bigger vehicles than job"<<endl;	
 	for(uint i = v; i < tours.num_tours(); ++i)
 		for(uint j=0; j<tours.num_jobs(i); ++j)
 		//if tour[i][j] is left, than job can not be in the left cone of it!
-			intervalsForRightCone(tours[i][j], job, events);
+			intervalsForRightCone(tours[i][j], i, job, v, events);
 	
 	
 	//sort -> using lexicographic order
@@ -447,7 +456,8 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 
 
 void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob, 
-                                               const Job& job, 
+                                               uint v_right,
+                                               const Job& job, uint v_left, 
                                                vector<interval>& events) const
 {
 
@@ -457,8 +467,10 @@ void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob,
 
 	//build both tuples
 	tuple<int,int> cones[2];
-	cones[0] = make_tuple(time, right->alpha()[0]);
-	cones[1] = make_tuple(time + right->length(), right->beta()[0]);
+	int offset = (v_right - v_left) * safety_distance_;
+	assert(offset >= 0);
+	cones[0] = make_tuple(time, right->alpha()[0] - offset );
+	cones[1] = make_tuple(time + right->length(), right->beta()[0] - offset);
 
 	int cone_x, cone_t, diff_x;	
 
@@ -491,7 +503,8 @@ void InsertionHeuristic::intervalsForRightCone(const scheduledJob& rightJob,
 }
 
 void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob, 
-                                              const Job& job, 
+                                              uint v_left,
+                                              const Job& job, uint v_right,
                                               vector<interval>& events) const
 {
 
@@ -501,6 +514,8 @@ void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob,
 
 	//build both tuples
 	tuple<int,int> cones[2];
+	int offset = (v_right - v_left) * safety_distance_;
+	assert(offset >= 0);
 	cones[0] = make_tuple(time, left->alpha()[0]);
 	cones[1] = make_tuple(time + left->length(), left->beta()[0]);
 
@@ -509,7 +524,7 @@ void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob,
 	//j_alpha in a cone1/2?
 	for( auto cone : cones){
 		tie(cone_t, cone_x) = cone;
-		diff_x = cone_x - job.alpha()[0];
+		diff_x = cone_x - (job.alpha()[0] - offset);
 		if(diff_x > 0){
 			if(debug_) 
 				cout<< "["<< cone_t - diff_x <<" - "
@@ -523,7 +538,7 @@ void InsertionHeuristic::intervalsForLeftCone(const scheduledJob& leftJob,
 	//=> shift interval with length of job backwards in time
 	for( auto cone : cones){
 		tie(cone_t, cone_x) = cone;
-		diff_x = cone_x - job.beta()[0];
+		diff_x = cone_x - (job.beta()[0]-offset);
 		if(diff_x > 0){
 			if(debug_) 
 				cout<< "["<< cone_t - diff_x- job.length() 

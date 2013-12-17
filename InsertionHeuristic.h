@@ -40,11 +40,14 @@ class InsertionHeuristic{
         void set_use_assignment(bool b){no_assignment = not b;}
         void set_verbosity(int v){verbosity_ = v;}
         void set_stop_at_better(bool s){stop_at_better_=s;}
-		
+		void set_safety_distance(uint s){safety_distance_ = s;}
+		void set_seed(uint s){seed_=s;}
 	private:
+	    uint seed_;
 	    bool no_assignment = false;
 	    int time_limit_ = -1;
 	    int verbosity_  =  0;
+	    mutable uint safety_distance_ =0;
 	    mutable std::chrono::time_point<std::chrono::system_clock> starting_time_;
 		mutable bool local_search_;
 		uint runs_;
@@ -60,10 +63,10 @@ class InsertionHeuristic{
         void insertion_helper(const Instance& inst, const std::vector<uint> &, 			
                                            Tours &tour) const;
                                            
-		inline void intervalsForLeftCone(const scheduledJob& , 
-							const Job& , std::vector<interval>&) const;
-		inline void intervalsForRightCone(const scheduledJob& , 
-							const Job& , std::vector<interval>&) const;
+		inline void intervalsForLeftCone(const scheduledJob& , uint, 
+							const Job& , uint, std::vector<interval>&) const;
+		inline void intervalsForRightCone(const scheduledJob& , uint, 
+							const Job& , uint,  std::vector<interval>&) const;
 		
 		bool is_permutation(std::vector<uint> v) const{
             sort(begin(v),end(v));

@@ -61,6 +61,7 @@ class Instance{
 		void generate_random_jobs(int n, int min_x, int max_x, 
 		                          int min_y, int max_y, unsigned int seed=0);
 		//generates depot positions such that it fits to the number of depots
+		//TODO: respect safety dist
 		void generate_random_depots(int min_x, int max_x, int min_y, 
 		                            int max_y, unsigned int seed=0);
 		
@@ -75,10 +76,12 @@ class Instance{
 		                       bool LP_relax = false, 
 		                       bool debug = false) const;
 		unsigned int get_upper_bound() const;
-		
+		unsigned int get_safety_distance() const{return safety_distance_;}
+		//TODO: warn if not mathcing with depot positions!
+		void set_safety_distance(uint dist) {safety_distance_ = dist;}
 	private:
 		void parse_line_(std::string &line);	
-			
+	    void sort_depots_();
 	
 };
 
