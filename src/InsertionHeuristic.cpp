@@ -1,5 +1,6 @@
 #include "InsertionHeuristic.h"
 #include "Tours.h"
+#include "Common.h"
 #include <thread>
 #include <random>
 #include <thread>
@@ -174,8 +175,8 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	
 	if(verbosity_>0){
 	    auto now = std::chrono::system_clock::now();        
-        auto total_seconds = duration_cast<seconds>(now - starting_time_);
-	    cout<<"Running time: "<< total_seconds.count() <<" seconds."<<endl;
+        //auto total_seconds = duration_cast<seconds>(now - starting_time_);
+	    cout<<"Running time: "<< duration_to_string(now - starting_time_) <<endl;
 	 }
 	//cout<< "best: "<<inst.makespan(solution)<<endl;
 	assert(inst.verify(solution));	

@@ -226,9 +226,10 @@ void insertion_heuristic(std::vector<std::string> argv){
 	    cout<<endl;
 	    if(i.num_jobs()<=20)
 	        cout<<"\n"<< sol <<endl;
-        cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
+	    cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
 
-        cout<< "Solutions checked in total: "<<Instance::num_checks <<endl;
+        if(Instance::num_checks>0)
+            cout<< "Solutions checked in total: "<<Instance::num_checks <<endl;
 
     }catch(exception& e) {
         cerr << " " << e.what() << "\n";

@@ -26,6 +26,8 @@ set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -lilocplex -lconcert -lcplex  -lpthrea
  
 # collect all sources (copy from 'ls -1 *.cpp *.h')
 SET(2DVS_Sources
+${twoDVS_sourcesDir}/Common.h
+${twoDVS_sourcesDir}/Common.cpp
 ${twoDVS_sourcesDir}/DisjointSet.h
 ${twoDVS_sourcesDir}/DisjointSet.cpp
 ${twoDVS_sourcesDir}/Main.cpp
@@ -53,6 +55,8 @@ ${twoDVS_sourcesDir}/LaserSharingProblemWriter.cpp
 
 # collect all sources
 SET(GTestSources
+${twoDVS_sourcesDir}/Common.h
+${twoDVS_sourcesDir}/Common.cpp
 ${twoDVS_sourcesDir}/datastructure_unittest.cpp
 ${twoDVS_sourcesDir}/DisjointSet.h
 ${twoDVS_sourcesDir}/DisjointSet.cpp
@@ -103,7 +107,7 @@ target_link_libraries (2DVS PM)
 
 add_custom_target(
     myBuildVersion
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build/build_version.sh ${CMAKE_CURRENT_SOURCE_DIR}/src/version.txt
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build/build_version.sh ${CMAKE_CURRENT_SOURCE_DIR}/src/version.txt ${CMAKE_BUILD_TYPE}
     )
 add_dependencies(2DVS myBuildVersion)
 
