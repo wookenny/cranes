@@ -1,0 +1,8 @@
+//this file was written automaticaly
+//date: 2013-Jul-22 13:59:24
+NUM_CRANES	=	 2
+START_DEPOTS	=	(1; 4) (0; 4) 
+//Jobs:
+[1]: (-5; 3) -> (-4; 4)
+[2]: (4; 3) -> (5; 3)
+
