@@ -17,7 +17,7 @@ const std::string BUILD_VERSION_{
 
 //all needed functions, their implementation can be found in Main.cpp
 void read_instance(std::vector<std::string> argv);
-void print_random_instance(std::vector<std::string> argv);
+void write_instance(std::vector<std::string> argv);
 void test_mtsp_mip(std::vector<std::string> argv);
 void insertion_heuristic(std::vector<std::string> argv);
 void laser(std::vector<std::string> argv);
@@ -39,7 +39,7 @@ int main(int argc, char** argv){
 	std::map<std::string,void (*)(std::vector<std::string>)> functionDict;
 	//ADD NEW FUNCTIONS HERE (they have to parse ther arguments or call a usage)
 	functionDict["read"] 		= &read_instance;
-	functionDict["random"] 		= &print_random_instance;
+	functionDict["write"] 		= &write_instance;
 	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
 	functionDict["insertion"]	= &insertion_heuristic;
 	functionDict["test"] 	= &test;
@@ -47,9 +47,9 @@ int main(int argc, char** argv){
 	functionDict["single_tsp"]      = &single_tsp;
 	//at least one parameter must be given
 	if(argc < 2){
-        std::cout<< "Version: "<< BUILD_VERSION_ << std::endl;
 		std::cout<<"No function given, try one of these:"<<std::endl;
 		printMapIndex(functionDict);
+		std::cout<< "Version: "<< BUILD_VERSION_ << std::endl;
 		return 0;
 	}
 

@@ -36,7 +36,8 @@ void read_instance(vector<string> argv){
 	Instance inst(argv[0]);
 	cout<< inst <<endl;
 }
-
+//TODO: delete old stub
+/*
 void print_random_instance(vector<string> argv){
 	if (argv.size()<2 || argv.size()>4){
 		cout<<"random [k] [n] <s> <filename> \n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s. Default seed is 0.\n\twrites the instance to te given filename"<<endl;
@@ -62,18 +63,20 @@ void print_random_instance(vector<string> argv){
 		cout<<"Written instance to file "<<filename <<endl;
 	}
 }
-
+*/
 //==============================================================================
 
-void print_random_instance_TEMPNAME(vector<string> argv){
+void write_instance(vector<string> argv){
      try {
         //define all parameters to set
-        int num_vehicles;
+        uint num_vehicles;
         unsigned int seed;
         string filename = "";
-        int num_jobs=0;
+        uint num_jobs=0;
         uint safety_dist; 
         int verbosity;
+        bool show_instance;
+        int min_x, max_x, min_y, max_y;
         
         po::options_description desc("Allowed options");
         desc.add_options()
@@ -84,10 +87,20 @@ void print_random_instance_TEMPNAME(vector<string> argv){
               "set seed for random samples")
             ("filename,f", po::value<string>(&filename), 
              "2DVS file for heuristic")
-            ("k", po::value<int>(&num_vehicles), 
+            ("k,k", po::value<uint>(&num_vehicles)->default_value(2)->required(), 
              "set number of vehicles/cranes")
-            ("n", po::value<int>(&num_jobs), 
+            ("n,n", po::value<uint>(&num_jobs)->required(), 
              "set number of jobs to generate in the instance")
+            ("print,p", po::value<bool>(&show_instance)->default_value(0), 
+            "print generated instance to console")
+            ("minx,x", po::value<int>(&min_x)->default_value(-100),
+                                             "minimal position on the x-axis")
+            ("maxx,X", po::value<int>(&max_x)->default_value(100), 
+                                             "maximal position on the x-axis")
+            ("miny,y", po::value<int>(&min_y)->default_value(-10),
+                                             "minimal position on the y-axis")
+            ("maxy,Y", po::value<int>(&max_y)->default_value(10), 
+                                             "maximal position on the y-axis")
             ("safetydist", po::value<uint>(&safety_dist), 
              "set safetydistance between vehicles");
 
@@ -95,14 +108,33 @@ void print_random_instance_TEMPNAME(vector<string> argv){
         po::store(po::command_line_parser(argv)
                     .options(desc)
                     .style(   po::command_line_style::unix_style)
-                    .run(), vm);
-        po::notify(vm);    
+                    .run(), vm); 
 
         //react on som settings
-        if (vm.count("help") ){
-            cout<<boolalpha << desc << "\n";
+        if (vm.count("help")){
+            cout<<"Generates a 2DVS instances and writes it to a file. ";
+            cout<<"If no filename is give, the generated instance will ";
+            cout<<"be shown in the console." <<"\n";
+            cout<<boolalpha << desc;
+            cout<<"required: 'n' and 'k'\n";
             return;
         }
+
+        po::notify(vm); 
+        //TODO: test bounds for validity
+        if( min_x > max_x or min_y > max_y){
+            cout<< "Invalid bounds given: '"<<min_x<<" <= x <= "<<max_x;
+            cout<< "' and '"<< min_y<< " <= y <= "<<max_y<<"'\n";
+            return;
+        }    
+        Instance i(num_jobs);
+        i.generate_random_depots(min_x,max_x,min_y,max_y,seed);
+	    i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
+	    
+	    
+        if(show_instance or not vm.count("filename"))
+            cout<< "Generated instance:\n"<< i <<endl;
+
          //TODO much more details to generatre jobs:
          
          //min x, man x
