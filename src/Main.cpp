@@ -63,6 +63,88 @@ void print_random_instance(vector<string> argv){
 	}
 }
 
+//==============================================================================
+
+void print_random_instance_TEMPNAME(vector<string> argv){
+     try {
+        //define all parameters to set
+        int num_vehicles;
+        unsigned int seed;
+        string filename = "";
+        int num_jobs=0;
+        uint safety_dist; 
+        int verbosity;
+        
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
+              "verbosity level")
+            ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
+              "set seed for random samples")
+            ("filename,f", po::value<string>(&filename), 
+             "2DVS file for heuristic")
+            ("k", po::value<int>(&num_vehicles), 
+             "set number of vehicles/cranes")
+            ("n", po::value<int>(&num_jobs), 
+             "set number of jobs to generate in the instance")
+            ("safetydist", po::value<uint>(&safety_dist), 
+             "set safetydistance between vehicles");
+
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style(   po::command_line_style::unix_style)
+                    .run(), vm);
+        po::notify(vm);    
+
+        //react on som settings
+        if (vm.count("help") ){
+            cout<<boolalpha << desc << "\n";
+            return;
+        }
+         //TODO much more details to generatre jobs:
+         
+         //min x, man x
+         //min y, max y
+         //depot positions
+         //random depots
+         
+         
+        /*    
+	    Instance i;
+	    if(  )
+	    i.set_num_vehicles(stoi(argv[0]));
+	
+	    if(argv.size()>2)
+	    	seed = stoi(argv[2]);
+	    i.generate_random_depots(-100,100,-10,10,seed);
+	    i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
+	
+	    cout<< i <<endl;
+
+	    if(argv.size()>3){
+		    string filename(argv[3]);
+		    if(filename.length()<5 or filename.substr(filename.length()-5,5) != ".2dvs")
+			    filename += ".2dvs";
+		    i.writeToFile(filename);
+		    cout<<"Written instance to file "<<filename <<endl;
+	    }
+	    */
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;
+	
+	
+}
+
+//==============================================================================
+
 void test_mtsp_mip(vector<string> argv){
 	if (argv.size()< 1 or argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
 		cout<<"test_mip <2dvs file> <collision constr., default = true>" 
