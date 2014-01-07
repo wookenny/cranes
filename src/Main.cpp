@@ -213,7 +213,7 @@ void write_instance(vector<string> argv){
 		    string comment = params.str();
 		    path p{filename.c_str()};
 		    if( exists(filename) ){
-		        cerr<<"Error: file '"<<filename<<"' exists already!\n";
+		        cerr<<"Error: file '"<<filename<<"' already exists!\n";
 		        return;
 		    }
 		    i.writeToFile(filename,comment);

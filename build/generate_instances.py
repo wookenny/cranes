@@ -23,7 +23,7 @@ def create_call(l,k,d,i):
     call = './2DVS write -v 0 -n %d -s %d -x %d -X %d -y %d -Y %d'%(n,i,min_x,max_x,min_y,max_y)
     call += ' -k %d -d %d'%(num_vehicles[k],driveby[d])
     call += ' --minlengthx %d --maxlengthx %d --minlengthy %d --maxlengthy %d'%length[l] 
-    call += ' -f %s.2dvs'%(l+'_'+d+'_'+k+'_'+str(i))
+    call += ' -f %s/%s.2dvs'%(basefolder+l+'_'+d+'_'+k,l+'_'+d+'_'+k+'_'+str(i))
     return call
 
 #number of jobs per setting
