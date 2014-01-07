@@ -142,24 +142,82 @@ void Instance::generate_random_jobs(int n, int min_x, int max_x,
 	}
 }
 
+void Instance::generate_random_bounded_jobs(int n, int min_x, int max_x,
+                                    int min_y, int max_y, 
+                                    double min_length_x, double max_length_x,
+                                    double min_length_y, double max_length_y,
+                                    unsigned int seed){
+    //random number generation via mersenne twister
+	mt19937_64 rng;
+	rng.seed(seed);
+	//unid distribution
+	int size_x = max_x - min_x; 
+	int size_y = max_y - min_y;
+	 
+	uniform_int_distribution<int> length_x(min_length_x*size_x*.01,
+	                                       max_length_x*size_x*.01); 
+	uniform_int_distribution<int> length_y(min_length_y*size_y*.01,
+	                                       max_length_y*size_y*.01);
+	
+    bernoulli_distribution distribution(0.5);
+	auto coin = std::bind( distribution, rng);
+	
+	while(0<=--n){
+	    int x_offset = (coin()?1:-1) * length_x(rng);
+	    int y_offset = (coin()?1:-1) * length_y(rng);
+	    
+	    //set range
+	    uniform_int_distribution<int> position_x( min_x + max(-x_offset,0),
+	                                              max_x - max( x_offset,0)); 
+	    uniform_int_distribution<int> position_y( min_y + max(-y_offset,0),
+	                                              max_y - max( y_offset,0));
+	    //draw start point
+	    int pos_x = position_x(rng);
+	    int pos_y = position_y(rng);
+	    
+	    //add job
+		Job j(jobs_.size()+1,pos_x, pos_y, pos_x + x_offset, pos_y + y_offset);
+		jobs_.push_back( j );
+	}
+}
+
+void Instance::generate_random_driveby_jobs(int n, int min_x, int max_x, int min_y, 
+		                                  int max_y, unsigned int seed){
+    //random number generation via mersenne twister
+	mt19937_64 rng;
+	rng.seed(seed);
+	//unid distribution
+	uniform_int_distribution<int> dist_x(min_x,max_x); 
+	uniform_int_distribution<int> dist_y(min_y,max_y);
+	
+	while(0<=--n){
+	    int pos_x = dist_x(rng);
+	    int pos_y = dist_y(rng);
+		Job j(jobs_.size()+1,pos_x,pos_y,pos_x,pos_y);
+		jobs_.push_back( j );
+	}		                                  
+}
+
 void Instance::generate_random_depots(int min_x, int max_x, 
 										int min_y, int max_y, unsigned int seed){
 	//random number generation via mersenne twister
 	mt19937 rng;
 	rng.seed(seed);
+	uint k = num_vehicles_;
 	//unid distribution
-	uniform_int_distribution<int> dist_x(min_x,max_x); 
+	uniform_int_distribution<int> dist_x(min_x, max_x - (k-1)*safety_distance_); 
 	uniform_int_distribution<int> dist_y(min_y,max_y); 
-	//creates depots until the number the nu,ber of vehicles matches
-	while( depotPositions_.size() < num_vehicles_)
-		depotPositions_.push_back( array<int,2>{{dist_x(rng),dist_y(rng)}});
 	
-	//shift depots
-	if(safety_distance_>0){
-	    for(uint i=0; i<depotPositions_.size()-1;++i)
-	        if( depotPositions_[i][0]+static_cast<int>(safety_distance_) >depotPositions_[i+1][0])
-	            depotPositions_[i+1][0]= depotPositions_[i][0]+safety_distance_;
-	}	
+	//adjst range on x-axis s.t. safety distance is satisfied
+	
+	//creates depots until the number the nu,ber of vehicles matches
+	while( depotPositions_.size() < num_vehicles_){
+	    int x_pos = dist_x(rng);
+     	depotPositions_.push_back( array<int,2>{{x_pos,dist_y(rng)}});
+        dist_x = uniform_int_distribution<int>(x_pos+safety_distance_, 
+                                                max_x - (k-1)*safety_distance_); 
+	}
+	
 }
 		
 //TODO: add GTests for all cases
@@ -368,7 +426,7 @@ void Instance::writeToFile(std::string filename, std::string comments) const{
 	using namespace boost::gregorian;
 	setNiceDayFormat();
 	
-	file<<"//this file was written automaticaly\n//date: "
+	file<<"//this file was written automatically\n//date: "
 		<< second_clock::local_time() << endl;
 	//write comments
 	if(comments!=""){
@@ -436,3 +494,12 @@ void Instance::sort_depots_(){
     sort( std::begin(depotPositions_), std::end(depotPositions_), sorter);
 
 }
+
+bool Instance::depots_obey_safety_dist() const{
+    for(uint i=1;i<depotPositions_.size();++i)
+        if(depotPositions_[i+1][0] < depotPositions_[i][0]
+                                     + static_cast<int>(safety_distance_) )
+            return false;
+    return true;         
+}
+

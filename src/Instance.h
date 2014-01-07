@@ -60,11 +60,23 @@ class Instance{
 		//generates n random jobs in the given bounds
 		void generate_random_jobs(int n, int min_x, int max_x, 
 		                          int min_y, int max_y, unsigned int seed=0);
+        //generates n random drive-by jobs in the given bounds
+        void generate_random_driveby_jobs(int n, int min_x, int max_x, int min_y, 
+		                                  int max_y, unsigned int seed=0);
+        //generates n random jobs in the given bounds with given 
+        //interval for its length. 
+        //the length of each job is genereated uniformly at random
+        void generate_random_bounded_jobs(int n, int min_x, int max_x,
+                                                 int min_y, int max_y, 
+                                    double min_length_x, double max_length_x,
+                                    double min_length_y, double max_length_y,
+                                    unsigned int seed=0);
+
 		//generates depot positions such that it fits to the number of depots
-		//TODO: respect safety dist
+		// and respect the safety distance
 		void generate_random_depots(int min_x, int max_x, int min_y, 
 		                            int max_y, unsigned int seed=0);
-		
+
 		//get the smallest bounding box around the whole instance
 		std::array<int,4> get_bounding_box() const;
 		
@@ -77,8 +89,10 @@ class Instance{
 		                       bool debug = false) const;
 		unsigned int get_upper_bound() const;
 		unsigned int get_safety_distance() const{return safety_distance_;}
-		//TODO: warn if not mathcing with depot positions!
-		void set_safety_distance(uint dist) {safety_distance_ = dist;}
+
+		void set_safety_distance(uint dist) {safety_distance_ = dist; 
+		                                    assert(depots_obey_safety_dist());}
+		bool depots_obey_safety_dist() const;
 	private:
 		void parse_line_(std::string &line);	
 	    void sort_depots_();

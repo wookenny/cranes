@@ -5,6 +5,8 @@
 #include <memory>
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
+#include <boost/filesystem/operations.hpp>
+#include <boost/filesystem/path.hpp>
 
 
 #if __clang__ 
@@ -24,6 +26,7 @@ namespace po = boost::program_options;
 #include "SingleCraneTSP_Solver.h"
 
 using namespace std;
+using namespace boost::filesystem;
 
 void read_instance(vector<string> argv){
 	
@@ -77,6 +80,8 @@ void write_instance(vector<string> argv){
         int verbosity;
         bool show_instance;
         int min_x, max_x, min_y, max_y;
+        double percentage_driveby;
+        double min_length_x, min_length_y, max_length_x, max_length_y;
         
         po::options_description desc("Allowed options");
         desc.add_options()
@@ -93,16 +98,37 @@ void write_instance(vector<string> argv){
              "set number of jobs to generate in the instance")
             ("print,p", po::value<bool>(&show_instance)->default_value(0), 
             "print generated instance to console")
-            ("minx,x", po::value<int>(&min_x)->default_value(-100),
+            ("minx,x", po::value<int>(&min_x)->default_value(0),
                                              "minimal position on the x-axis")
-            ("maxx,X", po::value<int>(&max_x)->default_value(100), 
+            ("maxx,X", po::value<int>(&max_x)->default_value(400), 
                                              "maximal position on the x-axis")
-            ("miny,y", po::value<int>(&min_y)->default_value(-10),
+            ("miny,y", po::value<int>(&min_y)->default_value(0),
                                              "minimal position on the y-axis")
-            ("maxy,Y", po::value<int>(&max_y)->default_value(10), 
+            ("maxy,Y", po::value<int>(&max_y)->default_value(40), 
                                              "maximal position on the y-axis")
-            ("safetydist", po::value<uint>(&safety_dist), 
-             "set safetydistance between vehicles");
+            ("safetydist", po::value<uint>(&safety_dist)->default_value(0), 
+             "set safetydistance between vehicles")
+            ("driveby,d", po::value<double>(&percentage_driveby)
+                                                    ->default_value(0), 
+             "set percentage of drive-by jobs in relation with all jobs."
+              "Valid range: [0,100].")
+             ("minlengthx", po::value<double>(&min_length_x)
+                                                    ->default_value(0), 
+             "set minimal length along x-axis of jobs in percentage of storage size. "
+             "Valid range: [0,100].") 
+             ("maxlengthx", po::value<double>(&max_length_x)
+                                                    ->default_value(100), 
+             "set maximal length along x-axisof jobs in percentage of storage size. "
+             "Valid range: [0,100].")
+             ("minlengthy", po::value<double>(&min_length_y)
+                                                    ->default_value(0), 
+             "set minimal length along y-axis of jobs in percentage of storage size. "
+             "Valid range: [0,100].") 
+             ("maxlengthy", po::value<double>(&max_length_y)
+                                                    ->default_value(100), 
+             "set maximal length along y-axis of jobs in percentage of storage size. "
+             "Valid range: [0,100].")  
+             ;
 
         po::variables_map vm;        
         po::store(po::command_line_parser(argv)
@@ -119,50 +145,86 @@ void write_instance(vector<string> argv){
             cout<<"required: 'n' and 'k'\n";
             return;
         }
+        
 
         po::notify(vm); 
-        //TODO: test bounds for validity
+        //verify settings
         if( min_x > max_x or min_y > max_y){
-            cout<< "Invalid bounds given: '"<<min_x<<" <= x <= "<<max_x;
-            cout<< "' and '"<< min_y<< " <= y <= "<<max_y<<"'\n";
+            cerr<< "Invalid bounds given: '"<<min_x<<" <= x <= "<<max_x;
+            cerr<< "' and '"<< min_y<< " <= y <= "<<max_y<<"'\n";
             return;
-        }    
-        Instance i(num_jobs);
+        }   
+        if( min_length_x<0 or min_length_x>100 or 
+            max_length_x<0 or max_length_x>100 or
+            min_length_y<0 or min_length_y>100 or 
+            max_length_y<0 or max_length_y>100 or
+            min_length_x > max_length_x or min_length_y > max_length_y)
+        {
+            cerr<< "Invalid job length bounds given: \n'";
+            cerr<< min_length_x<<" <= x length <= "<<max_length_x<<"'\n";
+            cerr<< min_length_y<<" <= y length <= "<<max_length_y<<"'\n";
+            return;
+        }
+        if(percentage_driveby<0 or percentage_driveby>100){
+            cerr<< "Percentage of drive-by jobs not in valid range: ";
+            cerr<< percentage_driveby<<"\n" <<endl;
+            return;
+        }
+        
+        Instance i(num_vehicles);
+        i.set_safety_distance(safety_dist);
+
         i.generate_random_depots(min_x,max_x,min_y,max_y,seed);
-	    i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
+        int num_driveby = static_cast<int>(0.01*percentage_driveby*num_jobs);
+        i.generate_random_driveby_jobs(num_driveby,min_x,max_x,
+                                                   min_y,max_y,seed);
+        i.generate_random_bounded_jobs(num_jobs-num_driveby,
+                                       min_x,max_x, min_y,max_y,
+                                       min_length_x, max_length_x,
+                                       min_length_y, max_length_y,
+                                       seed);                                           
 	    
 	    
-        if(show_instance or not vm.count("filename"))
+        if(show_instance or not vm.count("filename") or verbosity>=2)
             cout<< "Generated instance:\n"<< i <<endl;
 
-         //TODO much more details to generatre jobs:
-         
-         //min x, man x
-         //min y, max y
-         //depot positions
-         //random depots
-         
-         
-        /*    
-	    Instance i;
-	    if(  )
-	    i.set_num_vehicles(stoi(argv[0]));
-	
-	    if(argv.size()>2)
-	    	seed = stoi(argv[2]);
-	    i.generate_random_depots(-100,100,-10,10,seed);
-	    i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
-	
-	    cout<< i <<endl;
+           
+        //print statistics     
+        stringstream params;
+        params << "\nParameter: \nvehicles: "<<num_vehicles<<"\n";
+        params << "jobs: "<<num_jobs<<"\n";    
+        params << "percentage of drive-by: "<<percentage_driveby<<"% -> ";
+        params << num_driveby<<" drive-by jobs\n"; 
+        params << "positions: ["<<min_x<<":"<<max_x<<"] x [";
+        params << min_y<<":"<<max_y<<"]"<<"\n";  
+        params << "length bound: ["<<min_length_x<<"% - "<<max_length_x<<"%] x [";
+        params << min_length_y<<"% - "<<max_length_y<<"%]"<<"\n";  
+        params << "safety distance: "<<safety_dist<<"\n";
+        params << "seed: "<<seed<<"\n";
+        
+        if(verbosity>=2){   
+            cout<<params.str();
+        }
+        
+        //write file
+        if(vm.count("filename")){
+            if(filename.length()<5 or filename.substr(filename.length()-5,5) != ".2dvs")
+		        filename += ".2dvs";
+		    string comment = params.str();
+		    path p{filename.c_str()};
+		    if( exists(filename) ){
+		        cerr<<"Error: file '"<<filename<<"' exists already!\n";
+		        return;
+		    }
+		    i.writeToFile(filename,comment);
+		        
+            if(verbosity>=1)
+                cout<<"Written instance to file "<<filename <<endl; 
+        }    
 
-	    if(argv.size()>3){
-		    string filename(argv[3]);
-		    if(filename.length()<5 or filename.substr(filename.length()-5,5) != ".2dvs")
-			    filename += ".2dvs";
-		    i.writeToFile(filename);
-		    cout<<"Written instance to file "<<filename <<endl;
-	    }
-	    */
+	}catch(boost::program_options::required_option& e){
+	    cerr << " " << e.what() << "\n";
+	    cerr << " Try --help for all parameters.\n";
     }catch(exception& e) {
         cerr << " " << e.what() << "\n";
         return;
@@ -171,8 +233,6 @@ void write_instance(vector<string> argv){
         return;
     }
     return;
-	
-	
 }
 
 //==============================================================================
