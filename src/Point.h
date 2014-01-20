@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <cmath>  
 #include <cstddef>
@@ -64,7 +65,4 @@ private:
     
 };
 
-int main(){
-    Point<3,int> p;
-    //std::cout<< p.to_string() <<std::endl;
-}
+

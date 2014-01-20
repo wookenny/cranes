@@ -45,6 +45,8 @@ ${twoDVS_sourcesDir}/InsertionHeuristic.cpp
 ${twoDVS_sourcesDir}/my_PM_test.cpp
 ${twoDVS_sourcesDir}/Instance.h
 ${twoDVS_sourcesDir}/Instance.cpp
+${twoDVS_sourcesDir}/Point.h
+${twoDVS_sourcesDir}/Point.cpp
 ${twoDVS_sourcesDir}/Job.h
 ${twoDVS_sourcesDir}/Job.cpp
 ${twoDVS_sourcesDir}/Tours.h
@@ -66,6 +68,8 @@ ${twoDVS_sourcesDir}/Instance.h
 ${twoDVS_sourcesDir}/Instance.cpp
 ${twoDVS_sourcesDir}/InsertionHeuristic.h
 ${twoDVS_sourcesDir}/InsertionHeuristic.cpp
+${twoDVS_sourcesDir}/Point.h
+${twoDVS_sourcesDir}/Point.cpp
 ${twoDVS_sourcesDir}/generalizedVRP_MIP.h
 ${twoDVS_sourcesDir}/generalizedVRP_MIP.cpp
 ${twoDVS_sourcesDir}/m_TSP_MIP.h

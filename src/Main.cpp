@@ -524,9 +524,10 @@ void test(std::vector<std::string> argv){
 		}		
 				
 		SingleCraneTSP_Solver tsp;
-		Tours t(tsp(i));
+		auto tsp_result = tsp(i);
+		Tours t = std::get<1>(tsp_result);
+		double bound = std::get<0>(tsp_result);
 		if(not i.verify(t) ){
-			
 			cout<<"Found instance with invalid solution:\n"<<i<<endl;
 			cout<<"Seed: "<<seed+r<<endl;
 			cout<<"tours: "<<t<<endl;
@@ -559,6 +560,7 @@ void laser(std::vector<std::string> argv){
 }
 
 void single_tsp(std::vector<std::string> argv){
+    //TODO: Mehr optionen?
     if (argv.size()<1 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
 		cout<<"single_tsp [2dvs]\n\tSolves a 2dvs instance for a single vehile using concorde."<<endl;
 		return;
@@ -566,11 +568,16 @@ void single_tsp(std::vector<std::string> argv){
 	
     SingleCraneTSP_Solver solver;
     Instance i(argv[0]);
-    if( i.num_vehicles()!=1){
-        cout<<"Setting number of vehicles to 1!"<<endl;
-        i.set_num_vehicles(1);
-    }
-    //solve it
-    Tours t = solver(i);
+    
+	auto tsp_result = solver(i);
+	Tours t = std::get<1>(tsp_result);
+	double bound = std::get<0>(tsp_result);
+
+    cout<<"makespan of optimal tour with 1 vehicle: "<<i.makespan(t)<<endl;
+    cout<<"TSP bound: "<<bound<<endl;
+    cout<<t<<endl;
 }
+
+
+
 

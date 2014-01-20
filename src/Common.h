@@ -1,7 +1,22 @@
 #pragma once
 
-#include <chrono>
 #include <string>
+#include <chrono>
+#include <vector>
+
+std::vector<std::string> &split(const std::string &s, char delim, 
+                           std::vector<std::string> &elems);
+std::vector<std::string> split(const std::string &s, char delim);
+
+//cyclic slice of vector vec, including i, exluding j
+template <typename T>
+std::vector<T> slice(std::vector<T> vec, size_t i,size_t j){
+    std::vector<T> result;
+    assert(0>=i and 0>=j and i <= vec.size() and j <= vec.size());
+    for(size_t p=i; i!=j; i=(i+1)%vec.size())    
+        result.push_back(vec[p]);
+    return result;    
+}
 
 template<class Duration>
 std::string duration_to_string(const Duration& dtn){
@@ -20,4 +35,5 @@ std::string duration_to_string(const Duration& dtn){
             
     return dur;
 }
+
 

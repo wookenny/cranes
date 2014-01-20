@@ -51,7 +51,7 @@ private:
 public:
     Tours() = delete;
     /*Constructs k empty tours*/
-    explicit Tours(int k):_tours(k,std::vector<scheduledJob>()){}
+    explicit Tours(uint k):_tours(k,std::vector<scheduledJob>()){}
     //TODO(TG): Do I need a move-constr./assign.?
     
     unsigned int num_tours() const{return _tours.size();}

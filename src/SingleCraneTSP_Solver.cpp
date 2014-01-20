@@ -5,36 +5,37 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include "Common.h"
+
 using namespace std;
 
-
-vector<string> &split(const string &s, char delim, vector<string> &elems) {
-    stringstream ss(s);
-    string item;
-    while (getline(ss, item, delim)) {
-        elems.push_back(item);
-    }
-    return elems;
-}
-
-vector<string> split(const string &s, char delim) {
-    vector<string> elems;
-    split(s, delim, elems);
-    return elems;
-}
-
+//TODO:
+//DEBUG: Test for small examples, distance matrix might be wrong!
 
 const string solver_call = "concorde"; 
 const string tsp_file = "TMP_TSP_FILE.TSP";
 const string tsp_sol_file = "TMP_TSP_FILE.sol";  
 
-Tours SingleCraneTSP_Solver::operator()(const Instance& inst) const{
+SingleCraneTSP_Solver::SingleCraneTSP_Solver(){
+    //initialize helpfull lambda function to handle positions correctly
+    depot_start   =  [](int i){return 2*i;};
+    depot_end     =  [](int i){return 2*i+1;};
+    job_start     =  [this](int i){return 2*K+3*i;};
+    job_middle    =  [this](int i){return 2*K+3*i+1;};
+    job_end       =  [this](int i){return 2*K+3*i+2;};
+}
+
+
+
+tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst) const{
+    N = inst.num_jobs();
+    K = inst.num_vehicles();
 	int M = inst.get_upper_bound();
-	
-	cout << "bound = " << M << endl;
+	//cout << "bound = " << M << endl;
 	
 	//create distance matrix
-	int size = 3*(inst.num_jobs()+1);
+	//3 vertices for each jobs, 2 for every depot
+	int size = 3*inst.num_jobs() + 2*inst.num_vehicles();
 	vector<vector<int>> dist;
 	for(int i=0; i<size;++i)
 	    dist.push_back( vector<int>(size,M) );    
@@ -49,27 +50,37 @@ Tours SingleCraneTSP_Solver::operator()(const Instance& inst) const{
 	int ret = system( (solver_call+" "+tsp_file+" > /dev/null").c_str() );
 	if(ret!=0){
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
-	    return Tours{1};
+	    return make_tuple(0,Tours{1});
 	}    
 		  
     //read solution
-    vector<int> vec = parse_solution();	
+    vector<vector<int>> vec = parse_solution();	
+	//DEBUG: INFO
+	for(auto v:vec){
+	    cout<<"t: ";
+	    for(auto i: v)
+            cout<<i<<" ";
+        cout<<endl;
+	}
+	    
 	
 	//delete everything
+	/*
 	if( remove( tsp_file.c_str() ) != 0 )
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
 	if( remove( tsp_sol_file.c_str() ) != 0 )
 	    cerr<<"WARNING: Could not delete"<<tsp_sol_file<<"!"<< endl;
 	if( system( "rm TMP_TSP_FILE.* OTMP_TSP_FILE.*" )!=0)
-	    cerr<<"WARNING: Could not delete TMP files!"<< endl;
-
-	    
-	Tours t{1};
-	build_tour(t,vec,inst);
-	
-	cout<< "found tour: "<<inst.makespan(t)<<endl; 
-	cout<< "tour valid?: "<<inst.verify(t)<<endl;
-	return t;
+	    cerr<<"WARNING: Could not delete TMP files!"<< endl;  
+	*/
+	Tours t{K};
+	double time = build_tour(t,vec[0],inst,0);
+	for(uint i=1; i < K; ++i){
+	    time = build_tour(t,vec[i],inst,i,time);
+	}
+	assert(inst.verify(t));
+	//TODO: add makespan!
+	return make_tuple(time/K,t);
 }
 
 void SingleCraneTSP_Solver::create_TSP_file(const vector<vector<int>> &dist) const{
@@ -96,98 +107,181 @@ void SingleCraneTSP_Solver::write_TSP_file(fstream &file, const vector<vector<in
 
 void SingleCraneTSP_Solver::set_distances(vector<vector<int>> &dist, const Instance& inst) const{
     /* set distance acording to the scheme:
-    every job is split up in the parts.
+    every job is split up into three parts.
         - alpha, somewhere between and beta
-        - verteices: depot, depot,depot, j1, j1,j1, j2,....
-        => job i at position 3*i, 3i+1, 3i+2
+        - vertices: depot1, depot1, depot2, .... depotk, depotk, j1, j1, j1, j2,....
+        => job i at position i, 3i+1, 3i+2
         => index j belongs to job j/3, 
         - middle is only connected to alpha and beta
         - only alpha, beta connections
-    distances are:
     */
-    uint N = dist.size()/3;
-	//set selfloop to 0
+    //lambdas for convenient access to the indice of jobs/depots    
+    //numbers of jobs/depots are ranged from 0 to n-1/k-1
+    
+    auto setDist = [&](int i,int j,int d ){dist[i][j]=dist[j][i]=d;};
+    
+	//set selfloops to 0
 	for(uint i=0; i< dist.size(); ++i)
 	    dist[i][i]=0;
 	    
 	//connect all middle jobs to left and right 
-	dist[0][1] = dist[1][0] = dist[1][2] = dist[2][1] = 0;
-	for(uint i=1; i<N;++i){
-	    dist[3*i][3*i+1] = dist[3*i+1][3*i] = 0;
-	    dist[3*i+1][3*i+2] = dist[3*i+2][3*i+1] = inst[i-1].length();
-	    
-	    for(uint j=i+1; j<N;++j){
-	        auto& j1 = inst[i-1];
-	        auto& j2 = inst[j-1]; 
-	        dist[3*i][3*j+2] = dist[3*j+2][3*i] = dist_inf(j1.alpha(),j2.beta());
-	        dist[3*i+2][3*j] = dist[3*j][3*i+2] = dist_inf(j1.beta(),j2.alpha());
+	for(uint i=0; i<N;++i){
+	    setDist(job_start(i),job_middle(i),0);
+	    setDist(job_middle(i), job_end(i),inst[i].length());
+	}
+	//connect depot start and end 
+	for(uint i=0; i<K;++i)
+	    setDist(depot_start(i),depot_end(i),0);   
+
+    //connection between depots, cyclic edges with cost 0
+    for(uint i=0; i<K;++i)
+	    setDist(depot_end(i),depot_start((i+1)%K),0);
+	//connection between jobs (end<->start)    
+	for(uint i=0; i<N;++i){
+        for(uint j=i+1; j<N;++j){
+	        auto& job_i = inst[i];
+	        auto& job_j = inst[j]; 
+	        setDist(job_start(i),job_end(j), dist_inf(job_i.alpha(),job_j.beta()));
+	        setDist(job_end(i),job_start(j), dist_inf(job_i.beta(),job_j.alpha()));
 	    }
 	}
 
-    //distance to/from depot
-    for(uint i=1; i<N;++i){
-        auto& j1 = inst[i-1];
-        dist[0][3*i+2] = dist[3*i+2][0] = dist_inf(j1.beta(), inst.get_depot(0));
-	    dist[2][3*i] = dist[3*i][2] = dist_inf(j1.alpha(), inst.get_depot(0));    
-    }	
-	        
+    //distance to/from depot, (start<->start, end<->end)
+    for(uint i=0; i<N;++i){
+        auto& job = inst[i];
+        for(uint j=0; j<K;++j){
+            auto d = dist_inf(inst.get_depot(j), job.alpha());
+            setDist(depot_start(j),job_start(i),d);
+            
+            d = dist_inf(job.beta(), inst.get_depot(j));
+            setDist(job_end(i),depot_end(j),d);
+	    }    
+    }        
 }
 	    
-vector<int> SingleCraneTSP_Solver::parse_solution()const{
+vector<vector<int>> SingleCraneTSP_Solver::parse_solution() const{
     fstream f;
     f.open(  tsp_sol_file.c_str(), ios::in );
     //parse it
     string line, lines;
-    getline(f, line);  // have line 1
+    getline(f, line);  // line 1
     while(getline(f, line))  //line 2...
         lines+=line;
+    f.close();    
     vector<string> vec =  split(lines,' ');
     vector<int> numbers;
     for(auto i: vec)
         numbers.push_back(stoi(i));
 
-    int start = 0;
-    while(numbers[start]!=0)
-        ++start;      
-       
-    bool forward = (numbers[(start+1)%numbers.size()]==1);  
-    auto modulus = [=](int a, int m) ->int {return (a+m)%m;};
-    
-    vector<int> tour;
-    int pos = start + forward?1:-1;
-    int m = numbers.size(); 
-    pos = modulus(pos,m);
+    //TODO: delte debug infos
+    cout<<endl;
+    for(auto i: numbers)
+        cout<<i<< " ";
+    cout<<endl;     
 
-    for(int i=0; i<m/3;++i){
-        assert(numbers[pos]/3 == numbers[modulus(pos+1,m)]/3);
-        assert(numbers[pos]/3 == numbers[modulus(pos-1,m)]/3);
-        tour.push_back(numbers[pos]/3);
-        if(forward)
-            pos+=3;
-        else
-            pos-=3;
-        pos = modulus(pos,m);
-    }
-    f.close();
+
+    auto is_job       =  [this](int i){return i>=2*K;};
+    auto is_job_start =  [&,this](int i){return is_job(i) and (i-2*K)%3==0;};
+    auto job_index    =  [this](int i){return (i-2*K)/3;}; 
     
-    return tour;
+    auto is_depot       =  [this](int i){return i<2*K;};
+    auto is_depot_start =  [&,this](int i){return is_depot(i) and i%2==0;};
+    auto is_depot_end   =  [&,this](int i){return is_depot(i) and i%2==1;};
+    auto depot_index    =  [this](int i){return i/2;}; 
+     
+    assert(numbers[0]==0);
+    //algo: split in parts: split iff: interdepot edge
+    //find first split edge!
+    //insert correctly
+    vector<vector<int>> paths;    
+    for(uint i=0; i<K;++i)
+        paths.push_back(std::vector<int>{});   
+       
+    int M = numbers.size();
+    assert(M==3*N+2*K);
+
+    if (is_depot(numbers[1])){
+        reverse(begin(numbers)+1,end(numbers));
+         cout<<endl;
+         for(auto i: numbers)
+            cout<<i<< " ";
+         cout<<endl;     
+    }
+
+    //cr subtours
+    vector<int> *current = nullptr;
+    for(int i=0; i<M;++i){
+        if(current==nullptr){
+            assert(is_depot_start(numbers[i]));
+            current = &paths[depot_index(numbers[i])];
+        }
+        current->push_back(numbers[i]);
+        if(is_depot_end(numbers[i])){
+            current = nullptr;
+        }
+    }
+     
+    
+    cout<<"found paths"<<endl;
+    for(uint i=0; i<paths.size();++i){
+        cout<<i<<":  ";        
+        for(auto e:paths[i]){
+            cout<< e<<" ";
+        }
+        cout<<endl;
+    }    
+    
+    //find a tour for every depot, skip tours visiting multiple depots
+    vector<vector<int>> tours;
+    vector<bool> depot_visited;
+    for(uint i=0; i<K;i++) {
+        tours.push_back(vector<int>{});
+        depot_visited.push_back(false);
+    }    
+    //add tours
+    for(uint i=0;i<K;++i){
+        //already on other tour?
+        if(depot_visited[i]) continue;
+        //starting new and length == 2 => nop tour, just connection
+        if(paths[i].size()==2) continue;
+        //build tour, starting at depot i    
+        int curdepot = i; 
+        while(true){      
+            depot_visited[curdepot]=true;
+            for(uint j = 1; j<paths[curdepot].size()-1;++j)
+                if(is_job_start(paths[curdepot][j]))
+                    tours[curdepot].push_back(job_index(paths[curdepot][j]));
+            if(paths[curdepot].back()==2*i+1) break;
+            curdepot = paths[curdepot].back();   
+        }
+    }
+    
+    for(auto &t: tours){
+        cout<<"";
+        for(auto &e: t)
+           cout<< e << " ";
+        cout<<endl;       
+    }
+    
+    return tours;
 }	    
 	  
-void SingleCraneTSP_Solver::build_tour(Tours &t,const vector<int> &vec,
-                                            const Instance& inst) const
+double SingleCraneTSP_Solver::build_tour(Tours &t, const vector<int> &vec,
+                                            const Instance& inst, int vehicle, 
+                                            double time_offset) const
 {
-    assert(vec[0]==0);
-    //TODO: such a pice of code should be added to the tours class!
-    auto position = inst.get_depot(0);
-    double time = 0;
-    for(uint i=1; i<vec.size();++i){
-		int job = vec[i]-1;
-		time += dist_inf(position,inst[job].alpha());
-		t.add_job(&inst[job], time, 0);
+    if(vec.size()==0) return time_offset;
+    double time = time_offset;
+    auto pos = inst.get_depot(vehicle);
+    for(uint i=0; i<vec.size();++i){
+		int job = vec[i];
+		time += dist_inf(pos,inst[job].alpha());
+		t.add_job(&inst[job], time, vehicle);
 		time += inst[job].length();
-		position = inst[job].beta();
+		pos = inst[job].beta();
     }
-    
+    time += dist_inf(pos,inst.get_depot(vehicle));
+    return time;
 }	    
 	    
 	    
