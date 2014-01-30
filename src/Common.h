@@ -9,6 +9,7 @@ std::vector<std::string> &split(const std::string &s, char delim,
 std::vector<std::string> split(const std::string &s, char delim);
 
 //cyclic slice of vector vec, including i, exluding j
+/*
 template <typename T>
 std::vector<T> slice(std::vector<T> vec, size_t i,size_t j){
     std::vector<T> result;
@@ -17,6 +18,7 @@ std::vector<T> slice(std::vector<T> vec, size_t i,size_t j){
         result.push_back(vec[p]);
     return result;    
 }
+*/
 
 template<class Duration>
 std::string duration_to_string(const Duration& dtn){

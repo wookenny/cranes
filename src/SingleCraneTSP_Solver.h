@@ -38,25 +38,30 @@ EOF
 class SingleCraneTSP_Solver{
 
 	public:
-		std::tuple<double, Tours> operator()(const Instance& inst) const;
+		std::tuple<double, Tours> operator()(const Instance& inst, 
+		                                     bool no_solution=false) const;	
+		SingleCraneTSP_Solver();	
 		
-		SingleCraneTSP_Solver();		
+		
 	private:       
         void create_TSP_file(const std::vector<std::vector<int>> &) const;
         void write_TSP_file(std::fstream &, const std::vector<std::vector<int>> &) const;
         void set_distances(std::vector<std::vector<int>> &dist, const Instance& i) const;
-        std::vector<std::vector<int>>  parse_solution()const;
-        double build_tour(Tours&, const std::vector<int>&,const Instance&, 
-                                int vehicle,double time_offset=0) const;
+        std::vector<std::vector<int>>  parse_solution(std::vector<int> &numbers)const;
+        std::vector<int> read_solution() const ;
+        double calculate_bound(const std::vector<int>& tour,
+                               const std::vector<std::vector<int>>& dist) const;
+        void build_tour(Tours&, const std::vector<int>&,const Instance&, 
+                                int vehicle) const;
+	    
 	    	
-	    		
+	  	
         mutable uint N;
         mutable uint K;    
         std::function<int (int)> depot_start;
+        std::function<int (int)> depot_middle;
         std::function<int (int)> depot_end;
         std::function<int (int)> job_start;
         std::function<int (int)> job_middle;
-        std::function<int (int)> job_end;
-        bool is_job_start(int pos)const {return static_cast<uint>(pos)>=2*K and
-                                            (static_cast<uint>(pos)-2*K)%3==0;}        
+        std::function<int (int)> job_end;    
 };

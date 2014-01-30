@@ -158,7 +158,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 			    assign.push_back( uint_distr(rng) );  
 		}
 		//construct tour with ass. + perm	
-		Tours t{static_cast<int>(inst.num_vehicles())};
+		Tours t{inst.num_vehicles()};
 		if(no_assignment)
 		    t = operator()(inst, perm);
 		else t = operator()(inst, perm, assign);
@@ -235,7 +235,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
  	vector<uint> empty_a;
  	
 	if(local_search_){
-		Tours t{static_cast<int>(inst.num_vehicles())};	
+		Tours t{inst.num_vehicles()};	
 		bool decrease;
 		if(initial_runs_no_assign >0)
 		     decrease =  get_better_neighbour_parallel(inst, p, empty_a, t);

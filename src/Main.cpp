@@ -526,7 +526,6 @@ void test(std::vector<std::string> argv){
 		SingleCraneTSP_Solver tsp;
 		auto tsp_result = tsp(i);
 		Tours t = std::get<1>(tsp_result);
-		double bound = std::get<0>(tsp_result);
 		if(not i.verify(t) ){
 			cout<<"Found instance with invalid solution:\n"<<i<<endl;
 			cout<<"Seed: "<<seed+r<<endl;
@@ -573,9 +572,11 @@ void single_tsp(std::vector<std::string> argv){
 	Tours t = std::get<1>(tsp_result);
 	double bound = std::get<0>(tsp_result);
 
-    cout<<"makespan of optimal tour with 1 vehicle: "<<i.makespan(t)<<endl;
-    cout<<"TSP bound: "<<bound<<endl;
     cout<<t<<endl;
+    cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
+    cout<<"TSP bound: "<<bound<<endl;
+    cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
+    
 }
 
 
