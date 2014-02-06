@@ -2,11 +2,20 @@
 
 #include <string>
 #include <chrono>
-#include <vector>
+#include <vector> 
 
 std::vector<std::string> &split(const std::string &s, char delim, 
                            std::vector<std::string> &elems);
 std::vector<std::string> split(const std::string &s, char delim);
+
+
+void replaceAll(std::string& str, const std::string& from, const std::string& to);
+
+std::tuple<std::string,std::string> fixed_prefix_path(const std::string &s);
+
+//split string at every whitespace position
+std::vector<std::string> split(const std::string &input);
+
 
 //cyclic slice of vector vec, including i, exluding j
 /*
@@ -38,4 +47,7 @@ std::string duration_to_string(const Duration& dtn){
     return dur;
 }
 
-
+//used to build intervals
+std::vector<std::string> create_interval(const std::string& );
+//used to build intervals
+std::vector<std::string> find_files(const std::string& );

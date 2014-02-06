@@ -50,7 +50,7 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	create_TSP_file(dist);
 	
 	//solve it
-	int ret = system( (solver_call+" "+tsp_file+" > /dev/null").c_str() );
+	int ret = system( (solver_call+" "+tsp_file+" &> /dev/null").c_str() );
 	if(ret!=0){
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
 	    return make_tuple(0,Tours{1});
@@ -74,16 +74,17 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	    cerr<<"WARNING: Could not delete TMP files!"<< endl;  
     
 	//DEBUG: INFO
+	/*
 	for(auto v:vec){
 	    cout<<"t: ";
 	    for(auto i: v)
             cout<<i<<" ";
         cout<<endl;
 	}
-	  
+	*/  
 
-    //Find solution using the tsp slution as insertion ans assigment order
-	InsertionHeuristic heur;
+    //Find solution using the tsp solution as insertion ans assigment order
+	InsertionHeuristic heur{true};//TODO: make this selectable in Main and this method!
 	vector<uint> sequence;
 	vector<uint> assignment;
 	for(uint i=0;i<vec.size();++i)
@@ -91,6 +92,7 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	        sequence.push_back(static_cast<uint>(vec[i][j]));
 	        assignment.push_back(i);
 	    }
+	/*
 	cout<<"sequence"<<endl;    
 	for(auto e: sequence)
 	    cout<<e<<" ";
@@ -99,10 +101,10 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	for(auto e: assignment)
 	    cout<<e<<" ";
 	cout<<endl; 
-	
+	*/
 	
     auto t = heur(inst, sequence, assignment);
-
+    
 	assert(inst.verify(t));
 	return make_tuple(bound,t);
 }
@@ -227,6 +229,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
     auto depot_index    =  [this](int i){return i/2;}; 
 
     //TODO: delte debug infos
+    /*
     cout<<endl;
     for(auto i: numbers)
         if(not is_depot_middle(i))
@@ -234,6 +237,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
         else
             cout <<" | ";
     cout<<endl;     
+    */
     //END DELETE
      
     assert(numbers[0]==0);
@@ -251,7 +255,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
     if (is_depot_middle(numbers[1])){
         reverse(begin(numbers)+1,end(numbers));
         //TODO: DELETE
-         cout<<endl;
+        /* cout<<endl;
          for(auto i: numbers){
             if(not is_depot_middle(i))
                 cout<<i<< " ";
@@ -259,7 +263,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
                 cout <<" | ";
          }
          cout<<endl;  
-        
+        */
         //END DELETE    
     }
 
@@ -276,7 +280,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
         }
         current->push_back(numbers[i]);
         if(is_depot_end(numbers[i])){
-            cout<< numbers[i] << " is depot end, set to nullptr"<< endl;
+            //cout<< numbers[i] << " is depot end, set to nullptr"<< endl;
             current = nullptr;
         }
     }

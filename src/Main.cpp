@@ -1,5 +1,6 @@
 #include "Main.h"
 
+#include "Common.h"
 #include <algorithm>
 #include <unordered_map>
 #include <memory>
@@ -572,13 +573,74 @@ void single_tsp(std::vector<std::string> argv){
 	Tours t = std::get<1>(tsp_result);
 	double bound = std::get<0>(tsp_result);
 
-    cout<<t<<endl;
     cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
     cout<<"TSP bound: "<<bound<<endl;
     cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
+    if (i.makespan(t)/bound > i.num_vehicles())
+         cout<<"WARNING: ratio is above number of vehicles("<<i.num_vehicles()<<")"<<endl;     
     
 }
 
 
+/**
+ Recursive Method to insert all arguments and run the matching method!
+**/
+void recursive_replace_call(string command, uint pos, 
+                                    const vector<vector<string>>& replacement){
+    //all parameter replaced => call program
+    if(pos>=replacement.size()){
+        cout<<"--------------------------------------\n";
+        cout<<"calling: "<<command;
+        cout<<"\n--------------------------------------"<<endl;
+        int return_code = process_args(split(command));   
+        if(return_code != 0){
+            cout<< "\nLast call was not valid! Ending batch runs.\n" <<endl;
+            exit(0);
+        } 
+    }
+    else{//choose new replacement
+        for(auto s: replacement[pos]){
+            string new_command =  command;
+            replaceAll(new_command, "#"+to_string(pos+1), s);
+            recursive_replace_call(new_command,pos+1,replacement);        
+        }
+
+    }
+}
+
+
+void batch(vector<string> argv){
+    if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
+		cout<<"batch \"<command> #1 <param> #2 <param> #1...\" <replace1> <replace2>... \n\tRuns the command in batch mode."<<endl;
+		return;
+	}
+	
+	string command = argv[0];
+	vector<vector<string>> replace_lists;
+	
+    //build intervals for numbers or lists of files, using wildcard '*'			
+ 	for(uint i=1; i< argv.size(); ++i){
+        auto interval = create_interval(argv[i]);
+        if(!interval.empty())
+            replace_lists.push_back(interval);
+	    else{ //try to find wildcard filelist
+	        auto files =  find_files(argv[i]);
+	        replace_lists.push_back(files);  
+	    }
+	}
+    
+    /*
+    for(auto l: replace_lists){
+        for(auto e: l){
+            cout<<e <<" ";
+        }
+        cout<< l.size()<<endl;
+    }
+   //creating all calls!
+  */
+  
+  int pos = 0;
+  recursive_replace_call(command,pos,replace_lists);   
+} 
 
 

@@ -23,6 +23,7 @@ void insertion_heuristic(std::vector<std::string> argv);
 void laser(std::vector<std::string> argv);
 void single_tsp(std::vector<std::string> argv);
 void test(std::vector<std::string> argv);
+void batch(std::vector<std::string> argv);
 
 template <class T,class U>
 void printMapIndex( std::map<T,U> map){
@@ -31,8 +32,7 @@ void printMapIndex( std::map<T,U> map){
 		std::cout << "\t- "<<iter->first << std::endl;
 }
 
-
-int main(int argc, char** argv){
+int process_args(std::vector<std::string> argv){
     std::cout<<std::boolalpha;
 
 	//build function dictionary
@@ -45,37 +45,51 @@ int main(int argc, char** argv){
 	functionDict["test"] 	= &test;
 	functionDict["laser_format"] 	= &laser;
 	functionDict["single_tsp"]      = &single_tsp;
+	functionDict["batch"]       = &batch;
 	//at least one parameter must be given
-	if(argc < 2){
+	if(argv.size() < 1){
 		std::cout<<"No function given, try one of these:"<<std::endl;
 		printMapIndex(functionDict);
 		std::cout<< "Version: "<< BUILD_VERSION_ << std::endl;
-		return 0;
+		return -1;
 	}
 
-	//parse arguments
-	std::string method =  argv[1];
-	boost::algorithm::to_lower(method);
-	std::vector<std::string> arguments;
-	for(int i = 2; i < argc; ++i)
-		arguments.push_back(argv[i]);
+    auto method = argv[0];
+    std::vector<std::string> arguments;
+    arguments.insert(begin(arguments),begin(argv)+1, end(argv));
 
 	//functioncall or print all commands
 	if( functionDict.find(method)==functionDict.end()){
 		std::cout<<"No matching function found, try one of these:"<<std::endl;
 		printMapIndex(functionDict);
+		return -2;
 	}else{
 		// function call
 		try{
         	functionDict[method](arguments);
     	}catch(std::invalid_argument &){
 			std::cout<< "Given arguments are invalid for the choosen function. Exit." <<std::endl;
+			return -3;
 		}catch(std::out_of_range &oor){
 			std::cout<<"The argument you have given it out of range for its type."<<std::endl;
-		std::cout << oor.what() << std::endl;
+		    std::cout << oor.what() << std::endl;
+		    return -4;
 		}
-
 	}
+	return 0;
+}
+
+int main(int argc, char** argv){
+	//parse arguments
+	std::vector<std::string> arguments;
+	if(argc >= 2){
+        std::string method =  argv[1];
+	    boost::algorithm::to_lower(method);
+        arguments.push_back(method);
+	    for(int i = 2; i < argc; ++i)
+		    arguments.push_back(argv[i]);
+    }
+    return process_args(arguments);
 }
 
  
