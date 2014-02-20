@@ -568,30 +568,32 @@ void single_tsp(std::vector<std::string> argv){
         po::options_description desc("Allowed options");
         desc.add_options()
             ("help,h", "produce help message")
-            ("filename,f", po::value<string>(&filename), 
+            ("filename,f", po::value<string>(&filename)->required(), 
              "2DVS file")
             ("localsearch,l", 
-             "enable or disable the local search");
-
+             "enable or disable the local search")
+            ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
 
         po::variables_map vm;        
         po::store(po::command_line_parser(argv)
                     .options(desc)
                     .style( po::command_line_style::unix_style)
-                    .run(), vm);
-        po::notify(vm);    
+                    .run(), vm); 
 
         //react on som settings
-        if (vm.count("help") ){
+        if (vm.count("help")){
             cout<<"Calculates a lower bound for the given file.";
             cout<<"The bound is given by a TSP formulation, which is solved optimally via Concorde.\n"; 
             cout<<boolalpha << desc << "\n";
+            cout<<"required: 'f'"<<endl;
             return;
         }
-
+        po::notify(vm); 
+        
         //after parsing, execute the selected method    
         SingleCraneTSP_Solver solver;
         Instance i(filename);
+        solver.set_verbosity(verbosity);
         if(vm.count("localsearch"))
             solver.set_local_search(true);
 	    auto tsp_result = solver(i);
@@ -602,13 +604,17 @@ void single_tsp(std::vector<std::string> argv){
         cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
         cout<<"TSP bound: "<<bound<<endl;
         cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
-        if (i.makespan(t)/bound > i.num_vehicles())
-             cout<<"WARNING: ratio is above number of vehicles("<<i.num_vehicles()<<")"<<endl; 
-         
-         
-     }catch(exception& e) {
+        if (i.makespan(t)/bound > i.num_vehicles()){
+             cerr<<"WARNING: ratio is above number of vehicles(";
+             cerr<<i.num_vehicles()<<")"<<endl; 
+        }  
+
+    }catch(boost::program_options::required_option& e){
+	    cerr << " " << e.what() << "\n";
+	    cerr << " Try --help for all parameters.\n";
+    }catch(exception& e) {
         cerr << " " << e.what() << "\n";
-        return;
+        return;                    
     }catch(...) {
         cerr << "Exception of unknown type!\n";
         return;

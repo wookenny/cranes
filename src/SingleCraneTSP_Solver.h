@@ -42,7 +42,7 @@ class SingleCraneTSP_Solver{
 		                                     bool no_solution=false) const;	
 		SingleCraneTSP_Solver();
 		void set_local_search(bool ls){local_search_=ls;}
-		
+		void set_verbosity(int v){verbosity_ = v;}
 		
 	private:       
         void create_TSP_file(const std::vector<std::vector<int>> &) const;
@@ -55,7 +55,7 @@ class SingleCraneTSP_Solver{
         void build_tour(Tours&, const std::vector<int>&,const Instance&, 
                                 int vehicle) const;
 	    bool local_search_ = false;
-	    	
+	    int  verbosity_    = false;    	
 	  	
         mutable uint N;
         mutable uint K;    

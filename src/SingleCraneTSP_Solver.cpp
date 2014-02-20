@@ -228,18 +228,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
     auto is_depot_end   =  [&,this](int i){return is_depot(i) and i%2==1;};
     auto depot_index    =  [this](int i){return i/2;}; 
 
-    //TODO: delte debug infos
-    /*
-    cout<<endl;
-    for(auto i: numbers)
-        if(not is_depot_middle(i))
-            cout<<i<< " ";
-        else
-            cout <<" | ";
-    cout<<endl;     
-    */
-    //END DELETE
-     
+  
     assert(numbers[0]==0);
     //algo: split in parts: split iff: interdepot edge
     //find first split edge!
@@ -254,17 +243,6 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
     //Reverse if after the start of depot 0 comes an intermediate depot vertex  
     if (is_depot_middle(numbers[1])){
         reverse(begin(numbers)+1,end(numbers));
-        //TODO: DELETE
-        /* cout<<endl;
-         for(auto i: numbers){
-            if(not is_depot_middle(i))
-                cout<<i<< " ";
-            else
-                cout <<" | ";
-         }
-         cout<<endl;  
-        */
-        //END DELETE    
     }
 
     //split into subtours
@@ -280,22 +258,20 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
         }
         current->push_back(numbers[i]);
         if(is_depot_end(numbers[i])){
-            //cout<< numbers[i] << " is depot end, set to nullptr"<< endl;
             current = nullptr;
         }
     }
      
-    //TODO: DELETE
-    /*cout<<"found paths"<<endl;
-    for(uint i=0; i<paths.size();++i){
-        cout<<i<<":  ";        
-        for(auto e:paths[i]){
-            cout<< e<<" ";
+    if(verbosity_ >= 1){
+        cout<<"found paths"<<endl;
+        for(uint i=0; i<paths.size();++i){
+            cout<<i<<":  ";        
+            for(auto e:paths[i]){
+                cout<< e<<" ";
+            }
+            cout<<endl;
         }
-        cout<<endl;
     }
-    */    
-    //END DELETE
     
     //find a tour for every depot, skip tours visiting multiple depots
     vector<vector<int>> tours;
@@ -322,16 +298,15 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
         }
     }
     
-    //TODO: Delete!
-    /*
-    for(auto &t: tours){
-        cout<<"";
-        for(auto &e: t)
-           cout<< e << " ";
-        cout<<endl;       
+    if(verbosity_ >=0 ){
+        for(auto &t: tours){
+            cout<<"";
+            for(auto &e: t)
+               cout<< e << " ";
+            cout<<endl;       
+        }
     }
-    */
-    //END DELETE
+
     return tours;
 }	    
 	  
