@@ -84,7 +84,7 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	*/  
 
     //Find solution using the tsp solution as insertion ans assigment order
-	InsertionHeuristic heur{true};//TODO: make this selectable in Main and this method!
+	InsertionHeuristic heur{local_search_};
 	vector<uint> sequence;
 	vector<uint> assignment;
 	for(uint i=0;i<vec.size();++i)

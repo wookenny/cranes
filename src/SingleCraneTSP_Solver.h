@@ -40,7 +40,8 @@ class SingleCraneTSP_Solver{
 	public:
 		std::tuple<double, Tours> operator()(const Instance& inst, 
 		                                     bool no_solution=false) const;	
-		SingleCraneTSP_Solver();	
+		SingleCraneTSP_Solver();
+		void set_local_search(bool ls){local_search_=ls;}
 		
 		
 	private:       
@@ -53,7 +54,7 @@ class SingleCraneTSP_Solver{
                                const std::vector<std::vector<int>>& dist) const;
         void build_tour(Tours&, const std::vector<int>&,const Instance&, 
                                 int vehicle) const;
-	    
+	    bool local_search_ = false;
 	    	
 	  	
         mutable uint N;

@@ -560,25 +560,62 @@ void laser(std::vector<std::string> argv){
 }
 
 void single_tsp(std::vector<std::string> argv){
-    //TODO: Mehr optionen?
-    if (argv.size()<1 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"single_tsp [2dvs]\n\tSolves a 2dvs instance for a single vehile using concorde."<<endl;
-		return;
-	}
-	
-    SingleCraneTSP_Solver solver;
-    Instance i(argv[0]);
-    
-	auto tsp_result = solver(i);
-	Tours t = std::get<1>(tsp_result);
-	double bound = std::get<0>(tsp_result);
+     try {
+        //define all parameters to set
+        int verbosity;
+        string filename = "";
 
-    cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
-    cout<<"TSP bound: "<<bound<<endl;
-    cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
-    if (i.makespan(t)/bound > i.num_vehicles())
-         cout<<"WARNING: ratio is above number of vehicles("<<i.num_vehicles()<<")"<<endl;     
-    
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("filename,f", po::value<string>(&filename), 
+             "2DVS file")
+            ("localsearch,l", 
+             "enable or disable the local search");
+
+
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style( po::command_line_style::unix_style)
+                    .run(), vm);
+        po::notify(vm);    
+
+        //react on som settings
+        if (vm.count("help") ){
+            cout<<"Calculates a lower bound for the given file.";
+            cout<<"The bound is given by a TSP formulation, which is solved optimally via Concorde.\n"; 
+            cout<<boolalpha << desc << "\n";
+            return;
+        }
+
+        //after parsing, execute the selected method    
+        SingleCraneTSP_Solver solver;
+        Instance i(filename);
+        if(vm.count("localsearch"))
+            solver.set_local_search(true);
+	    auto tsp_result = solver(i);
+	
+	    Tours t = std::get<1>(tsp_result);
+	    double bound = std::get<0>(tsp_result);
+
+        cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
+        cout<<"TSP bound: "<<bound<<endl;
+        cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
+        if (i.makespan(t)/bound > i.num_vehicles())
+             cout<<"WARNING: ratio is above number of vehicles("<<i.num_vehicles()<<")"<<endl; 
+         
+         
+     }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;
+  
+       
 }
 
 
