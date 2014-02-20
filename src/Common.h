@@ -2,33 +2,19 @@
 
 #include <string>
 #include <chrono>
-#include <vector> 
+#include <vector>
 
-std::vector<std::string> &split(const std::string &s, char delim, 
-                           std::vector<std::string> &elems);
 std::vector<std::string> split(const std::string &s, char delim);
 
+//replaces all occureances of from in str with to
+void replaceAll(std::string& str, const std::string& from, 
+                                  const std::string& to);
 
-void replaceAll(std::string& str, const std::string& from, const std::string& to);
-
-std::tuple<std::string,std::string> fixed_prefix_path(const std::string &s);
-
-//split string at every whitespace position
+// split string at every whitespace position
 std::vector<std::string> split(const std::string &input);
 
-
-//cyclic slice of vector vec, including i, exluding j
-/*
-template <typename T>
-std::vector<T> slice(std::vector<T> vec, size_t i,size_t j){
-    std::vector<T> result;
-    assert(0>=i and 0>=j and i <= vec.size() and j <= vec.size());
-    for(size_t p=i; i!=j; i=(i+1)%vec.size())    
-        result.push_back(vec[p]);
-    return result;    
-}
-*/
-
+// convert a duration object into a nice and readable string, represeting
+// the same duration
 template<class Duration>
 std::string duration_to_string(const Duration& dtn){
     std::string dur;
@@ -41,13 +27,19 @@ std::string duration_to_string(const Duration& dtn){
         dur += (h>0?" ":"")+std::to_string(m)+" minutes";
     auto s = std::chrono::duration_cast<std::chrono::seconds>(dtn).count();
     s -= (h*60*60 + m*60);
-    if(s>0)
-        dur += ((h>0 or m > 0)?" ":"")+std::to_string(s)+" seconds";    
-            
+    if(s>0)  dur += ( (h>0 or m > 0) ? " " : "")+std::to_string(s)+" seconds";    
     return dur;
 }
 
-//used to build intervals
-std::vector<std::string> create_interval(const std::string& );
-//used to build intervals
-std::vector<std::string> find_files(const std::string& );
+// used to build intervals for the batch mode
+//exampels:  
+// * "a-d"   -> {a,b,c,d}
+// * "[a,d]" -> {a,b,c,d}
+// * "a"     -> {a}
+// * "a,b,d" -> {a,b,d}
+std::vector<std::string> create_interval(const std::string&);
+
+// used to build find files recursively
+//  E.g.: "./f*/g*.png" find all files with name g*.png   
+// in folders starting with f in the current directory
+std::vector<std::string> find_files(const std::string&);

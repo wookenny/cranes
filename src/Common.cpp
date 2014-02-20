@@ -6,10 +6,8 @@
 #include <boost/regex.hpp>
 #include <boost/filesystem.hpp>
 
-
 using namespace std;
 namespace fs = boost::filesystem;
-
 
 vector<string> split(const string &input){ 
     istringstream buffer(input);
@@ -75,6 +73,8 @@ vector<string> create_interval(const string& s){
     return result;
 }
 
+std::tuple<std::string,std::string> fixed_prefix_path(const std::string &s);
+
 //finds all files or directory, matching the filter, inside the given path
 vector<string> find_content(const string& path, const string& filter, bool directories){
     const boost::regex regex( filter );
@@ -123,7 +123,6 @@ void find_files_recursive(const string& path, const string& filter,
         results.insert( end(results), begin(content), end(content) );       
     }
 }
-
 
 //find files with the given path, wildcard can be applied
 vector<string> find_files(const string& filter){

@@ -59,6 +59,7 @@ ${twoDVS_sourcesDir}/LaserSharingProblemWriter.cpp
 SET(GTestSources
 ${twoDVS_sourcesDir}/Common.h
 ${twoDVS_sourcesDir}/Common.cpp
+${twoDVS_sourcesDir}/Common_Unittest.cpp
 ${twoDVS_sourcesDir}/datastructure_unittest.cpp
 ${twoDVS_sourcesDir}/DisjointSet.h
 ${twoDVS_sourcesDir}/DisjointSet.cpp
