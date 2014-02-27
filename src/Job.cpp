@@ -2,7 +2,6 @@
 		
 #include <cmath>
 #include <cassert>
-
 #include <cstring>
 
 using namespace std;
@@ -111,7 +110,46 @@ bool Job::operator==(const Job& j) const{
 	}
 	
 	assert(max-min==2);			
- 	return -2;									
+ 	return -2;
+ }
+ 
+ //------ Here are some GTests for this class---//
+#ifdef GTESTS_ENABLED
+#include <gtest/gtest.h>
+TEST(Job_Tests, Driveby_Job) { 
+    Job j1;
+    EXPECT_EQ(j1.num(),      0);
+    EXPECT_EQ (j1.length(),  0);
+    EXPECT_EQ (j1.delta_x(), 0);
+    EXPECT_EQ (j1.delta_y(), 0);
+    EXPECT_EQ (j1.alpha()[0],0);
+    EXPECT_EQ (j1.alpha()[1],0);
+    EXPECT_EQ (j1.beta()[0], 0);
+    EXPECT_EQ (j1.beta()[1], 0);
 }
 
+TEST(Job_Tests, Real_Job) { 
 
+    Job j1(2,3,7,4,-3);
+    EXPECT_EQ(2, j1.num());
+    EXPECT_EQ(10, j1.length());
+    EXPECT_EQ(1, j1.delta_x());
+    EXPECT_EQ(10, j1.delta_y());
+    EXPECT_EQ(3, j1.alpha()[0]);
+    EXPECT_EQ(7, j1.alpha()[1]);
+    EXPECT_EQ(4, j1.beta()[0]);
+    EXPECT_EQ(-3, j1.beta()[1]);
+}
+
+TEST(Job_Tests, Comparisons) { 
+    Job j1(1,3,7,4,-3);
+    Job j2(1,3,7,4,-3);
+    Job j3(3,3,7,4,-3);
+    EXPECT_TRUE (j1==j2);
+    EXPECT_FALSE(j1==j3);
+    EXPECT_TRUE (j2!=j3);
+}
+
+#else
+
+#endif

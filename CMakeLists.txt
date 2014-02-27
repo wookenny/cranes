@@ -119,6 +119,7 @@ add_dependencies(2DVS myBuildVersion)
 
 ADD_EXECUTABLE(GTests ${GTestSources} )
 target_link_libraries(GTests -lgtest -lgtest_main)
+set_target_properties (GTests PROPERTIES COMPILE_DEFINITIONS "GTESTS_ENABLED")
 
 ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )
 

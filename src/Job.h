@@ -18,7 +18,7 @@ class Job{
 		std::array<int,2> _beta;
 		
 	public:
-		Job() = default ;
+		Job():_num(0),_alpha{{0,0}},_beta{{0,0}}{};
 		Job(const Job&)= default;
 		Job(const Job* j):_num(j->_num),
 		                  _alpha{{j->_alpha[0],j->_alpha[1]}},
@@ -45,7 +45,7 @@ class Job{
         }
 
 		bool operator==(const Job& j) const;
-
+        bool operator!=(const Job& j) const{return !operator==(j);}
         
 		/*
 		This method considers the implication between the
