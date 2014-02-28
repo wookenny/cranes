@@ -53,3 +53,39 @@ void DisjointSet::linkSets_(unsigned int set1, unsigned int set2){
             rank_.at(set2) = rank_.at(set2) + 1;
     }
 }		 
+
+
+//------ Here are some GTests for this class---//
+#ifdef GTESTS_ENABLED
+#include <gtest/gtest.h>
+TEST(DisjointSet_Tests, GeneralTests) { 
+
+    auto D1 = DisjointSet{};
+    auto D2 = DisjointSet(10);
+    const std::vector<int> vec = {0,1,3,4,2};
+    auto D3 = DisjointSet(vec);
+    EXPECT_EQ(0, D1.size());
+    EXPECT_EQ(10, D2.size());
+    EXPECT_EQ(5-2, D3.size());
+
+    for(uint i=0; i<D2.size();++i)
+        EXPECT_EQ(D2.findSet(i),i);
+    D2.unionSets(0,3); D2.unionSets(0,2);
+    EXPECT_EQ(D2.findSet(0),D2.findSet(3));
+    EXPECT_EQ(D2.findSet(0),D2.findSet(2));
+    EXPECT_EQ(D2.findSet(2),D2.findSet(3));
+    EXPECT_EQ(1, D2.findSet(1));
+    EXPECT_EQ(10-2, D2.size());
+    for(uint i=4; i<D2.size()-1;++i)
+        EXPECT_EQ(D2.findSet(i),i);
+    
+    EXPECT_EQ(0, D3.findSet(0));
+    EXPECT_EQ(1, D3.findSet(1));
+    EXPECT_EQ(D3.findSet(2),D3.findSet(3));
+    EXPECT_EQ(D3.findSet(3),D3.findSet(4));
+    
+}
+
+
+#else
+#endif
