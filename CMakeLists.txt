@@ -18,8 +18,8 @@ set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -fopenmp -mfpmath=sse+387 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I/usr/site-local/include -I${CPLEXINCDIR} -I. -I${MATCHING_INCDIR} ")
-set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -L/usr/site-local/lib -lrt -lz  -lboost_iostreams -lboost_program_options -lboost_filesystem -lboost_system")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -fopenmp -mfpmath=sse+387 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -DILOUSESTL -DILOSTRINGSTL -DIL_STD -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I/usr/site-local/include -I${CPLEXINCDIR} -I. -I${MATCHING_INCDIR} ")
+set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -L/usr/site-local/lib -lrt -lz  -lboost_iostreams -lboost_program_options -lboost_filesystem -lboost_system")
 
 
 #clang is more silent if this is set: -Qunused-arguments
