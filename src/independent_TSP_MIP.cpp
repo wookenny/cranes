@@ -30,12 +30,15 @@ void independent_TSP_MIP::build_variables_(){
 
     string name;
 	//additional depot and 
-	if(fixed_makespan_ <= 0){	
-	    name = "makespan";
-	    v_[name] = counter_++;
+	name = "makespan";
+	v_[name] = counter_++;
+
+	if(fixed_makespan_ <= 0)	
 	    vars_.add( IloNumVar(env_, 0/*lb*/, IloInfinity/*ub*/,IloNumVar::Float, name.c_str() ) );
-    }
-	//time variables
+    else
+	    vars_.add( IloNumVar(env_,fixed_makespan_, fixed_makespan_,IloNumVar::Float, name.c_str() ) );
+    
+    //time variables
 	for(uint j = 1; j <= inst_.num_jobs()+inst_.num_vehicles();++j){
 		name = name_t_(j);
 		v_[name] = counter_++;
@@ -78,7 +81,10 @@ void independent_TSP_MIP::build_variables_(){
 	for(uint j = 1; j <= inst_.num_jobs()+inst_.num_vehicles();++j){
 		name = name_k_(j);
 		v_[name] = counter_++;
-		vars_.add( IloNumVar(env_, 1/*lb*/, inst_.num_vehicles()/*ub*/,IloNumVar::Int, name.c_str() ) );
+		auto var_type = IloNumVar::Int;
+		if(LP_relaxation_)
+			var_type = IloNumVar::Float; 
+		vars_.add( IloNumVar(env_, 1/*lb*/, inst_.num_vehicles()/*ub*/,var_type, name.c_str() ) );
 	}	
 	
 		
@@ -90,13 +96,11 @@ void independent_TSP_MIP::build_constraints_(){
 	uint n = inst_.num_jobs();
 	uint K = inst_.num_vehicles();
 	
-	bigM = inst_.get_upper_bound()+1;
-    if( not start.empty() )
-        bigM = std::min(static_cast<int>(inst_.makespan(start)), bigM); 
+	if (bigM <= 0)
+	    bigM = inst_.get_upper_bound();
     if(fixed_makespan_>0)
         bigM = fixed_makespan_;
-
-
+    
 	//indegree == outdegree nodes (single vehicle flow)
 	for(uint v=1; v<=K;++v){
 		for(uint i = 1; i<=n+K; ++i){
@@ -126,7 +130,7 @@ void independent_TSP_MIP::build_constraints_(){
 			}
 
 			IloRange constraint(env_, 0, expr, 0,
-			("in-outdegree for "+to_string(i)+" vehicle "+to_string(v)).c_str());
+			("in_outdegree_for_"+to_string(i)+"_vehicle_"+to_string(v)).c_str());
 			cons_.add(constraint);		
 		}
 	}
@@ -146,7 +150,7 @@ void independent_TSP_MIP::build_constraints_(){
 		}
 
 		IloRange constraint(env_, 1, expr, 1, 
-							("in-degree for "+to_string(i)).c_str() );
+							("in_degree_for_"+to_string(i)).c_str() );
 		cons_.add(constraint);		
 	}
 		
@@ -165,7 +169,7 @@ void independent_TSP_MIP::build_constraints_(){
 		}
 
 		IloRange constraint(env_, 1, expr, 1, 
-							("out-degree for "+to_string(i)).c_str() );
+							("out_degree_for_"+to_string(i)).c_str() );
 		cons_.add(constraint);		
 	}
 	
@@ -202,11 +206,11 @@ void independent_TSP_MIP::build_constraints_(){
 			if(i==j) continue;
 			const Job& job_i = inst_[i-1];
 			const Job& job_j = inst_[j-1];
-			for(uint v =1; v<=K;++v){   
-				
-				cons_.add( t(j) - 1*t(i)- bigM*x(i,j,v)  
+			for(uint v =1; v<=K;++v){
+				auto tmpBigM = bigM+ job_i.length() + dist_inf(job_i.beta(),job_j.alpha());  
+				cons_.add( t(j) - 1*t(i)- tmpBigM*x(i,j,v)  
 							>=  job_i.length() + dist_inf(job_i.beta(),job_j.alpha())
-								 -bigM);
+								 -tmpBigM);
 			}
 		}
 	
@@ -223,8 +227,8 @@ void independent_TSP_MIP::build_constraints_(){
 		//IloNumVar &makespan = vars_[v_["makespan"]];
 		const Job& job = inst_[i-1];
 		IloExpr expr(env_);
-		if(fixed_makespan_<=0)
-		    expr += 1* vars_[v_["makespan"]];
+		if (fixed_makespan_<=0)
+			expr += 1* vars_[v_["makespan"]];
 		else
 		    expr += fixed_makespan_;
 		expr -= t(i);
@@ -232,7 +236,7 @@ void independent_TSP_MIP::build_constraints_(){
 		for(uint v = 1; v<=K; ++v)
 			expr -= dist_inf(inst_.get_depot(v-1),job.get_beta()) * x(i,n+v,v);
 			
-		IloRange constraint(env_, 0, expr, IloInfinity, ("makespan cons due to vehicle "+to_string(i)).c_str() );
+		IloRange constraint(env_, 0, expr, IloInfinity, ("makespan_cons_due_to_vehicle_"+to_string(i)).c_str() );
 		cons_.add(constraint);	
 	}
 
@@ -255,10 +259,43 @@ void independent_TSP_MIP::build_constraints_(){
 			}
 		}
 		IloRange constraint(env_, 0, expr, 0, 
-				("vehicle assignment "+to_string(i)).c_str() );
+				("vehicle_assignment_"+to_string(i)).c_str() );
 		cons_.add(constraint);
-	}	
-
+	}
+	
+	//additional constraint to increase the makespan:
+	//makespan >= each single tour
+	for(uint v=1; v<=K;++v){
+			IloExpr expr(env_);
+			expr =  1.0 * vars_[v_["makespan"]];
+			//inter job vertices
+			for(uint i = 1; i<=n; ++i)
+		        for(uint j = 1; j<=n; ++j){
+		            if(i==j) continue;
+		            const Job& j1 = inst_[i-1];
+		            const Job& j2 = inst_[j-1];
+		            int l = j1.length();
+		            l += dist_inf(j1.beta(),j2.alpha());
+		            
+		            expr -=  l* x(i,j,v);
+		        }
+		    //depot->job vertices, job->depot vertices        
+			for(uint i = 1; i<=n; ++i){
+                    //to depot:
+		            const Job& j1 = inst_[i-1];
+		            int l = j1.length();
+		            l += dist_inf(j1.beta(),inst_.get_depot(v-1));	            
+		            expr -=  l * x(i,n+v,v);
+		            //from depot
+		            l = dist_inf(inst_.get_depot(v-1),j1.alpha());
+		            expr -=  l * x(n+v,i,v);
+		    }
+			    
+			IloRange constraint(env_, 0, expr, IloInfinity,
+			("length_bound_for_tour_"+to_string(v)).c_str());
+			cons_.add(constraint);		
+	}
+	
 }
 
 	
@@ -438,6 +475,9 @@ Tours independent_TSP_MIP::solve(){
 	//build the MIP model and solve it!
 	try {
 	
+		if(silent_)
+			cplex_.setParam(IloCplex::MIPDisplay, 0);
+
 		build_variables_();
 		
 		if( 1 != inst_.num_vehicles() and  collision_avoidance_ )
@@ -460,6 +500,10 @@ Tours independent_TSP_MIP::solve(){
 		//run cplex and solve the model!
 		cplex_.extract(model_);
 		
+		//write model to file
+		//TODO: remove
+		//cplex_.exportModel("tmp_mip.lp");
+		
 	    //add MIP start
         add_MIP_start_();
 		
@@ -469,12 +513,13 @@ Tours independent_TSP_MIP::solve(){
 		
 		//add callback to create cuts on the fly
 		uint threads = thread::hardware_concurrency();
-		cplex_.use( SubtourCutsCallback(env_, this) );
+		if(use_subtour_cuts_)
+			cplex_.use( SubtourCutsCallback(env_, this) );
 		cplex_.setParam(IloCplex::IntParam::Threads	,threads);
-		cout<<"Detected "<<threads<<" cores" <<endl;
+		if(not silent_) cout<<"Detected "<<threads<<" cores" <<endl;
 		
-		if(debug_ and fixed_makespan_>0)
-		    cout<< "Checking for solution with makspan at most "
+		if(not silent_ and debug_ and fixed_makespan_>0)
+		    cout<< "Checking for solution with makespan at most "
 		        << fixed_makespan_<< endl;
 			
 		bool solved = cplex_.solve();
@@ -575,9 +620,7 @@ void independent_TSP_MIP::add_MIP_start_(){
     }
    
     //add variables used for the collisions, if they are used 
-    if(collision_avoidance_){
-
-       
+    if(collision_avoidance_){     
 		std::set<string> variables;
 		
 		for(uint i=1; i<=n; ++i){
@@ -714,6 +757,7 @@ void independent_TSP_MIP::add_MIP_start_(){
             }
         }
         if(debug_){
+            cout<<"Variables set to start the MIP:"<<endl;
             for(auto name: variables)
                 cout<< name<< " = "<<1<< endl;
             cout << "\n"<< endl;

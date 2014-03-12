@@ -9,7 +9,9 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include <chrono>
 
+#include "Common.h"
 
 const std::string BUILD_VERSION_{
     #include "version.txt"
@@ -18,7 +20,8 @@ const std::string BUILD_VERSION_{
 //all needed functions, their implementation can be found in Main.cpp
 void read_instance(std::vector<std::string> argv);
 void write_instance(std::vector<std::string> argv);
-void test_mtsp_mip(std::vector<std::string> argv);
+void run_mip(std::vector<std::string> argv);
+void binsearch(std::vector<std::string> argv);
 void insertion_heuristic(std::vector<std::string> argv);
 void laser(std::vector<std::string> argv);
 void single_tsp(std::vector<std::string> argv);
@@ -38,14 +41,16 @@ int process_args(std::vector<std::string> argv){
 	//build function dictionary
 	std::map<std::string,void (*)(std::vector<std::string>)> functionDict;
 	//ADD NEW FUNCTIONS HERE (they have to parse ther arguments or call a usage)
-	functionDict["read"] 		= &read_instance;
-	functionDict["write"] 		= &write_instance;
-	functionDict["mtsp_mip"] 	= &test_mtsp_mip;
-	functionDict["insertion"]	= &insertion_heuristic;
-	functionDict["test"] 	= &test;
-	functionDict["laser_format"] 	= &laser;
-	functionDict["single_tsp"]      = &single_tsp;
-	functionDict["batch"]       = &batch;
+	functionDict["read"] 		  = &read_instance;
+	functionDict["write"] 		  = &write_instance;
+	functionDict["mip"] 		  = &run_mip;
+	functionDict["binsearch_mip"] = &binsearch;
+	functionDict["insertion"]	  = &insertion_heuristic;
+	functionDict["test"] 		  = &test;
+	functionDict["laser_format"]  = &laser;
+	functionDict["single_tsp"]    = &single_tsp;
+	functionDict["batch"]         = &batch;
+
 	//at least one parameter must be given
 	if(argv.size() < 1){
 		std::cout<<"No function given, try one of these:"<<std::endl;
@@ -89,7 +94,17 @@ int main(int argc, char** argv){
 	    for(int i = 2; i < argc; ++i)
 		    arguments.push_back(argv[i]);
     }
-    return process_args(arguments);
+
+    //measure the running time
+    auto start = std::chrono::system_clock::now();
+
+    int result = process_args(arguments);
+
+    auto stop = std::chrono::system_clock::now();
+    auto total_seconds = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+    if(total_seconds.count() > 5)
+    std::cout<<"\nTime elapsed: "<< duration_to_string(total_seconds) << std::endl;
+    return result;
 }
 
  

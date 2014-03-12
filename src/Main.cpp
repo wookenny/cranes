@@ -1,9 +1,9 @@
 #include "Main.h"
-
 #include "Common.h"
 #include <algorithm>
 #include <unordered_map>
 #include <memory>
+#include <iomanip>
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
 #include <boost/filesystem/operations.hpp>
@@ -28,11 +28,13 @@ namespace po = boost::program_options;
 
 using namespace std;
 using namespace boost::filesystem;
+using std::chrono::minutes;
 
 void read_instance(vector<string> argv){
 	
 	if (argv.size()!=1){
-		cout<<"read [file] \n \tRead the input file and print the instance."<<endl;
+		cout<<"read [file] \n \tRead the input file"
+			   " and print the instance."<<endl;
 		return;
 	}
 	
@@ -40,35 +42,6 @@ void read_instance(vector<string> argv){
 	Instance inst(argv[0]);
 	cout<< inst <<endl;
 }
-//TODO: delete old stub
-/*
-void print_random_instance(vector<string> argv){
-	if (argv.size()<2 || argv.size()>4){
-		cout<<"random [k] [n] <s> <filename> \n \tGenerates a random instance with k vehicles, \n\tn jobs and with seed s. Default seed is 0.\n\twrites the instance to te given filename"<<endl;
-		return;
-	}
-	
-	unsigned int seed = 0;
-	Instance i;
-	i.set_num_vehicles(stoi(argv[0]));
-	
-	if(argv.size()>2)
-		seed = stoi(argv[2]);
-	i.generate_random_depots(-100,100,-10,10,seed);
-	i.generate_random_jobs(stoi(argv[1]),-100,100,-10,10,seed);
-	
-	cout<< i <<endl;
-
-	if(argv.size()>3){
-		string filename(argv[3]);
-		if(filename.length()<5 or filename.substr(filename.length()-5,5) != ".2dvs")
-			filename += ".2dvs";
-		i.writeToFile(filename);
-		cout<<"Written instance to file "<<filename <<endl;
-	}
-}
-*/
-//==============================================================================
 
 void write_instance(vector<string> argv){
      try {
@@ -236,69 +209,126 @@ void write_instance(vector<string> argv){
     return;
 }
 
-//==============================================================================
 
-void test_mtsp_mip(vector<string> argv){
-	if (argv.size()< 1 or argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <2dvs file> <collision constr., default = true>" 
-			 <<" <LP relaxation., default = false> <TSP-type, 0 = condensed k-TSP, 1 = independent k-TSP, default = 1>\n Runs some tests on the mip formulation!"<<endl;
-		return;
-	}
-	
-	//set default parameter and parse given value
-	bool collisions = true;
-	bool lp_relax = false;
-	int mip_type = 1;
-	
-	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
-			{"1",true},{"yes",true},{"f",false},{"false",false},
-			{"0",false},{"no",false},{"y",true},{"n",false} };
+void run_mip(vector<string> argv){
+    try {
+        //define all parameters to set
+        int verbosity;
+        string filename = "";
+        int k,n; 
+        int mip_type = 1;
+        uint runs;
+        uint seed;
+        uint fixed_makespan;
 
-	if(argv.size()>1)
-		if(string_to_bool.find(argv[1])!=string_to_bool.end())
-			collisions = string_to_bool[argv[1]];	
-	if(argv.size()>2)
-		if(string_to_bool.find(argv[2])!=string_to_bool.end())
-			lp_relax = string_to_bool[argv[2]];	
-	if(argv.size()>3)
-		mip_type = stoi(argv[3]);
+        po::options_description desc("Allowed options");
 
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
+              "verbosity level")
+            ("filename,f", po::value<string>(&filename), 
+             "2DVS file for heuristic")
+            ("k", po::value<int>(&k), 
+             "set number of vehicles/cranes")
+            ("n", po::value<int>(&n), 
+             "set number of jobs to generate in the instance")
+            ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
+              "set seed for random samples")
+            ("debug,d","set debug mode for instances")
+            ("collisions,c", "allow collisions between vehicles")
+            ("lp_relaxation,l", "solve the LP relaxation of the IP formulation")
+            ("makespan,m", po::value<uint>(&fixed_makespan)->default_value(0), 
+              "set a fixed makespan to find a solution not exceeding it")
+            ("disablecuts,D","disables subtour cuts as user cuts.")
+            ("runs,r", po::value<uint>(&runs)->default_value(20), 
+              "number of runs to find an initial solution using the "
+              "insertion heuristic")
+        ;
+        //TODO: add parameter debug, miptype, collison cstr,
 
-	Instance i{argv[0]};
-			
-	unique_ptr<generalizedVRP_MIP> mip_ptr;
-	if(1==mip_type) //remember: explicit std::move here because of rvalue
-		mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
-	else
-		mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
-	
-	mip_ptr->set_debug(false);
-	mip_ptr->set_collision(collisions);
-	mip_ptr->set_LP(lp_relax);
-		
-	
-	//run heuristic, use it as starting solution	
-    cout<<"heuristic solution:"<<endl;
-	InsertionHeuristic heur(true);
-	heur.set_runs(20);
-	auto sol = heur(i); 
-	cout<<"Heristic Solution valid: "<<i.verify(sol)<<endl;
-	cout<<"Makespan: "<<i.makespan(sol)<<endl;
-	cout<<sol<<endl;		
-	
-	//mip_ptr->set_start_solution(sol);	
-	mip_ptr->set_fixed_makespan( .5*i.makespan(sol));
-	Tours &&t = mip_ptr->solve();
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style(   po::command_line_style::unix_style)
+                    .run(), vm);
+        po::notify(vm);    
 
-	cout<<boolalpha;
-	cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
-	cout<<"Makespan: "<<i.makespan(t)<<endl;
-	cout<<t<<endl;
+        //react on som settings
+        if (vm.count("help") ){
+            cout<<boolalpha << desc << "\n";
+            return;
+        }
 
-	
+         //after parsing, execute the selected method    
+        Instance i; 
+        i.debug( vm.count("debug")>0 ); 
+        if(vm.count("filename")){
+            i = Instance{filename};
+            if( vm.count("k") or vm.count("n")) 
+                cout<<"Warning: Ignoring given number of vehicles and jobs!"<<endl;
+        }else{
+            if( not vm.count("k") and not vm.count("n")) {
+                cout<< "Number of jobs and vehicles not given."
+                      << " No filename given. Usage:\n"<<desc<<endl;
+                return;
+            }
+                
+            i.set_num_vehicles(k);
+            i.generate_random_depots(0,100,0,20,seed);
+            i.generate_random_jobs(n,0,100,0,20,seed); 
+        }
+        
+        //setup MIP and run several tests.
+        unique_ptr<generalizedVRP_MIP> mip_ptr;
+        if(1==mip_type) //remember: explicit std::move here because of rvalue
+            mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
+        else
+            mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
 
-	if(not i.verify(sol) or i.makespan(sol) < i.makespan(t))
-		cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. MIP WORSE THAN HEURISTIC!"<<endl;
+        mip_ptr->set_LP( vm.count("lp_relaxation")>0 );            
+        mip_ptr->set_debug( vm.count("debug")>0 );
+        mip_ptr->set_collision( not vm.count("collisions")>0 );
+        if( vm.count("disablecuts") > 0 )
+            mip_ptr->use_subtour_cuts(false);
+        else
+            mip_ptr->use_subtour_cuts(true);
+        if(fixed_makespan != 0)
+            mip_ptr->set_fixed_makespan(fixed_makespan);        
+            
+        //run heuristic, use it as starting solution    
+        InsertionHeuristic heur(true);
+        heur.set_runs(runs);
+        auto sol = heur(i); 
+        assert(i.verify(sol));
+        cout<<"Makespan of heuristic solution: "<<i.makespan(sol)<<endl;
+        //cout<<sol<<endl;        
+           
+        mip_ptr->set_start_solution(sol);   
+        //TODO: this can be used to perfoma a binary search
+        //mip_ptr->set_fixed_makespan( .5*i.makespan(sol));
+            
+        Tours t = mip_ptr->solve();
+        if(i.num_jobs()<15)
+            cout<< "found tour: \n"<<t<<endl;
+
+        cout<<boolalpha;
+        cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
+        cout<<"Makespan: "<<i.makespan(t)<<endl;
+        //cout<<t<<endl;
+   
+        if( not i.verify(sol) 
+             or  (i.makespan(sol) < i.makespan(t) and fixed_makespan==0))
+            cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. "
+                  "MIP WORSE THAN HEURISTIC!"<<endl;
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;
 }
 
 
@@ -417,62 +447,6 @@ void insertion_heuristic(std::vector<std::string> argv){
 }
 
 
-/*
-void test_mip(vector<string> argv){
-	if (argv.size()>5 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"test_mip <n> <k> <coll.> <LP> <seed>\n Runs some tests on the mip formulation!";
-		cout<<"\n\tn: number of jobs(default = 4)\n\tk: number of vehicles(default = 2)"<<endl;
-		cout<<"\tcoll.: collision-avoidance constraints adding (default = true)"<<endl;
-		cout<<"\tLP: just solve the LP relaxation(default = false)"<<endl;
-		cout<<"\tseed: seed used to genenerate the jobs.(default = time(0))"<<endl;
-		return;
-	}
-	//set default parameter and parse given values
-	int k = 2;
-	int jobs = 4;
-	bool collision = true,LP = false;
-	int seed = time(0);
-	
-	//parse the given ones
-	if(argv.size()>0)
-		jobs = stoi(argv[0]);
-	if(argv.size()>1)
-		k = stoi(argv[1]);
-	unordered_map<string,bool> string_to_bool =  {{"t",true},{"true",true},
-			{"1",true},{"yes",true},{"f",false},{"false",false},
-			{"0",false},{"no",false},{"y",true},{"n",false} };
-
-	if(argv.size()>2)
-		if(string_to_bool.find(argv[2])!=string_to_bool.end())
-			collision = string_to_bool[argv[2]];
-	if(argv.size()>3)
-		if(string_to_bool.find(argv[3])!=string_to_bool.end())
-			LP = string_to_bool[argv[3]];		
-	if(argv.size()>4)
-		seed = stoi(argv[4]);
-	//give some informations
-	cout<<boolalpha;
-	cout<< "Solving a 2D-VS instance with the following settings:\n";
-	cout<< "Jobs: "<<jobs<<"\nVehicles: "<<k;
-	cout<<"\nAdding collision avoidance constr.: "<<collision;
-	cout<<"\nSolving LP relaxation.: "<<LP<<endl;
-		
-	Instance i(k);
-	//i.generate_random_depots(-10, 10, -10, 10, 0);
-	for(int j=0; j<k;++j)
-		i.add_depotposition(array<int, 2>{{0,0}});
-
-	i.generate_random_jobs(  jobs, -10, 10, -10, 10, seed);
-	Tours &&t = i.get_MIP_solution(collision, LP);
-
-	
-	cout<<i<<endl;
-	cout<<boolalpha;
-	if(not LP) cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
-	cout<<"Makespan: "<<i.makespan(t)<<endl;
-	cout<<t<<endl;
-}
-*/
 
 
 //TODO: REMOVE THIS AFTER IMPLEMENTING A CHRISTOFIDES-LIKE Heuristic 
@@ -560,7 +534,7 @@ void laser(std::vector<std::string> argv){
 }
 
 void single_tsp(std::vector<std::string> argv){
-     try {
+    try {
         //define all parameters to set
         int verbosity;
         string filename = "";
@@ -583,7 +557,8 @@ void single_tsp(std::vector<std::string> argv){
         //react on som settings
         if (vm.count("help")){
             cout<<"Calculates a lower bound for the given file.";
-            cout<<"The bound is given by a TSP formulation, which is solved optimally via Concorde.\n"; 
+            cout<<"The bound is given by a TSP formulation, which is solved"
+                   " optimally via Concorde.\n"; 
             cout<<boolalpha << desc << "\n";
             cout<<"required: 'f'"<<endl;
             return;
@@ -601,7 +576,8 @@ void single_tsp(std::vector<std::string> argv){
 	    Tours t = std::get<1>(tsp_result);
 	    double bound = std::get<0>(tsp_result);
 
-        cout<<"makespan of a tour based on optimal single vehicle tour: "<<i.makespan(t)<<endl;
+        cout<<"makespan of a tour based on optimal single vehicle tour: ";
+        cout<<i.makespan(t)<<endl;
         cout<<"TSP bound: "<<bound<<endl;
         cout<<"ratio: "<<i.makespan(t)*100/bound<<"%"<<endl;
         if (i.makespan(t)/bound > i.num_vehicles()){
@@ -619,9 +595,7 @@ void single_tsp(std::vector<std::string> argv){
         cerr << "Exception of unknown type!\n";
         return;
     }
-    return;
-  
-       
+    return;     
 }
 
 
@@ -653,8 +627,9 @@ void recursive_replace_call(string command, uint pos,
 
 
 void batch(vector<string> argv){
-    if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"batch \"<command> #1 <param> #2 <param> #1...\" <replace1> <replace2>... \n\tRuns the command in batch mode."<<endl;
+    if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help"))){
+		cout<<"batch \"<command> #1 <param> #2 <param> #1...\" <replace1>"
+                " <replace2>... \n\tRuns the command in batch mode."<<endl;
 		return;
 	}
 	
@@ -687,3 +662,119 @@ void batch(vector<string> argv){
 } 
 
 
+
+/* Helper function for the binary search*/
+Tours test_makespan(Instance &i, double makespan, bool cuts){
+
+    auto  mip = independent_TSP_MIP(i);
+    mip.set_debug( false );
+    mip.set_collision( true );
+    mip.set_LP( false );
+    mip.set_fixed_makespan(makespan);
+    mip.set_silent(true);
+    mip.use_subtour_cuts(cuts);
+    return mip.solve();
+}
+
+void binsearch(vector<string> argv){
+	try{
+        //define all parameters to set
+        int verbosity;
+        double epsilon = .5;
+        uint runs;
+        int timelimit;
+        string filename = "";
+
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("filename,f", po::value<string>(&filename)->required(), 
+                "2DVS file")
+            ("runs,r",po::value<uint>(&runs)->default_value(10),
+                "Number of runs used in the first step"
+                " to find a heuristic solution.")
+            ("cuts,C","enable subtour cuts as as user cuts, this is used "
+                "per default in the normal MIP model.")
+            ("timelimit,t",po::value<int>(&timelimit)->default_value(-1),
+                "timelimit in minutes for the binary search."
+                " A negative value indicates that there is no limit at all.")
+            ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
+
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style( po::command_line_style::unix_style)
+                    .run(), vm); 
+
+        //react on som settings
+        if (vm.count("help")){
+            cout<<"Calculates a lower bound for the given file.\n";
+            cout<<"Then find a heuristic solution to the instance.\n";
+            cout<<"With these two bound, a MIP is set up to close the\n" 
+                  "gap between the best solution known and the lower bound.\n";
+            cout<<"The MIP check finds a solution with a fixed makespan OR \n"
+                   "there is no solution with that particular makespan.\n";
+            cout<<" In both cases a binary search is performed"
+                    " to tighten the gap.";
+            cout<<boolalpha << desc << "\n";
+            cout<<"required: 'f'"<<endl;
+            return;
+        }
+        po::notify(vm); 
+        
+
+        //after parsing, execute the selected method    
+        SingleCraneTSP_Solver solver;
+        Instance i(filename);
+        solver.set_verbosity(verbosity);
+        solver.set_local_search(false);
+        
+        bool add_cuts = vm.count("help") > 0;
+        auto tsp_result = solver(i,true);
+        double LB = std::get<0>(tsp_result);
+
+        InsertionHeuristic heur(true);
+        heur.set_verbosity(verbosity);
+        heur.set_use_assignment(true);
+        heur.set_runs(runs);
+        Tours t = heur(i);
+        double UB = i.makespan(t);
+
+        cout<< "Starting binary seach using bounds:\n";
+        cout<< " lb - sol. \t\t gap\n";
+        cout<< " "<<LB <<" - "<< UB<<"\t\t"<<(UB/LB-1)*100<<"%"<<endl;
+        if(timelimit > 0)
+           cout<<" timelimit: "<<timelimit<<((timelimit==1)?" minute":"minutes")<<endl;
+
+        //start the binary search here!
+        auto starttime = std::chrono::system_clock::now();
+        bool time_left = true;
+        while(time_left and fabs(UB-LB) > epsilon){
+            int to_test = (UB+LB)/2.0;
+            auto sol = test_makespan(i,to_test,add_cuts);
+            if(verbosity > 0){ cout<<"result for "<<to_test<<endl;
+                if(sol.empty())
+                    cout<< "no solution "<<endl;
+                else cout<< "new makespan: "<<i.makespan(sol)<<endl;
+            }    
+            if( sol.empty() ) LB = to_test+1;
+            else              UB = i.makespan(sol); 
+
+            cout<< " "<<LB <<" - "<< UB<<"\t\t"<< (1-LB/UB)*100<<"%"<<endl;
+            auto now = std::chrono::system_clock::now();
+            auto elapsed = std::chrono::duration_cast<minutes>(now - starttime);
+            if(timelimit > 0)
+                time_left = (elapsed.count() < timelimit); 
+        }           
+    }catch(boost::program_options::required_option& e){
+        cerr << " " << e.what() << "\n";
+        cerr << " Try --help for all parameters.\n";
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;                    
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;
+}

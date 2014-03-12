@@ -66,6 +66,8 @@ Instance::Instance(string file){
 	
 	if(num_vehicles_!=depotPositions_.size())
 		cerr<< "Warning: Number of vehicles and given depot positions does not fit!" <<endl;
+    assert(num_vehicles_ <= depotPositions_.size());
+        
 }
 
 

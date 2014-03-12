@@ -97,8 +97,10 @@ class generalizedVRP_MIP{
 		bool debug_;
 		bool collision_avoidance_;
 		bool LP_relaxation_;
-		
-		int bigM;
+		bool silent_ = false;
+		bool use_subtour_cuts_ = false;
+
+		int bigM =0;
 		int fixed_makespan_;
 		
 		//variables and helper for collision handling
@@ -162,11 +164,12 @@ class generalizedVRP_MIP{
 		virtual ~generalizedVRP_MIP(){};
 		virtual Tours solve();
 
-
 		void set_debug(bool v){debug_=v;}
 		void set_LP(bool v){LP_relaxation_ = v;}
-		void set_collision(bool v){collision_avoidance_ = v;}		
+		void set_collision(bool v){collision_avoidance_ = v;}
+		void set_silent(bool s){silent_ = s;}			
         void set_fixed_makespan(int makespan){fixed_makespan_ = makespan; bigM = makespan;}
+		virtual void use_subtour_cuts(bool c){use_subtour_cuts_ = c;}
 		friend class SubtourCutsCallbackI;
     
         virtual void set_start_solution(const Tours &tours);       
@@ -186,8 +189,9 @@ class generalizedVRP_MIP{
 		virtual void build_collision_constraints_();  
 		
 		//parsing of solution		
-		virtual void parse_solution_(Tours &tours) = 0;		
-		virtual void print_LP_solution_() const; //generic version....further refinement possible!							
+		virtual void parse_solution_(Tours &tours) = 0;
+		//generic version....further refinement possible!							
+		virtual void print_LP_solution_() const; 		
 		
 };
 

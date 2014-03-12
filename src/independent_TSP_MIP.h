@@ -72,7 +72,10 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 									  start(i.num_vehicles()){}				  
 		Tours solve();
 
-        virtual void set_start_solution(const Tours &tours){ start = tours;}
+        virtual void set_start_solution(const Tours &tours){ start = tours; 
+                                                        inst_.makespan(start);}
+
+                                                      
 		
 		friend class SubtourCutsCallbackI;
 		

@@ -20,6 +20,8 @@ Tours generalizedVRP_MIP::solve(){
 	//build the MIP model and solve it!
 	try {
 	
+		if(silent_)
+			cplex_.setParam(IloCplex::MIPDisplay, 0);
 		build_variables_();
 		
 		if( 1 != inst_.num_vehicles() and  collision_avoidance_ )
@@ -38,9 +40,9 @@ Tours generalizedVRP_MIP::solve(){
         
 		//run cplex and solve the model!
 		cplex_.extract(model_);
-		
+			
 		//print small models 
-		if( inst_.num_jobs()<=6)
+		if(not silent_ and inst_.num_jobs()<=6)
 			cout<<"MIP Model: \n"<<model_<<endl;
 		
 		bool solved = cplex_.solve();
@@ -119,9 +121,10 @@ void generalizedVRP_MIP::build_collision_variables_(){
 
 
 void generalizedVRP_MIP::build_collision_constraints_(){
-	//TODO add a better initialization!
-	bigM = 1000;
-    if(fixed_makespan_ > 0)
+	
+	if(bigM<=0)
+	    bigM = inst_.get_upper_bound();
+    if(fixed_makespan_>0)
         bigM = fixed_makespan_;
 
 	uint n = inst_.num_jobs();
@@ -157,22 +160,35 @@ void generalizedVRP_MIP::build_collision_constraints_(){
 			auto beta_x  = [&](const Job& job)->int{return job.get_beta()[0];};
 			
 			//plus variables
-			cons_.add(bigM*caa_p(i,j)  + t(j) - t(i) >= alpha_x(job_j) - alpha_x(job_i) );
-			cons_.add(bigM*cab_p(i,j)  + t(j) - t(i) >= beta_x(job_j) - job_j.length() 
-													- alpha_x(job_i));
-			cons_.add(bigM*cba_p(i,j)  + t(j) - t(i) >= alpha_x(job_j) 
-													- beta_x(job_i) + job_i.length());
-			cons_.add(bigM*cbb_p(i,j)  + t(j) - t(i) >= beta_x(job_j) -job_j.length()
-													- beta_x(job_i) + job_i.length());
+			//TODO: add rightHandSide to bigM
+			cons_.add( (bigM + alpha_x(job_j) - alpha_x(job_i))*caa_p(i,j) 
+						 + t(j) - t(i) 
+						>= alpha_x(job_j) - alpha_x(job_i) );
+			cons_.add( (bigM + beta_x(job_j) - job_j.length()- alpha_x(job_i)) 
+						* cab_p(i,j) + t(j) - t(i) 
+							 >= beta_x(job_j) - job_j.length()- alpha_x(job_i));
+			cons_.add( (bigM+  alpha_x(job_j)- beta_x(job_i) + job_i.length()) 
+						* cba_p(i,j)  + t(j) - t(i) 
+						>= alpha_x(job_j)- beta_x(job_i) + job_i.length());
+			cons_.add((bigM +beta_x(job_j) -job_j.length()
+							- beta_x(job_i) + job_i.length())*cbb_p(i,j)
+							+ t(j) - t(i) 
+						>= beta_x(job_j) -job_j.length()
+							- beta_x(job_i) + job_i.length());
 		
 			//minus variables
-			cons_.add(bigM*caa_m(i,j)  - t(j) + t(i) >= alpha_x(job_j) - alpha_x(job_i));
-			cons_.add(bigM*cab_m(i,j)  - t(j) + t(i) >= beta_x(job_j) + job_j.length() 
-													-  alpha_x(job_i));
-			cons_.add(bigM*cba_m(i,j)  - t(j) + t(i) >= alpha_x(job_j) 
-													- beta_x(job_i) - job_i.length());
-			cons_.add(bigM*cbb_m(i,j)  - t(j) + t(i) >= beta_x(job_j) + job_j.length()
-													- beta_x(job_i) - job_i.length());
+			cons_.add( (bigM+alpha_x(job_j) - alpha_x(job_i))
+						* caa_m(i,j)  - t(j) + t(i) 
+					 	>= alpha_x(job_j) - alpha_x(job_i));
+			cons_.add( (bigM+beta_x(job_j) + job_j.length()-alpha_x(job_i))
+						*cab_m(i,j)  - t(j) + t(i) 
+						>= beta_x(job_j) + job_j.length()-alpha_x(job_i));
+			cons_.add( (bigM+ alpha_x(job_j) - beta_x(job_i) - job_i.length()) 
+						* cba_m(i,j)  - t(j) + t(i) 
+						>= alpha_x(job_j) - beta_x(job_i) - job_i.length());
+			cons_.add( (bigM + beta_x(job_j) + job_j.length()-beta_x(job_i) - job_i.length())
+						*cbb_m(i,j)  - t(j) + t(i) 
+						>= beta_x(job_j) + job_j.length()-beta_x(job_i) - job_i.length());
 		}
 	}
 	
