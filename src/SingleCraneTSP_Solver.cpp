@@ -298,7 +298,7 @@ vector<vector<int>> SingleCraneTSP_Solver::parse_solution(vector<int> &numbers) 
         }
     }
     
-    if(verbosity_ >=0 ){
+    if(verbosity_ >=1 ){
         for(auto &t: tours){
             cout<<"";
             for(auto &e: t)

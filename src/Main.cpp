@@ -65,7 +65,7 @@ void write_instance(vector<string> argv){
             ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
               "set seed for random samples")
             ("filename,f", po::value<string>(&filename), 
-             "2DVS file for heuristic")
+             "2DVS filemname for the new file")
             ("k,k", po::value<uint>(&num_vehicles)->default_value(2)->required(), 
              "set number of vehicles/cranes")
             ("n,n", po::value<uint>(&num_jobs)->required(), 
@@ -681,9 +681,11 @@ void binsearch(vector<string> argv){
         //define all parameters to set
         int verbosity;
         double epsilon = .5;
+        double LB, UB;
         uint runs;
         int timelimit;
         string filename = "";
+
 
         po::options_description desc("Allowed options");
         desc.add_options()
@@ -693,6 +695,12 @@ void binsearch(vector<string> argv){
             ("runs,r",po::value<uint>(&runs)->default_value(10),
                 "Number of runs used in the first step"
                 " to find a heuristic solution.")
+            ("LB,L",po::value<double>(&LB)->default_value(0),
+                "uses the given lower bound for the binary search."
+                " No check for validity performed!")
+            ("UB,U",po::value<double>(&UB)->default_value(0),
+                "uses the given upper bound for the binary search."
+                " No check for validity performed!")
             ("cuts,C","enable subtour cuts as as user cuts, this is used "
                 "per default in the normal MIP model.")
             ("timelimit,t",po::value<int>(&timelimit)->default_value(-1),
@@ -724,27 +732,41 @@ void binsearch(vector<string> argv){
         
 
         //after parsing, execute the selected method    
-        SingleCraneTSP_Solver solver;
+       
         Instance i(filename);
-        solver.set_verbosity(verbosity);
-        solver.set_local_search(false);
-        
+      
         bool add_cuts = vm.count("help") > 0;
-        auto tsp_result = solver(i,true);
-        double LB = std::get<0>(tsp_result);
+        //find valid LB if no value set
+        if(LB==0){
+            SingleCraneTSP_Solver solver;
+            solver.set_verbosity(verbosity);
+            solver.set_local_search(false);
+            auto tsp_result = solver(i,true);
+            LB = std::get<0>(tsp_result);
+        }
 
-        InsertionHeuristic heur(true);
-        heur.set_verbosity(verbosity);
-        heur.set_use_assignment(true);
-        heur.set_runs(runs);
-        Tours t = heur(i);
-        double UB = i.makespan(t);
+        //find valid UB if no value set
+        if(UB==0){
+            InsertionHeuristic heur(true);
+            heur.set_verbosity(verbosity);
+            heur.set_use_assignment(true);
+            heur.set_runs(runs);
+            Tours t = heur(i);
+            UB = i.makespan(t);
+        }
 
         cout<< "Starting binary seach using bounds:\n";
         cout<< " lb - sol. \t\t gap\n";
+        cout<< std::fixed << std::setprecision(2); //only two digits for the gap
         cout<< " "<<LB <<" - "<< UB<<"\t\t"<<(UB/LB-1)*100<<"%"<<endl;
         if(timelimit > 0)
            cout<<" timelimit: "<<timelimit<<((timelimit==1)?" minute":"minutes")<<endl;
+
+        if(UB < LB){
+            cerr<<"Lower bound("<<LB<<") is bigger than upper bound("<<UB<<")";
+            cerr<<" Abort!" <<endl;
+            return;
+        }
 
         //start the binary search here!
         auto starttime = std::chrono::system_clock::now();
