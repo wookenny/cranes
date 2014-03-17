@@ -70,7 +70,7 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 									  name_x_("x",3),
 									  x(name_x_,vars_,v_),
 									  start(i.num_vehicles()){}				  
-		Tours solve();
+		std::pair<Tours,double> solve();
 
         virtual void set_start_solution(const Tours &tours){ start = tours; 
                                                         inst_.makespan(start);}
@@ -92,3 +92,4 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		void parse_solution_(Tours &tours);		
         
 };
+

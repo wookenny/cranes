@@ -387,7 +387,7 @@ Tours Instance::get_MIP_solution(bool collision_free,bool LP_relax,bool debug) c
 	mip->set_collision(collision_free);
 	mip->set_LP(LP_relax);
 	
-	Tours&& t = mip->solve();
+	Tours t = get<0>(mip->solve());
 	assert(verify(t));
 	return t;
 }

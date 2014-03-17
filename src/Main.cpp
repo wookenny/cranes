@@ -289,6 +289,8 @@ void run_mip(vector<string> argv){
         mip_ptr->set_LP( vm.count("lp_relaxation")>0 );            
         mip_ptr->set_debug( vm.count("debug")>0 );
         mip_ptr->set_collision( not vm.count("collisions")>0 );
+        bool valid_solution = vm.count("lp_relaxation")==0;
+        valid_solution = valid_solution and (vm.count("collisions")==0);
         if( vm.count("disablecuts") > 0 )
             mip_ptr->use_subtour_cuts(false);
         else
@@ -297,30 +299,38 @@ void run_mip(vector<string> argv){
             mip_ptr->set_fixed_makespan(fixed_makespan);        
             
         //run heuristic, use it as starting solution    
-        InsertionHeuristic heur(true);
-        heur.set_runs(runs);
-        auto sol = heur(i); 
-        assert(i.verify(sol));
-        cout<<"Makespan of heuristic solution: "<<i.makespan(sol)<<endl;
-        //cout<<sol<<endl;        
-           
-        mip_ptr->set_start_solution(sol);   
-        //TODO: this can be used to perfoma a binary search
-        //mip_ptr->set_fixed_makespan( .5*i.makespan(sol));
+        Tours sol{i.num_vehicles()};
+        if(runs > 0){
+            InsertionHeuristic heur(true);
+            heur.set_runs(runs);
+            sol = heur(i); 
+            assert(i.verify(sol));
+            cout<<"Makespan of heuristic solution: "<<i.makespan(sol)<<endl;
+            //cout<<sol<<endl;        
+            mip_ptr->set_start_solution(sol);   
+        }
+
             
-        Tours t = mip_ptr->solve();
+        auto mip_sol = mip_ptr->solve();
+        Tours t = get<0>( mip_sol );
+        double objective = get<1>( mip_sol );
         if(i.num_jobs()<15)
             cout<< "found tour: \n"<<t<<endl;
 
         cout<<boolalpha;
-        cout<<"MIP-Solution valid: "<<i.verify(t)<<endl;
-        cout<<"Makespan: "<<i.makespan(t)<<endl;
-        //cout<<t<<endl;
-   
-        if( not i.verify(sol) 
-             or  (i.makespan(sol) < i.makespan(t) and fixed_makespan==0))
+        if(valid_solution){
+            cout<<"MIP-Solution valid: "<<i.verify(t)<<"\n";
+            cout<<"Makespan: "<<i.makespan(t)<<"\n";
+            cout<<"MIP Objective: "<<objective<<endl;
+        }else{
+            cout<< "Objective: "<<objective<<endl;           
+        }  
+        
+        if( not sol.empty() and fixed_makespan==0 and valid_solution){
+            if( not i.verify(sol) or  i.makespan(sol) < i.makespan(t) )
             cout<<"WARNING!: SOMETHING IS TERRIBLY BAD. "
                   "MIP WORSE THAN HEURISTIC!"<<endl;
+         }         
     }catch(exception& e) {
         cerr << " " << e.what() << "\n";
         return;
@@ -673,7 +683,7 @@ Tours test_makespan(Instance &i, double makespan, bool cuts){
     mip.set_fixed_makespan(makespan);
     mip.set_silent(true);
     mip.use_subtour_cuts(cuts);
-    return mip.solve();
+    return get<0>(mip.solve());
 }
 
 void binsearch(vector<string> argv){

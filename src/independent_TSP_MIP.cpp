@@ -301,7 +301,9 @@ void independent_TSP_MIP::build_constraints_(){
 	
 //parsing of solution		
 void independent_TSP_MIP::parse_solution_(Tours &tours){
-
+	//check wheter the model is capable of producing falid sol
+	if( not collision_avoidance_ or LP_relaxation_)
+		return;
 
 	uint n = inst_.num_jobs();
 
@@ -469,7 +471,7 @@ ILOUSERCUTCALLBACK1(SubtourCutsCallback, independent_TSP_MIP*, mip )
    return;
 }
 
-Tours independent_TSP_MIP::solve(){
+std::pair<Tours,double> independent_TSP_MIP::solve(){
 	Tours tours(inst_.num_vehicles());
 
 	//build the MIP model and solve it!
@@ -528,14 +530,13 @@ Tours independent_TSP_MIP::solve(){
 		if ( !solved ) {
 			env_.end();
 			//return empty tours if MIP was unsolvable!
-			return Tours(inst_.num_vehicles());
+			return pair<Tours,double>{Tours(inst_.num_vehicles()),-1};
 		}else{
 			//parse solution
-			//return empty tour id only an LP relaxation was solved
-			if(LP_relaxation_ and inst_.num_jobs()<10){
+			if(LP_relaxation_ and inst_.num_jobs()<10)
 				print_LP_solution_();
-				return tours;
-			}	
+			
+			found_objective_ =  cplex_.getObjValue();
 			parse_solution_(tours);
 		}
 		
@@ -551,7 +552,7 @@ Tours independent_TSP_MIP::solve(){
 	}
 	env_.end();
 	
-	return tours;
+	return pair<Tours,double>(tours,found_objective_);
 }
 
 

@@ -2,6 +2,7 @@
 
 #include <unordered_map>
 #include <string>
+#include <utility> 
 #include <ilcplex/ilocplex.h>
 #include <iostream>
 
@@ -62,8 +63,8 @@ class generalizedVRP_MIP{
 						return vars_[pos_[name_(i)]]; 
 				}
 				IloNumVar& operator()(int i,int j) const{
-				     if( pos_.find(name_(i,j))==pos_.end() )
-				          std::cout << name_(i,j) << std::endl;
+				     //if( pos_.find(name_(i,j))==pos_.end() )
+				     //    std::cout << name_(i,j) << std::endl;
 						assert(pos_.find(name_(i,j))!=pos_.end());
 						return vars_[pos_[name_(i,j)]]; 
 				}
@@ -103,6 +104,7 @@ class generalizedVRP_MIP{
 		int bigM =0;
 		int fixed_makespan_;
 		
+		double found_objective_ = -1;
 		//variables and helper for collision handling
 		//collision name/variable helper
 		stringify name_t_; 
@@ -162,7 +164,7 @@ class generalizedVRP_MIP{
 											  cbb_m(name_cbb_m_,vars_,v_){};
 											  
 		virtual ~generalizedVRP_MIP(){};
-		virtual Tours solve();
+		virtual std::pair<Tours,double> solve();
 
 		void set_debug(bool v){debug_=v;}
 		void set_LP(bool v){LP_relaxation_ = v;}

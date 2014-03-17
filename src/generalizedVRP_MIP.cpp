@@ -14,7 +14,7 @@
 
 using namespace std;
 
-Tours generalizedVRP_MIP::solve(){
+std::pair<Tours,double> generalizedVRP_MIP::solve(){
 	Tours tours(inst_.num_vehicles());
 
 	//build the MIP model and solve it!
@@ -51,19 +51,19 @@ Tours generalizedVRP_MIP::solve(){
 		if ( !solved ) {
 			env_.end();
 			//return empty tours if MIP was unsolvable!
-			return Tours(inst_.num_vehicles());
+			return pair<Tours,double>{Tours(inst_.num_vehicles()),
+												found_objective_};
 		}else{
 			//parse solution
-			//return empty tour id only an LP relaxation was solved
 			if(LP_relaxation_ and inst_.num_jobs()<10){
 				print_LP_solution_();
-				return tours;
-			}	
+			}
+			found_objective_ = cplex_.getObjValue();	
+
 			parse_solution_(tours);
 		}
 		
 		if(debug_)	print_LP_solution_();
-		
 	}catch (IloException& e) {
 		cerr << "Concert exception caught: " << e << endl;
 	}
@@ -73,7 +73,7 @@ Tours generalizedVRP_MIP::solve(){
 		exit(1); // Returns 1 to the operating system
 	}
 	env_.end();
-	return tours;
+	return pair<Tours,double>{tours,found_objective_};
 }
 
 void generalizedVRP_MIP::print_LP_solution_() const{
