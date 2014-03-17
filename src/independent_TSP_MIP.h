@@ -67,7 +67,7 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 		virtual ~independent_TSP_MIP(){}
 		independent_TSP_MIP()=delete;
 		independent_TSP_MIP(const Instance& i): generalizedVRP_MIP(i), 
-									  name_x_("x",3),
+									  name_x_("x", 3),
 									  x(name_x_,vars_,v_),
 									  start(i.num_vehicles()){}				  
 		std::pair<Tours,double> solve();

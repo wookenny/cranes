@@ -550,8 +550,10 @@ std::pair<Tours,double> independent_TSP_MIP::solve(){
 		
 		exit(1); // Returns 1 to the operating system
 	}
+	//end it
 	env_.end();
-	
+
+
 	return pair<Tours,double>(tours,found_objective_);
 }
 
@@ -768,7 +770,7 @@ void independent_TSP_MIP::add_MIP_start_(){
     //add the vector to the system
     cplex_.addMIPStart(startVar, startVal);
     startVal.end();
-    startVar.end();     
+    startVar.end();
          
 }
 

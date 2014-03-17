@@ -8,7 +8,6 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace std;
 using std::vector;
 using std::string;
 using std::cerr;
