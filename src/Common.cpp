@@ -7,6 +7,7 @@
 #include <iterator>
 #include <algorithm>
 #include <iostream>
+#include <random>
 
 using std::vector;
 using std::string;
@@ -19,6 +20,19 @@ using std::to_string;
 using std::stringstream;
 using std::istringstream;
 using std::istream_iterator;
+
+
+vector<uint> random_assignment(uint size, uint lb, uint ub, int seed){
+    std::mt19937 rng; 
+    rng.seed(seed);
+
+    vector<uint> assign(0); 
+    std::uniform_int_distribution<uint> uint_distr(lb,ub);  // ub included!
+    for(uint i=0; i < size; ++i)
+        assign.push_back(uint_distr(rng));
+    return assign;
+}
+
 
 namespace fs = boost::filesystem;
 

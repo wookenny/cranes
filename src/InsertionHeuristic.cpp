@@ -124,10 +124,6 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
     using namespace std::chrono;
     starting_time_ = system_clock::now();
 
-	//randomness
-	mt19937 rng; 
-	rng.seed(seed_);
-
 	uint n = inst.num_jobs();
 	//get some random permutation
 	vector<uint> perm;
@@ -135,7 +131,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 	for (uint i=0; i<n; ++i) 
 		perm.push_back(i);
 	vector<uint> assign(0);	
-    uniform_int_distribution<uint> uint_distr(0,inst.num_vehicles()-1);
+
 	
 	Tours solution(inst.num_vehicles());
 	uint runs = 0;
@@ -153,9 +149,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 		    first_run = false;
 		}  
 		if(no_assignment == false){  
-		    assign.clear();
-		    for (uint i=0; i<n; ++i) 
-			    assign.push_back( uint_distr(rng) );  
+		    assign = random_assignment(n, 0, inst.num_vehicles()-1, seed_);
 		}
 		//construct tour with ass. + perm	
 		Tours t{inst.num_vehicles()};

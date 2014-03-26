@@ -4,6 +4,8 @@
 #include <chrono>
 #include <vector>
 
+std::vector<uint> random_assignment(uint size, uint lb, uint ub, int seed=0);
+
 std::vector<std::string> split(const std::string &s, char delim);
 
 // replaces all occureances of from in str with to

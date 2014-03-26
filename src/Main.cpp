@@ -241,6 +241,7 @@ void run_mip(vector<string> argv){
             ("makespan,m", po::value<uint>(&fixed_makespan)->default_value(0), 
               "set a fixed makespan to find a solution not exceeding it")
             ("disablecuts,D","disables subtour cuts as user cuts.")
+            ("assignment,a","uses a random assigment for all jobs.")
             ("runs,r", po::value<uint>(&runs)->default_value(20), 
               "number of runs to find an initial solution using the "
               "insertion heuristic")
@@ -300,7 +301,7 @@ void run_mip(vector<string> argv){
             
         //run heuristic, use it as starting solution    
         Tours sol{i.num_vehicles()};
-        if(runs > 0){
+        if(runs > 0 and vm.count("assignment")==0){
             InsertionHeuristic heur(true);
             heur.set_runs(runs);
             sol = heur(i); 
@@ -310,6 +311,12 @@ void run_mip(vector<string> argv){
             mip_ptr->set_start_solution(sol);   
         }
 
+        //if assignment set
+        if (vm.count("assignment") > 0) { 
+            auto a = random_assignment(i.num_jobs(),
+                                            0, i.num_vehicles()-1, seed);
+            mip_ptr->set_assignment(a);
+        }
             
         auto mip_sol = mip_ptr->solve();
         Tours t = get<0>( mip_sol );

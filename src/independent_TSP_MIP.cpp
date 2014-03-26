@@ -24,6 +24,9 @@ void independent_TSP_MIP::add_objective_function_(){
  
 //building variables
 void independent_TSP_MIP::build_variables_(){
+	bool use_assign = (assignment_.size() > 0);
+	assert(assignment_.size()==0 or assignment_.size()==inst_.num_jobs());
+
 	auto type = IloNumVar::Bool;
 	if(LP_relaxation_)
 		type = IloNumVar::Float; 
@@ -63,7 +66,18 @@ void independent_TSP_MIP::build_variables_(){
 				
 				string name = name_x_(i,j,v);
 				v_[name] = counter_++;
-				vars_.add( IloNumVar(env_, 0/*lb*/, 1/*ub*/, type, name.c_str() ) );
+				int lb = 0; int ub = 1;
+				if(use_assign){
+					//do not use edge if not both jobs are assigned to v
+					if (i <= inst_.num_vehicles() and assignment_[i-1]+1 != v){ 
+						ub = 0;
+					}	
+					if (j <= inst_.num_vehicles() and assignment_[j-1]+1 != v){
+						ub = 0;
+					}
+					//for i,j > k: other job is real and assign == v
+				}
+				vars_.add( IloNumVar(env_, lb, ub, type, name.c_str() ) );
 			}
 
 		}
@@ -83,8 +97,16 @@ void independent_TSP_MIP::build_variables_(){
 		v_[name] = counter_++;
 		auto var_type = IloNumVar::Int;
 		if(LP_relaxation_)
-			var_type = IloNumVar::Float; 
-		vars_.add( IloNumVar(env_, 1/*lb*/, inst_.num_vehicles()/*ub*/,var_type, name.c_str() ) );
+			var_type = IloNumVar::Float;
+		int lb = 1;
+		int ub = inst_.num_vehicles();
+
+		if (use_assign and  j <= inst_.num_jobs() ){
+			assert(assignment_[j-1] >= 0);
+			assert(assignment_[j-1] < inst_.num_vehicles());
+			lb = ub = assignment_[j-1]+1;
+		}
+		vars_.add( IloNumVar(env_, lb, ub, var_type, name.c_str() ) );
 	}	
 	
 		
@@ -100,7 +122,8 @@ void independent_TSP_MIP::build_constraints_(){
 	    bigM = inst_.get_upper_bound();
     if(fixed_makespan_>0)
         bigM = fixed_makespan_;
-    
+    if( not start_.empty() and assignment_.empty() )
+    	bigM = inst_.makespan(start_);
 	//indegree == outdegree nodes (single vehicle flow)
 	for(uint v=1; v<=K;++v){
 		for(uint i = 1; i<=n+K; ++i){
@@ -559,10 +582,10 @@ std::pair<Tours,double> independent_TSP_MIP::solve(){
 
 
 void independent_TSP_MIP::add_MIP_start_(){
-    if(LP_relaxation_ or start.empty() ) return;
+    if(LP_relaxation_ or start_.empty() ) return;
     if(fixed_makespan_>0) return; //not sound to set a start in this setting
     
-    auto schedule = start.get_schedule();
+    auto schedule = start_.get_schedule();
 
     uint n = inst_.num_jobs();
  	uint K = inst_.num_vehicles();
@@ -572,7 +595,7 @@ void independent_TSP_MIP::add_MIP_start_(){
 
     //makespan,	a variable for the makespan
     startVar.add(vars_[v_["makespan"]]);
-    startVal.add(inst_.makespan(start));
+    startVal.add(inst_.makespan(start_));
       
     //t_j, 		starting times for all jobs and ll depots
     for(uint i=1; i<=n; ++i){
@@ -584,9 +607,9 @@ void independent_TSP_MIP::add_MIP_start_(){
 
     //x_i,j,k for used edges between jobs
     for(uint v=0; v< K; ++v)
-        for(uint i=0; i+1 < start[v].size(); ++i){
-            int job1 = std::get<0>(start[v][i])->num();
-            int job2 = std::get<0>(start[v][i+1])->num();
+        for(uint i=0; i+1 < start_[v].size(); ++i){
+            int job1 = std::get<0>(start_[v][i])->num();
+            int job2 = std::get<0>(start_[v][i+1])->num();
                            
             startVar.add(x(job1,job2,v+1));
             startVal.add( 1 );
@@ -594,10 +617,10 @@ void independent_TSP_MIP::add_MIP_start_(){
 
     //edges from depot to first job AND from last to depot
     for(uint v=0; v< K; ++v){
-        if(start[v].empty()) continue;
+        if(start_[v].empty()) continue;
     
-         int first_job = std::get<0>(start[v].front())->num();
-         int last_job = std::get<0>(start[v].back())->num();
+         int first_job = std::get<0>(start_[v].front())->num();
+         int last_job = std::get<0>(start_[v].back())->num();
          
          //depot to first job
          startVar.add(x(n+v+1,first_job,v+1));

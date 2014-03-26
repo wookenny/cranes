@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <string>
 #include <utility> 
+#include <vector>
 #include <ilcplex/ilocplex.h>
 #include <iostream>
 
@@ -105,6 +106,10 @@ class generalizedVRP_MIP{
 		int fixed_makespan_;
 		
 		double found_objective_ = -1;
+
+		//some variables for relaxations:
+		std::vector<uint> assignment_;
+
 		//variables and helper for collision handling
 		//collision name/variable helper
 		stringify name_t_; 
@@ -140,6 +145,7 @@ class generalizedVRP_MIP{
 											  collision_avoidance_(false),
 											  LP_relaxation_(false),
 											  fixed_makespan_(-1),
+											  assignment_(),
 											  name_t_("t",1),
 									  		  t(name_t_,vars_,v_),
 											  name_k_("k",1),
@@ -170,7 +176,10 @@ class generalizedVRP_MIP{
 		void set_LP(bool v){LP_relaxation_ = v;}
 		void set_collision(bool v){collision_avoidance_ = v;}
 		void set_silent(bool s){silent_ = s;}			
-        void set_fixed_makespan(int makespan){fixed_makespan_ = makespan; bigM = makespan;}
+        void set_fixed_makespan(int makespan){fixed_makespan_ = makespan; 
+        									          bigM = makespan;}
+      	void set_assignment(std::vector<uint> a){assignment_=a;}
+
 		virtual void use_subtour_cuts(bool c){use_subtour_cuts_ = c;}
 		friend class SubtourCutsCallbackI;
     
