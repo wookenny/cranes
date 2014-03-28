@@ -14,73 +14,43 @@ set(CONCERTDIR "/usr/site-local/ILOG/CPLEX_Studio124/concert")
 set(CONCERTINCDIR "${CONCERTDIR}/include")
 set(CONCERTLIBDIR "${CONCERTDIR}/lib/x86-64_sles10_4.1/static_pic")
 
+FIND_PACKAGE( Boost  COMPONENTS program_options filesystem iostreams system regex REQUIRED )
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+
+
 set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")  
 set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -fopenmp -mfpmath=sse+387 -m64 -pipe -fmessage-length=0 -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables -fasynchronous-unwind-tables -DILOUSESTL -DILOSTRINGSTL -DIL_STD -D_REENTRANT -DNO_FREETYPE -Wno-write-strings -std=c++0x  -I${CONCERTINCDIR} -I/usr/site-local/include -I${CPLEXINCDIR} -I. -I${MATCHING_INCDIR} ")
-set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic -lilocplex -lconcert -lcplex  -lpthread -lboost_regex  -DILOUSESTL -DILOSTRINGSTL -DIL_STD -lpthread  -L${CONCERTLIBDIR} -L${CPLEXLIBDIR} -L. -L/usr/site-local/lib -lrt -lz  -lboost_iostreams -lboost_program_options -lboost_filesystem -lboost_system")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -mfpmath=sse+387 -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
+
+
+set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic ")
+
+INCLUDE_DIRECTORIES(/usr/site-local/include ${CPLEXINCDIR} ${CONCERTINCDIR} ${MATCHING_INCDIR} .)
+LINK_DIRECTORIES(/usr/site-local/lib ${CONCERTLIBDIR} ${CPLEXLIBDIR})
+
+
+add_definitions(-DILOSTRINGSTL -DIL_STD -D_FORTIFY_SOURCE=2  -DILOUSESTL  -D_REENTRANT -DNO_FREETYPE )
+
+find_package(OpenMP)
+if (OPENMP_FOUND)
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
-#clang is more silent if this is set: -Qunused-arguments
- 
 # collect all sources (copy from 'ls -1 *.cpp *.h')
-SET(2DVS_Sources
-${twoDVS_sourcesDir}/Common.h
-${twoDVS_sourcesDir}/Common.cpp
-${twoDVS_sourcesDir}/DisjointSet.h
-${twoDVS_sourcesDir}/DisjointSet.cpp
-${twoDVS_sourcesDir}/Main.cpp
-${twoDVS_sourcesDir}/Main.h
-${twoDVS_sourcesDir}/SingleCraneTSP_Solver.h
-${twoDVS_sourcesDir}/SingleCraneTSP_Solver.cpp
-${twoDVS_sourcesDir}/generalizedVRP_MIP.h
-${twoDVS_sourcesDir}/generalizedVRP_MIP.cpp
-${twoDVS_sourcesDir}/m_TSP_MIP.h
-${twoDVS_sourcesDir}/m_TSP_MIP.cpp
-${twoDVS_sourcesDir}/independent_TSP_MIP.h
-${twoDVS_sourcesDir}/independent_TSP_MIP.cpp
-${twoDVS_sourcesDir}/InsertionHeuristic.h
-${twoDVS_sourcesDir}/InsertionHeuristic.cpp
-${twoDVS_sourcesDir}/my_PM_test.cpp
-${twoDVS_sourcesDir}/Instance.h
-${twoDVS_sourcesDir}/Instance.cpp
-${twoDVS_sourcesDir}/Point.h
-${twoDVS_sourcesDir}/Point.cpp
-${twoDVS_sourcesDir}/Job.h
-${twoDVS_sourcesDir}/Job.cpp
-${twoDVS_sourcesDir}/Tours.h
-${twoDVS_sourcesDir}/SingleCraneTourApproximation.cpp
-${twoDVS_sourcesDir}/LaserSharingProblemWriter.h
-${twoDVS_sourcesDir}/LaserSharingProblemWriter.cpp
+file(GLOB 2DVS_Sources
+    ${twoDVS_sourcesDir}/*.h
+    ${twoDVS_sourcesDir}/*.cpp
 )
 
 # collect all sources
-SET(GTestSources
-${twoDVS_sourcesDir}/Common.h
-${twoDVS_sourcesDir}/Common.cpp
-${twoDVS_sourcesDir}/Common_Unittest.cpp
-${twoDVS_sourcesDir}/datastructure_unittest.cpp
-${twoDVS_sourcesDir}/DisjointSet.h
-${twoDVS_sourcesDir}/DisjointSet.cpp
-${twoDVS_sourcesDir}/Job.h
-${twoDVS_sourcesDir}/Job.cpp
-${twoDVS_sourcesDir}/Instance.h
-${twoDVS_sourcesDir}/Instance.cpp
-${twoDVS_sourcesDir}/InsertionHeuristic.h
-${twoDVS_sourcesDir}/InsertionHeuristic.cpp
-${twoDVS_sourcesDir}/Point.h
-${twoDVS_sourcesDir}/Point.cpp
-${twoDVS_sourcesDir}/generalizedVRP_MIP.h
-${twoDVS_sourcesDir}/generalizedVRP_MIP.cpp
-${twoDVS_sourcesDir}/m_TSP_MIP.h
-${twoDVS_sourcesDir}/m_TSP_MIP.cpp
-${twoDVS_sourcesDir}/independent_TSP_MIP.h
-${twoDVS_sourcesDir}/independent_TSP_MIP.cpp
-${twoDVS_sourcesDir}/Tours.h
+file(GLOB 2DVS_Sources
+    ${twoDVS_sourcesDir}/*.h
+    ${twoDVS_sourcesDir}/*.cpp
 )
-
 
 set(FindGraphConfiguation_sources
 ${twoDVS_sourcesDir}/stringify.h
@@ -90,8 +60,6 @@ ${twoDVS_sourcesDir}/find_graph_configuration.cpp
 set(Versioning_sources
 build_version.sh
 )
-
-#set_source_files_properties( MIP.cpp PROPERTIES CMAKE_CXX_FLAGS "-W0" ) 
 
 # display status message for important variables
 MESSAGE( STATUS )
@@ -108,8 +76,8 @@ MESSAGE( STATUS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS}" )
 MESSAGE( STATUS "-------------------------------------------------------------------------------" )
 MESSAGE( STATUS )
 
-ADD_EXECUTABLE(2DVS ${2DVS_Sources} )
-target_link_libraries (2DVS PM) 
+ADD_EXECUTABLE(2DVS ${2DVS_Sources}  )
+target_link_libraries (2DVS PM pthread ilocplex concert cplex ${Boost_LIBRARIES} )
 
 add_custom_target(
     myBuildVersion
@@ -118,9 +86,10 @@ add_custom_target(
 add_dependencies(2DVS myBuildVersion)
 
 
-ADD_EXECUTABLE(GTests ${GTestSources} )
-target_link_libraries(GTests -lgtest -lgtest_main)
+ADD_EXECUTABLE(GTests ${2DVS_Sources} )
+TARGET_LINK_LIBRARIES(GTests gtest  gtest_main pthread ilocplex concert cplex ${Boost_LIBRARIES})
 set_target_properties (GTests PROPERTIES COMPILE_DEFINITIONS "GTESTS_ENABLED")
 
-ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )
 
+ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )
+TARGET_LINK_LIBRARIES(find_graph_configuration ilocplex concert cplex)
