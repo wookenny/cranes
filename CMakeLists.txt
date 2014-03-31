@@ -22,7 +22,7 @@ set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -mfpmath=sse+387 -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -mfpmath=sse+387 -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
 
 
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic ")
@@ -60,21 +60,6 @@ ${twoDVS_sourcesDir}/find_graph_configuration.cpp
 set(Versioning_sources
 build_version.sh
 )
-
-# display status message for important variables
-MESSAGE( STATUS )
-MESSAGE( STATUS "-------------------------------------------------------------------------------" )
-MESSAGE( STATUS "compiling with flags: " )
-MESSAGE( STATUS "${CMAKE_CXX_FLAGS}" )
-MESSAGE( STATUS "-------------------------------------------------------------------------------" )
-MESSAGE( STATUS )
-
-MESSAGE( STATUS )
-MESSAGE( STATUS "-------------------------------------------------------------------------------" )
-MESSAGE( STATUS "linking with flags: " )
-MESSAGE( STATUS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS}" )
-MESSAGE( STATUS "-------------------------------------------------------------------------------" )
-MESSAGE( STATUS )
 
 ADD_EXECUTABLE(2DVS ${2DVS_Sources}  )
 target_link_libraries (2DVS PM pthread ilocplex concert cplex ${Boost_LIBRARIES} )
