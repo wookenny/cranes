@@ -1,6 +1,7 @@
 #include "InsertionHeuristic.h"
 #include "Tours.h"
 #include "Common.h"
+
 #include <thread>
 #include <random>
 #include <thread>

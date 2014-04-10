@@ -61,3 +61,19 @@ TEST(Common_Methods /*Testcase Name*/,Interval_Function /*Test name*/) {
     INTER int9 = {"2", "-5", "7", "0"};
     EXPECT_EQ(int9, create_interval("2,-5,7,0"));
 }
+
+TEST(Common_Methods /*Testcase Name*/,Permutation_Functions /*Test name*/) {
+    std::vector<uint> v1 = {2,3,4,1,0};
+    std::vector<uint> v2 = {0,1,2,3,4};
+    std::vector<uint> v3 = {0,2,3,6,4,2};
+    std::vector<uint> v4 = {0,1,2,3,5};
+    EXPECT_TRUE(is_permutation(v1));
+    EXPECT_TRUE(is_permutation(v2));
+    EXPECT_FALSE(is_permutation(v3));
+    EXPECT_FALSE(is_permutation(v4));
+
+    for(int i=0; i<10;++i){
+        auto vec = random_permutation(20, i);
+            EXPECT_TRUE(is_permutation(vec));
+    }
+}    

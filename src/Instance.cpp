@@ -319,7 +319,7 @@ bool Instance::verify(Tours& t) const{
 				    }				
 					if(-2==ord or 1==ord){
 						if(debug_){
-							cout<< "Job "<<t[v1][i]<<" crosses with job "
+							cout<< "Job "<<t[v1][i]<<" \"crosses\" with job "
 							             <<t[v2][j]<<endl;
 						}
 						return false;
@@ -355,7 +355,7 @@ bool Instance::verify(Tours& t) const{
 /*
 Calculates the makespan for a given solution.
 */
-double Instance::makespan(Tours& t) const{
+double Instance::makespan(Tours& t, bool returning_to_depot) const{
 	//tours should be valid!
 	assert(verify(t));
 	//t.sort_jobs();
@@ -367,12 +367,14 @@ double Instance::makespan(Tours& t) const{
 	    	continue;
 		const Job* j = get<0>(t[i].back());
 	 	double time = get<1>(t[i].back()) + j->length();
-	 	time += dist_inf(depotPositions_[i], j->get_beta());
+	 	if(not returning_to_depot)
+	 		time += dist_inf(depotPositions_[i], j->get_beta());
 		makespan = max(makespan, time );
 	}
 	
 	return makespan;
 }
+
 
 Tours Instance::get_MIP_solution(bool collision_free,bool LP_relax,bool debug) const{
 
@@ -505,3 +507,19 @@ bool Instance::depots_obey_safety_dist() const{
     return true;         
 }
 
+Instance Instance::splice(uint start, uint n,const std::vector<uint> &p) const {
+	
+	Instance i(num_vehicles_);
+	i.debug_ = debug_;
+	i.safety_distance_ = safety_distance_;
+	i.depotPositions_ = depotPositions_;
+
+	if(start >= jobs_.size())
+		return i;
+	while(n > 0 and start < jobs_.size()){
+		i.jobs_.push_back( jobs_[p[start]] );
+		++start;
+		--n;
+	}
+	return i;
+}

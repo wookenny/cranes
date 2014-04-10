@@ -8,7 +8,7 @@
 namespace po = boost::program_options;
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
-
+#include <boost/any.hpp>
 
 #if __clang__ 
     //no omp.h for clang++
@@ -23,6 +23,7 @@ namespace po = boost::program_options;
 #include "independent_TSP_MIP.h"
 #include "Instance.h"
 #include "InsertionHeuristic.h"
+#include "MipInsertionHeuristic.h"
 #include "LaserSharingProblemWriter.h"
 #include "SingleCraneTSP_Solver.h"
 
@@ -590,8 +591,9 @@ void single_tsp(std::vector<std::string> argv){
             solver.set_local_search(true);
 	    auto tsp_result = solver(i);
 	
-	    Tours t = std::get<1>(tsp_result);
-	    double bound = std::get<0>(tsp_result);
+	    Tours t{0};
+        double bound;
+        std::tie(bound,t) = solver(i);
 
         cout<<"makespan of a tour based on optimal single vehicle tour: ";
         cout<<i.makespan(t)<<endl;
@@ -752,7 +754,7 @@ void binsearch(vector<string> argv){
        
         Instance i(filename);
       
-        bool add_cuts = vm.count("help") > 0;
+        bool add_cuts = vm.count("cuts") > 0;
         //find valid LB if no value set
         if(LB==0){
             SingleCraneTSP_Solver solver;
@@ -816,4 +818,144 @@ void binsearch(vector<string> argv){
         return;
     }
     return;
+}
+
+struct sol_function{
+    sol_function(std::string const& val): value(val){ }
+    std::string value;
+
+    static vector<std::string> allowed_values;
+
+    Tours generate_Tour(const Instance & i) const{
+
+        if(value == "TSP" or value == "TSP_ls"){
+            SingleCraneTSP_Solver solver;
+            solver.set_verbosity(0);
+            solver.set_local_search(value == "TSP_ls");
+           return std::get<1>(solver(i)); 
+        }else if(value == "insertion" or value == "insertion_ls"){
+            InsertionHeuristic solver(value == "insertion_ls");
+            solver.set_verbosity(0);
+            solver.set_stop_at_better(true);
+            solver.set_use_assignment(true);
+
+            return solver(i); 
+        }
+
+        return Tours{i.num_vehicles()};
+    }
+};
+
+vector<std::string> sol_function::allowed_values = {"TSP","TSP_ls","insertion",
+                                                    "insertion_ls","none"};
+
+
+
+void validate(boost::any& v, 
+              std::vector<std::string> const& values,
+              sol_function* /* target_type */,
+              int)
+{
+    using namespace boost::program_options;
+    // Make sure no previous assignment to 'v' was made.
+    validators::check_first_occurrence(v);
+
+    // Extract the first string from 'values'. If there is more than
+    // one string, it's an error, and exception will be thrown.
+    string const& s = validators::get_single_string(values);
+    vector<std::string> & vec = sol_function::allowed_values;
+
+    if ( std::find(begin(vec), end(vec), s)!=end(vec)){
+        v = boost::any(sol_function(s));
+    } else {
+        //add allowed values
+        throw boost::program_options::invalid_option_value(s);
+    }
+}
+
+
+void insertion_mip(std::vector<std::string> argv){
+try{
+        //define all parameters to set
+        int verbosity;
+        uint clustersize;
+        string filename = "";
+        int timelimit;  
+        uint seed;
+        sol_function sol{"none"};
+
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("filename,f", po::value<string>(&filename)->required(), 
+                "2DVS file")
+            ("clustersize,c",po::value<uint>(&clustersize)->default_value(8),
+                " number of jobs that will be considered and "
+                 "solved to optimility.")
+            ("localsearch,l", " use a local search to find better solutions")
+            ("seed,s",po::value<uint>(&seed)->default_value(0),
+                " seed used to find a random permutation to start with.")
+            ("inital_solver,i", po::value<sol_function>(&sol), ("set initial solver function\n\t"
+                "possible values: "+
+                to_str(sol_function::allowed_values)).c_str())
+            ("timelimit,t",po::value<int>(&timelimit)->default_value(-1),
+                "timelimit in minutes for the binary search."
+                " A negative value indicates that there is no limit at all.")
+            ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
+
+
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style( po::command_line_style::unix_style)
+                    .run(), vm); 
+
+        //react on som settings
+        if (vm.count("help")){
+            cout<<"Splits the instance into several smaller ones.\n";
+            cout<<"The size of the smaller problems is given by the clustersize.\n";
+            cout<<" Every instance is solved optimally via MIP and a solution is "
+            "build by adding the jobs into a solution for all jobs.";
+            cout<<boolalpha << desc << "\n";
+            cout<<"required: 'f'"<<endl;
+            return;
+        }
+        po::notify(vm); 
+        
+
+        Instance i(filename);
+      
+        bool localsearch = vm.count("localsearch") > 0;
+        MipInsertionHeuristic insert(localsearch);
+        insert.set_verbosity(verbosity);
+        insert.set_seed(seed);
+        insert.set_cluster_size(clustersize);
+        insert.set_timelimit(timelimit);
+
+
+        Tours t(i.num_vehicles());
+        if(vm.count("inital_solver")>0){
+            auto perm = sol.generate_Tour(i).startingtime_permutation();
+            //auto perm = sol.generate_Tour(i).endingtime_permutation();
+            t = insert(i,perm);
+        } else {
+            t = insert(i);
+        }
+       
+        cout<< "Found solution with makespan "<<i.makespan(t)<<endl;
+        if(verbosity>0)
+            cout<<t<<endl;
+
+    }catch(boost::program_options::required_option& e){
+        cerr << " " << e.what() << "\n";
+        cerr << " Try --help for all parameters.\n";
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;                    
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    return;
+    }
+    return;
+
 }

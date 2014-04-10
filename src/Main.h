@@ -23,6 +23,7 @@ void write_instance(std::vector<std::string> argv);
 void run_mip(std::vector<std::string> argv);
 void binsearch(std::vector<std::string> argv);
 void insertion_heuristic(std::vector<std::string> argv);
+void insertion_mip(std::vector<std::string> argv);
 void laser(std::vector<std::string> argv);
 void single_tsp(std::vector<std::string> argv);
 void test(std::vector<std::string> argv);
@@ -46,6 +47,7 @@ int process_args(std::vector<std::string> argv){
 	functionDict["mip"] 		  = &run_mip;
 	functionDict["binsearch_mip"] = &binsearch;
 	functionDict["insertion"]	  = &insertion_heuristic;
+	functionDict["insertion_mip"] = &insertion_mip;
 	functionDict["test"] 		  = &test;
 	functionDict["laser_format"]  = &laser;
 	functionDict["single_tsp"]    = &single_tsp;

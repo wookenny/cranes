@@ -22,8 +22,8 @@ set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Werror -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -mfpmath=sse+387 -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
+#deleted: -mfpmath=sse+387
 
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic ")
 
@@ -52,6 +52,12 @@ file(GLOB 2DVS_Sources
     ${twoDVS_sourcesDir}/*.cpp
 )
 
+# collect all sources
+file(GLOB GTests_Sources
+    ${twoDVS_sourcesDir}/*.h
+    ${twoDVS_sourcesDir}/*.cpp
+)
+
 set(FindGraphConfiguation_sources
 ${twoDVS_sourcesDir}/stringify.h
 ${twoDVS_sourcesDir}/find_graph_configuration.cpp
@@ -61,6 +67,7 @@ set(Versioning_sources
 build_version.sh
 )
 
+list(REMOVE_ITEM 2DVS_Sources "${twoDVS_sourcesDir}/find_graph_configuration.cpp" "${twoDVS_sourcesDir}/datastructure_unittest.cpp" "${twoDVS_sourcesDir}/Common_Unittest.cpp" )
 ADD_EXECUTABLE(2DVS ${2DVS_Sources}  )
 target_link_libraries (2DVS PM pthread ilocplex concert cplex ${Boost_LIBRARIES} )
 
@@ -71,9 +78,14 @@ add_custom_target(
 add_dependencies(2DVS myBuildVersion)
 
 
-ADD_EXECUTABLE(GTests ${2DVS_Sources} )
-TARGET_LINK_LIBRARIES(GTests gtest  gtest_main pthread ilocplex concert cplex ${Boost_LIBRARIES})
+
+list(REMOVE_ITEM GTests_Sources "${twoDVS_sourcesDir}/find_graph_configuration.cpp" "${twoDVS_sourcesDir}/Main.cpp")
+ADD_EXECUTABLE(GTests ${GTests_Sources} )
+TARGET_LINK_LIBRARIES(GTests PM pthread gtest  gtest_main pthread ilocplex concert cplex ${Boost_LIBRARIES})
 set_target_properties (GTests PROPERTIES COMPILE_DEFINITIONS "GTESTS_ENABLED")
+add_custom_command(TARGET GTests
+                   POST_BUILD
+                   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/bin/GTests)
 
 
 ADD_EXECUTABLE(find_graph_configuration ${FindGraphConfiguation_sources} )

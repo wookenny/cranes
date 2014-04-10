@@ -196,6 +196,7 @@ ILOUSERCUTCALLBACK5(BendersUserCallback, Arcs, x, IloCplex, workerCplex,
 } // END BendersUserCallback
 
 
+/*
 int
 main(int argc, char **argv)
 {
@@ -336,7 +337,7 @@ main(int argc, char **argv)
    return 0;
 
 } // END main
-
+*/
 
 // This routine creates the master ILP (arc variables x and degree constraints).
 //

@@ -211,3 +211,48 @@ tuple<string, string> fixed_prefix_path(const std::string &s) {
         postfix = postfix.substr(0, postfix.size()-1);
     return make_tuple(prefix, postfix);
 }
+
+bool is_permutation(std::vector<uint> v) {
+    sort(begin(v),end(v));
+    for(uint i=0; i<v.size();++i)
+        if(v[i]!=i)
+            return false;
+    return true; 
+}
+
+std::function<bool ()> getTimer(int timelimit) {
+    if (timelimit < 0)
+        return [](){return true;};
+    //get current time
+    using namespace std::chrono;
+    auto startingtime = std::chrono::system_clock::now();
+
+    return [=]() { 
+        auto now = std::chrono::system_clock::now();        
+        auto total_seconds = duration_cast<seconds>(now - startingtime);
+        return (total_seconds.count() < timelimit);
+    };
+}
+
+
+std::vector<uint> random_permutation(uint n, int seed){
+    if (seed < 0)
+            std::srand(time(0));
+    else    std::srand(seed);
+    vector<uint> perm;
+    perm.reserve(n);
+    for (uint i=0; i<n; ++i) 
+        perm.push_back(i);
+    random_shuffle(perm.begin(),perm.end());
+    return perm;
+}
+
+std::string to_str(const std::vector<std::string>& vec,bool b){
+    std::string s = b ? "[" : "";
+    for(uint i=0; i<vec.size()-1;++i){
+        s += vec[i]+", ";
+    }
+    if(not vec.empty())
+        s+= vec.back();
+    return b ? (s+"]") : s;
+}  

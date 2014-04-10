@@ -3,6 +3,7 @@
 #include <string>
 #include <chrono>
 #include <vector>
+#include <functional>
 
 std::vector<uint> random_assignment(uint size, uint lb, uint ub, int seed=0);
 
@@ -47,3 +48,11 @@ std::vector<std::string> create_interval(const std::string&);
 // E.g.: "./f*/g*.png" find all files with name g*.png
 // in folders starting with f in the current directory
 std::vector<std::string> find_files(const std::string&);
+
+bool is_permutation(std::vector<uint> v);
+
+std::vector<uint> random_permutation(uint n, int seed = -1);
+
+std::function<bool ()> getTimer(int timelimit); 
+
+std::string to_str(const std::vector<std::string>& vec, bool braces=false);

@@ -1,17 +1,17 @@
+#pragma once
+
 /*
  * This file is part of a solving framework for 2DVS instances.
  * Copyright (C) 2013 Torsten Gellert <gellert@math.tu-berlin.de>
  */
-
-#pragma once
-
 #include <tuple>
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
 #include <map>
 #include <cassert>
-#include<string>
+#include <string>
+
 
 class Job;
 
@@ -28,90 +28,54 @@ typedef std::tuple<const Job*, double> scheduledJob;
 */
 class Tours{
 private: 
-    std::vector<std::vector<scheduledJob> > _tours;
+    std::vector<std::vector<scheduledJob> > tours_;
     std::unordered_set<const Job*> _job_map;
     
-    void _sort(int i){  
-        std::sort(_tours[i].begin(), _tours[i].end(), [](const scheduledJob &a,const scheduledJob &b){
-            return std::get<1>(a) < std::get<1>(b) or 
-            (  std::get<1>(a) == std::get<1>(b) and 
-            std::get<0>(a)->length() < std::get<0>(b)->length());
-            //same starting time -> job with length 0 first
-        });
-    }
+    void _sort(int i);
     
-    std::string to_string(unsigned int i) const{
-        std::string s;
-        for(const scheduledJob &sj: _tours[i])
-            s+= std::get<0>(sj)->to_string() +" @ "+std::to_string(std::get<1>(sj))+"\n";
-        return s;
-    }
+    std::string to_string(unsigned int i) const;
     
+    std::vector<scheduledJob> all_jobs() const;
     
 public:
     Tours() = delete;
     /*Constructs k empty tours*/
-    explicit Tours(uint k):_tours(k,std::vector<scheduledJob>()){}
-    //TODO(TG): Do I need a move-constr./assign.?
+    explicit Tours(uint k):tours_(k,std::vector<scheduledJob>()){}
     
-    unsigned int num_tours() const{return _tours.size();}
+    unsigned int num_tours() const{return tours_.size();}
     unsigned int num_jobs() const{return _job_map.size();}
-    unsigned int num_jobs(unsigned int i) const{return _tours[i].size();}
+    unsigned int num_jobs(unsigned int i) const{return tours_[i].size();}
     
-    bool empty() const noexcept{
-        return _job_map.empty();
-    }
+    bool empty() const noexcept{ return _job_map.empty(); }
     
     bool contains(const Job* const job){return _job_map.find(job)!=_job_map.end();}
     
     
     const std::vector<scheduledJob>& operator[](int i) const{
-        assert(0<=i and i < static_cast<int>(_tours.size()) );
-        return _tours[i];
+        assert(0<=i and i < static_cast<int>(tours_.size()) );
+        return tours_[i];
     }
     
     void clear(){ 
         _job_map.clear();
-        for(auto& t: _tours) t.clear(); 
+        for(auto& t: tours_) t.clear(); 
     }
     
-    std::map<int,std::tuple<Job, double, int>> get_schedule() const {
-        std::map<int,std::tuple<Job, double, int>> schedule;
-        //ID -> Job, starting time, vehicle
-        for(uint i=0; i<_tours.size();++i)
-            for(const auto job: _tours[i]){
-                Job j =  *std::get<0>(job);
-                double time =  std::get<1>(job);
-                schedule[j.num()] = std::make_tuple(j,time,i);
-            }
-            return schedule;
-    }
+    std::map<int,std::tuple<Job, double, int>> get_schedule() const;
 
-    unsigned int vehicle(const Job* const job) {
-        return _job_map.find(job) != _job_map.end();}
-
-    void add_job(const Job* const job, double time, int vehicle) {
-        assert(vehicle >= 0);
-        assert(vehicle < static_cast<int>(_tours.size()));
-        assert(not contains(job));
-        _tours[vehicle].push_back(std::make_tuple(job, time));
-        _job_map.insert(job);
-    }
+    void add_job(const Job* const job, double time, int vehicle);
 
     void add_job(const scheduledJob& job, int vehicle) {
         add_job(std::get<0>(job), std::get<1>(job), vehicle);
     }
 
-    void sort_jobs() {for(unsigned int i = 0; i < _tours.size(); ++i) _sort(i);}
+    void sort_jobs();
 
-    std::string to_string() const{
-        std::string s;
-        for (unsigned int i = 0; i < _tours.size(); ++i) {
-            s+=std::string("Tour ")+std::to_string(i)+":\n";
-            s+=to_string(i);
-        }
-        return s;
-    }
+    std::string to_string() const;
+
+    std::vector<uint> startingtime_permutation() const;
+
+    std::vector<uint> endingtime_permutation() const;
 };
 
 /** Stream operator for convenience. 

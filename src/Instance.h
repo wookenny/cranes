@@ -45,6 +45,8 @@ class Instance{
 		void add_job(const Job& j){jobs_.push_back(j);}
 		void add_depotposition(const std::array<int, 2> &d){
 			depotPositions_.push_back(d);}
+		void set_depotposition(const std::array<int, 2> &d, uint i){
+			depotPositions_[i] = d;}	
 		void debug(bool d){debug_=d;}	
 			
 
@@ -82,7 +84,8 @@ class Instance{
 		
 		//verification for tours
 		bool   verify(Tours& t) const;
-		double makespan(Tours& t) const;
+		double makespan(Tours& t, bool returning_to_depot=false) const;
+
 		
 		Tours get_MIP_solution(bool collision_free = false,
 		                       bool LP_relax = false, 
@@ -93,6 +96,10 @@ class Instance{
 		void set_safety_distance(uint dist) {safety_distance_ = dist; 
 		                                    assert(depots_obey_safety_dist());}
 		bool depots_obey_safety_dist() const;
+
+		Instance splice(uint start, uint n,const std::vector<uint> &perm) const;
+
+
 	private:
 		void parse_line_(std::string &line);	
 	    void sort_depots_();

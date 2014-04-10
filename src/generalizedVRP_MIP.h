@@ -101,6 +101,7 @@ class generalizedVRP_MIP{
 		bool LP_relaxation_;
 		bool silent_ = false;
 		bool use_subtour_cuts_ = false;
+		bool returning_to_depot_ = true;
 
 		int bigM =0;
 		int fixed_makespan_;
@@ -178,6 +179,7 @@ class generalizedVRP_MIP{
 		void set_silent(bool s){silent_ = s;}			
         void set_fixed_makespan(int makespan){fixed_makespan_ = makespan; 
         									          bigM = makespan;}
+        void set_returning_to_depot(bool b){returning_to_depot_ = b;}							          
       	void set_assignment(std::vector<uint> a){assignment_=a;}
 
 		virtual void use_subtour_cuts(bool c){use_subtour_cuts_ = c;}

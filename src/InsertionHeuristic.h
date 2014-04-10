@@ -2,6 +2,7 @@
 
 #include "Instance.h"
 
+
 #include <vector>
 #include <thread>
 #include <tuple>
@@ -23,6 +24,11 @@ There is a second mode, where no assignment is generated.
 Every job added to te vehicle, which can execute it te earliest.
 **/
 class InsertionHeuristic{
+
+	//Switch to enable debug information. 
+	//If it is false, code can be removed during compilation.
+	static constexpr bool debug_ = false;
+	static constexpr uint random_starts_ = 12;	
 
 	public:
 		Tours operator()(const Instance& inst, const std::vector<uint>&, 
@@ -68,17 +74,6 @@ class InsertionHeuristic{
 		inline void intervalsForRightCone(const scheduledJob& , uint, 
 							const Job& , uint,  std::vector<interval>&) const;
 		
-		bool is_permutation(std::vector<uint> v) const{
-            sort(begin(v),end(v));
-            for(uint i=0; i<v.size();++i)
-                if(v[i]!=i)
-                    return false;
-            return true; 
-        }
-		
+	
 		bool time_remaining() const;
-		//Switch to enable debug information. 
-		//If it is false, code can be removed during compilation.
-		static constexpr bool debug_ = false;
-		static constexpr uint random_starts_ = 12;	
 };

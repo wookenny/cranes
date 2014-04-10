@@ -102,7 +102,6 @@ void independent_TSP_MIP::build_variables_(){
 		int ub = inst_.num_vehicles();
 
 		if (use_assign and  j <= inst_.num_jobs() ){
-			assert(assignment_[j-1] >= 0);
 			assert(assignment_[j-1] < inst_.num_vehicles());
 			lb = ub = assignment_[j-1]+1;
 		}
@@ -196,28 +195,6 @@ void independent_TSP_MIP::build_constraints_(){
 		cons_.add(constraint);		
 	}
 	
-	/*
-	//special constraint for the depot:
-	//sum of out/in <=1  for every sngle depot
-	for(uint i = n+1; i<=n+K; ++i){
-		IloExpr expr_out(env_);
-		IloExpr expr_in(env_);
-		int v = i-n;
-		for(uint j = 1; j<=n; ++j){
-	 		if(i==j) continue; //add x_ii only for depot
-			expr_out += x(i,j,v);
-			expr_in  += x(j,i,v);
-		}
-		IloRange out_constraint(env_, 0, expr_out, 1, 
-							("out-degree for "+to_string(i)).c_str() );
-		IloRange in_constraint(env_, 0, expr_in, 1, 
-							("in-degree for "+to_string(i)).c_str() );
-		cons_.add(out_constraint);	
-		cons_.add(in_constraint);		
-	}
-   */
-
-
 	//starting time variables for depots
 	for(uint i = n+1; i<=n+K; ++i)
 		cons_.add( t(i) == 0);	
@@ -256,8 +233,10 @@ void independent_TSP_MIP::build_constraints_(){
 		    expr += fixed_makespan_;
 		expr -= t(i);
 		expr -= job.length();
-		for(uint v = 1; v<=K; ++v)
-			expr -= dist_inf(inst_.get_depot(v-1),job.get_beta()) * x(i,n+v,v);
+		//add length to choosen depot
+		if(returning_to_depot_)
+			for(uint v = 1; v<=K; ++v)
+				expr -= dist_inf(inst_.get_depot(v-1),job.get_beta()) * x(i,n+v,v);
 			
 		IloRange constraint(env_, 0, expr, IloInfinity, ("makespan_cons_due_to_vehicle_"+to_string(i)).c_str() );
 		cons_.add(constraint);	
@@ -305,10 +284,13 @@ void independent_TSP_MIP::build_constraints_(){
 		    //depot->job vertices, job->depot vertices        
 			for(uint i = 1; i<=n; ++i){
                     //to depot:
-		            const Job& j1 = inst_[i-1];
+					const Job& j1 = inst_[i-1];
 		            int l = j1.length();
-		            l += dist_inf(j1.beta(),inst_.get_depot(v-1));	            
-		            expr -=  l * x(i,n+v,v);
+		            //do not drive back to depot if not needed!
+		            if(returning_to_depot_){
+		            	l += dist_inf(j1.beta(),inst_.get_depot(v-1));	            
+		            	expr -=  l * x(i,n+v,v);
+		        	}
 		            //from depot
 		            l = dist_inf(inst_.get_depot(v-1),j1.alpha());
 		            expr -=  l * x(n+v,i,v);
@@ -330,9 +312,14 @@ void independent_TSP_MIP::parse_solution_(Tours &tours){
 
 	uint n = inst_.num_jobs();
 
+	tours.clear();
 	//build all k tours
 	for( uint j = 1; j<=n; ++j){
-		int v = cplex_.getValue(k(j));
+		//int v = std::round(cplex_.getValue(k(j)));
+		int v = cplex_.getIntValue(k(j));
+		assert( v - cplex_.getIntValue(k(j)) < 0.1);
+		assert(v > 0);
+		assert(static_cast<uint>(v) <= inst_.num_vehicles() );
 		double time = cplex_.getValue(t(j));
 		tours.add_job(&inst_[j-1], time, v-1);
 	}
