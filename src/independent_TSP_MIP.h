@@ -72,9 +72,7 @@ class independent_TSP_MIP: public generalizedVRP_MIP{
 									  start_(0){}				  
 		std::pair<Tours,double> solve();
 
-        virtual void set_start_solution(const Tours &tours){ start_ = tours;}
-
-                                                      
+        virtual void set_start_solution(const Tours &tours){ start_ = tours;}                               
 		
 		friend class SubtourCutsCallbackI;
 		

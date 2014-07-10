@@ -6,13 +6,14 @@ project(2D-VehicleScheduling)
 ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/SRC)
 
 #some path settings
-set(CPLEXDIR "/usr/site-local/ILOG/CPLEX_Studio124/cplex")
+set(CPLEXBASE "/usr/site-local/ILOG/CPLEX_Studio126")
+set(CPLEXDIR "${CPLEXBASE}/cplex")
 set(CPLEXINCDIR "${CPLEXDIR}/include")
-set(CPLEXLIBDIR "${CPLEXDIR}/lib/x86-64_sles10_4.1/static_pic")
+set(CPLEXLIBDIR "${CPLEXDIR}/lib/x86-64_linux/static_pic")
 
-set(CONCERTDIR "/usr/site-local/ILOG/CPLEX_Studio124/concert")
+set(CONCERTDIR "${CPLEXBASE}/concert")
 set(CONCERTINCDIR "${CONCERTDIR}/include")
-set(CONCERTLIBDIR "${CONCERTDIR}/lib/x86-64_sles10_4.1/static_pic")
+set(CONCERTLIBDIR "${CONCERTDIR}/lib/x86-64_linux/static_pic")
 
 FIND_PACKAGE( Boost  COMPONENTS program_options filesystem iostreams system regex REQUIRED )
 INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )

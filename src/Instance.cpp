@@ -460,6 +460,20 @@ void Instance::writeToFile(std::string filename, std::string comments) const{
 	file.close();
 }
 
+	double Instance::length() const{
+		auto box = get_bounding_box();
+		double length =  box[2] - box[0];
+		assert(length>=0);
+		return length;
+	}
+	
+	double Instance::depth() const{
+		auto box = get_bounding_box();
+		double depth =  box[3] - box[1];
+		assert(depth>=0);
+		return depth;
+	}		
+
 array<int,4> Instance::get_bounding_box() const{
 	array<int,4> bbox;
 	bbox[0] = bbox[2] = depotPositions_[0][0];//x coords

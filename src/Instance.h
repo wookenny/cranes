@@ -81,6 +81,8 @@ class Instance{
 
 		//get the smallest bounding box around the whole instance
 		std::array<int,4> get_bounding_box() const;
+		double length() const;
+		double depth() const;
 		
 		//verification for tours
 		bool   verify(Tours& t) const;

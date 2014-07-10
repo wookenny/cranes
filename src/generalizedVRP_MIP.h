@@ -6,6 +6,7 @@
 #include <vector>
 #include <ilcplex/ilocplex.h>
 #include <iostream>
+#include <chrono>
 
 #include "Instance.h"
 #include "Job.h"
@@ -99,14 +100,17 @@ class generalizedVRP_MIP{
 		bool debug_;
 		bool collision_avoidance_;
 		bool LP_relaxation_;
+		bool tighten_ = false;
 		bool silent_ = false;
 		bool use_subtour_cuts_ = false;
 		bool returning_to_depot_ = true;
 
 		int bigM =0;
 		int fixed_makespan_;
+		double timelimit_ = -1;
 		
 		double found_objective_ = -1;
+		std::chrono::seconds runningtime_;
 
 		//some variables for relaxations:
 		std::vector<uint> assignment_;
@@ -146,6 +150,7 @@ class generalizedVRP_MIP{
 											  collision_avoidance_(false),
 											  LP_relaxation_(false),
 											  fixed_makespan_(-1),
+											  runningtime_(0),
 											  assignment_(),
 											  name_t_("t",1),
 									  		  t(name_t_,vars_,v_),
@@ -181,8 +186,10 @@ class generalizedVRP_MIP{
         									          bigM = makespan;}
         void set_returning_to_depot(bool b){returning_to_depot_ = b;}							          
       	void set_assignment(std::vector<uint> a){assignment_=a;}
-
-		virtual void use_subtour_cuts(bool c){use_subtour_cuts_ = c;}
+      	void set_tightening_cons(bool t){tighten_ = t;}
+      	void set_timelimit(double t){timelimit_ = t;}
+      	std::chrono::seconds get_runningtime() const {return runningtime_;}
+		void use_subtour_cuts(bool c){use_subtour_cuts_ = c;}
 		friend class SubtourCutsCallbackI;
     
         virtual void set_start_solution(const Tours &tours);       

@@ -22,6 +22,10 @@ std::pair<Tours,double> generalizedVRP_MIP::solve(){
 	
 		if(silent_)
 			cplex_.setParam(IloCplex::MIPDisplay, 0);
+		
+		if(timelimit_ > 0)
+			cplex_.setParam(IloCplex::TiLim, 60*timelimit_);
+
 		build_variables_();
 		
 		if( 1 != inst_.num_vehicles() and  collision_avoidance_ )

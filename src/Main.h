@@ -104,7 +104,7 @@ int main(int argc, char** argv){
 
     auto stop = std::chrono::system_clock::now();
     auto total_seconds = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-    if(total_seconds.count() > 5)
+    if(total_seconds.count() > 1)
     std::cout<<"\nTime elapsed: "<< duration_to_string(total_seconds) << std::endl;
     return result;
 }

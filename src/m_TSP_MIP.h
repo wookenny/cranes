@@ -48,8 +48,10 @@ class m_TSP_MIP: public generalizedVRP_MIP{
 		m_TSP_MIP()=delete;
 		m_TSP_MIP(const Instance& i): generalizedVRP_MIP(i), 
 									  name_x_("x",2),
-									  x(name_x_,vars_,v_){}				  
+									  x(name_x_,vars_,v_){}
+		std::pair<Tours,double> solve();				  
 
+		friend class SubtourCutsMTSPCallbackI;
 		
 	protected:	
 		void add_objective_function_();

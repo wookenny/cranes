@@ -217,10 +217,11 @@ void run_mip(vector<string> argv){
         int verbosity;
         string filename = "";
         int k,n; 
-        int mip_type = 1;
+        uint mip_type = 1;
         uint runs;
         uint seed;
         uint fixed_makespan;
+        double timelimit;
 
         po::options_description desc("Allowed options");
 
@@ -229,7 +230,7 @@ void run_mip(vector<string> argv){
             ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
               "verbosity level")
             ("filename,f", po::value<string>(&filename), 
-             "2DVS file for heuristic")
+             "2DVS file to solve via MIP")
             ("k", po::value<int>(&k), 
              "set number of vehicles/cranes")
             ("n", po::value<int>(&n), 
@@ -237,31 +238,42 @@ void run_mip(vector<string> argv){
             ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
               "set seed for random samples")
             ("debug,d","set debug mode for instances")
-            ("collisions,c", "allow collisions between vehicles")
+            ("timelimit,T", po::value<double>(&timelimit)->default_value(0),
+                            "time limit in minutes for the MIP solver")
+            ("tighteningconstraints,g", "add tightening constraints for the"
+                                       " sum of arcs")
+            ("miptype,t",po::value<uint>(&mip_type)->default_value(1), 
+              "type of MIP: 0 = two-indexed VRP, 1 = three-indexed VRP")
             ("lp_relaxation,l", "solve the LP relaxation of the IP formulation")
             ("makespan,m", po::value<uint>(&fixed_makespan)->default_value(0), 
               "set a fixed makespan to find a solution not exceeding it")
-            ("disablecuts,D","disables subtour cuts as user cuts.")
+            ("subtourcuts,S","enable subtour cuts as user cuts.")
             ("assignment,a","uses a random assigment for all jobs.")
+            ("intial,i", "using a heuritic to find an initial startting "
+                                                        "solution for he mip")
             ("runs,r", po::value<uint>(&runs)->default_value(20), 
               "number of runs to find an initial solution using the "
               "insertion heuristic")
         ;
-        //TODO: add parameter debug, miptype, collison cstr,
-
         po::variables_map vm;        
         po::store(po::command_line_parser(argv)
                     .options(desc)
                     .style(   po::command_line_style::unix_style)
                     .run(), vm);
-        po::notify(vm);    
+ 
 
         //react on som settings
         if (vm.count("help") ){
+            cout<< "Solves a 2DVS instances via MIP. Either with the two- or"
+                    " the three-indexed VRP MIP.\n"
+                    "Collision constraints, LP relaxation and user cuts can be" 
+                    "switched on or off." <<endl;
             cout<<boolalpha << desc << "\n";
             return;
         }
-
+        
+        po::notify(vm);   
+        
          //after parsing, execute the selected method    
         Instance i; 
         i.debug( vm.count("debug")>0 ); 
@@ -283,26 +295,33 @@ void run_mip(vector<string> argv){
         
         //setup MIP and run several tests.
         unique_ptr<generalizedVRP_MIP> mip_ptr;
-        if(1==mip_type) //remember: explicit std::move here because of rvalue
+        if(1==mip_type){ //remember: explicit std::move here because of rvalue
+            cout<<"Using the three-indexed VRP MIP"<<endl;
             mip_ptr = unique_ptr<generalizedVRP_MIP>(new independent_TSP_MIP(i));
-        else
+        }else{
+            cout<<"Using the two-indexed VRP MIP"<<endl;
             mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
-
-        mip_ptr->set_LP( vm.count("lp_relaxation")>0 );            
+        }
+        mip_ptr->set_LP( vm.count("lp_relaxation")>0 );    
+                
         mip_ptr->set_debug( vm.count("debug")>0 );
         mip_ptr->set_collision( not vm.count("collisions")>0 );
         bool valid_solution = vm.count("lp_relaxation")==0;
         valid_solution = valid_solution and (vm.count("collisions")==0);
-        if( vm.count("disablecuts") > 0 )
-            mip_ptr->use_subtour_cuts(false);
-        else
-            mip_ptr->use_subtour_cuts(true);
+        mip_ptr->use_subtour_cuts(vm.count("subtourcuts") > 0 );
+        cout<< "subtour cuts: "<<(vm.count("subtourcuts") > 0 )<<endl;
+        mip_ptr->set_tightening_cons(vm.count("tighteningconstraints")>0 );
+        cout<< "tightening cons: "<<(vm.count("tighteningconstraints")>0)<<endl;
+
+        mip_ptr->set_timelimit(timelimit);
+        if(timelimit>0)
+            cout<< "timelimit: "<< timelimit << " minutes"<<endl;
         if(fixed_makespan != 0)
             mip_ptr->set_fixed_makespan(fixed_makespan);        
             
         //run heuristic, use it as starting solution    
         Tours sol{i.num_vehicles()};
-        if(runs > 0 and vm.count("assignment")==0){
+        if(runs > 0 and vm.count("assignment")==0 and vm.count("intial")>0){
             InsertionHeuristic heur(true);
             heur.set_runs(runs);
             sol = heur(i); 
@@ -312,6 +331,9 @@ void run_mip(vector<string> argv){
             mip_ptr->set_start_solution(sol);   
         }
 
+        
+        mip_ptr->set_silent(verbosity<=0);
+        
         //if assignment set
         if (vm.count("assignment") > 0) { 
             auto a = random_assignment(i.num_jobs(),
@@ -322,14 +344,17 @@ void run_mip(vector<string> argv){
         auto mip_sol = mip_ptr->solve();
         Tours t = get<0>( mip_sol );
         double objective = get<1>( mip_sol );
-        if(i.num_jobs()<15)
+        if(i.num_jobs()<15 and verbosity > 0)
             cout<< "found tour: \n"<<t<<endl;
 
         cout<<boolalpha;
+
         if(valid_solution){
-            cout<<"MIP-Solution valid: "<<i.verify(t)<<"\n";
-            cout<<"Makespan: "<<i.makespan(t)<<"\n";
-            cout<<"MIP Objective: "<<objective<<endl;
+                cout<<"MIP-Solution valid: "<<i.verify(t)<<"\n";
+                cout<<"Makespan: "<<i.makespan(t)<<"\n";
+                cout<<"MIP Objective: "<<objective<<endl;
+                cout<<"Running time: "
+                    <<duration_to_string(mip_ptr->get_runningtime()) <<endl;
         }else{
             cout<< "Objective: "<<objective<<endl;           
         }  
@@ -649,7 +674,9 @@ void batch(vector<string> argv){
     if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help"))){
 		cout<<"batch \"<command> #1 <param> #2 <param> #1...\" <replace1>"
                 " <replace2>... \n\tRuns the command in batch mode."<<endl;
-		return;
+		
+        cout<<"Examples: ...."<<endl;
+        return;
 	}
 	
 	string command = argv[0];

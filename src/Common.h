@@ -20,6 +20,9 @@ std::vector<std::string> split(const std::string &input);
 // the same duration
 template<class Duration>
 std::string duration_to_string(const Duration& dtn) {
+    if(std::chrono::duration_cast<std::chrono::seconds>(dtn).count() == 0)
+        return "0 seconds";
+
     std::string dur;
     auto h = std::chrono::duration_cast<std::chrono::hours>(dtn).count();
     if (h > 0)

@@ -1,8 +1,9 @@
 #include "independent_TSP_MIP.h"
 #include "DisjointSet.h"
+#include "Common.h"
 #include <set>
 #include <thread>
-#include<algorithm>
+#include <algorithm>
 using namespace std;
 
 
@@ -195,6 +196,28 @@ void independent_TSP_MIP::build_constraints_(){
 		cons_.add(constraint);		
 	}
 	
+
+	//add inflow = outflow for all subgraphs k
+	for(uint i = 1; i<=n+K; ++i){
+		for(uint v = 1; v<=K; ++v){
+			IloExpr expr(env_);
+			for(uint j = 1; j<=n+K; ++j){
+				if(j>n and v!=j-n) //no edges from depot with wrong vehicle 
+					continue;
+				if(i>n and v!=i-n) //no edges from depot with wrong vehicle 
+					continue;
+	 			if(i==j and i<=n) continue; //add x_ii only for depot
+				expr += x(i,j,v);
+				expr -= x(j,i,v);
+			}
+			IloRange constraint(env_, 0, expr, 0, 
+							("subflow_conservation_"+to_string(v)+"_vertex_"
+													+to_string(i)).c_str() );
+			cons_.add(constraint);	
+		}		
+	}
+
+
 	//starting time variables for depots
 	for(uint i = n+1; i<=n+K; ++i)
 		cons_.add( t(i) == 0);	
@@ -267,39 +290,43 @@ void independent_TSP_MIP::build_constraints_(){
 	
 	//additional constraint to increase the makespan:
 	//makespan >= each single tour
-	for(uint v=1; v<=K;++v){
-			IloExpr expr(env_);
-			expr =  1.0 * vars_[v_["makespan"]];
-			//inter job vertices
-			for(uint i = 1; i<=n; ++i)
-		        for(uint j = 1; j<=n; ++j){
-		            if(i==j) continue;
-		            const Job& j1 = inst_[i-1];
-		            const Job& j2 = inst_[j-1];
-		            int l = j1.length();
-		            l += dist_inf(j1.beta(),j2.alpha());
-		            
-		            expr -=  l* x(i,j,v);
-		        }
-		    //depot->job vertices, job->depot vertices        
-			for(uint i = 1; i<=n; ++i){
-                    //to depot:
-					const Job& j1 = inst_[i-1];
-		            int l = j1.length();
-		            //do not drive back to depot if not needed!
-		            if(returning_to_depot_){
-		            	l += dist_inf(j1.beta(),inst_.get_depot(v-1));	            
-		            	expr -=  l * x(i,n+v,v);
-		        	}
-		            //from depot
-		            l = dist_inf(inst_.get_depot(v-1),j1.alpha());
-		            expr -=  l * x(n+v,i,v);
-		    }
-			    
-			IloRange constraint(env_, 0, expr, IloInfinity,
-			("length_bound_for_tour_"+to_string(v)).c_str());
-			cons_.add(constraint);		
+	if(tighten_){
+		for(uint v=1; v<=K;++v){
+				IloExpr expr(env_);
+				expr =  1.0 * vars_[v_["makespan"]];
+				//inter job vertices
+				for(uint i = 1; i<=n; ++i)
+			        for(uint j = 1; j<=n; ++j){
+			            if(i==j) continue;
+			            const Job& j1 = inst_[i-1];
+			            const Job& j2 = inst_[j-1];
+			            int l = j1.length();
+			            l += dist_inf(j1.beta(),j2.alpha());
+			            
+			            expr -=  l* x(i,j,v);
+			        }
+			    //depot->job vertices, job->depot vertices        
+				for(uint i = 1; i<=n; ++i){
+	                    //to depot:
+						const Job& j1 = inst_[i-1];
+			            int l = j1.length();
+			            //do not drive back to depot if not needed!
+			            if(returning_to_depot_){
+			            	l += dist_inf(j1.beta(),inst_.get_depot(v-1));	            
+			            	expr -=  l * x(i,n+v,v);
+			        	}
+			            //from depot
+			            l = dist_inf(inst_.get_depot(v-1),j1.alpha());
+			            expr -=  l * x(n+v,i,v);
+			    }
+				    
+				IloRange constraint(env_, 0, expr, IloInfinity,
+				("length_bound_for_tour_"+to_string(v)).c_str());
+				cons_.add(constraint);		
+		}
 	}
+
+	
 	
 }
 
@@ -330,9 +357,6 @@ void independent_TSP_MIP::parse_solution_(Tours &tours){
 }	
 
 
-/**
- Own solve()-method to enable an own cut-callback
-**/
 
 //Cut callback 
 //checks for fractional subtours, which means: ?????
@@ -481,7 +505,13 @@ ILOUSERCUTCALLBACK1(SubtourCutsCallback, independent_TSP_MIP*, mip )
    return;
 }
 
+
+/**
+ Own solve()-method to enable an own cut-callback
+**/
+
 std::pair<Tours,double> independent_TSP_MIP::solve(){
+	auto start = std::chrono::system_clock::now();
 	Tours tours(inst_.num_vehicles());
 
 	//build the MIP model and solve it!
@@ -489,6 +519,9 @@ std::pair<Tours,double> independent_TSP_MIP::solve(){
 	
 		if(silent_)
 			cplex_.setParam(IloCplex::MIPDisplay, 0);
+
+		if(timelimit_ > 0)
+			cplex_.setParam(IloCplex::TiLim, 60*timelimit_);
 
 		build_variables_();
 		
@@ -537,14 +570,15 @@ std::pair<Tours,double> independent_TSP_MIP::solve(){
 		bool solved = cplex_.solve();
 		if(debug_) cout<< "Solving MIP was successful: "<<boolalpha<<solved<<endl;
 		if(debug_) cout<< "MIP status = "<<cplex_.getStatus()<<endl;
-		if ( !solved ) {
+		auto stop = std::chrono::system_clock::now();
+		runningtime_ = std::chrono::duration_cast<std::chrono::seconds>(stop - start);		if ( !solved ) {
 			env_.end();
 			//return empty tours if MIP was unsolvable!
 			return pair<Tours,double>{Tours(inst_.num_vehicles()),-1};
 		}else{
 			//parse solution
-			if(LP_relaxation_ and inst_.num_jobs()<10)
-				print_LP_solution_();
+			//if(LP_relaxation_ and inst_.num_jobs()<10)
+			//	print_LP_solution_();
 			
 			found_objective_ =  cplex_.getObjValue();
 			parse_solution_(tours);
@@ -784,3 +818,88 @@ void independent_TSP_MIP::add_MIP_start_(){
          
 }
 
+
+
+//------ Here are some GTests for this class---//
+#ifdef GTESTS_ENABLED
+#include <gtest/gtest.h>
+TEST(Three_Index_MIP, Normal) { 
+    Instance i; 
+    i.set_num_vehicles(3);
+    uint seed = 5; uint n = 8;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    independent_TSP_MIP mip(i);
+    mip.set_silent(true);
+    mip.set_collision(true); 
+	//settings: 
+	mip.use_subtour_cuts(false);
+	mip.set_tightening_cons(false);
+	auto mip_sol = mip.solve();
+    Tours t = get<0>( mip_sol );
+    double objective = get<1>( mip_sol );
+    EXPECT_DOUBLE_EQ(objective, 221);
+    EXPECT_TRUE (i.verify(t));
+}
+
+TEST(Three_Index_MIP, SubtourCuts) { 
+    Instance i; 
+    i.set_num_vehicles(3);
+    uint seed = 5; uint n = 8;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    independent_TSP_MIP mip(i);
+    mip.set_silent(true);
+    mip.set_collision(true); 
+	//settings: 
+	mip.use_subtour_cuts(true);
+	mip.set_tightening_cons(false);
+	auto mip_sol = mip.solve();
+    Tours t = get<0>( mip_sol );
+    double objective = get<1>( mip_sol );
+    EXPECT_DOUBLE_EQ(objective, 221);
+    EXPECT_TRUE(i.verify(t));
+
+}
+
+TEST(Three_Index_MIP, Tightening) { 
+    Instance i; 
+    i.set_num_vehicles(3);
+    uint seed = 5; uint n = 8;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    independent_TSP_MIP mip(i);
+    mip.set_silent(true);
+    mip.set_collision(true); 
+	//settings: 
+	mip.use_subtour_cuts(false);
+	mip.set_tightening_cons(true);
+	auto mip_sol = mip.solve();
+    Tours t = get<0>( mip_sol );
+    double objective = get<1>( mip_sol );
+    EXPECT_DOUBLE_EQ (objective, 221);
+    EXPECT_TRUE(i.verify(t));
+}
+
+TEST(Three_Index_MIP, TighteningAndCuts) { 
+    Instance i; 
+    i.set_num_vehicles(3);
+    uint seed = 5; uint n = 8;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    independent_TSP_MIP mip(i);
+    mip.set_silent(true);
+    mip.set_collision(true); 
+	//settings: 
+	mip.use_subtour_cuts(true);
+	mip.set_tightening_cons(true);
+	auto mip_sol = mip.solve();
+    Tours t = get<0>( mip_sol );
+    double objective = get<1>( mip_sol );
+    EXPECT_DOUBLE_EQ(objective, 221);
+    EXPECT_TRUE (i.verify(t));
+}
+
+#else
+
+#endif
