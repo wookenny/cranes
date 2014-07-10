@@ -1,6 +1,8 @@
 #include "independent_TSP_MIP.h"
 #include "DisjointSet.h"
 #include "Common.h"
+#include "MinCut.h"
+
 #include <set>
 #include <thread>
 #include <algorithm>
@@ -361,148 +363,87 @@ void independent_TSP_MIP::parse_solution_(Tours &tours){
 //Cut callback 
 //checks for fractional subtours, which means: ?????
 ILOUSERCUTCALLBACK1(SubtourCutsCallback, independent_TSP_MIP*, mip )
-{       
+{   
+
+	// mip->x(j,i,i-n)    
+ 	// auto arc = [&] (int i, int j, int k){ return xSol[mip->v_[mip->name_x_(i,j,k)]];};
+	//arcs: 
+
+   // Skip the separation if not at the end of the cut loop
    // Skip the separation if not at the end of the cut loop
    if( !isAfterCutLoop() )
       return;
-	            
- 	uint n = mip->inst_.num_jobs();
- 	uint K = mip->inst_.num_vehicles();
     
-    //find elements that are reachable from a depot
-    //ask vor every valie of an edge
-    DisjointSet sets( n+K );
-    //all depots are interconnected! connect d_i with d_i+1
-    for(uint j = n+1; j<= n+K-1; ++j)
-    	sets.unionSets(j-1,j+1-1);
-   
-    
-	//cplex style to get the model
+ 
+	 
+	uint n = mip->inst_.num_jobs();
+ 	uint K = mip->inst_.num_vehicles(); 
+
+	//parse LP solution   
 	IloEnv env = getEnv();
 	IloInt numNodes =  mip->vars_.getSize();
 	IloNumArray xSol(env, numNodes);
 	getValues(xSol,  mip->vars_);
 
 	auto arc = [&] (int i, int j, int k){ return xSol[mip->v_[mip->name_x_(i,j,k)]];};
-	//auto arc_name = [&] (int i, int j, int k){ return mip->name_x_(i,j,k);};
-		
-	for(uint i=1; i<= n; ++i){
-		//reaching all real jobs
-		
-		for(uint j = 1; j<= n; ++j){
-			for(uint v = 1; v<=K; ++v){
-				if(i==j) continue;
-				if( arc(i,j,v) > 0.0001)
-					sets.unionSets(i-1,j-1);
-	   			}
-	   	}
-		
-		//reaching all deopts 
-		for(uint j = n+1; j<= n+K; ++j){
-			if( arc(i,j,j-n) > 0.0001)
-				sets.unionSets(i-1,j-1);
-   		}
-	}
-	
-	//starting at depot:
-	for(uint i=n+1; i<= n+K; ++i){
-		//reaching real jobs
-		for(uint j = 1; j<= n; ++j){
-			if( arc(i,j,i-n)> 0.0001)
-				sets.unionSets(i-1,j-1);	
-		}			
-	}
-
-  
-   //cout<<"\n\nfound: "<<sets.size()<<" components "<<endl;
-   if(sets.size()!=1){
-   			//print all values, 
-			std::set<uint> component1;
-			component1.insert(1);
-			uint cmp = sets.findSet(0);			
-			for(uint j = 1; j<= n+K; ++j){
-				uint current_Set = sets.findSet(j-1);
-				if( current_Set == cmp )
-					component1.insert(j);
+	//calculate min cut
+	std::vector<std::tuple<int,int,double>> edges;
+	//capacity of 2 between depots
+	for(uint i=n+1; i<=n+K; ++i)
+		for(uint j=i+1; j<=n+K; ++j){
+			edges.push_back(make_tuple(i-1,j-1,2));
+		}
+	//ask once for every variable!	
+	//add sum of arce in both dorections
+	for(uint i=1; i<=n; ++i){
+		for(uint j=i+1; j<=n+K;++j){
+			double c = 0;
+			if(j>n){//depot
+				c+= arc(i,j,j-n) + arc(j,i,j-n);
+			}else{//two normal jobs
+				for(uint v=1;v<=K;v++)
+					c += arc(i,j,v) + arc(j,i,v);
 			}
-			
-			//build constraint	
-		 	IloExpr cutLhs1(env);
-	 		IloExpr cutLhs2(env);
-
-		 	//find other "side" of the cut
-		 	set<uint> component2;
-		 	for(uint i=1; i<=n+K; ++i)
-		 		if( component1.find(i)==component1.end())
-		 			component2.insert(i);	
-		 				 
-		 	for(auto i: component1)
-				for(auto j: component2){
-					if(i>n and j>n) continue; //no interdepot edges
-					if(i>n){//only i is a depot
-						cutLhs1 += 1*mip->x(i,j,i-n);//outgoing edge
-						cutLhs2 += 1*mip->x(j,i,i-n);//incoming edge
-					}else if(j>n){//only j is a depot
-						cutLhs1 += 1*mip->x(i,j,j-n);//outgoing edge
-						cutLhs2 += 1*mip->x(j,i,j-n);//incoming edge
-					}else{
-					//i and j are no depots
-						for(uint v=1; v<=K; ++v){
-							cutLhs1 += 1*mip->x(i,j,v);//outgoing edge
-							cutLhs2 += 1*mip->x(j,i,v);//incoming edge
-						}
-					}							
-				}
-		 	
-		 	//add both cuts to the model
-   			IloNum cutRhs = 1;			 
-   			
-   						
-   		    add(cutLhs1 >= cutRhs).end();
-   		    add(cutLhs2 >= cutRhs).end();
-   		  //  cout<<"added 2 cuts"<<endl;
-   		    //cout<< cutLhs1 <<" >= "<<cutRhs <<endl;
-   			cutLhs1.end(); cutLhs2.end();
-
-		//Debug Info: Solution printed!
-		/*
-			//print a bad set
-			//print variables for the solution!
-
-			for(uint i=1; i<= n; ++i){
-			//reaching all real jobs
-		
-			for(uint j = 1; j<= n; ++j){
-				for(uint v = 1; v<=K; ++v){
-					if(i==j) continue;
-					if( arc(i,j,v) > 0.0001)
-						cout<<arc_name(i,j,v) <<" "<<arc(i,j,v) <<endl;
-		   			}
-		   	}
-		
-			//reaching all deopts 
-			for(uint j = n+1; j<= n+K; ++j){
-				if( arc(i,j,j-n) > 0.0001)
-					cout<<arc_name(i,j,j-n) <<" "<<arc(i,j,j-n) <<endl;
-	   		}
+			if(c> 0.0001)	
+				edges.push_back(make_tuple(i-1,j-1,c));
 		}
-	
-		//starting at depot:
-		for(uint i=n+1; i<= n+K; ++i){
-			//reaching real jobs
-			for(uint j = 1; j<= n; ++j){
-				if( arc(i,j,i-n)> 0.0001)
-					cout<<arc_name(i,j,i-n) <<" "<<arc(i,j,i-n) <<endl;	
-			}			
-		}
-	*/	
-	//assert(false);	
 	}
-	
-   
+	std::vector<bool> cut = find_min_cut(edges,n+K); 
+
+    assert(cut.size()==n+K or cut.size()==0);
+
+    if(cut.size()==0){
+    	xSol.end();
+    	return;
+    }
+	IloExpr new_cut(env);
+
+	for(uint i=1; i<=cut.size(); ++i)
+		for(uint j=i+1; j<=cut.size(); ++j)
+			if(cut[i-1] != cut[j-1]){
+				//std::cout<< "add undir. arc "<<i<<"-"<<j <<std::endl;
+				assert( i<=n or j<=n);//not two depots!
+				if(i>n){//i is a depot vertex
+					new_cut += 1*mip->x(i,j,i-n);
+					new_cut += 1*mip->x(j,i,i-n);
+				}else if(j>n){// j is a depot
+					new_cut += 1*mip->x(i,j,j-n);
+					new_cut += 1*mip->x(j,i,j-n);
+				}else{//two non-depot vertices
+					for(uint v=1;v<=K;++v){
+						new_cut += 1*mip->x(i,j,v);
+						new_cut += 1*mip->x(j,i,v);
+					}
+				}
+
+			}
+	add(new_cut >= 2).end();
+	new_cut.end();
    //free all cplex stuff
    xSol.end();
    return;
+
+
 }
 
 

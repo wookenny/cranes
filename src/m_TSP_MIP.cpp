@@ -266,22 +266,9 @@ ILOUSERCUTCALLBACK1(SubtourCutsMTSPCallback, m_TSP_MIP*, mip )
 		for(uint j=i+1; j<=n+K;++j)
 			if(arc(i,j)+arc(j,i)> 0.0001)	
 				edges.push_back(make_tuple(i-1,j-1,arc(i,j)+arc(j,i)));
-    /*int u,v;
-    double capacity;
-    for(auto edge: edges){
-    	 std::tie(u,v,capacity) = edge;
-    	 std::cout<<u<<"->"<<v <<" cap: "<<capacity<<std::endl;
-    }*/
 	std::vector<bool> cut = find_min_cut(edges,n+K); 
 
-	/*
-    for(uint i=1; i<=cut.size(); ++i)
-    	if(cut[i-1])
-    		std::cout<<i<< " ";
-    std::cout<<std::endl;	
-	*/
-	//add a single cut for these variables!
-	//TODO: impl. this
+
     assert(cut.size()==n+K or cut.size()==0);
 
     if(cut.size()==0){
