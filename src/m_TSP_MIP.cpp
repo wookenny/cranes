@@ -305,6 +305,9 @@ std::pair<Tours,double> m_TSP_MIP::solve(){
 	
 		if(silent_)
 			cplex_.setParam(IloCplex::MIPDisplay, 0);
+		
+		if(timelimit_ > 0)
+			cplex_.setParam(IloCplex::TiLim, 60*timelimit_);
 
 		build_variables_();
 		
