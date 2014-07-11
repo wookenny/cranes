@@ -31,15 +31,16 @@ std::vector<bool> find_min_cut(const std::vector<std::tuple<int,int,double>> &ed
     typedef boost::property_traits<weight_map_type>::value_type weight_type;
   
     // define the 16 edges of the graph. {3, 4} means an undirected edge between vertices 3 and 4.
-    edge_t *E= new edge_t[edges.size()];
+    //edge_t *E= new edge_t[edges.size()];
+    std::vector<edge_t> E;
+ 
 
     // for each of the 16 edges, define the associated edge weight. ws[i] is the weight for the edge
     // that is described by edges[i].
-    weight_type *ws = new weight_type[edges.size()];
+    std::vector<weight_type> ws;
 
     unsigned int u,v;
     double capacity;
-    int i = 0;
     for(auto e: edges){
        std::tie(u,v,capacity) = e;
        //std::cout<<u<<"->"<<v <<std::endl;
@@ -51,9 +52,8 @@ std::vector<bool> find_min_cut(const std::vector<std::tuple<int,int,double>> &ed
        edge_t edge;
        edge.first = u;
        edge.second = v;
-       E[i] = edge;
-       ws[i] = capacity; 
-       ++i;
+       E.push_back(edge);
+       ws.push_back(capacity); 
     }   
 
     //find the cut
@@ -61,7 +61,7 @@ std::vector<bool> find_min_cut(const std::vector<std::tuple<int,int,double>> &ed
     // construct the graph object. n is the number of vertices, 
     //which are numbered from 0 through n-1, and  is the number of edges.
   
-    undirected_graph g(E, E+edges.size(), ws, n, edges.size());
+    undirected_graph g(E.cbegin(), E.cend(), ws.cbegin(), n, edges.size());
 
      // define a property map, `parities`, that will store a boolean value for each vertex.
     // Vertices that have the same parity after `stoer_wagner_min_cut` runs are on the same side of the min-cut.
@@ -78,9 +78,7 @@ std::vector<bool> find_min_cut(const std::vector<std::tuple<int,int,double>> &ed
             cutSet.push_back( get(parities, i) );
         }
     }
-    
-    delete[] ws;
-    delete[] E;
+
     return cutSet;
 }
 
