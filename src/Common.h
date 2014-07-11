@@ -40,11 +40,13 @@ std::string duration_to_string(const Duration& dtn) {
 }
 
 // used to build intervals for the batch mode
-// exampels:
+// examples:
 // * "a-d"   -> {a,b,c,d}
 // * "[a,d]" -> {a,b,c,d}
 // * "a"     -> {a}
 // * "a,b,d" -> {a,b,d}
+// HINT: this workls only for numbers!
+// non numbers: "s,t,q" -> {s,t,q}
 std::vector<std::string> create_interval(const std::string&);
 
 // used to build find files recursively

@@ -68,6 +68,8 @@ vector<string> create_interval(const string& s) {
     if (boost::regex_match(s.c_str(), cm, interval_1)) {
         lower = stoi(cm[1]);
         upper = stoi(cm[2]);
+        if(lower > upper)
+            return result;
     }
 
     // interval [a,d] -> {a,b,c,d}
@@ -75,6 +77,8 @@ vector<string> create_interval(const string& s) {
     if (boost::regex_match(s.c_str(), cm, interval_2)) {
         lower = stoi(cm[1]);
         upper = stoi(cm[2]);
+        if(lower > upper)
+            return result;
     }
 
     // interval a -> {a}
@@ -84,19 +88,19 @@ vector<string> create_interval(const string& s) {
         return result;
     }
 
-    // interval a,b,d -> {a,b,d}
-    boost::regex interval_4("((-?[0-9]+,)*(-?[0-9]+))");
-    if (boost::regex_match(s.c_str(), cm, interval_4)) {
-        for (auto s : split(cm[1], ','))
-            result.push_back(s);
-        return result;
-    }
-
     while (lower <= upper) {
         result.push_back(to_string(lower));
         ++lower;
     }
-
+   
+    if(result.size()==0){
+        // interval a,b,d -> {a,b,d}
+        boost::regex interval_4("(([^,]+,)*([^,]+))");
+        if (boost::regex_match(s.c_str(), cm, interval_4)) 
+            for (auto s : split(cm[1], ','))
+                result.push_back(s);   
+    }
+    
     return result;
 }
 

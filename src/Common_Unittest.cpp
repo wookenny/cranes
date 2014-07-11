@@ -60,6 +60,9 @@ TEST(Common_Methods /*Testcase Name*/,Interval_Function /*Test name*/) {
     // * "a,b,d" -> {a,b,d}
     INTER int9 = {"2", "-5", "7", "0"};
     EXPECT_EQ(int9, create_interval("2,-5,7,0"));
+
+    INTER ints10 = {"a", "c", "-T", "-sg 3"};
+    EXPECT_EQ(ints10, create_interval("a,c,-T,-sg 3"));
 }
 
 TEST(Common_Methods /*Testcase Name*/,Permutation_Functions /*Test name*/) {
