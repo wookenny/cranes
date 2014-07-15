@@ -244,6 +244,7 @@ void run_mip(vector<string> argv){
                                        " sum of arcs")
             ("miptype,t",po::value<uint>(&mip_type)->default_value(1), 
               "type of MIP: 0 = two-indexed VRP, 1 = three-indexed VRP")
+            ("no_collsion_avoidance,c", "disables the collision avoidance constraints")
             ("lp_relaxation,l", "solve the LP relaxation of the IP formulation")
             ("makespan,m", po::value<uint>(&fixed_makespan)->default_value(0), 
               "set a fixed makespan to find a solution not exceeding it")
@@ -303,9 +304,8 @@ void run_mip(vector<string> argv){
             mip_ptr = unique_ptr<generalizedVRP_MIP>(new m_TSP_MIP(i));
         }
         mip_ptr->set_LP( vm.count("lp_relaxation")>0 );    
-                
+        mip_ptr->set_collision(vm.count("no_collsion_avoidance")==0);        
         mip_ptr->set_debug( vm.count("debug")>0 );
-        mip_ptr->set_collision( not vm.count("collisions")>0 );
         bool valid_solution = vm.count("lp_relaxation")==0;
         valid_solution = valid_solution and (vm.count("collisions")==0);
         mip_ptr->use_subtour_cuts(vm.count("subtourcuts") > 0 );
@@ -315,7 +315,7 @@ void run_mip(vector<string> argv){
 
         mip_ptr->set_timelimit(timelimit);
         if(timelimit>0)
-            cout<< "timelimit: "<< timelimit << " minutes"<<endl;
+            cout<< "timelimit: "<< minutes_to_string(timelimit)<<endl;
         if(fixed_makespan != 0)
             mip_ptr->set_fixed_makespan(fixed_makespan);        
             
@@ -403,9 +403,9 @@ void insertion_heuristic(std::vector<std::string> argv){
             ("filename,f", po::value<string>(&filename), 
              "2DVS file for heuristic")
             ("debug,d","set debug mode for instances")
-            ("k", po::value<int>(&k), 
+            ("k,k", po::value<int>(&k), 
              "set number of vehicles/cranes")
-            ("n", po::value<int>(&n), 
+            ("n,n", po::value<int>(&n), 
              "set number of jobs to generate in the instance")
             ("localsearch,l", 
              "enable or disable the local search")
@@ -689,8 +689,8 @@ void batch(vector<string> argv){
             replace_lists.push_back(interval);
 	    else{ //try to find wildcard filelist
 	        auto files =  find_files(argv[i]);
-	        replace_lists.push_back(files);  
-	    }
+            replace_lists.push_back(files);  
+        }
 	}
     
     /*
@@ -806,7 +806,7 @@ void binsearch(vector<string> argv){
         cout<< std::fixed << std::setprecision(2); //only two digits for the gap
         cout<< " "<<LB <<" - "<< UB<<"\t\t"<<(UB/LB-1)*100<<"%"<<endl;
         if(timelimit > 0)
-           cout<<" timelimit: "<<timelimit<<((timelimit==1)?" minute":"minutes")<<endl;
+           cout<<" timelimit: "<<minutes_to_string(timelimit)<<endl;
 
         if(UB < LB){
             cerr<<"Lower bound("<<LB<<") is bigger than upper bound("<<UB<<")";

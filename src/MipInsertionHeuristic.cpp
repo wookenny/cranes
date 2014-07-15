@@ -7,7 +7,6 @@ using std::cout;
 using std::endl;
 using std::boolalpha;
 
-
 Tours MipInsertionHeuristic::operator()(const Instance& inst, 
 										const std::vector<uint>& p) const {
 

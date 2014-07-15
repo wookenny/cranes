@@ -22,6 +22,12 @@ using std::istringstream;
 using std::istream_iterator;
 
 
+std::string minutes_to_string(double time){
+    std::chrono::milliseconds ms{static_cast<int>(60*1000*time)};
+    return duration_to_string(ms);
+}
+
+
 vector<uint> random_assignment(uint size, uint lb, uint ub, int seed){
     std::mt19937 rng; 
     rng.seed(seed);

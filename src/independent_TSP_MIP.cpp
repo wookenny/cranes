@@ -229,14 +229,28 @@ void independent_TSP_MIP::build_constraints_(){
 	for(uint i = 1; i<=n; ++i)
 		for(uint j = 1; j<=n; ++j){
 			if(i==j) continue;
+			IloExpr expr(env_);
 			const Job& job_i = inst_[i-1];
 			const Job& job_j = inst_[j-1];
+			///*
+			auto tmpBigM = bigM+ job_i.length() + dist_inf(job_i.beta(),job_j.alpha());
+			expr += 1*t(j);
+			expr -= 1*t(i);
+			for(uint v =1; v<=K;++v)
+				expr -= tmpBigM*x(i,j,v);
+			IloRange constraint(env_, 
+				job_i.length() + dist_inf(job_i.beta(),job_j.alpha()) -tmpBigM, 
+				expr, IloInfinity, 
+				("increasing_starting_time_"+
+					to_string(i)+"_"+to_string(j)).c_str() );
+			cons_.add(constraint);	
+			//add them multiple times
 			for(uint v =1; v<=K;++v){
-				auto tmpBigM = bigM+ job_i.length() + dist_inf(job_i.beta(),job_j.alpha());  
 				cons_.add( t(j) - 1*t(i)- tmpBigM*x(i,j,v)  
 							>=  job_i.length() + dist_inf(job_i.beta(),job_j.alpha())
 								 -tmpBigM);
 			}
+			
 		}
 	
 	//starting time variables for "first" jobs after depots
