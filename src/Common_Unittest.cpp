@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <vector>
 #include <string>
+#include <set>
 #include "./Common.h"
 
 using std::vector;
@@ -79,4 +80,44 @@ TEST(Common_Methods /*Testcase Name*/,Permutation_Functions /*Test name*/) {
         auto vec = random_permutation(20, i);
             EXPECT_TRUE(is_permutation(vec));
     }
+}    
+
+
+TEST(Common_Methods /*Testcase Name*/,All_Combinations_Iterator /*Test name*/) {
+    //test with a string
+    {   
+        std::string s = "12345";
+        std::size_t comb_size = 3;
+        std::set<string> all_combinations;
+        do{
+            all_combinations.insert( s.substr(0,comb_size) );      
+        }
+        while( next_combination(begin(s),begin(s) + comb_size,end(s)) );
+        EXPECT_EQ(10/*5 choose 3*/, all_combinations.size());
+    }
+
+    {   
+        std::string s = "234";
+        std::size_t comb_size = 3;
+        std::set<string> all_combinations;
+        do{
+            all_combinations.insert( s.substr(0,comb_size) );      
+        }
+        while( next_combination(begin(s),begin(s) + comb_size,end(s)) );
+        EXPECT_EQ(1/*3 choose 3*/, all_combinations.size());
+    }
+
+    //test with a vector
+    {
+        std::vector<double> v = {1,2,3,4};
+        std::size_t comb_size = 3;
+        std::set<std::vector<double>> all_combinations;
+        do{
+            std::vector<double> selection(begin(v), begin(v) +comb_size);
+            all_combinations.insert( selection );      
+        }
+        while( next_combination( begin(v),begin(v) + comb_size, end(v)) );
+        EXPECT_EQ(4/*4 choose 3*/, all_combinations.size());
+    }
+
 }    

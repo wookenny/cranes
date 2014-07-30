@@ -55,7 +55,7 @@ class SingleCraneTSP_Solver{
         void build_tour(Tours&, const std::vector<int>&,const Instance&, 
                                 int vehicle) const;
 	    bool local_search_ = false;
-	    int  verbosity_    = false;    	
+	    int  verbosity_    = 0;    	
 	  	
         mutable uint N;
         mutable uint K;    

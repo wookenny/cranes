@@ -23,7 +23,8 @@ class Instance{
 		std::vector< std::array<int, 2> > depotPositions_;
 		std::vector<Job> jobs_;
 		
-		bool debug_ = false;
+		mutable bool debug_ = false;
+		
 	public:
 		static long num_checks;
 		//constrs
@@ -45,9 +46,10 @@ class Instance{
 		void add_job(const Job& j){jobs_.push_back(j);}
 		void add_depotposition(const std::array<int, 2> &d){
 			depotPositions_.push_back(d);}
+		void clear_depots(){depotPositions_.clear();}
 		void set_depotposition(const std::array<int, 2> &d, uint i){
 			depotPositions_[i] = d;}	
-		void debug(bool d){debug_=d;}	
+		void debug(bool d) const {debug_=d;}	
 			
 
 		//iterator over jobs to use a range based for loop

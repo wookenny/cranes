@@ -52,7 +52,7 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	//solve it
 	int ret = system( (solver_call+" "+tsp_file+" &> /dev/null").c_str() );
 	if(ret!=0){
-	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
+	    cerr<<"WARNING: Could not solve this file "<<tsp_file<<"!"<< endl;
 	    return make_tuple(0,Tours{1});
 	}    
 		  
@@ -66,11 +66,11 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
     vector<vector<int>> vec = parse_solution(tsp_tour);	
     
     //delete everything
-	if( remove( tsp_file.c_str() ) != 0 )
+	if( remove( tsp_file.c_str() ) != 0 and verbosity_>0)
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
-	if( remove( tsp_sol_file.c_str() ) != 0 )
+	if( remove( tsp_sol_file.c_str() ) != 0 and verbosity_>0)
 	    cerr<<"WARNING: Could not delete"<<tsp_sol_file<<"!"<< endl;
-	if( system( "rm TMP_TSP_FILE.* OTMP_TSP_FILE.*" )!=0)
+	if( system( "rm TMP_TSP_FILE.* OTMP_TSP_FILE.*  &> /dev/null" )!=0 and verbosity_>0)
 	    cerr<<"WARNING: Could not delete TMP files!"<< endl;  
     
 	//DEBUG: INFO

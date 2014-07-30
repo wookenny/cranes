@@ -321,6 +321,9 @@ bool Instance::verify(Tours& t) const{
 						if(debug_){
 							cout<< "Job "<<t[v1][i]<<" \"crosses\" with job "
 							             <<t[v2][j]<<endl;
+							cout<< "Job "<<std::get<0>(t[v1][i])->num() 
+								 << " should be left of Job "
+								 << std::get<0>(t[v2][j])->num() <<std::endl;
 						}
 						return false;
 					}	
@@ -357,8 +360,9 @@ Calculates the makespan for a given solution.
 */
 double Instance::makespan(Tours& t, bool returning_to_depot) const{
 	//tours should be valid!
-	assert(verify(t));
-	//t.sort_jobs();
+	//Might be a problem for instances that are not fully complete
+	//assert(verify(t)); 
+	t.sort_jobs();
 	
 	//find latest return of a job
 	double makespan = 0;
