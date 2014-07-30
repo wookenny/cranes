@@ -45,9 +45,7 @@ std::vector<bool> find_min_cut(const std::vector<std::tuple<int,int,double>> &ed
        std::tie(u,v,capacity) = e;
        //std::cout<<u<<"->"<<v <<std::endl;
        assert(u<n);
-       assert(u>=0);
        assert(v<n);
-       assert(v>=0);
        assert(capacity >=0);
        edge_t edge;
        edge.first = u;

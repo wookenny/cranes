@@ -44,6 +44,16 @@ class Job{
             _alpha[1] += y_shift; _beta[1] += y_shift;
         }
 
+        bool contained_in_xrange(int x1, int x2)  const{
+        	return x1 <= _alpha[0] and _alpha[0] <= x2 and
+        		   x1 <=  _beta[0] and  _beta[0] <= x2;
+        }
+
+        bool contained_in_yrange(int y1, int y2) const{
+        	return y1 <= _alpha[1] and _alpha[1] <= y2 and
+        		   y1 <=  _beta[1] and  _beta[1] <= y2;
+        }
+
 		bool operator==(const Job& j) const;
         bool operator!=(const Job& j) const{return !operator==(j);}
         

@@ -28,6 +28,7 @@ void laser(std::vector<std::string> argv);
 void single_tsp(std::vector<std::string> argv);
 void test(std::vector<std::string> argv);
 void batch(std::vector<std::string> argv);
+void separate(std::vector<std::string> argv);
 
 template <class T,class U>
 void printMapIndex( std::map<T,U> map){
@@ -52,6 +53,7 @@ int process_args(std::vector<std::string> argv){
 	functionDict["laser_format"]  = &laser;
 	functionDict["single_tsp"]    = &single_tsp;
 	functionDict["batch"]         = &batch;
+	functionDict["separation"]    = &separate;
 
 	//at least one parameter must be given
 	if(argv.size() < 1){
