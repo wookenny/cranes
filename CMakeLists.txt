@@ -23,8 +23,12 @@ set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
 #deleted: -mfpmath=sse+387
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11 ")
+
+#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -D _GLIBCXX_DEBUG -D #_GLIBCXX_DEBUG_PEDANTIC")
 
 set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic ")
 
