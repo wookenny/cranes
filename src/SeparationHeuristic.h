@@ -6,7 +6,7 @@
 #include <thread>
 #include <tuple>
 #include <chrono>
-
+#include <unordered_map>
 
 class Tours;
 
@@ -33,12 +33,25 @@ class SeparationHeuristic{
         void only_initial(bool o){stop_after_initial_ = o;}
         void use_insertion(int i){insertion_heur_ = i;}
 
+        void use_lkh(bool l){use_LKH_ = l;}
+
 	private:
 
 	    int verbosity_  =  0;
 	    mutable uint safety_distance_ = 0;
 	    bool stop_after_initial_ = false;
 	    bool insertion_heur_ = false;
+	    bool use_LKH_ = false;
 
+
+	    bool schedule_initial_subset(Tours& , const Instance&, 
+                             const std::vector<Job>& , uint,
+                             int, int,
+                             std::unordered_map<int, std::array<int, 2>>&, 
+                             std::unordered_map<int, double>&, double ) const;
+		bool schedule_subset(Tours&, const Instance&, 
+                     const std::vector<Job>&, uint, uint,
+                     std::unordered_map<int, std::array<int, 2>>& , 
+                     std::unordered_map<int, double>&, double ) const;
 
 };

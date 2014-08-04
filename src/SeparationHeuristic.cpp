@@ -5,19 +5,9 @@
 
 #include <list>
 #include <set>
-#include <unordered_map>
+
 
 using namespace std;
-
-bool schedule_initial_subset(Tours& , const Instance&, 
-                             const std::vector<Job>& , uint,
-                             int, int,
-                             std::unordered_map<int, std::array<int, 2>>&, 
-                             std::unordered_map<int, double>&, double );
-bool schedule_subset(Tours&, const Instance&, 
-                     const std::vector<Job>&, uint, uint,
-                     std::unordered_map<int, std::array<int, 2>>& , 
-                     std::unordered_map<int, double>&, double );
 
 
 Tours SeparationHeuristic::operator()(const Instance& inst) const{
@@ -174,11 +164,11 @@ Tours SeparationHeuristic::operator()(const Instance& inst,
 	return tours;
 }
 
-bool schedule_initial_subset(Tours& tours, const Instance& inst, 
+bool SeparationHeuristic::schedule_initial_subset(Tours& tours, const Instance& inst, 
                      const std::vector<Job>& jobs, uint v,
                      int left_border, int right_border,
                      std::unordered_map<int, std::array<int, 2>>& veh_pos, 
-                     std::unordered_map<int, double>& veh_time, double bound)
+                     std::unordered_map<int, double>& veh_time, double bound)  const
 { 
     assert(veh_time[v]==0);
     if(jobs.size()==0){
@@ -201,6 +191,7 @@ bool schedule_initial_subset(Tours& tours, const Instance& inst,
     //solve via TSP: 
     SingleCraneTSP_Solver solver;
     solver.set_verbosity(-1);
+    solver.use_lkh(use_LKH_);
     auto sol = solver(subinst);
     Tours t = get<1>( sol );
 
@@ -241,10 +232,10 @@ bool schedule_initial_subset(Tours& tours, const Instance& inst,
     return true;
 }  
 
-bool schedule_subset(Tours& tours, const Instance& inst, 
+bool SeparationHeuristic::schedule_subset(Tours& tours, const Instance& inst, 
                      const std::vector<Job>& jobs, uint v_begin, uint v_end,
                      std::unordered_map<int, std::array<int, 2>>& veh_pos, 
-                     std::unordered_map<int, double>& veh_time, double bound)
+                     std::unordered_map<int, double>& veh_time, double bound)  const
 { 
     if(jobs.size()==0)
         return true;
@@ -278,6 +269,7 @@ bool schedule_subset(Tours& tours, const Instance& inst,
 
         //solve the subprob
         SingleCraneTSP_Solver solver;
+        solver.use_lkh(use_LKH_);
         solver.set_verbosity(-1);
         auto sol = solver(subinst);
         Tours t = get<1>( sol );
@@ -355,3 +347,48 @@ bool schedule_subset(Tours& tours, const Instance& inst,
     }
     return true;
 }
+
+
+
+//------ Here are some GTests for this class---//
+#ifdef GTESTS_ENABLED
+#include <gtest/gtest.h>
+TEST(Separation_Tests, Valid_solution_1) { 
+    Instance i; 
+    i.set_num_vehicles(2);
+    uint seed = 5; uint n = 8;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    SeparationHeuristic heur;
+    heur.set_verbosity(0);
+    Tours t = heur(i);
+    EXPECT_TRUE(i.verify(t));
+}
+
+TEST(Separation_Tests, Valid_solution_2) { 
+    Instance i; 
+    i.set_num_vehicles(4);
+    uint seed = 8; uint n = 20;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    SeparationHeuristic heur;
+    heur.set_verbosity(0);
+    heur.only_initial(true);
+    Tours t = heur(i);
+    EXPECT_TRUE(i.verify(t));
+}
+TEST(Separation_Tests, Valid_solution_3) { 
+    Instance i; 
+    i.set_num_vehicles(7);
+    uint seed = 8; uint n = 100;
+    i.generate_random_depots(0,100,0,20,seed);
+    i.generate_random_jobs(n,0,100,0,20,seed);
+    SeparationHeuristic heur;
+    heur.set_verbosity(0);
+    heur.only_initial(true);
+    Tours t = heur(i);
+    EXPECT_TRUE(i.verify(t));
+}
+#else
+
+#endif

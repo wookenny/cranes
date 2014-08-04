@@ -1,6 +1,6 @@
 #include "SingleCraneTSP_Solver.h"
 #include "InsertionHeuristic.h"
-#include <string>
+
 #include <sstream>
 #include <iostream>
 #include <cstdio>
@@ -8,16 +8,15 @@
 
 #include "Common.h"
 
+#include <boost/filesystem.hpp>
 using namespace std;
 
 
 //TODO: Count edges for bound!
 // use insertion heuristic for better tour!
-//DEBUG!
 
 const string solver_call = "concorde"; 
-const string tsp_file = "TMP_TSP_FILE.TSP";
-const string tsp_sol_file = "TMP_TSP_FILE.sol";  
+
 
 SingleCraneTSP_Solver::SingleCraneTSP_Solver(){
     //initialize helpfull lambda function to handle positions correctly
@@ -31,6 +30,11 @@ SingleCraneTSP_Solver::SingleCraneTSP_Solver(){
 
 tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst, 
                                                         bool no_solution) const{
+    //find new filenames    
+    std::string random_name = boost::filesystem::unique_path("TSP_temp_file_%%%%-%%%%-%%%%-%%%%").native();
+    tsp_file     = random_name+".tsp";
+    tsp_sol_file = random_name+".sol";
+
     N = inst.num_jobs();
     K = inst.num_vehicles();
 	int M = inst.get_upper_bound();
@@ -48,9 +52,15 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	    
 	//write tsp file    
 	create_TSP_file(dist);
-	
 	//solve it
-	int ret = system( (solver_call+" "+tsp_file+" &> /dev/null").c_str() );
+	int ret = 0;
+    if(not use_LKH_)
+        ret = system( (solver_call+" "+tsp_file+" &> /dev/null").c_str() );
+    else
+        ret = system( ("../LKH-2.0.6/test/LKH "+tsp_file+" "+tsp_sol_file).c_str());
+        //TODO: better choice but results in segfault in LKH code!
+        //solve_tsp(tsp_file,tsp_sol_file);
+
 	if(ret!=0){
 	    cerr<<"WARNING: Could not solve this file "<<tsp_file<<"!"<< endl;
 	    return make_tuple(0,Tours{1});
@@ -193,16 +203,30 @@ void SingleCraneTSP_Solver::set_distances(vector<vector<int>> &dist, const Insta
 std::vector<int> SingleCraneTSP_Solver::read_solution() const{
     fstream f;
     f.open(  tsp_sol_file.c_str(), ios::in );
-    //parse it
-    string line, lines;
-    getline(f, line);  // line 1
-    while(getline(f, line))  //line 2...
-        lines+=line;
-    f.close();    
-    vector<string> vec =  split(lines,' ');
     vector<int> numbers;
-    for(auto i: vec)
-        numbers.push_back(stoi(i));    
+
+    //parse it
+    if(not use_LKH_){
+        string line, lines;
+        getline(f, line);  // line 1
+        while(getline(f, line))  //line 2...
+            lines+=line;  
+        vector<string> vec =  split(lines,' ');
+        for(auto i: vec)
+            numbers.push_back(stoi(i));    
+    }else{
+        string line;
+        while(line!="TOUR_SECTION")
+            getline(f, line);
+        
+        while(getline(f, line)){  //line after tour section.
+            if(line == "-1" or line =="EOF") 
+                break;
+            numbers.push_back(stoi(line)-1);
+        } 
+    }
+
+    f.close();
     return numbers;
 }
 	

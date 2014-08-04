@@ -691,10 +691,11 @@ void batch(vector<string> argv){
     //build intervals for numbers or lists of files, using wildcard '*'			
  	for(uint i=1; i< argv.size(); ++i){
         auto interval = create_interval(argv[i]);
-        if(!interval.empty())
+        if(!interval.empty() and argv[i].find("*")==std::string::npos)
             replace_lists.push_back(interval);
 	    else{ //try to find wildcard filelist
 	        auto files =  find_files(argv[i]);
+            std::sort(begin(files),end(files));
             replace_lists.push_back(files);  
         }
 	}
@@ -1012,6 +1013,7 @@ void separate(std::vector<std::string> argv){
             ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
               "set seed for random samples")
             ("initial,i", "stop after initial solution")
+            ("lkh,l","use LKH instead of concorde to solve the TSPs")
             ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
 
         po::variables_map vm;        
@@ -1030,9 +1032,11 @@ void separate(std::vector<std::string> argv){
         }
         po::notify(vm); 
         
-        //after parsing, execute the selected method    
+        //after parsing, execute the selected method
+        auto start = std::chrono::system_clock::now();    
         SeparationHeuristic heur;
         heur.only_initial( vm.count("initial")>0 );
+        heur.use_lkh( vm.count("lkh")>0 );
         Instance i; 
         if(vm.count("filename")){
             i = Instance{filename};
@@ -1055,11 +1059,16 @@ void separate(std::vector<std::string> argv){
 
         heur.set_verbosity(verbosity);
         Tours t = heur(i);
-    
+        auto stop = std::chrono::system_clock::now();
+        auto runningtime = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
         cout<<"makespan of a separation heur. solution: ";
         cout<<i.makespan(t)<<endl;
+        
+        cout<<"Running time: "
+            <<duration_to_string(runningtime) <<endl;
         if(not i.verify(t))
             cout<<"WARNING: Solution not valid!"<<endl;
+
 
     }catch(boost::program_options::required_option& e){
         cerr << " " << e.what() << "\n";

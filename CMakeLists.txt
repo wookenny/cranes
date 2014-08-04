@@ -20,20 +20,19 @@ INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
 
 
 set(twoDVS_sourcesDir "${CMAKE_CURRENT_SOURCE_DIR}/src")  
-set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE")  
+set(MATCHING_INCDIR "${CMAKE_CURRENT_SOURCE_DIR}/blossom5-v2.03/INCLUDE") 
 #specific compiler settings
 
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -Wpointer-arith -Wformat-nonliteral -fPIC -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -fstack-protector -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11")
 #deleted: -mfpmath=sse+387
 
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11 ")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC -O -Wpointer-arith -Wformat-nonliteral -Winit-self -Wall -Wextra -pedantic -m64 -pipe -fmessage-length=0  -funwind-tables -fasynchronous-unwind-tables -Wno-write-strings -std=c++11 ")
 
-#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -D _GLIBCXX_DEBUG -D #_GLIBCXX_DEBUG_PEDANTIC")
 
-set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic ")
+set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS " -Wl,--discard-all -Wl,--no-undefined -Wl,--build-id=sha1 -Wl,-O3 -rdynamic -fPIC")
 
-INCLUDE_DIRECTORIES(/usr/site-local/include ${CPLEXINCDIR} ${CONCERTINCDIR} ${MATCHING_INCDIR} .)
-LINK_DIRECTORIES(/usr/site-local/lib ${CONCERTLIBDIR} ${CPLEXLIBDIR})
+INCLUDE_DIRECTORIES(/usr/site-local/include ${CPLEXINCDIR} ${CONCERTINCDIR} ${MATCHING_INCDIR}  .)
+LINK_DIRECTORIES(/usr/site-local/lib ${CONCERTLIBDIR} ${CPLEXLIBDIR} )
 
 
 add_definitions(-DILOSTRINGSTL -DIL_STD -D_FORTIFY_SOURCE=2  -DILOUSESTL  -D_REENTRANT -DNO_FREETYPE )
@@ -80,9 +79,8 @@ add_custom_target(
     myBuildVersion
     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build/build_version.sh ${CMAKE_CURRENT_SOURCE_DIR}/src/version.txt ${CMAKE_BUILD_TYPE}
     )
+
 add_dependencies(2DVS myBuildVersion)
-
-
 
 list(REMOVE_ITEM GTests_Sources "${twoDVS_sourcesDir}/find_graph_configuration.cpp" "${twoDVS_sourcesDir}/Main.cpp")
 ADD_EXECUTABLE(GTests ${GTests_Sources} )

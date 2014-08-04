@@ -5,6 +5,8 @@
 #include <fstream>
 #include <functional>
 #include <tuple>
+#include <string>
+
 
 class Tours;
 
@@ -43,6 +45,7 @@ class SingleCraneTSP_Solver{
 		SingleCraneTSP_Solver();
 		void set_local_search(bool ls){local_search_=ls;}
 		void set_verbosity(int v){verbosity_ = v;}
+        void use_lkh(bool l){use_LKH_ = l;}
 		
 	private:       
         void create_TSP_file(const std::vector<std::vector<int>> &) const;
@@ -56,7 +59,8 @@ class SingleCraneTSP_Solver{
                                 int vehicle) const;
 	    bool local_search_ = false;
 	    int  verbosity_    = 0;    	
-	  	
+	  	bool use_LKH_ = false;
+
         mutable uint N;
         mutable uint K;    
         std::function<int (int)> depot_start;
@@ -65,4 +69,7 @@ class SingleCraneTSP_Solver{
         std::function<int (int)> job_start;
         std::function<int (int)> job_middle;
         std::function<int (int)> job_end;    
+
+        mutable std::string tsp_file;
+        mutable std::string tsp_sol_file; 
 };
