@@ -139,6 +139,8 @@ TEST(Job_Tests, Real_Job) {
     EXPECT_EQ(7, j1.alpha()[1]);
     EXPECT_EQ(4, j1.beta()[0]);
     EXPECT_EQ(-3, j1.beta()[1]);
+
+    EXPECT_DOUBLE_EQ(0.1,j1.x_speed());
 }
 
 TEST(Job_Tests, Comparisons) { 
@@ -149,6 +151,7 @@ TEST(Job_Tests, Comparisons) {
     EXPECT_FALSE(j1==j3);
     EXPECT_TRUE (j2!=j3);
     
+
     /*
     getOrdering(const std::tuple<const Job*, double>&,
 							   const std::tuple<const Job*, double>&);

@@ -168,7 +168,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst) const{
 		 }   
 	}
 	
-	if(verbosity_>0){
+	if(verbosity_>=0){
 	    auto now = std::chrono::system_clock::now();        
         //auto total_seconds = duration_cast<seconds>(now - starting_time_);
 	    cout<<"Running time: "<< duration_to_string(now - starting_time_) <<endl;

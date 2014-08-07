@@ -38,6 +38,9 @@ class Job{
 		int delta_y() const;
 		int num() const{return _num;}
 		std::string to_string() const;
+		bool is_positive() const {return _alpha[0] < _beta[0];}
+		bool is_negative() const {return _alpha[0] > _beta[0];}
+		double x_speed() const {return 1.*delta_x()/std::max(delta_x(),delta_y());}
 
         void shift(int x_shift, int y_shift) {
             _alpha[0] += x_shift; _beta[0] += x_shift;

@@ -80,7 +80,7 @@ tuple<double, Tours> SingleCraneTSP_Solver::operator()(const Instance& inst,
 	    cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< endl;
 	if( remove( tsp_sol_file.c_str() ) != 0 and verbosity_>0)
 	    cerr<<"WARNING: Could not delete"<<tsp_sol_file<<"!"<< endl;
-	if( system( "rm TMP_TSP_FILE.* OTMP_TSP_FILE.*  &> /dev/null" )!=0 and verbosity_>0)
+    if( system( "rm *TSP_temp_file*  &> /dev/null" )!=0 and verbosity_>0)
 	    cerr<<"WARNING: Could not delete TMP files!"<< endl;  
     
 	//DEBUG: INFO
