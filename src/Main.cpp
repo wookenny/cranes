@@ -27,6 +27,7 @@ namespace po = boost::program_options;
 #include "LaserSharingProblemWriter.h"
 #include "SingleCraneTSP_Solver.h"
 #include "SeparationHeuristic.h"
+#include "ConsolidationHeuristic.h"
 
 using namespace std;
 using namespace boost::filesystem;
@@ -1083,3 +1084,91 @@ void separate(std::vector<std::string> argv){
     return;     
 }
 
+
+
+void consolidate(std::vector<std::string> argv){
+    try {
+        //define all parameters to set
+        int verbosity;
+        int k,n; 
+        uint seed;
+        string filename = "";
+
+        po::options_description desc("Allowed options");
+        desc.add_options()
+            ("help,h", "produce help message")
+            ("filename,f", po::value<string>(&filename), 
+             "2DVS file")
+            ("k", po::value<int>(&k), 
+             "set number of vehicles/cranes")
+            ("n", po::value<int>(&n), 
+             "set number of jobs to generate in the instance")
+            ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
+              "set seed for random samples")
+            ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
+
+        po::variables_map vm;        
+        po::store(po::command_line_parser(argv)
+                    .options(desc)
+                    .style( po::command_line_style::unix_style)
+                    .run(), vm); 
+
+        //react on som settings
+        if (vm.count("help")){
+            cout<<"Finds a solution for the given file using the";
+            std::cout<<" consolidation heuristic.\n";
+            cout<<boolalpha << desc << "\n";
+            cout<<"required: 'f'"<<endl;
+            return;
+        }
+        po::notify(vm); 
+        
+        //after parsing, execute the selected method
+        auto start = std::chrono::system_clock::now();    
+        ConsolidationHeuristic heur;
+        Instance i; 
+        if(vm.count("filename")){
+            i = Instance{filename};
+            if( vm.count("n")) 
+                cout<<"Warning: Ignoring given number of jobs!"<<endl;
+            if( vm.count("k")){
+                cout<<"Warning: Ignoring number of vehicles in file!"<<endl;
+                i.set_num_vehicles(k);
+            }
+        }else{
+            if( not vm.count("k") and not vm.count("n")) {
+                cout<< "Number of jobs and vehicles not given."
+                      << " No filename given. Usage:\n"<<desc<<endl;
+                return;
+            }
+            i.set_num_vehicles(k);
+            i.generate_random_depots(0,100,0,20,seed);
+            i.generate_random_jobs(n,0,100,0,20,seed); 
+        }
+
+        heur.set_verbosity(verbosity);
+        Tours t = heur(i);
+        auto stop = std::chrono::system_clock::now();
+        auto runningtime = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+        cout<<"makespan of a separation heur. solution: ";
+        cout<<i.makespan(t)<<endl;
+        
+        cout<<"Running time: "
+            <<duration_to_string(runningtime) <<endl;
+        if(not i.verify(t))
+            cout<<"WARNING: Solution not valid!"<<endl;
+
+
+    }catch(boost::program_options::required_option& e){
+        cerr << " " << e.what() << "\n";
+        cerr << " Try --help for all parameters.\n";
+    }catch(exception& e) {
+        cerr << " " << e.what() << "\n";
+        return;                    
+    }catch(...) {
+        cerr << "Exception of unknown type!\n";
+        return;
+    }
+    return;     
+
+}
