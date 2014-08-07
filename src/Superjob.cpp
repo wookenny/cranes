@@ -184,8 +184,8 @@ std::vector<std::array<int,2>> Superjob::start_positions_() const{
 std::vector<std::list<uint>> Superjob::build_graph_(std::vector<uint> &in_degree, 
 													const std::vector<Job>& jobs) const{
 	std::vector<std::list<uint>> graph;
-	assert(in_degree.size()==jobs_.size());
-	for(uint i=0;i<jobs_.size();++i)
+	assert(in_degree.size()==jobs.size());
+	for(uint i=0;i<jobs.size();++i)
 		graph.push_back( std::list<uint>() );
 
 	for(uint i=0; i<graph.size();++i)
