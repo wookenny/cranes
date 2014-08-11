@@ -11,6 +11,8 @@
 
 class Superjob{
 	
+
+
 private:
 	std::vector<Job> jobs_;
 	double speed_low;
@@ -22,52 +24,10 @@ private:
 	int min_x;
 	int max_x;   
 
+	static const uint MAX_JOBS = 10;
+
 public:	
 	Superjob() = default;
-
-    //copy constr.
-    
- /*   Superjob( const Superjob& other ):
-    	speed_low(other.speed_low),
-    	speed_high(other.speed_high),
-    	jobs_length_(other.jobs_length_),
-    	jobs_positive_(other.jobs_positive_),
-    	k_(other.k_),
-    	min_x(other.min_x),
-    	max_x(other.max_x){
-    		jobs_.insert(jobs_.end(),other.jobs_.begin(), other.jobs_.end());
-    	};
-
-	Superjob(  Superjob&& other ):
-    	speed_low(other.speed_low),
-    	speed_high(other.speed_high),
-    	jobs_length_(other.jobs_length_),
-    	jobs_positive_(other.jobs_positive_),
-    	k_(other.k_),
-    	min_x(other.min_x),
-    	max_x(other.max_x){
-    		jobs_ = std::move(other.jobs_);
-    	};
-*/
-	// Superjob& operator=(const Superjob& other){
-	// 	Superjob tmp( other );
-
-	// 	std::swap( jobs_, tmp.jobs_ );
-	// 	///and so on
-
- //      	return *this;
-	// }
-
-	// Superjob& operator=(Superjob&& other){
-
-	// 	jobs_ = std::move(other.jobs_);
-	// 	///and so on
-	// 	//NOT DONE
- //      	return *this;
-	// }
-
-
-
 
 	Superjob(uint k, double low, double high, bool positive):speed_low(low),
 					speed_high(high),jobs_length_(0),jobs_positive_(positive),
@@ -86,7 +46,24 @@ public:
 	int distance_to_depot(const Instance& inst) const;
 	int distance_from_depot(const Instance& inst) const;
 
+	int min() const { return min_x;}
+	int max() const { return max_x;}
+	double low() const {return speed_low;}
+	double high() const {return speed_high;}
+
+	bool is_positive() const { return jobs_positive_;}
+	bool is_negative() const { return not jobs_positive_;}
+	
 	bool empty() const {return jobs_.empty();}
+
+	uint num_vehicles() const{ return k_;}
+	uint num_jobs() const{ return jobs_.size();}
+
+	std::vector<Job> copy_jobs() const{
+		std::vector<Job> jobs;
+		jobs.insert(jobs.begin(),jobs_.begin(),jobs_.end());
+		return jobs;
+	}
 
 	//return the jobs in s, sorted via distance from the start,
  	//additional, return the assignment of each job, this can be done via BFS

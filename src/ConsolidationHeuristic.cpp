@@ -16,14 +16,17 @@ Tours ConsolidationHeuristic::operator()(const Instance& inst) const
 
 	}
 	//find consolidation
-	std::vector<Superjob> con = greedy_consolidation_(inst);
-	return operator()(inst,con);
+	std::vector<uint> slow_jobs;
+	std::vector<Superjob> con = greedy_consolidation_(inst, slow_jobs);
+
+	return operator()(inst,con, slow_jobs);
 }
 
 
 
 Tours ConsolidationHeuristic::operator()(const Instance& inst,
-										const std::vector<Superjob>& con) const
+										const std::vector<Superjob>& con,
+										const std::vector<uint>& slow_jobs) const
 {
 
 	//find best tour
@@ -54,19 +57,26 @@ Tours ConsolidationHeuristic::operator()(const Instance& inst,
  		}
  	}
 
+ 	//add all slow jobs to the vehicle whose depot is the closest
+ 	for(uint j: slow_jobs){
+ 		uint veh = inst.get_closest_depot(j);
+ 		perm.push_back(j);
+ 		assign.push_back(veh);	
+ 	}
 
     assert(sequence.size() == con.size());
  	assert(perm.size() == inst.num_jobs());
  	assert(assign.size() == inst.num_jobs());
  	//build permutation and assignment
 
-
-
- 	InsertionHeuristic heur;
+ 	InsertionHeuristic heur(local_search_);
+ 	heur.set_use_assignment(true);
+ 	heur.set_stop_at_better(true);
  	return heur(inst,perm, assign);
 }
 
-std::vector<Superjob> ConsolidationHeuristic::greedy_consolidation_(const Instance& inst) const
+std::vector<Superjob> ConsolidationHeuristic::greedy_consolidation_(
+					  const Instance& inst, std::vector<uint>& slow_jobs) const
 {
 	
 	std::vector<Superjob> consol;
@@ -77,7 +87,6 @@ std::vector<Superjob> ConsolidationHeuristic::greedy_consolidation_(const Instan
 	speed_bound.push_back( std::make_tuple(1,.75) );
 	speed_bound.push_back( std::make_tuple(.75,.5) ); 
 
-	
 	for(auto e: speed_bound){
 		double low,high;
 		std::tie(high,low) = e;
@@ -111,10 +120,12 @@ std::vector<Superjob> ConsolidationHeuristic::greedy_consolidation_(const Instan
 	//Another IDEA: add some with the insertion heuriostic 
 	//or split it up and just use
 	//the distance.
+	for(const auto& j:  remaining_jobs)
+		slow_jobs.push_back(j.num()-1);
 
-	assert(remaining_jobs.empty());//IF THIS HAPPENS THEN IT WAS NOT FIXED CORRECTLY
-
-
+	if(verbosity_>1){
+		std::cout<<" slow jobs remaining: "<< remaining_jobs.size()<<std::endl;
+	}
 	return consol;
 }
 
@@ -153,11 +164,17 @@ std::vector<Superjob> ConsolidationHeuristic::build_superjobs_(
 				}
 			}			
 		}
-		if(verbosity_>0){
+		if(verbosity_>1){
 			if(best_candidate!=-1){
 				std::cout<<"found candidate "<<best_candidate;
 				std::cout<<" with quality "<<best_quality<<std::endl;
-				
+
+				std::cout<<" job "<<j<<" can be added to superjob "<<
+							best_candidate<<std::endl;
+				std::cout<<" vehicles: "<<pos_superjobs[best_candidate].num_vehicles();
+				std::cout<<", speed: "<<pos_superjobs[best_candidate].low()<<" to ";
+				std::cout<< pos_superjobs[best_candidate].high();
+				std::cout<<", currently "<<pos_superjobs[best_candidate].num_jobs()<<" jobs"<< std::endl;
 			}
 		}
 		if(best_quality < threshold or best_candidate==-1){
@@ -183,7 +200,7 @@ std::vector<Superjob> ConsolidationHeuristic::build_superjobs_(
 				}
 			}			
 		}
-		if(verbosity_>0){
+		if(verbosity_>1){
 			if(best_candidate!=-1){
 				std::cout<<"found candidate "<<best_candidate;
 				std::cout<<" with quality "<<best_quality<<std::endl;
@@ -204,5 +221,16 @@ std::vector<Superjob> ConsolidationHeuristic::build_superjobs_(
 		pos_superjobs.push_back(s);
 	//pos_superjobs.insert(pos_superjobs.begin(),neg_superjobs.begin(),
 	//											   neg_superjobs.end());
+
+	if(verbosity_>0){
+		for(const auto& sjobs: pos_superjobs){
+			std::cout<< ((sjobs.is_positive())?" positive":" negative");
+			std::cout<<" superjob in range ["<<sjobs.min()<<", "<<
+											   sjobs.max()<<"]"<<std::endl;
+			for( const auto& j: sjobs.copy_jobs() ){
+				std::cout<<"\t"<<j<<std::endl;
+			}
+		}		
+	}
 	return pos_superjobs;
 }

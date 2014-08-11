@@ -6,9 +6,13 @@
 #include <iostream>
 #include <boost/filesystem.hpp>
 
+
+typedef std::vector<std::list<uint>> Edges;
+typedef std::list<std::tuple<uint,uint>> UndecidedEdges;
+
 void Superjob::add(const Job& j){
 	assert(is_addable(j));
-		//add it
+	//add it
 	jobs_.push_back(j);
 	min_x = std::min(min_x,std::min(j.alpha()[0],j.beta()[0]));
 	max_x = std::max(max_x,std::max(j.alpha()[0],j.beta()[0]));
@@ -79,14 +83,15 @@ bool Superjob::cycle_or_long_path_(const std::vector<std::list<uint>> &g,
 }
 
 bool Superjob::is_addable(const Job& job) const{
+	//not too many jobs?
+	if(jobs_.size() == MAX_JOBS)
+		return false;
 	//same direction?
 	if( jobs_positive_ and job.is_negative() )
 		return false;
 	if( (not jobs_positive_) and job.is_positive() )
 		return false;
 
-	std::cout<< "job's speed:"<<job.x_speed()<<std::endl;
-	std::cout<< job<<std::endl;
 	//correct speed? needed: low <= speed <= high
 	if(job.x_speed() < speed_low or  job.x_speed() > speed_high)
 		return false;
@@ -96,9 +101,6 @@ bool Superjob::is_addable(const Job& job) const{
 
 	//cycles or path of length > k in set of jobs?	
 	//build graph
-	std::cout<< "checking graph for adablility" <<std::endl;
-
-
 	//work on a copy of all these jobs to add thje new job
 	std::vector<Job> jobs_copy;
 	for(const auto& j: jobs_)
@@ -109,23 +111,10 @@ bool Superjob::is_addable(const Job& job) const{
 	std::vector<uint> in_degree(jobs_copy.size(),0);
 	std::vector<std::list<uint>> graph = build_graph_(in_degree,jobs_copy);
 
-	std::cout <<"jobs: "<<jobs_copy.size()<<"\nin degrees:" <<std::endl;
-	for(auto e: in_degree){
-		std::cout<< e<<" ";
-	}
-	std::cout<<std::endl;
-	std::cout<< "Edges: "<<std::endl;
-	for(const auto& l: graph){
-		for(auto v: l){
-			std::cout<< v<<" ";
-		}
-		std::cout<<std::endl;
-	}
-	std::cout<<std::endl;
-
 	//find longest path or cycle => BFS in order of non-labeled incoming arcs
 	if (cycle_or_long_path_(graph, in_degree))
 		return false;
+
 	return true;
 }		
 
@@ -182,14 +171,16 @@ std::vector<std::array<int,2>> Superjob::start_positions_() const{
 
 
 std::vector<std::list<uint>> Superjob::build_graph_(std::vector<uint> &in_degree, 
-													const std::vector<Job>& jobs) const{
+													const std::vector<Job>& jobs) const
+{
 	std::vector<std::list<uint>> graph;
 	assert(in_degree.size()==jobs.size());
 	for(uint i=0;i<jobs.size();++i)
 		graph.push_back( std::list<uint>() );
 
+	//std::cout<<"speed is: "<<speed_low<<std::endl;
 	for(uint i=0; i<graph.size();++i)
-		for(uint j: graph[i]){
+		for(uint j=i+1; j<graph.size();++j){
 			const Job* job1 = &jobs[i]; 
 			const Job* job2 = &jobs[j]; 
 			double time1,time2;
@@ -204,13 +195,37 @@ std::vector<std::list<uint>> Superjob::build_graph_(std::vector<uint> &in_degree
 			int order = Job::getOrdering(std::make_tuple(job1,time1),
 				std::make_tuple(job2,time2));
 			assert(order!=-2);
-				if(order==-1){//job1 left of job2
-					graph[i].push_back(j);
-					in_degree[j]+=1;				
-				}else if(order==1){//job1 right of job2
-					graph[j].push_back(i);
-					in_degree[i]+=1;	
-				}
+			if(order==-1){//job1 left of job2
+				//std::cout<< *job1<<"@"<<time1<<" left of "<<*job2<<"@"<<time2<<std::endl;
+				graph[i].push_back(j);
+				in_degree[j]+=1;				
+			}else if(order==1){//job1 right of job2
+				//std::cout<< *job2<<"@"<<time2<<" left of "<<*job1<<"@"<<time1 <<std::endl;
+				graph[j].push_back(i);
+				in_degree[i]+=1;	
+			}else if(order==0){
+				//jobs might cover each other => detect this and select the 
+				//earlier job to be left! => just a heuristic, otherwise hard problem
+				if( std::max(time1,time2) < 
+					std::min(time1+job1->length(),time2+job2->length()) ){
+					//std::cout<<"alert: undecided edge!"<<std::endl;
+				
+					//std::cout<< "select first stop as left!" <<std::endl;
+					if(time1+job1->length() < time2+job2->length()){
+						graph[i].push_back(j);
+						in_degree[j]+=1;
+					}else{
+						graph[j].push_back(i);
+						in_degree[i]+=1;
+					}
+				}	
+			}
+
+			/*0
+			std::cout<<"job1: "<<*job1<<"@"<<time1;
+			std::cout<<", job2: "<<*job2<<"@"<<time2<<std::endl;
+			std::cout<<"ordering: "<<order<<std::endl;
+			*/
 		}
 	return graph;
 }
@@ -457,14 +472,14 @@ std::vector<std::tuple<Job,uint>> Superjob::get_sorted_assignment() const{
 //------ Here are some GTests for this class---//
 #ifdef GTESTS_ENABLED
 #include <gtest/gtest.h>
-TEST(Superjob_Tests, Addable_Test) { 
+TEST(Superjob_Tests, Addable_Test1) { 
    
     Superjob s(2, .5, 1, true);
 
    	//3 vehivles, speed between 0.5 and 1, all jobs positive
     //Job(int num,int alpha_x,int alpha_y,int beta_x, int beta_y)
     Job j1(1, 0,0, 10,0);
-    Job j2(2, 2,1, 12,1);
+    Job j2(2, 1,0, 11,0);
 
     Job j3(3, 5,0, 14,0); 
     Job j4(4, 13,0, 12,0);
@@ -472,12 +487,13 @@ TEST(Superjob_Tests, Addable_Test) {
     EXPECT_TRUE(s.is_addable(j1));
     s.add(j1);
 
-    EXPECT_DOUBLE_EQ( .5,s.quality());
+    EXPECT_DOUBLE_EQ( .5, s.quality());
 
     EXPECT_TRUE(s.is_addable(j2));
-    //s.add(j2);
+    s.add(j2);
 
-    //EXPECT_DOUBLE_EQ(24/22.,s.quality());
+    //.5 (20 / 11)
+    EXPECT_DOUBLE_EQ(.5* 20/11,s.quality());
 
     EXPECT_FALSE(s.is_addable(j3));// at leat 3 vehicles needed
     EXPECT_FALSE(s.is_addable(j4));//negative job
@@ -486,8 +502,27 @@ TEST(Superjob_Tests, Addable_Test) {
 
 }
 
+TEST(Superjob_Tests, Addable_Test2) { 
+/*
+[1]: (1; 0) -> (5; 0)
+[2]: (2; 0) -> (6; 0)
+[3]: (3; 0) -> (7; 0)
+*/
+    Job j1(1, 1,0, 5,0);
+    Job j2(2, 2,0, 6,0);
+    Job j3(3, 3,0, 7,0);	
+	Superjob s(2, 1, 1, true);
 
+	EXPECT_TRUE(s.is_addable(j1));
+	s.add(j1);
 
+	EXPECT_TRUE(s.is_addable(j2));
+	EXPECT_TRUE(s.is_addable(j3));
+	s.add(j2);
+
+	EXPECT_FALSE(s.is_addable(j3));
+
+}
 #else
 
 #endif

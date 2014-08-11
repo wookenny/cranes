@@ -403,7 +403,7 @@ void insertion_heuristic(std::vector<std::string> argv){
 
         desc.add_options()
             ("help,h", "produce help message")
-            ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
+            ("verbosity,v", po::value<int>(&verbosity)->default_value(0), 
               "verbosity level")
             ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
               "set seed for random samples")
@@ -479,7 +479,7 @@ void insertion_heuristic(std::vector<std::string> argv){
         //solve it
         auto sol = heur(i);
 	    cout<<endl;
-	    if(i.num_jobs()<=20)
+	    if(i.num_jobs()<=20 and verbosity > 0)
 	        cout<<"\n"<< sol <<endl;
 	    cout<<"makespan of solution: "<<i.makespan(sol)<<endl;
 
@@ -1103,6 +1103,7 @@ void consolidate(std::vector<std::string> argv){
              "set number of vehicles/cranes")
             ("n", po::value<int>(&n), 
              "set number of jobs to generate in the instance")
+            ("localsearch,l", "use a local search on the created permutation and assigment.")
             ("seed,s", po::value<unsigned int>(&seed)->default_value(0), 
               "set seed for random samples")
             ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
@@ -1114,7 +1115,7 @@ void consolidate(std::vector<std::string> argv){
                     .run(), vm); 
 
         //react on som settings
-        if (vm.count("help")){
+        if (vm.count("help")>0){
             cout<<"Finds a solution for the given file using the";
             std::cout<<" consolidation heuristic.\n";
             cout<<boolalpha << desc << "\n";
@@ -1126,17 +1127,18 @@ void consolidate(std::vector<std::string> argv){
         //after parsing, execute the selected method
         auto start = std::chrono::system_clock::now();    
         ConsolidationHeuristic heur;
+        heur.use_local_search( vm.count("localsearch")>0 );
         Instance i; 
-        if(vm.count("filename")){
+        if(vm.count("filename")>0){
             i = Instance{filename};
-            if( vm.count("n")) 
+            if( vm.count("n")>0) 
                 cout<<"Warning: Ignoring given number of jobs!"<<endl;
-            if( vm.count("k")){
+            if( vm.count("k")>0){
                 cout<<"Warning: Ignoring number of vehicles in file!"<<endl;
                 i.set_num_vehicles(k);
             }
         }else{
-            if( not vm.count("k") and not vm.count("n")) {
+            if( vm.count("k")==0 and vm.count("n")==0 ) {
                 cout<< "Number of jobs and vehicles not given."
                       << " No filename given. Usage:\n"<<desc<<endl;
                 return;

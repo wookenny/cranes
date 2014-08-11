@@ -61,6 +61,8 @@ class Instance{
 		    assert(i<depotPositions_.size()); 
 		    return depotPositions_[i]; }  
 		
+		uint get_closest_depot(uint job_index) const;
+
 		//generates n random jobs in the given bounds
 		void generate_random_jobs(int n, int min_x, int max_x, 
 		                          int min_y, int max_y, unsigned int seed=0);

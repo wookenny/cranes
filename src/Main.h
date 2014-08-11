@@ -48,12 +48,13 @@ int process_args(std::vector<std::string> argv){
 	functionDict["write"] 		  = &write_instance;
 	functionDict["mip"] 		  = &run_mip;
 	functionDict["binsearch_mip"] = &binsearch;
-	functionDict["insertion"]	  = &insertion_heuristic;
-	functionDict["insertion_mip"] = &insertion_mip;
+	functionDict["insert"]	  = &insertion_heuristic;
+	functionDict["insert_mip"] = &insertion_mip;
 	functionDict["test"] 		  = &test;
 	functionDict["laser_format"]  = &laser;
 	functionDict["single_tsp"]    = &single_tsp;
 	functionDict["batch"]         = &batch;
+	functionDict["separate"]   	  = &separate;
 	functionDict["consolidate"]   = &consolidate;
 
 	//at least one parameter must be given

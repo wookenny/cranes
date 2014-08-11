@@ -150,8 +150,6 @@ TEST(Job_Tests, Comparisons) {
     EXPECT_TRUE (j1==j2);
     EXPECT_FALSE(j1==j3);
     EXPECT_TRUE (j2!=j3);
-    
-
     /*
     getOrdering(const std::tuple<const Job*, double>&,
 							   const std::tuple<const Job*, double>&);

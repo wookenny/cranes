@@ -541,3 +541,26 @@ Instance Instance::splice(uint start, uint n,const std::vector<uint> &p) const {
 	}
 	return i;
 }
+
+uint Instance::get_closest_depot(uint job_index) const{
+	assert(job_index<jobs_.size());
+	if(1==depotPositions_.size())
+		return 0;
+
+	const Job& job = jobs_[job_index];
+	uint depot = 0;
+	int dist = std::min( dist_inf(job.alpha(),depotPositions_[depot]),
+						 dist_inf(job.beta(), depotPositions_[depot]) );
+
+	//check all other depots
+	for(uint i=1; i<depotPositions_.size();++i){
+		int tdist = std::min( dist_inf(job.alpha(),depotPositions_[i]),
+						 	  dist_inf(job.beta(), depotPositions_[i]) );
+		if(tdist<dist){
+			dist = tdist;
+			depot = i;
+		}
+	}
+
+	return depot;
+}
