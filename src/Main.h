@@ -31,12 +31,44 @@ void batch(std::vector<std::string> argv);
 void separate(std::vector<std::string> argv);
 void consolidate(std::vector<std::string> argv);
 
+
+
+
 template <class T,class U>
 void printMapIndex( std::map<T,U> map){
 	typename std::map<T, U>::const_iterator iter;
 	for(iter = map.begin(); iter != map.end(); ++iter ) 
 		std::cout << "\t- "<<iter->first << std::endl;
 }
+
+template <class T,class U>
+ typename std::map<T,U>::const_iterator FindPrefix(const std::map<T,U>& map, const T& search_for) {
+    typename std::map<T,U>::const_iterator i = map.lower_bound(search_for);
+    if (i != map.end()) {
+        const T& key = i->first;
+        if (key.compare(0, search_for.size(), search_for) == 0) // Really a prefix?
+            return i;
+    }
+    return map.end();
+}
+
+template <class T,class U>
+ typename std::vector<T> FindAllPrefix(const std::map<T,U>& map, const T& search_for) {
+ 	typename std::vector<T> hits;
+ 	typename std::map<T,U>::const_iterator iter = FindPrefix(map, search_for);
+ 	while(iter!=map.end()){
+ 		const T& key = iter->first;
+ 		if (key.compare(0, search_for.size(), search_for) == 0){
+ 			hits.push_back(key);
+ 			++iter;
+ 		}else{
+ 			break;//not mathing anymore
+ 		}
+ 		
+ 	}
+ 	return hits;
+}
+
 
 int process_args(std::vector<std::string> argv){
     std::cout<<std::boolalpha;
@@ -71,22 +103,38 @@ int process_args(std::vector<std::string> argv){
 
 	//functioncall or print all commands
 	if( functionDict.find(method)==functionDict.end()){
-		std::cout<<"No matching function found, try one of these:"<<std::endl;
-		printMapIndex(functionDict);
-		return -2;
-	}else{
-		// function call
-		try{
-        	functionDict[method](arguments);
-    	}catch(std::invalid_argument &){
-			std::cout<< "Given arguments are invalid for the choosen function. Exit." <<std::endl;
-			return -3;
-		}catch(std::out_of_range &oor){
-			std::cout<<"The argument you have given it out of range for its type."<<std::endl;
-		    std::cout << oor.what() << std::endl;
-		    return -4;
-		}
+		//single hit?
+		auto matches = FindAllPrefix(functionDict, method);
+   		if(matches.size()>1){
+   			std::cout<<"One of these functions?:";
+   			for(const auto& e: matches)
+   				std::cout<< " '"<<e<<"'";
+   			std::cout<<std::endl;
+   			return -2;
+   		}
+   		if(matches.size()==0){
+   			std::cout<<"No matching function found, try one of these:"<<std::endl;
+			printMapIndex(functionDict);
+			return -2;	
+   		}
+
+   		assert(matches.size()==1);
+   		std::cout<<"'"<<method<<"' -> '"<<matches[0]<<"'"<<std::endl;	
+   		method = matches[0];
 	}
+
+	// function call
+	try{
+		functionDict[method](arguments);
+	}catch(std::invalid_argument &){
+		std::cout<< "Given arguments are invalid for the choosen function. Exit." <<std::endl;
+		return -3;
+	}catch(std::out_of_range &oor){
+		std::cout<<"The argument you have given it out of range for its type."<<std::endl;
+		std::cout << oor.what() << std::endl;
+		return -4;
+	}
+	
 	return 0;
 }
 
