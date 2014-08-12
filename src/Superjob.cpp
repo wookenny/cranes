@@ -385,11 +385,11 @@ std::vector<Superjob> Superjob::best_order(const std::vector<Superjob>& jobs,
 	}
 
     //delete both files
-   /* if( std::remove( tsp_file.c_str() ) != 0 )
+    if( std::remove( tsp_file.c_str() ) != 0 )
 	    std::cerr<<"WARNING: Could not delete"<<tsp_file<<"!"<< std::endl;
 	if( std::remove( tsp_sol_file.c_str() ) != 0 )
 	    std::cerr<<"WARNING: Could not delete"<<tsp_sol_file<<"!"<< std::endl;
-	*/
+	
 	return sequence;
 }
 
