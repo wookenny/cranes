@@ -1,0 +1,3602 @@
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 42175
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41238
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 42096
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40714
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 42921
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 42347
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 42431
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41519
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 44939
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k1/L1_d0_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 43164
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25514
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24798
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24381
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24042
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25471
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25574
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25386
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25538
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26945
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k2/L1_d0_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26712
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18870
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17796
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18792
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16753
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17910
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16749
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17346
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17887
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18271
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k3/L1_d0_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18359
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13521
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13332
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14632
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13365
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12855
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14142
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13965
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14167
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13409
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k4/L1_d0_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15213
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11991
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10694
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12153
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11431
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11504
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12508
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11726
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11089
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11556
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d0_k5/L1_d0_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12666
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27954
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28413
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26021
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28249
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 29439
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26751
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28495
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27083
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 29510
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k1/L1_d50_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 29959
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15466
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16556
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15506
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14887
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16601
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14833
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15223
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15090
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17640
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k2/L1_d50_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17259
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11239
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10494
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10977
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10939
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10012
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10780
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9885
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10203
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12021
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k3/L1_d50_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11066
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8169
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8706
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8047
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8912
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9058
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9052
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8596
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7959
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9698
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k4/L1_d50_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8428
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7258
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7709
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6485
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6934
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7064
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6897
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7352
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6650
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7270
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d50_k5/L1_d50_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6844
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21352
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22565
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21900
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22078
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23718
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21350
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20560
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19844
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24064
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k1/L1_d75_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19350
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9104
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10638
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10139
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10697
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11956
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9791
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10099
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9548
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12036
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k2/L1_d75_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10241
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6854
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6509
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7652
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7786
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8155
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6410
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6889
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6186
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8586
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k3/L1_d75_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6102
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5190
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6332
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5587
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5783
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6236
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4408
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4907
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4080
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7389
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k4/L1_d75_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5224
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4390
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4660
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3769
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4628
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5105
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4093
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3865
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3540
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4492
+--------------------------------------
+calling: insertion -f ../data/generated/L1_d75_k5/L1_d75_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4278
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16892
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17595
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18582
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18701
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17957
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18473
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18563
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16660
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18929
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k1/L2_d0_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 18214
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6703
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6433
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6743
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6816
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6867
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6588
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7304
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6196
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7830
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k2/L2_d0_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7121
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3909
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3855
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4143
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4287
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4219
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3766
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4306
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4098
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4293
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k3/L2_d0_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3825
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3080
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3030
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2718
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2765
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3091
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2700
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3209
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2726
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3130
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k4/L2_d0_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2477
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2522
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2476
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2218
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2170
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2544
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2222
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2556
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2277
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2683
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d0_k5/L2_d0_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2258
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16950
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16285
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16459
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16636
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16390
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16906
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16470
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16205
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16138
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k1/L2_d50_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15948
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5979
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5511
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5760
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5656
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6043
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5741
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6491
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5011
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6172
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k2/L2_d50_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5355
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3094
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2832
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3181
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3705
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3496
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3134
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3332
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3145
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3397
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k3/L2_d50_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2882
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2210
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2341
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2166
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2479
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2465
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2188
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2601
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2103
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2629
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k4/L2_d50_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2128
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1811
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1862
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1600
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1738
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2182
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1795
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2060
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1679
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2285
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d50_k5/L2_d50_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1716
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15878
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15000
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15121
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16131
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16093
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15855
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15615
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14894
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15700
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k1/L2_d75_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16234
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5238
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4773
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5343
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5392
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5402
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5295
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5479
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4961
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5612
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k2/L2_d75_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5177
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2676
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2496
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2530
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2903
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3021
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2730
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2812
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2650
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3084
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k3/L2_d75_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2705
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2016
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1687
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1746
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1969
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2257
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2055
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2134
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1863
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 2161
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k4/L2_d75_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1615
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1474
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1583
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1346
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1643
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1752
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1490
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1790
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1541
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1852
+--------------------------------------
+calling: insertion -f ../data/generated/L2_d75_k5/L2_d75_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 1423
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 63222
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 63836
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 63737
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 62855
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 63782
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 65863
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 64034
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 63601
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 65216
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k1/L3_d0_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 65415
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38365
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38716
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39752
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38961
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38479
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40390
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40029
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 37481
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38767
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k2/L3_d0_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39526
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28443
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26034
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25450
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26086
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27726
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27181
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27295
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26595
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25995
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k3/L3_d0_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27149
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20928
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19604
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20946
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21344
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19512
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21384
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21104
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20987
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20397
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k4/L3_d0_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20445
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15962
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16853
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16478
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16889
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16541
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17941
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15681
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16469
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17513
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d0_k5/L3_d0_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17100
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40795
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40838
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40519
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41256
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40342
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41189
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40618
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40593
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41144
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k1/L3_d50_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 41075
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 25569
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24462
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24852
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22132
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24635
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24983
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23235
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22214
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23823
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k2/L3_d50_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24442
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16759
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16836
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16207
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16047
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15021
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17347
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14933
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16533
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16867
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k3/L3_d50_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16689
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13266
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12578
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11688
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12103
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12337
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13228
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11065
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12276
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12811
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k4/L3_d50_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11156
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10844
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10398
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8761
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9795
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10009
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11027
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9380
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10948
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9622
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d50_k5/L3_d50_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9944
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27562
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28638
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28195
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28051
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 29182
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28175
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28396
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27894
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28488
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k1/L3_d75_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28071
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15573
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15330
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15632
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14305
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15639
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15177
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14827
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12800
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14696
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k2/L3_d75_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14655
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9915
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9897
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9560
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9895
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10002
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9724
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8986
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9281
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10418
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k3/L3_d75_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8647
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7642
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7745
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6864
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7809
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7770
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8278
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7112
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6348
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7604
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k4/L3_d75_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8200
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7100
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6890
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5547
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5603
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6443
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5525
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5174
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5543
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6786
+--------------------------------------
+calling: insertion -f ../data/generated/L3_d75_k5/L3_d75_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6782
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39896
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39956
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39554
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39842
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 39940
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40796
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40331
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 38163
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40823
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k1/L4_d0_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 40137
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23681
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23166
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22987
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22375
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23780
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22531
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23771
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22663
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 24528
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k2/L4_d0_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23924
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17066
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16917
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16499
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17258
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17260
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17128
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16623
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 17254
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16959
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k3/L4_d0_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16829
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13236
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13111
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12629
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13455
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 12738
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13420
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13999
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13182
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13300
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k4/L4_d0_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 13210
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11016
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10421
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11005
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10609
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10397
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11068
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10669
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11402
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11494
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d0_k5/L4_d0_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10629
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28726
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27652
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 26638
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27587
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27437
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28067
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28478
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27186
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 27601
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k1/L4_d50_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 28209
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15596
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15047
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 15291
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14617
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14821
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14100
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14650
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 14762
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16062
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k2/L4_d50_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 16100
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10637
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10619
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9893
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10211
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9818
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10542
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10669
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10454
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10870
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k3/L4_d50_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10105
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8139
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7771
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7745
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8005
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8237
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7918
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8117
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8172
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8415
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k4/L4_d50_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 8277
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6555
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6323
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5684
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6666
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6410
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5970
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6302
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6802
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6743
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d50_k5/L4_d50_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6078
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21187
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 20211
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21286
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21750
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 23091
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19750
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21584
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 19749
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 22662
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k1/L4_d75_k1_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 21332
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10313
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9968
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10404
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10581
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 11056
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10109
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9996
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 9948
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10863
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k2/L4_d75_k2_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 10151
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6597
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6963
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6187
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6845
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7500
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6368
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6913
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6861
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 7761
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k3/L4_d75_k3_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 6306
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4996
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4880
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5171
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5532
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5764
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5380
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5407
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4936
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5432
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k4/L4_d75_k4_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 5120
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_0.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4660
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_1.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4289
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_2.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3313
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_3.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4670
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_4.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4614
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_5.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 3653
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_6.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4366
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_7.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4302
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_8.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4625
+--------------------------------------
+calling: insertion -f ../data/generated/L4_d75_k5/L4_d75_k5_9.2dvs
+--------------------------------------
+Running time: 0 seconds
+
+makespan of solution: 4139
+
+Time elapsed: 24 seconds
