@@ -229,7 +229,7 @@ void run_mip(vector<string> argv){
 
         desc.add_options()
             ("help,h", "produce help message")
-            ("verbosity,v", po::value<int>(&verbosity)->default_value(1), 
+            ("verbosity,v", po::value<int>(&verbosity)->default_value(0), 
               "verbosity level")
             ("filename,f", po::value<string>(&filename), 
              "2DVS file to solve via MIP")
@@ -321,6 +321,7 @@ void run_mip(vector<string> argv){
         cout<< "tightening cons: "<<(vm.count("tighteningconstraints")>0)<<endl;
 
         mip_ptr->set_timelimit(timelimit);
+        mip_ptr->set_silent(verbosity<1);
         if(timelimit>0)
             cout<< "timelimit: "<< minutes_to_string(timelimit)<<endl;
         if(fixed_makespan != 0)
@@ -339,7 +340,7 @@ void run_mip(vector<string> argv){
         }
 
         
-        mip_ptr->set_silent(verbosity<=0);
+        
         
         //if assignment set
         if (vm.count("assignment") > 0) { 
@@ -347,7 +348,7 @@ void run_mip(vector<string> argv){
                                             0, i.num_vehicles()-1, seed);
             mip_ptr->set_assignment(a);
         }
-            
+        
         auto mip_sol = mip_ptr->solve();
         Tours t = get<0>( mip_sol );
         double objective = get<1>( mip_sol );
@@ -363,6 +364,8 @@ void run_mip(vector<string> argv){
                 cout<<"Running time: "
                     <<duration_to_string(mip_ptr->get_runningtime()) <<endl;
         }else{
+            cout<<"Running time: "
+                    <<duration_to_string(mip_ptr->get_runningtime()) <<endl;
             cout<< "Objective: "<<objective<<endl;           
         }  
         
