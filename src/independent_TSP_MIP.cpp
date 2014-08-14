@@ -472,8 +472,11 @@ std::pair<Tours,double> independent_TSP_MIP::solve(){
 	//build the MIP model and solve it!
 	try {
 	
-		if(silent_)
+		if(silent_){
 			cplex_.setParam(IloCplex::MIPDisplay, 0);
+			cplex_.setParam(IloCplex::SimDisplay, 0);
+		}
+		
 
 		if(timelimit_ > 0)
 			cplex_.setParam(IloCplex::TiLim, 60*timelimit_);
