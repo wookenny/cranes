@@ -1,0 +1,4202 @@
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27268
+TSP bound: 27268
+ratio: 100%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26563
+TSP bound: 26563
+ratio: 100%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26904
+TSP bound: 26904
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 25476
+TSP bound: 25476
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27747
+TSP bound: 27747
+ratio: 100%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29608
+TSP bound: 29608
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27486
+TSP bound: 27486
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28990
+TSP bound: 28990
+ratio: 100%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 31263
+TSP bound: 31263
+ratio: 100%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k1/L1_d0_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27722
+TSP bound: 27722
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27258
+TSP bound: 13629
+ratio: 200%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26548
+TSP bound: 13274
+ratio: 200%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 19450
+TSP bound: 13452
+ratio: 144.588%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23585
+TSP bound: 12738
+ratio: 185.155%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27744
+TSP bound: 13872
+ratio: 200%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22330
+TSP bound: 14804
+ratio: 150.838%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27484
+TSP bound: 13742
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27855
+TSP bound: 14495
+ratio: 192.17%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 31263
+TSP bound: 15631.5
+ratio: 200%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k2/L1_d0_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27722
+TSP bound: 13861
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27258
+TSP bound: 9086
+ratio: 300%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26548
+TSP bound: 8849.33
+ratio: 300%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26904
+TSP bound: 8968
+ratio: 300%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 25476
+TSP bound: 8492
+ratio: 300%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27744
+TSP bound: 9248
+ratio: 300%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 25041
+TSP bound: 9869.33
+ratio: 253.725%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27484
+TSP bound: 9161.33
+ratio: 300%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28990
+TSP bound: 9663.33
+ratio: 300%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 31263
+TSP bound: 10421
+ratio: 300%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k3/L1_d0_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24237
+TSP bound: 9240.67
+ratio: 262.286%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26292
+TSP bound: 6814.5
+ratio: 385.824%
+Running time: 34 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22934
+TSP bound: 6637
+ratio: 345.548%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 25088
+TSP bound: 6726
+ratio: 373%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23997
+TSP bound: 6369
+ratio: 376.778%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27744
+TSP bound: 6936
+ratio: 400%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28670
+TSP bound: 7402
+ratio: 387.328%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27484
+TSP bound: 6871
+ratio: 400%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26648
+TSP bound: 7247.5
+ratio: 367.685%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 31263
+TSP bound: 7815.75
+ratio: 400%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k4/L1_d0_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23387
+TSP bound: 6930.5
+ratio: 337.45%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27258
+TSP bound: 5451.6
+ratio: 500%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26548
+TSP bound: 5309.6
+ratio: 500%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26056
+TSP bound: 5380.8
+ratio: 484.24%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22027
+TSP bound: 5095.2
+ratio: 432.309%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27744
+TSP bound: 5548.8
+ratio: 500%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28988
+TSP bound: 5921.6
+ratio: 489.53%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27484
+TSP bound: 5496.8
+ratio: 500%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24950
+TSP bound: 5798
+ratio: 430.321%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 31263
+TSP bound: 6252.6
+ratio: 500%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d0_k5/L1_d0_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26896
+TSP bound: 5544.4
+ratio: 485.102%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13815
+TSP bound: 13815
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14426
+TSP bound: 14426
+ratio: 100%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12843
+TSP bound: 12843
+ratio: 100%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14411
+TSP bound: 14411
+ratio: 100%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16778
+TSP bound: 16778
+ratio: 100%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14384
+TSP bound: 14384
+ratio: 100%
+Running time: 28 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13375
+TSP bound: 13375
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13089
+TSP bound: 13089
+ratio: 100%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18331
+TSP bound: 18331
+ratio: 100%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k1/L1_d50_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15414
+TSP bound: 15414
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13794
+TSP bound: 6902
+ratio: 199.855%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14215
+TSP bound: 7213
+ratio: 197.075%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12843
+TSP bound: 6421.5
+ratio: 200%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14411
+TSP bound: 7205.5
+ratio: 200%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16765
+TSP bound: 8382.5
+ratio: 200%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14384
+TSP bound: 7192
+ratio: 200%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13370
+TSP bound: 6685
+ratio: 200%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13089
+TSP bound: 6544.5
+ratio: 200%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18331
+TSP bound: 9165.5
+ratio: 200%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k2/L1_d50_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15408
+TSP bound: 7705
+ratio: 199.974%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13416
+TSP bound: 4601.33
+ratio: 291.568%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14426
+TSP bound: 4808.67
+ratio: 300%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12843
+TSP bound: 4281
+ratio: 300%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14194
+TSP bound: 4803.67
+ratio: 295.483%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16765
+TSP bound: 5588.33
+ratio: 300%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14384
+TSP bound: 4794.67
+ratio: 300%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13368
+TSP bound: 4456
+ratio: 300%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13089
+TSP bound: 4363
+ratio: 300%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18331
+TSP bound: 6110.33
+ratio: 300%
+Running time: 35 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k3/L1_d50_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14858
+TSP bound: 5136.67
+ratio: 289.254%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13794
+TSP bound: 3451
+ratio: 399.71%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12432
+TSP bound: 3606.5
+ratio: 344.711%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12843
+TSP bound: 3210.75
+ratio: 400%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11743
+TSP bound: 3602.75
+ratio: 325.945%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16763
+TSP bound: 4190.75
+ratio: 400%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13578
+TSP bound: 3596
+ratio: 377.586%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13368
+TSP bound: 3342
+ratio: 400%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13089
+TSP bound: 3272.25
+ratio: 400%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18331
+TSP bound: 4582.75
+ratio: 400%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k4/L1_d50_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15408
+TSP bound: 3852.5
+ratio: 399.948%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12684
+TSP bound: 2760.8
+ratio: 459.432%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14426
+TSP bound: 2885.2
+ratio: 500%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11025
+TSP bound: 2568.6
+ratio: 429.222%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14411
+TSP bound: 2882.2
+ratio: 500%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16763
+TSP bound: 3352.6
+ratio: 500%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14384
+TSP bound: 2876.8
+ratio: 500%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13367
+TSP bound: 2673.6
+ratio: 499.963%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13089
+TSP bound: 2617.8
+ratio: 500%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18331
+TSP bound: 3666.2
+ratio: 500%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d50_k5/L1_d50_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12614
+TSP bound: 3082
+ratio: 409.28%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6928
+TSP bound: 6928
+ratio: 100%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8684
+TSP bound: 8684
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7547
+TSP bound: 7547
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8959
+TSP bound: 8959
+ratio: 100%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9867
+TSP bound: 9867
+ratio: 100%
+Running time: 28 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6652
+TSP bound: 6652
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6807
+TSP bound: 6807
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6684
+TSP bound: 6684
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9078
+TSP bound: 9078
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k1/L1_d75_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7107
+TSP bound: 7107
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6906
+TSP bound: 3458
+ratio: 199.711%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8465
+TSP bound: 4342
+ratio: 194.956%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7547
+TSP bound: 3773.5
+ratio: 200%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8959
+TSP bound: 4479.5
+ratio: 200%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9859
+TSP bound: 4929.5
+ratio: 200%
+Running time: 32 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6652
+TSP bound: 3326
+ratio: 200%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6807
+TSP bound: 3403.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6684
+TSP bound: 3342
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9077
+TSP bound: 4538.5
+ratio: 200%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k2/L1_d75_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7100
+TSP bound: 3550
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6906
+TSP bound: 2305.33
+ratio: 299.566%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7625
+TSP bound: 2894.67
+ratio: 263.415%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7547
+TSP bound: 2515.67
+ratio: 300%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8948
+TSP bound: 2984.67
+ratio: 299.799%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9859
+TSP bound: 3286.33
+ratio: 300%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6652
+TSP bound: 2217.33
+ratio: 300%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6786
+TSP bound: 2269
+ratio: 299.074%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6201
+TSP bound: 2228
+ratio: 278.321%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9075
+TSP bound: 3025
+ratio: 300%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k3/L1_d75_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7073
+TSP bound: 2363
+ratio: 299.323%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6906
+TSP bound: 1729
+ratio: 399.422%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8684
+TSP bound: 2171
+ratio: 400%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7547
+TSP bound: 1886.75
+ratio: 400%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8948
+TSP bound: 2238.5
+ratio: 399.732%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9859
+TSP bound: 2464.75
+ratio: 400%
+Running time: 34 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6309
+TSP bound: 1663
+ratio: 379.375%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6782
+TSP bound: 1701.75
+ratio: 398.531%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6099
+TSP bound: 1671
+ratio: 364.991%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9075
+TSP bound: 2268.75
+ratio: 400%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k4/L1_d75_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7073
+TSP bound: 1772.25
+ratio: 399.097%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 5996
+TSP bound: 1383.2
+ratio: 433.488%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8684
+TSP bound: 1736.8
+ratio: 500%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7543
+TSP bound: 1508.6
+ratio: 500%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8948
+TSP bound: 1790.8
+ratio: 499.665%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9859
+TSP bound: 1971.8
+ratio: 500%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6652
+TSP bound: 1330.4
+ratio: 500%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6803
+TSP bound: 1361.4
+ratio: 499.706%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6684
+TSP bound: 1336.8
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9075
+TSP bound: 1815
+ratio: 500%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L1_d75_k5/L1_d75_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7058
+TSP bound: 1416.8
+ratio: 498.165%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4751
+TSP bound: 4751
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4541
+TSP bound: 4541
+ratio: 100%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4462
+TSP bound: 4462
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4281
+TSP bound: 4281
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4796
+TSP bound: 4796
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4641
+TSP bound: 4641
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4683
+TSP bound: 4683
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4524
+TSP bound: 4524
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4525
+TSP bound: 4525
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k1/L2_d0_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4871
+TSP bound: 4871
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4751
+TSP bound: 2375.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4541
+TSP bound: 2270.5
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4462
+TSP bound: 2231
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4276
+TSP bound: 2138
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4796
+TSP bound: 2398
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4538
+TSP bound: 2320.5
+ratio: 195.561%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4683
+TSP bound: 2341.5
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4522
+TSP bound: 2261
+ratio: 200%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4525
+TSP bound: 2262.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k2/L2_d0_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4857
+TSP bound: 2428.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4751
+TSP bound: 1583.67
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2423
+TSP bound: 1511.67
+ratio: 160.287%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4461
+TSP bound: 1487
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4276
+TSP bound: 1425.33
+ratio: 300%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4796
+TSP bound: 1598.67
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4537
+TSP bound: 1546.67
+ratio: 293.341%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4683
+TSP bound: 1561
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4522
+TSP bound: 1507.33
+ratio: 300%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4522
+TSP bound: 1507.33
+ratio: 300%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k3/L2_d0_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4857
+TSP bound: 1619
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4750
+TSP bound: 1187.5
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2423
+TSP bound: 1133.25
+ratio: 213.81%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4133
+TSP bound: 1115.25
+ratio: 370.59%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4273
+TSP bound: 1068.25
+ratio: 400%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4796
+TSP bound: 1199
+ratio: 400%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4537
+TSP bound: 1160
+ratio: 391.121%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4661
+TSP bound: 1170
+ratio: 398.376%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4521
+TSP bound: 1130.25
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4522
+TSP bound: 1130.5
+ratio: 400%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k4/L2_d0_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4854
+TSP bound: 1213.5
+ratio: 400%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 3193
+TSP bound: 950
+ratio: 336.105%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2423
+TSP bound: 906.2
+ratio: 267.38%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4461
+TSP bound: 892.2
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4273
+TSP bound: 854.6
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4796
+TSP bound: 959.2
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4537
+TSP bound: 928
+ratio: 488.901%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4661
+TSP bound: 936
+ratio: 497.97%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4521
+TSP bound: 904.2
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4522
+TSP bound: 904.4
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d0_k5/L2_d0_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 4849
+TSP bound: 969.8
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2748
+TSP bound: 2748
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2743
+TSP bound: 2743
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2737
+TSP bound: 2737
+ratio: 100%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2819
+TSP bound: 2819
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2820
+TSP bound: 2820
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2646
+TSP bound: 2646
+ratio: 100%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2818
+TSP bound: 2818
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2818
+TSP bound: 2818
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2890
+TSP bound: 2890
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k1/L2_d50_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2876
+TSP bound: 2876
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1965
+TSP bound: 1370
+ratio: 143.431%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2743
+TSP bound: 1371.5
+ratio: 200%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2737
+TSP bound: 1368.5
+ratio: 200%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2334
+TSP bound: 1398.5
+ratio: 166.893%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2812
+TSP bound: 1406
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1573
+TSP bound: 1320.5
+ratio: 119.122%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2818
+TSP bound: 1409
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1531
+TSP bound: 1407
+ratio: 108.813%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2888
+TSP bound: 1444
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k2/L2_d50_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2860
+TSP bound: 1430
+ratio: 200%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1965
+TSP bound: 911.667
+ratio: 215.539%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2430
+TSP bound: 913.667
+ratio: 265.961%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1801
+TSP bound: 903.667
+ratio: 199.299%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2334
+TSP bound: 932.333
+ratio: 250.34%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2812
+TSP bound: 937.333
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1573
+TSP bound: 880
+ratio: 178.75%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2816
+TSP bound: 938.667
+ratio: 300%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1531
+TSP bound: 938
+ratio: 163.22%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2888
+TSP bound: 962.667
+ratio: 300%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k3/L2_d50_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2047
+TSP bound: 952
+ratio: 215.021%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1965
+TSP bound: 683.75
+ratio: 287.386%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2430
+TSP bound: 685.25
+ratio: 354.615%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1801
+TSP bound: 674.75
+ratio: 266.914%
+Running time: 39 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2334
+TSP bound: 699.25
+ratio: 333.786%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2812
+TSP bound: 703
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1703
+TSP bound: 660
+ratio: 258.03%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2816
+TSP bound: 704
+ratio: 400%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1355
+TSP bound: 692.25
+ratio: 195.739%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2888
+TSP bound: 722
+ratio: 400%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k4/L2_d50_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2047
+TSP bound: 711
+ratio: 287.904%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1965
+TSP bound: 547
+ratio: 359.232%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2430
+TSP bound: 546.6
+ratio: 444.566%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1801
+TSP bound: 539.8
+ratio: 333.642%
+Running time: 43 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2334
+TSP bound: 558.6
+ratio: 417.83%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2793
+TSP bound: 562.2
+ratio: 496.798%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1573
+TSP bound: 528
+ratio: 297.917%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2816
+TSP bound: 563.2
+ratio: 500%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1355
+TSP bound: 552.4
+ratio: 245.293%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2888
+TSP bound: 577.6
+ratio: 500%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d50_k5/L2_d50_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2047
+TSP bound: 568.8
+ratio: 359.88%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1892
+TSP bound: 1892
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1951
+TSP bound: 1951
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1945
+TSP bound: 1945
+ratio: 100%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2068
+TSP bound: 2068
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2052
+TSP bound: 2052
+ratio: 100%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1853
+TSP bound: 1853
+ratio: 100%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1909
+TSP bound: 1909
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2005
+TSP bound: 2005
+ratio: 100%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1982
+TSP bound: 1982
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k1/L2_d75_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1973
+TSP bound: 1973
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1524
+TSP bound: 938
+ratio: 162.473%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1704
+TSP bound: 968
+ratio: 176.033%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1945
+TSP bound: 972.5
+ratio: 200%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1585
+TSP bound: 1027
+ratio: 154.333%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2049
+TSP bound: 1024.5
+ratio: 200%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1273
+TSP bound: 914.5
+ratio: 139.202%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1909
+TSP bound: 954.5
+ratio: 200%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1177
+TSP bound: 998.5
+ratio: 117.877%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1982
+TSP bound: 991
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k2/L2_d75_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1135
+TSP bound: 979
+ratio: 115.935%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1280
+TSP bound: 623.333
+ratio: 205.348%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1704
+TSP bound: 645.333
+ratio: 264.05%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1245
+TSP bound: 637.333
+ratio: 195.345%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1585
+TSP bound: 684
+ratio: 231.725%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2049
+TSP bound: 683
+ratio: 300%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1273
+TSP bound: 609.667
+ratio: 208.803%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1909
+TSP bound: 636.333
+ratio: 300%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1177
+TSP bound: 663.667
+ratio: 177.348%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1982
+TSP bound: 660.667
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k3/L2_d75_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 823
+TSP bound: 651.333
+ratio: 126.356%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1280
+TSP bound: 467
+ratio: 274.09%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1704
+TSP bound: 484
+ratio: 352.066%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1245
+TSP bound: 477.25
+ratio: 260.87%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1585
+TSP bound: 513
+ratio: 308.967%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2049
+TSP bound: 512.25
+ratio: 400%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1273
+TSP bound: 457.25
+ratio: 278.403%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1909
+TSP bound: 477.25
+ratio: 400%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1177
+TSP bound: 485.75
+ratio: 242.306%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1982
+TSP bound: 495.5
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k4/L2_d75_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 823
+TSP bound: 487
+ratio: 168.994%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1280
+TSP bound: 373.6
+ratio: 342.612%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1704
+TSP bound: 385.6
+ratio: 441.909%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1245
+TSP bound: 378.6
+ratio: 328.843%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1585
+TSP bound: 409.6
+ratio: 386.963%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 2049
+TSP bound: 409.8
+ratio: 500%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1273
+TSP bound: 365.8
+ratio: 348.004%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1909
+TSP bound: 381.8
+ratio: 500%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1177
+TSP bound: 387.4
+ratio: 303.82%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 1982
+TSP bound: 396.4
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L2_d75_k5/L2_d75_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 823
+TSP bound: 386.6
+ratio: 212.882%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46077
+TSP bound: 46077
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 44739
+TSP bound: 44739
+ratio: 100%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46633
+TSP bound: 46633
+ratio: 100%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 48355
+TSP bound: 48355
+ratio: 100%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46031
+TSP bound: 46031
+ratio: 100%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 53206
+TSP bound: 53206
+ratio: 100%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46730
+TSP bound: 46730
+ratio: 100%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 47815
+TSP bound: 47815
+ratio: 100%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 50589
+TSP bound: 50589
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k1/L3_d0_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 45445
+TSP bound: 45445
+ratio: 100%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46077
+TSP bound: 23038.5
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 44513
+TSP bound: 22256.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46633
+TSP bound: 23316.5
+ratio: 200%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 36772
+TSP bound: 24177.5
+ratio: 152.092%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46025
+TSP bound: 23012.5
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 53206
+TSP bound: 26603
+ratio: 200%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46725
+TSP bound: 23362.5
+ratio: 200%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 41086
+TSP bound: 23907.5
+ratio: 171.854%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 50589
+TSP bound: 25294.5
+ratio: 200%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k2/L3_d0_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 45445
+TSP bound: 22722.5
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 42965
+TSP bound: 15359
+ratio: 279.738%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 44513
+TSP bound: 14837.7
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46633
+TSP bound: 15544.3
+ratio: 300%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 45448
+TSP bound: 16118.3
+ratio: 281.965%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46025
+TSP bound: 15341.7
+ratio: 300%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 38794
+TSP bound: 17735.3
+ratio: 218.738%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46725
+TSP bound: 15575
+ratio: 300%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46550
+TSP bound: 15938.3
+ratio: 292.063%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 50589
+TSP bound: 16863
+ratio: 300%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k3/L3_d0_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 45445
+TSP bound: 15148.3
+ratio: 300%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 41164
+TSP bound: 11519.2
+ratio: 357.35%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 39978
+TSP bound: 11128.2
+ratio: 359.248%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 42162
+TSP bound: 11658.2
+ratio: 361.649%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 39673
+TSP bound: 12088.8
+ratio: 328.181%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46025
+TSP bound: 11506.2
+ratio: 400%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 51109
+TSP bound: 13301.5
+ratio: 384.235%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 44945
+TSP bound: 11681.2
+ratio: 384.762%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 41190
+TSP bound: 11953.8
+ratio: 344.578%
+Running time: 32 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 50589
+TSP bound: 12647.2
+ratio: 400%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k4/L3_d0_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 40671
+TSP bound: 11361.2
+ratio: 357.98%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 45197
+TSP bound: 9215.4
+ratio: 490.451%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 33082
+TSP bound: 8902.6
+ratio: 371.599%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 41029
+TSP bound: 9326.6
+ratio: 439.914%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 48355
+TSP bound: 9671
+ratio: 500%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46025
+TSP bound: 9205
+ratio: 500%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 49268
+TSP bound: 10641.2
+ratio: 462.993%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 46725
+TSP bound: 9345
+ratio: 500%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 32033
+TSP bound: 9563
+ratio: 334.968%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 50589
+TSP bound: 10117.8
+ratio: 500%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d0_k5/L3_d0_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 38125
+TSP bound: 9089
+ratio: 419.463%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23379
+TSP bound: 23379
+ratio: 100%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23237
+TSP bound: 23237
+ratio: 100%
+Running time: 34 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23470
+TSP bound: 23470
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23126
+TSP bound: 23126
+ratio: 100%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28197
+TSP bound: 28197
+ratio: 100%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27655
+TSP bound: 27655
+ratio: 100%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23067
+TSP bound: 23067
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23528
+TSP bound: 23528
+ratio: 100%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27833
+TSP bound: 27833
+ratio: 100%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k1/L3_d50_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24871
+TSP bound: 24871
+ratio: 100%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23377
+TSP bound: 11688.5
+ratio: 200%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22982
+TSP bound: 11596.5
+ratio: 198.18%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23470
+TSP bound: 11735
+ratio: 200%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22801
+TSP bound: 11539.5
+ratio: 197.591%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22955
+TSP bound: 14098.5
+ratio: 162.819%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27655
+TSP bound: 13827.5
+ratio: 200%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23066
+TSP bound: 11533
+ratio: 200%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23526
+TSP bound: 11763
+ratio: 200%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27833
+TSP bound: 13916.5
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k2/L3_d50_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24871
+TSP bound: 12435.5
+ratio: 200%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23288
+TSP bound: 7792.33
+ratio: 298.858%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22916
+TSP bound: 7731
+ratio: 296.417%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 20831
+TSP bound: 7823.33
+ratio: 266.268%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22879
+TSP bound: 7693
+ratio: 297.4%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24837
+TSP bound: 9399
+ratio: 264.252%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26316
+TSP bound: 9218.33
+ratio: 285.475%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23066
+TSP bound: 7688.67
+ratio: 300%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23526
+TSP bound: 7842
+ratio: 300%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27833
+TSP bound: 9277.67
+ratio: 300%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k3/L3_d50_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 20145
+TSP bound: 8290.33
+ratio: 242.994%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18749
+TSP bound: 5844.25
+ratio: 320.811%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22822
+TSP bound: 5798.25
+ratio: 393.602%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23470
+TSP bound: 5867.5
+ratio: 400%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22837
+TSP bound: 5769.75
+ratio: 395.806%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23720
+TSP bound: 7049.25
+ratio: 336.49%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27655
+TSP bound: 6913.75
+ratio: 400%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23066
+TSP bound: 5766.5
+ratio: 400%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 21811
+TSP bound: 5881.5
+ratio: 370.841%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27833
+TSP bound: 6958.25
+ratio: 400%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k4/L3_d50_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 18422
+TSP bound: 6217.75
+ratio: 296.281%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 17863
+TSP bound: 4675.4
+ratio: 382.064%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22916
+TSP bound: 4638.6
+ratio: 494.028%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23470
+TSP bound: 4694
+ratio: 500%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 22792
+TSP bound: 4615.8
+ratio: 493.782%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 28158
+TSP bound: 5639.4
+ratio: 499.308%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23368
+TSP bound: 5531
+ratio: 422.491%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23066
+TSP bound: 4613.2
+ratio: 500%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 20242
+TSP bound: 4705.2
+ratio: 430.205%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27833
+TSP bound: 5566.6
+ratio: 500%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d50_k5/L3_d50_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 19808
+TSP bound: 4974.2
+ratio: 398.215%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12407
+TSP bound: 12407
+ratio: 100%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12747
+TSP bound: 12747
+ratio: 100%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12053
+TSP bound: 12053
+ratio: 100%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14298
+TSP bound: 14298
+ratio: 100%
+Running time: 31 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15972
+TSP bound: 15972
+ratio: 100%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13655
+TSP bound: 13655
+ratio: 100%
+Running time: 41 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12330
+TSP bound: 12330
+ratio: 100%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11847
+TSP bound: 11847
+ratio: 100%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12503
+TSP bound: 12503
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k1/L3_d75_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13060
+TSP bound: 13060
+ratio: 100%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12407
+TSP bound: 6203.5
+ratio: 200%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12747
+TSP bound: 6373.5
+ratio: 200%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12053
+TSP bound: 6026.5
+ratio: 200%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14298
+TSP bound: 7149
+ratio: 200%
+Running time: 31 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15972
+TSP bound: 7986
+ratio: 200%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 10010
+TSP bound: 6827.5
+ratio: 146.613%
+Running time: 43 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12326
+TSP bound: 6163
+ratio: 200%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11847
+TSP bound: 5923.5
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12492
+TSP bound: 6246
+ratio: 200%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k2/L3_d75_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12008
+TSP bound: 6530
+ratio: 183.89%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12405
+TSP bound: 4135
+ratio: 300%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11962
+TSP bound: 4249
+ratio: 281.525%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12053
+TSP bound: 4017.67
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14067
+TSP bound: 4766
+ratio: 295.153%
+Running time: 39 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15911
+TSP bound: 5324
+ratio: 298.854%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12544
+TSP bound: 4551.67
+ratio: 275.591%
+Running time: 35 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12326
+TSP bound: 4108.67
+ratio: 300%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11847
+TSP bound: 3949
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12491
+TSP bound: 4163.67
+ratio: 300%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k3/L3_d75_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13060
+TSP bound: 4353.33
+ratio: 300%
+Running time: 28 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12405
+TSP bound: 3101.25
+ratio: 400%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12747
+TSP bound: 3186.75
+ratio: 400%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12051
+TSP bound: 3012.75
+ratio: 400%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14226
+TSP bound: 3574.5
+ratio: 397.986%
+Running time: 41 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15911
+TSP bound: 3993
+ratio: 398.472%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13655
+TSP bound: 3413.75
+ratio: 400%
+Running time: 42 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12326
+TSP bound: 3081.5
+ratio: 400%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11847
+TSP bound: 2961.75
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12491
+TSP bound: 3122.75
+ratio: 400%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k4/L3_d75_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12071
+TSP bound: 3265
+ratio: 369.709%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12405
+TSP bound: 2481
+ratio: 500%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11112
+TSP bound: 2549.4
+ratio: 435.867%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12049
+TSP bound: 2409.8
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13081
+TSP bound: 2859.6
+ratio: 457.442%
+Running time: 28 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15972
+TSP bound: 3194.4
+ratio: 500%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9859
+TSP bound: 2731
+ratio: 361.003%
+Running time: 54 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12326
+TSP bound: 2465.2
+ratio: 500%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 11847
+TSP bound: 2369.4
+ratio: 500%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12491
+TSP bound: 2498.2
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L3_d75_k5/L3_d75_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13060
+TSP bound: 2612
+ratio: 500%
+Running time: 35 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27025
+TSP bound: 27025
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26669
+TSP bound: 26669
+ratio: 100%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26910
+TSP bound: 26910
+ratio: 100%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27725
+TSP bound: 27725
+ratio: 100%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26620
+TSP bound: 26620
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 30315
+TSP bound: 30315
+ratio: 100%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27250
+TSP bound: 27250
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27772
+TSP bound: 27772
+ratio: 100%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29064
+TSP bound: 29064
+ratio: 100%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k1/L4_d0_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26620
+TSP bound: 26620
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27025
+TSP bound: 13512.5
+ratio: 200%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26660
+TSP bound: 13330
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26910
+TSP bound: 13455
+ratio: 200%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27725
+TSP bound: 13862.5
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26614
+TSP bound: 13307
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26553
+TSP bound: 15157.5
+ratio: 175.181%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27250
+TSP bound: 13625
+ratio: 200%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26619
+TSP bound: 13886
+ratio: 191.697%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29064
+TSP bound: 14532
+ratio: 200%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k2/L4_d0_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26613
+TSP bound: 13306.5
+ratio: 200%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26501
+TSP bound: 9008.33
+ratio: 294.183%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26660
+TSP bound: 8886.67
+ratio: 300%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26910
+TSP bound: 8970
+ratio: 300%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27001
+TSP bound: 9241.67
+ratio: 292.166%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26614
+TSP bound: 8871.33
+ratio: 300%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27980
+TSP bound: 10105
+ratio: 276.893%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27250
+TSP bound: 9083.33
+ratio: 300%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 20045
+TSP bound: 9257.33
+ratio: 216.531%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29064
+TSP bound: 9688
+ratio: 300%
+Running time: 28 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k3/L4_d0_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26613
+TSP bound: 8871
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 21191
+TSP bound: 6756.25
+ratio: 313.65%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26660
+TSP bound: 6665
+ratio: 400%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 24250
+TSP bound: 6727.5
+ratio: 360.461%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26409
+TSP bound: 6931.25
+ratio: 381.014%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26614
+TSP bound: 6653.5
+ratio: 400%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26930
+TSP bound: 7578.75
+ratio: 355.336%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27250
+TSP bound: 6812.5
+ratio: 400%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23822
+TSP bound: 6943
+ratio: 343.108%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29064
+TSP bound: 7266
+ratio: 400%
+Running time: 32 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k4/L4_d0_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26613
+TSP bound: 6653.25
+ratio: 400%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 23420
+TSP bound: 5405
+ratio: 433.302%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26660
+TSP bound: 5332
+ratio: 500%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26910
+TSP bound: 5382
+ratio: 500%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27725
+TSP bound: 5545
+ratio: 500%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26614
+TSP bound: 5322.8
+ratio: 500%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 25159
+TSP bound: 6063
+ratio: 414.96%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27250
+TSP bound: 5450
+ratio: 500%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 27772
+TSP bound: 5554.4
+ratio: 500%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 29064
+TSP bound: 5812.8
+ratio: 500%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d0_k5/L4_d0_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 26613
+TSP bound: 5322.6
+ratio: 500%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14740
+TSP bound: 14740
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13820
+TSP bound: 13820
+ratio: 100%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13625
+TSP bound: 13625
+ratio: 100%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13758
+TSP bound: 13758
+ratio: 100%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16245
+TSP bound: 16245
+ratio: 100%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15737
+TSP bound: 15737
+ratio: 100%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14075
+TSP bound: 14075
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13836
+TSP bound: 13836
+ratio: 100%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16079
+TSP bound: 16079
+ratio: 100%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k1/L4_d50_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14497
+TSP bound: 14497
+ratio: 100%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14738
+TSP bound: 7369
+ratio: 200%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13820
+TSP bound: 6910
+ratio: 200%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13625
+TSP bound: 6812.5
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13758
+TSP bound: 6879
+ratio: 200%
+Running time: 4 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16235
+TSP bound: 8117.5
+ratio: 200%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 15737
+TSP bound: 7868.5
+ratio: 200%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14059
+TSP bound: 7029.5
+ratio: 200%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13295
+TSP bound: 6918
+ratio: 192.18%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16079
+TSP bound: 8039.5
+ratio: 200%
+Running time: 34 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k2/L4_d50_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14483
+TSP bound: 7241.5
+ratio: 200%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14738
+TSP bound: 4912.67
+ratio: 300%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13809
+TSP bound: 4603
+ratio: 300%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12586
+TSP bound: 4541.67
+ratio: 277.123%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13758
+TSP bound: 4586
+ratio: 300%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16235
+TSP bound: 5411.67
+ratio: 300%
+Running time: 27 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14741
+TSP bound: 5245.67
+ratio: 281.013%
+Running time: 33 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14057
+TSP bound: 4685.67
+ratio: 300%
+Running time: 12 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 12376
+TSP bound: 4612
+ratio: 268.343%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16079
+TSP bound: 5359.67
+ratio: 300%
+Running time: 32 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k3/L4_d50_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14483
+TSP bound: 4827.67
+ratio: 300%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14738
+TSP bound: 3684.5
+ratio: 400%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13809
+TSP bound: 3452.25
+ratio: 400%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13625
+TSP bound: 3406.25
+ratio: 400%
+Running time: 14 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13758
+TSP bound: 3439.5
+ratio: 400%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16235
+TSP bound: 4058.75
+ratio: 400%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14202
+TSP bound: 3934.25
+ratio: 360.984%
+Running time: 42 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14055
+TSP bound: 3513.75
+ratio: 400%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13295
+TSP bound: 3459
+ratio: 384.36%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16079
+TSP bound: 4019.75
+ratio: 400%
+Running time: 35 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k4/L4_d50_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14483
+TSP bound: 3620.75
+ratio: 400%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14738
+TSP bound: 2947.6
+ratio: 500%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13108
+TSP bound: 2761.8
+ratio: 474.618%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13625
+TSP bound: 2725
+ratio: 500%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13758
+TSP bound: 2751.6
+ratio: 500%
+Running time: 6 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16235
+TSP bound: 3247
+ratio: 500%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14757
+TSP bound: 3147.4
+ratio: 468.863%
+Running time: 44 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14055
+TSP bound: 2811
+ratio: 500%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 13836
+TSP bound: 2767.2
+ratio: 500%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 16079
+TSP bound: 3215.8
+ratio: 500%
+Running time: 29 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d50_k5/L4_d50_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 14483
+TSP bound: 2896.6
+ratio: 500%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8179
+TSP bound: 8179
+ratio: 100%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7776
+TSP bound: 7776
+ratio: 100%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7396
+TSP bound: 7396
+ratio: 100%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8428
+TSP bound: 8428
+ratio: 100%
+Running time: 20 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9402
+TSP bound: 9402
+ratio: 100%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7850
+TSP bound: 7850
+ratio: 100%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7464
+TSP bound: 7464
+ratio: 100%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7637
+TSP bound: 7637
+ratio: 100%
+Running time: 8 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7697
+TSP bound: 7697
+ratio: 100%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k1/L4_d75_k1_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7695
+TSP bound: 7695
+ratio: 100%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8177
+TSP bound: 4088.5
+ratio: 200%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7751
+TSP bound: 3884.5
+ratio: 199.537%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7396
+TSP bound: 3698
+ratio: 200%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8428
+TSP bound: 4214
+ratio: 200%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9395
+TSP bound: 4697.5
+ratio: 200%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7850
+TSP bound: 3925
+ratio: 200%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7452
+TSP bound: 3726
+ratio: 200%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7637
+TSP bound: 3818.5
+ratio: 200%
+Running time: 5 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7697
+TSP bound: 3848.5
+ratio: 200%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k2/L4_d75_k2_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7683
+TSP bound: 3841.5
+ratio: 200%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8177
+TSP bound: 2725.67
+ratio: 300%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7751
+TSP bound: 2589.67
+ratio: 299.305%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7396
+TSP bound: 2465.33
+ratio: 300%
+Running time: 1 second
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8428
+TSP bound: 2809.33
+ratio: 300%
+Running time: 17 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9395
+TSP bound: 3131.67
+ratio: 300%
+Running time: 21 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7850
+TSP bound: 2616.67
+ratio: 300%
+Running time: 30 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7452
+TSP bound: 2484
+ratio: 300%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7637
+TSP bound: 2545.67
+ratio: 300%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7697
+TSP bound: 2565.67
+ratio: 300%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k3/L4_d75_k3_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7683
+TSP bound: 2561
+ratio: 300%
+Running time: 19 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8177
+TSP bound: 2044.25
+ratio: 400%
+Running time: 18 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7751
+TSP bound: 1942.25
+ratio: 399.073%
+Running time: 10 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7396
+TSP bound: 1849
+ratio: 400%
+Running time: 0 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8428
+TSP bound: 2107
+ratio: 400%
+Running time: 15 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9395
+TSP bound: 2348.75
+ratio: 400%
+Running time: 24 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7850
+TSP bound: 1962.5
+ratio: 400%
+Running time: 26 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7451
+TSP bound: 1862.75
+ratio: 400%
+Running time: 9 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 6012
+TSP bound: 1909.25
+ratio: 314.888%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7697
+TSP bound: 1924.25
+ratio: 400%
+Running time: 3 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k4/L4_d75_k4_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7683
+TSP bound: 1920.75
+ratio: 400%
+Running time: 23 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_0.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8177
+TSP bound: 1635.4
+ratio: 500%
+Running time: 16 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_1.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7751
+TSP bound: 1553.8
+ratio: 498.842%
+Running time: 11 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_2.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7396
+TSP bound: 1479.2
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_3.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 8428
+TSP bound: 1685.6
+ratio: 500%
+Running time: 22 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_4.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 9373
+TSP bound: 1878.8
+ratio: 498.882%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_5.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7850
+TSP bound: 1570
+ratio: 500%
+Running time: 25 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_6.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7417
+TSP bound: 1489.4
+ratio: 497.986%
+Running time: 13 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_7.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7637
+TSP bound: 1527.4
+ratio: 500%
+Running time: 7 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_8.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7697
+TSP bound: 1539.4
+ratio: 500%
+Running time: 2 seconds
+--------------------------------------
+calling: single_tsp  -f ../data/generated/L4_d75_k5/L4_d75_k5_9.2dvs --lkh
+--------------------------------------
+makespan of a tour based on optimal single vehicle tour: 7651
+TSP bound: 1535.4
+ratio: 498.307%
+Running time: 20 seconds
+
+Time elapsed: 3 hours 59 minutes 55 seconds

@@ -1,0 +1,4802 @@
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27258
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26544.1
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26904
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 25476
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27744
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 29608
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27484
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 28990
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 31263
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k1/L1_d0_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27722
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 13629
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 13272
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 13452
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 12738
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 38 seconds
+Objective: 13872
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 58 seconds
+Objective: 14804
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 37 seconds
+Objective: 13742
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 6 seconds
+Objective: 14495
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 44 seconds
+Objective: 15631.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k2/L1_d0_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 13861
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 9086
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 8848.03
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 8968
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 8492
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 1 second
+Objective: 9248
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 34 seconds
+Objective: 9869.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 57 seconds
+Objective: 9161.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 51 seconds
+Objective: 9663.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 50 seconds
+Objective: 10421
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k3/L1_d0_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 9240.67
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 41 seconds
+Objective: 6814.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 6636.02
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 36 seconds
+Objective: 6726
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 6369
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 23 seconds
+Objective: 6936
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 9 seconds
+Objective: 7402
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 15 seconds
+Objective: 6871
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 26 seconds
+Objective: 7247.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 8 seconds
+Objective: 7815.75
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k4/L1_d0_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 6930.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 49 seconds
+Objective: 5451.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 5308.82
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 41 seconds
+Objective: 5380.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 38 seconds
+Objective: 5095.2
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 43 seconds
+Objective: 5548.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 45 seconds
+Objective: 5921.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 37 seconds
+Objective: 5496.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 56 seconds
+Objective: 5798
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 57 seconds
+Objective: 6252.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d0_k5/L1_d0_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 30 seconds
+Objective: 5544.4
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13801
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14416
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 12817.1
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14402
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 16763
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14383
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13340
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13084
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 18331
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k1/L1_d50_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 15405
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 6900.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 7208
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 6408.53
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 7201
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 8381.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 35 seconds
+Objective: 7191.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 6670
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 6542
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 41 seconds
+Objective: 9165.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k2/L1_d50_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 7702
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 4600.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 4805.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 4272.35
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 38 seconds
+Objective: 4800.67
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 44 seconds
+Objective: 5587.67
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 59 seconds
+Objective: 4794.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 4446.67
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 4361.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 2 seconds
+Objective: 6110.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k3/L1_d50_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 5134.67
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 49 seconds
+Objective: 3450.25
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 3604
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 3204.26
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 50 seconds
+Objective: 3600.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 26 seconds
+Objective: 4190.75
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 21 seconds
+Objective: 3595.75
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 3335
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 3271
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 20 seconds
+Objective: 4582.75
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k4/L1_d50_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 3851
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 56 seconds
+Objective: 2760.2
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 2883.2
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 2563.41
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 1 second
+Objective: 2880.4
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 3 minutes 9 seconds
+Objective: 3352.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 42 seconds
+Objective: 2876.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 2668
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 2616.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 41 seconds
+Objective: 3666.2
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d50_k5/L1_d50_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 3080.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 6904
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 8666.14
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7512.11
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 8958
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 9853
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 6645
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 6744.02
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 6676
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 9039.01
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k1/L1_d75_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7037.04
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 3452
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 4333.07
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 3756.05
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 36 seconds
+Objective: 4479
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 4926.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 3322.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 3372.01
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 3338
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 4519.5
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k2/L1_d75_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 3518.52
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 2301.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 2888.71
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 2504.04
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 47 seconds
+Objective: 2983
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 45 seconds
+Objective: 3284.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2215
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 2248.01
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 2225.33
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 3013
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k3/L1_d75_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 2343.34
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 1726
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 38 seconds
+Objective: 2166.53
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 1878.03
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 21 seconds
+Objective: 2237.25
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 1 second
+Objective: 2463.25
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 1661.25
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 1686.01
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 1669
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2259.75
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k4/L1_d75_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 1757.51
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 1380.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 40 seconds
+Objective: 1733.23
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 1502.42
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 29 seconds
+Objective: 1789.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 18 seconds
+Objective: 1970.6
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 39 seconds
+Objective: 1329
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 1348.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 1335.2
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 30 seconds
+Objective: 1807.8
+--------------------------------------
+calling: mip  -f ../data/generated/L1_d75_k5/L1_d75_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 1405.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4735.07
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4512.07
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4451.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4261.03
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4788.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4636.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4669
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4505
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4514.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k1/L2_d0_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 4844.03
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 2367.54
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 2256.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 2225.52
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 2130.51
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 2394.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 2318
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 2334.5
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 2252.5
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 2257
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k2/L2_d0_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 13 seconds
+Objective: 2422.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1578.36
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1504.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1483.68
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1420.34
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 1596.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 1545.34
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 1556.33
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 1501.67
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1504.67
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k3/L2_d0_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1614.68
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 1183.77
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 1128.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1112.76
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 1065.26
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 1197.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 1159
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 1166.5
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 1126.25
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1128.5
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k4/L2_d0_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1211.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 947.015
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 902.415
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 890.207
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 852.205
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 957.609
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 927.202
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 933.2
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 901.001
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 902.802
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d0_k5/L2_d0_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 968.806
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2678.05
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2697.06
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2587.06
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2752.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2730.08
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2582.08
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2734.08
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2732.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2844.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k1/L2_d50_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 2815.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1339.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1348.53
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1293.53
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 1376.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 1365.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 1291.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 1367.04
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 1366.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 1422.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k2/L2_d50_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 1406.52
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 892.683
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 899.02
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 862.352
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 917.347
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 910.027
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 860.692
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 911.361
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 910.671
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 948.007
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k3/L2_d50_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 937.681
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 669.512
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 674.265
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 646.764
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 688.01
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 682.52
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 645.519
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 683.521
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 678.019
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 711.005
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k4/L2_d50_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 703.261
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 535.61
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 539.406
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 517.411
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 550.409
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 545.816
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 516.415
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 546.817
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 542.411
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 568.804
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d50_k5/L2_d50_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 562.609
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1759.07
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1840.06
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1708.1
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1942.06
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1892.11
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1640.15
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1746.09
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1832.05
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1858.06
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k1/L2_d75_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 1825.09
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 879.533
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 920.03
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 854.05
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 971.031
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 946.055
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 820.075
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 873.043
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 916.023
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 929.029
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k2/L2_d75_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 911.047
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 586.355
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 613.354
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 569.366
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 647.352
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 630.703
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 546.716
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 582.029
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 610.682
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 619.353
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k3/L2_d75_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 607.361
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 439.765
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 460.015
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 427.025
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 485.514
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 473.027
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 410.037
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 436.52
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 453.018
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 464.515
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k4/L2_d75_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 455.521
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 351.812
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 368.012
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 341.62
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 388.411
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 378.422
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 328.03
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 349.216
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 362.412
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 371.612
+--------------------------------------
+calling: mip  -f ../data/generated/L2_d75_k5/L2_d75_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 364.417
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 46077
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 44513
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 46633
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 48355
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 46025
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 53206
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 46725
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 47815
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 50589
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k1/L3_d0_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 45445
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 23038.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 22256.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 23316.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 24177.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 23012.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 44 seconds
+Objective: 26603
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 23362.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 23907.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 46 seconds
+Objective: 25294.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k2/L3_d0_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 22722.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 15359
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 14837.7
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 45 seconds
+Objective: 15544.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 48 seconds
+Objective: 16118.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 15341.7
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 14 seconds
+Objective: 17735.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 15575
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 15938.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 14 seconds
+Objective: 16863
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k3/L3_d0_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 15148.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 45 seconds
+Objective: 11519.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 11128.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute
+Objective: 11658.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 7 seconds
+Objective: 12088.8
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 39 seconds
+Objective: 11506.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 35 seconds
+Objective: 13301.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 34 seconds
+Objective: 11681.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 58 seconds
+Objective: 11953.8
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 33 seconds
+Objective: 12647.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k4/L3_d0_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 11361.3
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 52 seconds
+Objective: 9215.4
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 8902.6
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 16 seconds
+Objective: 9326.6
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 22 seconds
+Objective: 9671
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 41 seconds
+Objective: 9205
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 58 seconds
+Objective: 10641.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 36 seconds
+Objective: 9345
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 10 seconds
+Objective: 9563
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 50 seconds
+Objective: 10117.8
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d0_k5/L3_d0_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 9089
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 23369
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 23022
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 23467.1
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 22968
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 28197
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27655
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 23055
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 23524
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27833
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k1/L3_d50_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 24871
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 11684.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 11511
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 11733.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 11484
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 52 seconds
+Objective: 14098.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 46 seconds
+Objective: 13827.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 11527.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 11762
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 47 seconds
+Objective: 13916.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k2/L3_d50_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 12435.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 7789.67
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 7674.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 7822.36
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 7656.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 24 seconds
+Objective: 9399
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 39 seconds
+Objective: 9218.33
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 7685
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 7841.34
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 23 seconds
+Objective: 9277.67
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k3/L3_d50_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 44 seconds
+Objective: 8290.33
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 37 seconds
+Objective: 5842.25
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 5755.51
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 5866.77
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 5742.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 18 seconds
+Objective: 7049.25
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 15 seconds
+Objective: 6913.75
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 5763.75
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 5881.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 9 seconds
+Objective: 6958.25
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k4/L3_d50_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 3 seconds
+Objective: 6217.75
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 44 seconds
+Objective: 4673.8
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 4604.41
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 4693.41
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 4593.61
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 52 seconds
+Objective: 5639.4
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 3 minutes
+Objective: 5531
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 4611
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 38 seconds
+Objective: 4704.8
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 36 seconds
+Objective: 5566.6
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d50_k5/L3_d50_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 15 seconds
+Objective: 4974.2
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 12397
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 12738
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 11968
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14293.1
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 15972
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13655
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 12322.1
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 11734
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 12407
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k1/L3_d75_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13060
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 6198.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 6369
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 5984.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 7146.54
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 47 seconds
+Objective: 7986
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 43 seconds
+Objective: 6827.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 6161.03
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 5867.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 6203.51
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k2/L3_d75_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 36 seconds
+Objective: 6530
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 4132.33
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 4246
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 3989.34
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 18 seconds
+Objective: 4764.36
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 31 seconds
+Objective: 5324
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 58 seconds
+Objective: 4551.67
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 4107.35
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 3911.34
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 4135.68
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k3/L3_d75_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 59 seconds
+Objective: 4353.33
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 34 seconds
+Objective: 3099.25
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 3184.5
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 2992.01
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 42 seconds
+Objective: 3573.27
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 3 seconds
+Objective: 3993
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 33 seconds
+Objective: 3413.75
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 3080.52
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 2933.51
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 3101.76
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k4/L3_d75_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 20 seconds
+Objective: 3265
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 2479.4
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 2547.6
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 2393.61
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 3 seconds
+Objective: 2858.61
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes
+Objective: 3194.4
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 55 seconds
+Objective: 2731
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2464.41
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 2346.81
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2481.41
+--------------------------------------
+calling: mip  -f ../data/generated/L3_d75_k5/L3_d75_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 33 seconds
+Objective: 2612
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27024
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26659
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26910
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27725
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26609
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 30315
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27250
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 27772
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 29064
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k1/L4_d0_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 26612
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 13512
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 13329.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 13455
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 34 seconds
+Objective: 13862.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 13304.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 48 seconds
+Objective: 15157.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 13625
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 13886
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 51 seconds
+Objective: 14532
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k2/L4_d0_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 13306
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 9008
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 8886.34
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 8970
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 55 seconds
+Objective: 9241.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 8869.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 28 seconds
+Objective: 10105
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 9083.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 51 seconds
+Objective: 9257.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 24 seconds
+Objective: 9688
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k3/L4_d0_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 8870.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 6756
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 6664.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 37 seconds
+Objective: 6727.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 13 seconds
+Objective: 6931.25
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 6652.25
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 52 seconds
+Objective: 7578.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 48 seconds
+Objective: 6812.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 10 seconds
+Objective: 6943
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 6 seconds
+Objective: 7266
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k4/L4_d0_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 6653
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 44 seconds
+Objective: 5404.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 5331.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 45 seconds
+Objective: 5382
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 28 seconds
+Objective: 5545
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 5321.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 27 seconds
+Objective: 6063
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 1 second
+Objective: 5450
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 27 seconds
+Objective: 5554.4
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 2 minutes 30 seconds
+Objective: 5812.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d0_k5/L4_d0_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 5322.4
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14738
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13794
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13597.1
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13754
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 16231
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 15733
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14052
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 13829
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 16079
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k1/L4_d50_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 14480
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 7369
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 6897.02
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 6798.56
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 6877
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 40 seconds
+Objective: 8115.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 37 seconds
+Objective: 7866.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 7026
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 14 seconds
+Objective: 6914.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 45 seconds
+Objective: 8039.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k2/L4_d50_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 7240
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 4912.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 4598.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 4532.37
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 4584.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 1 second
+Objective: 5410.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 2 seconds
+Objective: 5244.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 4684
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 4609.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 8 seconds
+Objective: 5359.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k3/L4_d50_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 4826.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 3684.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 3448.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 3399.28
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 3438.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 21 seconds
+Objective: 4057.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 21 seconds
+Objective: 3933.25
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 3513
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 3457.25
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 26 seconds
+Objective: 4019.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k4/L4_d50_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 3620
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 50 seconds
+Objective: 2947.6
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2758.81
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 2719.42
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 27 seconds
+Objective: 2750.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 40 seconds
+Objective: 3246.2
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 38 seconds
+Objective: 3146.6
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 2810.4
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 2765.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 50 seconds
+Objective: 3215.8
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d50_k5/L4_d50_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 32 seconds
+Objective: 2896
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 8161
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7751.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7351
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 8408.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 9355.02
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7823.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7395.03
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7622
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7625.14
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k1/L4_d75_k1_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 0 seconds
+Objective: 7655.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 4080.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 3871.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 3675.5
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 4204
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 46 seconds
+Objective: 4677.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 19 seconds
+Objective: 3911.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 17 seconds
+Objective: 3697.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 15 seconds
+Objective: 3811
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 18 seconds
+Objective: 3812.57
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k2/L4_d75_k2_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 16 seconds
+Objective: 3827.51
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 2720.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 2581
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 2450.33
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 36 seconds
+Objective: 2802.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 12 seconds
+Objective: 3118.34
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 2607.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 2465.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 2540.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 2541.71
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k3/L4_d75_k3_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 2551.67
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 33 seconds
+Objective: 2040.25
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 22 seconds
+Objective: 1935.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 20 seconds
+Objective: 1837.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 2102
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 36 seconds
+Objective: 2338.76
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 34 seconds
+Objective: 1955.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 21 seconds
+Objective: 1848.76
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 24 seconds
+Objective: 1904
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 1906.29
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k4/L4_d75_k4_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 1913.75
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_0.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 37 seconds
+Objective: 1632.2
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_1.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 28 seconds
+Objective: 1548.6
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_2.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 23 seconds
+Objective: 1470.2
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_3.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 54 seconds
+Objective: 1681.6
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_4.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 1 minute 57 seconds
+Objective: 1871
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_5.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 42 seconds
+Objective: 1564.6
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_6.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 25 seconds
+Objective: 1479.01
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_7.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 26 seconds
+Objective: 1523.2
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_8.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 31 seconds
+Objective: 1525.03
+--------------------------------------
+calling: mip  -f ../data/generated/L4_d75_k5/L4_d75_k5_9.2dvs  -lg
+--------------------------------------
+Using the three-indexed VRP MIP
+subtour cuts: false
+tightening cons: true
+Running time: 29 seconds
+Objective: 1531
+
+Time elapsed: 5 hours 13 minutes 58 seconds
