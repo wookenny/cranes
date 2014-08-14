@@ -692,9 +692,9 @@ void batch(vector<string> argv){
 		
         cout<<"Examples: "<<endl;
         cout<<"2DVS batch \"single_tsp -f #1 --lkh\" \"../data/generated/*/*.2dvs\n";
-        cout<<"\t solves the single tsp for all files in all folder below generated."
+        cout<<"\t solves the single tsp for all files in all folder below generated.";
         cout<<"2DVS batch \"insert --k  #2 --n #3 -s #1\" 1  2-3  10,20,30\n";
-        cout<<"\t runs the insertion heur. on files generated with 2 and 3 vehicles,\n"
+        cout<<"\t runs the insertion heur. on files generated with 2 and 3 vehicles,\n";
         cout<<"\t 10,20 and 30 jobs using 1 as seed for the job generation."<<endl;
         return;
 	}
