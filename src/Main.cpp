@@ -596,6 +596,7 @@ void single_tsp(std::vector<std::string> argv){
              "2DVS file")
             ("localsearch,l", 
              "enable or disable the local search")
+            ("lkh","Use the LKH heuristic to solve he tsp.")
             ("verbosity,v",po::value<int>(&verbosity)->default_value(0));
 
         po::variables_map vm;        
@@ -619,10 +620,15 @@ void single_tsp(std::vector<std::string> argv){
         SingleCraneTSP_Solver solver;
         Instance i(filename);
         solver.set_verbosity(verbosity);
+        solver.use_lkh(vm.count("lkh"));
         if(vm.count("localsearch"))
             solver.set_local_search(true);
+       
+        auto start = std::chrono::system_clock::now();    
 	    auto tsp_result = solver(i);
-	
+	    auto stop = std::chrono::system_clock::now();
+        auto runningtime = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+
 	    Tours t{0};
         double bound;
         std::tie(bound,t) = solver(i);
@@ -635,6 +641,8 @@ void single_tsp(std::vector<std::string> argv){
              cerr<<"WARNING: ratio is above number of vehicles(";
              cerr<<i.num_vehicles()<<")"<<endl; 
         }  
+        cout<<"Running time: "
+            <<duration_to_string(runningtime) <<endl;
 
     }catch(boost::program_options::required_option& e){
 	    cerr << " " << e.what() << "\n";
@@ -682,7 +690,12 @@ void batch(vector<string> argv){
 		cout<<"batch \"<command> #1 <param> #2 <param> #1...\" <replace1>"
                 " <replace2>... \n\tRuns the command in batch mode."<<endl;
 		
-        cout<<"Examples: ...."<<endl;
+        cout<<"Examples: "<<endl;
+        cout<<"2DVS batch \"single_tsp -f #1 --lkh\" \"../data/generated/*/*.2dvs\n";
+        cout<<"\t solves the single tsp for all files in all folder below generated."
+        cout<<"2DVS batch \"insert --k  #2 --n #3 -s #1\" 1  2-3  10,20,30\n";
+        cout<<"\t runs the insertion heur. on files generated with 2 and 3 vehicles,\n"
+        cout<<"\t 10,20 and 30 jobs using 1 as seed for the job generation."<<endl;
         return;
 	}
 	
