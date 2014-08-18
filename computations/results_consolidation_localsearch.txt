@@ -1,0 +1,3002 @@
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27616
+Running time: 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27020
+Running time: 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27223
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 25913
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27905
+Running time: 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 29712
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27751
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 29060
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 31353
+Running time: 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 28152
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14805
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14311
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14672
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13829
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14964
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15823
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14444
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15672
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16607
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k2/L1_d0_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14913
+Running time: 59 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10483
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10378
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10451
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9827
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10921
+Running time: 1 minute 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11368
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10770
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11211
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11207
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k3/L1_d0_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10822
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8947
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8178
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8655
+Running time: 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7840
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8893
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8798
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8052
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8785
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9278
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k4/L1_d0_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8062
+Running time: 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7144
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6780
+Running time: 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6877
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6863
+Running time: 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7384
+Running time: 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8227
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7682
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7242
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8000
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d0_k5/L1_d0_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7804
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14379
+Running time: 1 minute 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15333
+Running time: 1 minute 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13844
+Running time: 1 minute 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15153
+Running time: 1 minute 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16871
+Running time: 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14758
+Running time: 1 minute 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14441
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13844
+Running time: 2 minutes 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 18468
+Running time: 56 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k1/L1_d50_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16068
+Running time: 2 minutes 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7996
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8928
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7807
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8971
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9157
+Running time: 1 minute 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7761
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8086
+Running time: 1 minute 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7848
+Running time: 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9456
+Running time: 1 minute 55 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k2/L1_d50_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8729
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5978
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6070
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5813
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6046
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6718
+Running time: 2 minutes 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5790
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5932
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5788
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6849
+Running time: 1 minute 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k3/L1_d50_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6418
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4589
+Running time: 58 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5075
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5602
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5174
+Running time: 1 minute 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5670
+Running time: 2 minutes 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5135
+Running time: 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5154
+Running time: 1 minute 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4610
+Running time: 38 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5698
+Running time: 1 minute 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k4/L1_d50_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5212
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4012
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4219
+Running time: 56 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3974
+Running time: 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4721
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5096
+Running time: 1 minute 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4811
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4181
+Running time: 2 minutes 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3814
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5258
+Running time: 1 minute 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d50_k5/L1_d50_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4258
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7827
+Running time: 2 minutes 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9523
+Running time: 2 minutes 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8679
+Running time: 2 minutes 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9636
+Running time: 2 minutes
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10251
+Running time: 1 minute 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7093
+Running time: 2 minutes 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8219
+Running time: 2 minutes 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7686
+Running time: 2 minutes 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9882
+Running time: 2 minutes 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k1/L1_d75_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8205
+Running time: 1 minute 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4856
+Running time: 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6188
+Running time: 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6006
+Running time: 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5478
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6148
+Running time: 1 minute 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4404
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4607
+Running time: 1 minute 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4898
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6377
+Running time: 1 minute 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k2/L1_d75_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4592
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3805
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4975
+Running time: 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3806
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4500
+Running time: 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4699
+Running time: 1 minute 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3028
+Running time: 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3692
+Running time: 2 minutes 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3395
+Running time: 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4583
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k3/L1_d75_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4008
+Running time: 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2753
+Running time: 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3595
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4003
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3577
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3978
+Running time: 2 minutes 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2603
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3483
+Running time: 2 minutes 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3312
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3858
+Running time: 2 minutes 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k4/L1_d75_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2831
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2644
+Running time: 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3148
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3086
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2936
+Running time: 1 minute 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3667
+Running time: 2 minutes 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2773
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2838
+Running time: 1 minute 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3362
+Running time: 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3282
+Running time: 2 minutes 59 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L1_d75_k5/L1_d75_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2334
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6524
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6518
+Running time: 1 minute 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6242
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6537
+Running time: 1 minute 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7060
+Running time: 1 minute 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6515
+Running time: 1 minute 1 second
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6240
+Running time: 1 minute 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6066
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6648
+Running time: 1 minute 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k1/L2_d0_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6734
+Running time: 1 minute 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3632
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3275
+Running time: 1 minute 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3758
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3520
+Running time: 1 minute 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4391
+Running time: 1 minute 1 second
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3702
+Running time: 49 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3940
+Running time: 1 minute 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3363
+Running time: 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4093
+Running time: 1 minute 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k2/L2_d0_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3302
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3271
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3489
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2797
+Running time: 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2767
+Running time: 1 minute 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3238
+Running time: 1 minute 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2801
+Running time: 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3226
+Running time: 1 minute 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2712
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2635
+Running time: 1 minute 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k3/L2_d0_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2904
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2736
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2755
+Running time: 1 minute 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2567
+Running time: 1 minute 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2739
+Running time: 58 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3016
+Running time: 1 minute 49 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2798
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2929
+Running time: 1 minute 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2710
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3213
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k4/L2_d0_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2563
+Running time: 1 minute 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2112
+Running time: 2 minutes 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2821
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2560
+Running time: 58 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2287
+Running time: 1 minute 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2894
+Running time: 1 minute 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2399
+Running time: 1 minute 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2472
+Running time: 2 minutes 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2932
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2053
+Running time: 1 minute 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d0_k5/L2_d0_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2557
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4348
+Running time: 1 minute 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4484
+Running time: 1 minute 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4632
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4986
+Running time: 1 minute 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5362
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4233
+Running time: 1 minute 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4870
+Running time: 1 minute 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4446
+Running time: 1 minute 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5644
+Running time: 1 minute 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k1/L2_d50_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4685
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2912
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2598
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2569
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3052
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3333
+Running time: 1 minute 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2407
+Running time: 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3129
+Running time: 2 minutes 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2384
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3222
+Running time: 2 minutes 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k2/L2_d50_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2155
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2406
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2424
+Running time: 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2281
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2411
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2702
+Running time: 2 minutes 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2575
+Running time: 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2428
+Running time: 2 minutes 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2440
+Running time: 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2557
+Running time: 2 minutes 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k3/L2_d50_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2143
+Running time: 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1733
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2060
+Running time: 55 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2024
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2378
+Running time: 1 minute 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2415
+Running time: 2 minutes 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2536
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2172
+Running time: 2 minutes 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2178
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2150
+Running time: 2 minutes 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k4/L2_d50_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1222
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2483
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1988
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2060
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2785
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2670
+Running time: 2 minutes 1 second
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2105
+Running time: 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2381
+Running time: 2 minutes 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2292
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2228
+Running time: 2 minutes 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d50_k5/L2_d50_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1743
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3986
+Running time: 1 minute 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3908
+Running time: 2 minutes 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3529
+Running time: 1 minute 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3727
+Running time: 1 minute 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4117
+Running time: 1 minute 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3787
+Running time: 1 minute 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3723
+Running time: 2 minutes 38 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4266
+Running time: 1 minute 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4322
+Running time: 1 minute 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k1/L2_d75_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4017
+Running time: 55 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2263
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2493
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3599
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2119
+Running time: 1 minute 1 second
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2510
+Running time: 2 minutes 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2169
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3235
+Running time: 1 minute 38 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2381
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2530
+Running time: 2 minutes 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k2/L2_d75_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2051
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1880
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2226
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1872
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1910
+Running time: 1 minute 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2017
+Running time: 2 minutes 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1822
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2613
+Running time: 2 minutes 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1781
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2192
+Running time: 2 minutes 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k3/L2_d75_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1574
+Running time: 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1708
+Running time: 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1603
+Running time: 49 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1397
+Running time: 17 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1816
+Running time: 1 minute 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2136
+Running time: 2 minutes 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1714
+Running time: 49 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2274
+Running time: 2 minutes 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1780
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2676
+Running time: 1 minute 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k4/L2_d75_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1074
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2002
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1978
+Running time: 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1195
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1907
+Running time: 1 minute 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1748
+Running time: 2 minutes 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1803
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2316
+Running time: 2 minutes 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1780
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1734
+Running time: 3 minutes 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L2_d75_k5/L2_d75_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 1633
+Running time: 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 46077
+Running time: 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 44739
+Running time: 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 46633
+Running time: 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 48355
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 46031
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 53206
+Running time: 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 46731
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 47815
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 50589
+Running time: 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k1/L3_d0_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 45445
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 23934
+Running time: 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24032
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24652
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24943
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24801
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27573
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24870
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24748
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 25842
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k2/L3_d0_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 23734
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16428
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 17319
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 18751
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 17365
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 17268
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 19204
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16857
+Running time: 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16699
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 17296
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k3/L3_d0_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16670
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12857
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12323
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13529
+Running time: 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14370
+Running time: 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13401
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15492
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14462
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14315
+Running time: 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14668
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k4/L3_d0_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12411
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10388
+Running time: 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12027
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12351
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10850
+Running time: 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11024
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12220
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12040
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12511
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12951
+Running time: 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d0_k5/L3_d0_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11536
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24285
+Running time: 1 minute 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 23662
+Running time: 2 minutes 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24139
+Running time: 1 minute 55 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 23766
+Running time: 2 minutes 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 28262
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27715
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 23827
+Running time: 3 minutes 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 24318
+Running time: 1 minute 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27918
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k1/L3_d50_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 25416
+Running time: 2 minutes 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 12757
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13090
+Running time: 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13094
+Running time: 1 minute 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13739
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16246
+Running time: 2 minutes 1 second
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15579
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13330
+Running time: 2 minutes 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13457
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15342
+Running time: 2 minutes 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k2/L3_d50_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13875
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8833
+Running time: 1 minute 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10792
+Running time: 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9561
+Running time: 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10908
+Running time: 1 minute 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10767
+Running time: 2 minutes 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10418
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9462
+Running time: 1 minute 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9776
+Running time: 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11689
+Running time: 2 minutes 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k3/L3_d50_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10071
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7255
+Running time: 59 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6854
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7029
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7573
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8235
+Running time: 1 minute 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8349
+Running time: 1 minute 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7570
+Running time: 2 minutes 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7223
+Running time: 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8329
+Running time: 3 minutes 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k4/L3_d50_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7466
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6424
+Running time: 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6655
+Running time: 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6506
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5797
+Running time: 1 minute 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8217
+Running time: 3 minutes 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7095
+Running time: 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7054
+Running time: 2 minutes 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6161
+Running time: 1 minute 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7332
+Running time: 1 minute 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d50_k5/L3_d50_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6720
+Running time: 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13323
+Running time: 2 minutes 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13593
+Running time: 2 minutes 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13372
+Running time: 3 minutes 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14606
+Running time: 1 minute 59 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16095
+Running time: 1 minute 5 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14291
+Running time: 1 minute 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13365
+Running time: 2 minutes 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13511
+Running time: 3 minutes 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13929
+Running time: 3 minutes 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k1/L3_d75_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14859
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7285
+Running time: 1 minute
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8268
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7346
+Running time: 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8711
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9070
+Running time: 1 minute 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8308
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8133
+Running time: 1 minute 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7026
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8198
+Running time: 2 minutes 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k2/L3_d75_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8178
+Running time: 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5582
+Running time: 1 minute 2 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5818
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5869
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5838
+Running time: 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6382
+Running time: 1 minute 56 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6198
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6020
+Running time: 2 minutes 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5826
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6778
+Running time: 1 minute 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k3/L3_d75_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5523
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4352
+Running time: 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4054
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4887
+Running time: 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5141
+Running time: 59 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5712
+Running time: 3 minutes 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4704
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4905
+Running time: 1 minute 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4449
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4804
+Running time: 2 minutes 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k4/L3_d75_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4601
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3948
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3937
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4404
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4471
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4141
+Running time: 2 minutes 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5468
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4666
+Running time: 1 minute 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4162
+Running time: 50 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4114
+Running time: 2 minutes 55 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L3_d75_k5/L3_d75_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4182
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27089
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 26731
+Running time: 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 26959
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27785
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 26709
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 30331
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27302
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 27784
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 29102
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k1/L4_d0_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 26673
+Running time: 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14306
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 13968
+Running time: 44 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14441
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14248
+Running time: 42 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14180
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15536
+Running time: 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14131
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14268
+Running time: 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15138
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k2/L4_d0_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14530
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10379
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9930
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10563
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10204
+Running time: 57 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9883
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 11198
+Running time: 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10885
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10062
+Running time: 48 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10443
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k3/L4_d0_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9940
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7830
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7785
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8065
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8111
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8268
+Running time: 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9414
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8044
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7963
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8472
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k4/L4_d0_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8185
+Running time: 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6592
+Running time: 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6016
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6607
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6337
+Running time: 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6500
+Running time: 14 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7030
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6950
+Running time: 27 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6443
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7330
+Running time: 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d0_k5/L4_d0_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6516
+Running time: 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15273
+Running time: 1 minute 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14803
+Running time: 1 minute 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14668
+Running time: 1 minute 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14686
+Running time: 1 minute 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16410
+Running time: 1 minute 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15813
+Running time: 1 minute 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14865
+Running time: 1 minute 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 14773
+Running time: 1 minute 8 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 16269
+Running time: 1 minute 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k1/L4_d50_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 15199
+Running time: 1 minute 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8504
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 7815
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8077
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8457
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8891
+Running time: 1 minute 56 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8826
+Running time: 38 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8791
+Running time: 1 minute 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8117
+Running time: 33 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8919
+Running time: 1 minute 56 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k2/L4_d50_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8307
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5845
+Running time: 1 minute
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6060
+Running time: 15 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5631
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5794
+Running time: 1 minute 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6591
+Running time: 1 minute 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6448
+Running time: 29 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6496
+Running time: 1 minute 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6142
+Running time: 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6720
+Running time: 1 minute 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k3/L4_d50_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 6058
+Running time: 25 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5140
+Running time: 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4943
+Running time: 47 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4864
+Running time: 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4604
+Running time: 1 minute 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5377
+Running time: 1 minute 53 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5464
+Running time: 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5080
+Running time: 1 minute 31 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5702
+Running time: 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5233
+Running time: 2 minutes 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k4/L4_d50_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4806
+Running time: 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4649
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4144
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4229
+Running time: 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4270
+Running time: 34 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5008
+Running time: 2 minutes 11 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4308
+Running time: 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4779
+Running time: 1 minute 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4509
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4320
+Running time: 2 minutes 24 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d50_k5/L4_d50_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4094
+Running time: 13 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9019
+Running time: 1 minute 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8774
+Running time: 1 minute 20 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8295
+Running time: 1 minute 54 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9142
+Running time: 1 minute 22 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 10227
+Running time: 1 minute 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8694
+Running time: 1 minute 51 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8720
+Running time: 2 minutes 40 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8595
+Running time: 1 minute 39 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 9059
+Running time: 1 minute 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k1/L4_d75_k1_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 8519
+Running time: 1 minute 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5335
+Running time: 21 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5473
+Running time: 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4888
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5112
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5941
+Running time: 1 minute 52 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5081
+Running time: 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5521
+Running time: 1 minute 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5316
+Running time: 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5334
+Running time: 1 minute 28 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k2/L4_d75_k2_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 5145
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4115
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3922
+Running time: 36 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4305
+Running time: 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3788
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4336
+Running time: 2 minutes 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4961
+Running time: 7 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4065
+Running time: 2 minutes 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4861
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3568
+Running time: 2 minutes 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k3/L4_d75_k3_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3807
+Running time: 6 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3936
+Running time: 18 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3878
+Running time: 26 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3704
+Running time: 12 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3385
+Running time: 37 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4188
+Running time: 2 minutes 19 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3077
+Running time: 43 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2974
+Running time: 2 minutes 16 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4275
+Running time: 9 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3328
+Running time: 1 minute 45 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k4/L4_d75_k4_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3281
+Running time: 4 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_0.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2523
+Running time: 1 minute 35 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_1.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3547
+Running time: 41 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_2.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3037
+Running time: 10 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_3.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3326
+Running time: 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_4.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3286
+Running time: 2 minutes 32 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_5.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2509
+Running time: 30 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_6.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 3083
+Running time: 2 minutes 23 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_7.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 4581
+Running time: 3 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_8.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2912
+Running time: 2 minutes 46 seconds
+--------------------------------------
+calling: consolidate -f ../data/generated/L4_d75_k5/L4_d75_k5_9.2dvs -l
+--------------------------------------
+makespan of a separation heur. solution: 2671
+Running time: 9 seconds
+
+Time elapsed: 10 hours 3 minutes 45 seconds
