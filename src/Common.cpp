@@ -129,14 +129,11 @@ vector<string> find_content(const string& path, const string& filter,
         if (directories and !fs::is_directory( i->status() ) ) continue;
 
         boost::smatch what;
-        // Skip if no match
-        if ( !boost::regex_match( i->path().string(),
+        // Skip match -> store it
+        if ( boost::regex_match( i->path().filename().string(),
                                     what,
                                     boost::regex(filter) ) )
-            continue;
-
-        // File matches, store it
-        all_matching_files.push_back(i->path().string());
+            all_matching_files.push_back(i->path().string());
     }
     return all_matching_files;
 }
@@ -151,8 +148,9 @@ void find_files_recursive(const string& path, const string& filter,
     if (found != string::npos) {
         string path_filter = filter.substr(0, found);
         auto content = find_content(path, path_filter, true);
-        for (auto folder : content)
+        for (auto folder : content){
             find_files_recursive(folder, filter.substr(found+1), results);
+        }
 
         // done with all recursive calls!
         return;
@@ -172,7 +170,7 @@ vector<string> find_files(const string& filter) {
 
     // adjust filter:
     string my_filter = postfix;
-    replaceAll(my_filter, "/", "|");
+    replaceAll(my_filter, "/", "|"); // separator token, splits paths
     replaceAll(my_filter, ".", "\\.");
     replaceAll(my_filter, "*", ".*");
     // append ./ if nothing similar in front
