@@ -20,19 +20,18 @@ def parse_results(fname):
     #content = content.split("\n")
     
     datafile = None
-    time     = None
     makespan = None
-    call     = None
+    bound    = None
     
     for c in content:
         #jump over lines like: 
         #'--------'
-        if c.startswith('-------') and makespan==None:
+        if c.startswith('-------') and bound==None:
             continue
         
-        if c.startswith('-------') and makespan!=None:
-            res[datafile] = (makespan,time)
-            datafile = makespan = time = None
+        if c.startswith('-------') and bound!=None:
+            res[datafile] = (bound)
+            datafile = bound = None
             
         #read file and call from lines like
         #calling: consolidate -f ../data/generated/L1_d0_k1/L1_d0_k1_0.2dvs 
@@ -42,22 +41,19 @@ def parse_results(fname):
         
         #read makespan from lines like
         #makespan of a separation heur. solution: 28532
-        if c.startswith('makespan '):
-            makespan = int(c.split(':')[-1])
+        if c.startswith('Objective') or c.startswith("TSP bound"):
+            bound = float(c.split(':')[-1])
+    
+        #if "makespan" in c:
+        #    makespan = int(c.split(':')[-1])
 
-        #read runningtimes and print all while reading lines like
-        #Running time: 6 seconds
-        if c.startswith('Running time:'):
-            time = c.split(':')[-1]
-            time = convert_to_seconds(time)
-
-    if(makespan!=None):
-        res[datafile] = (makespan,time)
-        datafile = makespan = time = None
+    if(bound!=None):
+        res[datafile] = (bound)
+        datafile = bound = None
     return res                
             
 def collect_files():
-    return [f for f in  os.listdir('.') if f.endswith('.txt') and f.startswith('results')  and not 'bound' in f ]
+    return ['results_bounds_LPrelax.txt', 'results_bounds_TSP_LKH_nolocalsearch.txt']
     
     
 files = collect_files()
@@ -67,7 +63,7 @@ for f in files:
     methods.append(parse_results(f))
 datafile = sorted(methods[0].keys())
    
-with open('heuristics.csv', 'wb') as csvfile:
+with open('bounds.csv', 'wb') as csvfile:
     writer = csv.writer(csvfile, delimiter=';',
                             quotechar='"', quoting=csv.QUOTE_MINIMAL)
     #write methods
@@ -79,8 +75,8 @@ with open('heuristics.csv', 'wb') as csvfile:
     for d in datafile:
         row = [d]
         for m in methods:
-            row.extend(m[d])
-        #if 'd75' in d:    
-        writer.writerow(row)
+            row.append(m[d])
+        if 'd75' in d:
+            writer.writerow(row)
     
             
