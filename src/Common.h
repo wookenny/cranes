@@ -105,3 +105,5 @@ std::vector<uint> random_permutation(uint n, int seed = -1);
 std::function<bool ()> getTimer(int timelimit); 
 
 std::string to_str(const std::vector<std::string>& vec, bool braces=false);
+
+std::string itos(int value, int base);

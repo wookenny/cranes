@@ -264,3 +264,23 @@ std::string to_str(const std::vector<std::string>& vec,bool b){
         s+= vec.back();
     return b ? (s+"]") : s;
 }  
+
+
+
+std::string itos(int value, int base) {
+    // check that the base if valid
+    if (base < 2 || base > 36) { return ""; }
+    std::string result;
+    int tmp_value;
+    do {
+        tmp_value = value;
+        value /= base;
+        result = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz" [35 + (tmp_value - value * base)] + result;
+    } while ( value );
+
+            // Apply negative sign
+    if (tmp_value < 0) 
+        result = "-"+result;
+
+    return result;
+}

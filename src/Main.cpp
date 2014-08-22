@@ -504,66 +504,88 @@ void insertion_heuristic(std::vector<std::string> argv){
 
 //TODO: REMOVE THIS AFTER IMPLEMENTING A CHRISTOFIDES-LIKE Heuristic 
 void test(std::vector<std::string> argv){
-	if (argv.size()<2 or (argv.size() >0 and (argv[0]=="h" or argv[0]=="help")) ){
-		cout<<"Testfunction with a two to three arguments."<<endl;
+	if (argv.size() >0 and (argv[0]=="h" or argv[0]=="help") ){
+		cout<<"Testfunction with some arguments."<<endl;
 		return;
 	}
-	
-	int number_of_jobs = stoi(argv[0]);
-	int runs = stoi(argv[1]);
-	int completed = 0;
-	int seed = 0;//time(0);
-	
-	if(argv.size()>2)
-		seed = stoi(argv[2]);
 
-	//stop startingtime
-	using std::chrono::duration_cast;
-	using std::chrono::microseconds;
-	using std::chrono::system_clock;
+    uint seed = 0;
+    bool once = true;
+    while(true){
+        uint num_jobs = 5;
+        uint num_vehicles = 3;
+        Instance i(num_vehicles);
+        i.generate_random_depots(0,100,0,0,seed);
+        i.generate_random_jobs(num_jobs,0,100,0,0,seed);
 
-	system_clock::time_point start = system_clock::now();
-	
-	#pragma omp parallel for
-	for(int r=0; r<runs;++r){
-		++completed;
-		cout << "\r";
-		Instance i(2);
-		i.generate_random_jobs(  number_of_jobs, -10, 10, -10, 10, seed+r);
-		i.add_depotposition(array<int, 2>{{-5,0}});
-		//i.add_depotposition(array<int, 2>{{ -3,0}});
-		//i.add_depotposition(array<int, 2>{{  3,0}});
-		i.add_depotposition(array<int, 2>{{ 5,0}});
+          
+        //run mip
+        auto  mip = independent_TSP_MIP(i);
+        mip.set_debug( false );
+        mip.set_collision( true );
+        mip.set_LP( false );
+        mip.set_silent(true);
+        auto opt_tour = get<0>(mip.solve());
+        double opt = i.makespan(opt_tour);
+        if(!i.verify(opt_tour)){
+            std::cout<<"W: invalid opt. sol!"<<std::endl;
+            return;
+        }
 
-		#if __clang__ 
-		if(true){
-		#else
-		if(0==omp_get_thread_num()){ //CLANG does not like this line	
-		#endif
-			auto time = duration_cast<std::chrono::seconds>(system_clock::now()- start).count();
-			double speed =  completed/(1.0*time);
-			auto remaining = (runs-completed)/speed;
-			cout<<" Runs remaining: "<<runs-completed;
-			if(1.*completed/runs > .1)
-				cout<<"  time left: "<<(int)remaining+1<<" seconds                      ";
+        //run insertion on overy permutation
+        std::vector<uint> perm;
+        for(uint j=0; j<num_jobs;++j)
+            perm.push_back(j);
+        std::string max_assig= "";
+        for(uint j = 0; j<num_jobs;++j)
+            max_assig += std::to_string(num_vehicles-1);
 
-			//cout<<"    Testing instance with seed: "<<seed+r<<"     ";
-			cout.flush();
-		}		
-				
-		SingleCraneTSP_Solver tsp;
-		auto tsp_result = tsp(i);
-		Tours t = std::get<1>(tsp_result);
-		if(not i.verify(t) ){
-			cout<<"Found instance with invalid solution:\n"<<i<<endl;
-			cout<<"Seed: "<<seed+r<<endl;
-			cout<<"tours: "<<t<<endl;
-			//break;
-		}
-		
-	}
-	
-	cout<< "\n\nAll tested solutions ok."<<endl;
+        double min_insert = -1;
+        do{
+
+            //for every assignment: 
+            for(int j=0; j<= std::stoi(max_assig,0,num_vehicles);++j){
+                
+                std::vector<uint> assign;
+                std::string assi = itos(j,num_vehicles);
+
+                for(uint l=0; l<assi.size();++l){
+                    uint append = std::stoi(assi.substr(l,1),0,num_vehicles);
+                    assign.push_back(append);
+                }
+
+                for(uint l = assign.size(); l<num_jobs;++l)
+                    assign.insert(assign.begin(), 0);
+                if(once){
+                std::cout<<"assigment: ";
+                for(auto e: assign)
+                    std::cout<<e<<" ";
+                std::cout<<std::endl;
+            }
+                InsertionHeuristic heur(false);
+                heur.set_use_assignment(true);
+                Tours t = heur(i,perm,assign);
+                double make = i.makespan(t);
+                if(min_insert==-1 or make < min_insert)
+                    min_insert = make;
+            }
+            once = false;    
+        }
+        while ( std::next_permutation(perm.begin(), perm.end()) );
+
+        if( std::round(opt) < std::round(min_insert)){
+            std::cout<< "found instance without optimal insert order after "<<(seed+1)<<" runs" <<":"<<std::endl;
+            std::cout<< i<<std::endl;
+            std::cout << "opt tour: "<<opt_tour<< std::endl;
+            std::cout << "opt: "<<opt<<std::endl;
+            std::cout << "best insert: "<<min_insert<< std::endl;
+            break;
+        }
+        ++seed;
+        if(seed%100==0 and seed>0)
+            std::cout<< "run: "<<seed<<std::endl;
+    }
+
 }
 
 void laser(std::vector<std::string> argv){
