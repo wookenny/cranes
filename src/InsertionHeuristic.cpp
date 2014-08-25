@@ -184,6 +184,8 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 					const vector<uint> &perm) const
 {
     
+    if(debug_)
+    	std::cout<<"\n\nstarting to add into an empty tour! \n\n"<<std::endl;
 	assert( perm.size() == inst.num_jobs() );
 	
 	safety_distance_ = inst.get_safety_distance();
@@ -216,6 +218,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
 Tours InsertionHeuristic::operator()(const Instance& inst, 
 					const vector<uint> &perm, const vector<uint> &assign) const
 {
+
 	assert( perm.size() == inst.num_jobs() );
 	assert( assign.size() == inst.num_jobs() or assign.size()==0);
 	
@@ -256,7 +259,7 @@ Tours InsertionHeuristic::operator()(const Instance& inst,
                 }    
 		    }
 	    }	
-		
+
 		insertion_helper(inst, p,a,tour);  	
 		assert(inst.verify(tour));	
 	}else{
@@ -341,6 +344,18 @@ void InsertionHeuristic::insertion_helper(const Instance& inst,
     assert(assign.size()==inst.num_jobs());
     assert( is_permutation(perm) );
 	//insert every job at the first, collision-free position
+
+    if(debug_){
+    	std::cout<<"\n\nstarting to add into an empty tour! \n\n"<<std::endl;
+    	std::cout<<"perm:";
+    	for(auto p: perm)
+    		std::cout<<" "<< p;
+    	std::cout<<"\nassign:";
+    	for(auto a: assign)
+    		std::cout<<" "<< a;
+    	std::cout<<std::endl;
+    }
+
 	
 	for(uint i=0; i < inst.num_jobs();++i){
 		const Job& job = inst[perm[i]];
@@ -431,11 +446,19 @@ uint InsertionHeuristic::earliest_startingtime_(const Instance& inst,
 		for(uint j=0; j<tours.num_jobs(i); ++j)
 		//if tour[i][j] is left, than job can not be in the left cone of it!
 			intervalsForRightCone(tours[i][j], i, job, v, events);
-	
-	
-	//sort -> using lexicographic order
+
+	//add event for min time, with value 0, 
+	events.push_back(std::make_tuple(time,0));	
 	sort(events.begin(),events.end());	
-	
+
+	//sort -> using lexicographic order
+	if(debug_){
+		std::cout<<"events:"<<std::endl;
+		for(auto e: events)
+			std::cout<<" "<<get<0>(e)<<": "<<get<1>(e);
+		std::cout<<std::endl;
+	}
+
 	//find first pos with sum == 0
 	int sum = 0;
 	int t = 0;
