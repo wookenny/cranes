@@ -7,7 +7,7 @@ void Tours::_sort(int i){
 	std::sort(tours_[i].begin(), tours_[i].end(), 
 				[](const scheduledJob &a,const scheduledJob &b){
                     //same starting time(doublevalue) -> job with length 0 first
-                    if( logically_equal(std::get<1>(a),std::get<1>(b),10) )
+                    if( std::abs(std::get<1>(a)-std::get<1>(b)) < .01 )
                         return (std::get<0>(a)->length() < std::get<0>(b)->length());
                     //rearlierjob first
         			return (std::get<1>(a) < std::get<1>(b)); 

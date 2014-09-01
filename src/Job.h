@@ -60,6 +60,7 @@ class Job{
 		bool operator==(const Job& j) const;
         bool operator!=(const Job& j) const{return !operator==(j);}
         
+        bool equals(const Job& j) const;
 		/*
 		This method considers the implication between the
 		assignment of two jobs with given startingtimes.

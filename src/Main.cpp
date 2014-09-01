@@ -462,8 +462,8 @@ void insertion_heuristic(std::vector<std::string> argv){
 	        }
 	            
 	        i.set_num_vehicles(k);
-	        i.generate_random_depots(0,100,0,20,seed);
-	        i.generate_random_jobs(n,0,100,0,20,seed); 
+	        i.generate_random_depots(0,10,0,10,seed);
+	        i.generate_random_jobs(n,0,100,0,100,seed); 
 	    }
 	    
 	    i.debug(debug);
@@ -508,15 +508,27 @@ void test(std::vector<std::string> argv){
 		cout<<"Testfunction with some arguments."<<endl;
 		return;
 	}
+    
 
+    //other test
     uint seed = 0;
+    if(argv.size()>0){
+        try{
+            seed = std::stoi(argv[0]);
+        }catch(std::invalid_argument e){
+            std::cout<<"'"<<argv[0]<<"' is no valid argument for a seed."<<std::endl;
+        }catch(std::out_of_range  e){
+            std::cout<<"'"<<argv[0]<<"' is not inm valid range for an unsigned int."<<std::endl;
+        }
+        std::cout<<"starting with seed: "<<seed<<std::endl;
+    }
     bool once = true;
     while(true){
-        uint num_jobs = 5;
-        uint num_vehicles = 3;
+        uint num_jobs = 3;
+        uint num_vehicles = 2;
         Instance i(num_vehicles);
-        i.generate_random_depots(0,100,0,0,seed);
-        i.generate_random_jobs(num_jobs,0,100,0,0,seed);
+        i.generate_random_depots(0,2,0,2,seed);
+        i.generate_random_jobs(num_jobs,0,5,0,5,seed);
 
           
         //run mip
@@ -577,7 +589,7 @@ void test(std::vector<std::string> argv){
         }
         while ( std::next_permutation(perm.begin(), perm.end()) );
 
-        if( std::round(opt) < std::round(min_insert)){
+        if( std::round(opt) < std::round(min_insert) ){
             std::cout<< "found instance without optimal insert order after "<<(seed+1)<<" runs" <<":"<<std::endl;
             std::cout<< i<<std::endl;
             std::cout << "opt tour: "<<opt_tour<< std::endl;

@@ -138,9 +138,20 @@ void Instance::generate_random_jobs(int n, int min_x, int max_x,
 	uniform_int_distribution<int> dist_x(min_x,max_x); 
 	uniform_int_distribution<int> dist_y(min_y,max_y);
 	
-	while(0<=--n){
+	while( n > 0){
 		Job j(jobs_.size()+1,dist_x(rng),dist_y(rng),dist_x(rng),dist_y(rng));
-		jobs_.push_back( j );
+		//such a job job already generated?
+		bool contained = false;
+		for(auto &job: jobs_)
+			if(job.equals(j)){
+				contained = true;
+				break;
+			}
+		
+		if(not contained){
+			jobs_.push_back( j );
+			--n;
+		}
 	}
 }
 
