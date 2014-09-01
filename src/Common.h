@@ -5,6 +5,7 @@
 #include <vector>
 #include <functional>
 #include <algorithm>
+#include <limits>
 
 template <typename Iterator>
 bool next_combination(const Iterator first, Iterator k, const Iterator last){
@@ -79,6 +80,14 @@ std::string duration_to_string(const Duration& dtn) {
     return dur;
 }
 
+
+inline bool logically_equal(double a, double b, double error_factor=1.0)
+{
+  return a==b or
+    std::abs(a-b) < std::abs(std::min(a,b)) *
+                    std::numeric_limits<double>::epsilon() *
+                    error_factor;
+}
 
 std::string minutes_to_string(double time);
 

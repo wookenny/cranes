@@ -159,6 +159,15 @@ TEST(Job_Tests, Comparisons) {
     */
 }
 
+TEST(Job_Tests, Ordering) { 
+    Job j1(1, 2, 7, 0, 9);
+    Job j2(2, 0, 1, 1, 9);    
+
+    auto sched1 = std::make_tuple(&j1, 7);
+    auto sched2 = std::make_tuple(&j2, 1); 
+    int ord  = Job::getOrdering(sched1,sched2);
+    EXPECT_EQ(-1, ord);
+}
 #else
 
 #endif
