@@ -528,7 +528,11 @@ void test(std::vector<std::string> argv){
         auto opt_tour = get<0>(mip.solve());
         double opt = i.makespan(opt_tour);
         if(!i.verify(opt_tour)){
-            std::cout<<"W: invalid opt. sol!"<<std::endl;
+
+            std::cout<<"\nW: invalid opt. sol!"<<std::endl;
+            std::cout<<"seed: "<<seed<<"\n";
+            std::cout<<i<<std::endl;
+            std::cout<<"Sol:"<<opt_tour<<std::endl;
             return;
         }
 
